@@ -1,6 +1,6 @@
 # Lex TL;DR
 
-This is a small, GitHub Pages-compatible Jekyll blog. Each Markdown post is one variant of a logical article. The shared `article_id` and `article_title` in front matter let Liquid group variants on the home page and show related links on every article page. A logical article can also belong to a named collection through `collection_id`. The sample `Ship Small` article demonstrates English and Chinese editions inside the `Practice Notes` collection.
+This is a small, GitHub Pages-compatible Jekyll blog for concise summaries of Lex Fridman podcast episodes, with support for adding other podcasters later. Each Markdown post is one variant of a logical summary. The shared `article_id` and `article_title` in front matter let Liquid group language or format variants on the home page and show related links on every summary page. A summary can also belong to a podcaster collection through `collection_id`. The sample `Ship Small` article demonstrates English and Chinese editions inside the first collection.
 
 This intentionally has no CMS, database, user accounts, comments, scheduled publishing, custom domain, or custom application server.
 

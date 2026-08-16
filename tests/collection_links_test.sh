@@ -10,6 +10,19 @@ bundle exec jekyll build --quiet --drafts --destination "$site_dir"
 
 home_page="$site_dir/index.html"
 
+for purpose_text in \
+  'Short summaries of long conversations.' \
+  'Lex Fridman podcast episodes' \
+  'other leading podcasters'
+do
+  if ! grep -Fq "$purpose_text" "$home_page"; then
+    echo "FAIL: homepage does not communicate its podcast-summary purpose: $purpose_text" >&2
+    exit 1
+  fi
+done
+
+echo "PASS: homepage communicates its podcast-summary purpose"
+
 if ! grep -Fq 'href="/lex-tldr/collections/practice-notes/"' "$home_page"; then
   echo "FAIL: homepage does not link to the Practice Notes collection with the project base URL" >&2
   exit 1

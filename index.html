@@ -4,13 +4,13 @@ title: Home
 ---
 <section class="intro wide-container">
   <div class="intro-label">
-    <span>Vol. 01</span>
-    <span>Notes on making</span>
+    <span>Now summarizing</span>
+    <span>Lex Fridman Podcast</span>
   </div>
   <div class="intro-copy">
-    <p class="eyebrow">A multi-form journal</p>
-    <h1>Ideas, in the<br><em>form that fits.</em></h1>
-    <p class="intro-description">Thoughtful writing should meet you where you are. Read each idea in your language, at your length, on your terms.</p>
+    <p class="eyebrow">Podcast summaries</p>
+    <h1>Long conversations,<br><em>made concise.</em></h1>
+    <p class="intro-description">Short summaries of long conversations. Lex TL;DR turns Lex Fridman podcast episodes into concise, readable takeaways, with other leading podcasters to come.</p>
   </div>
   <div class="intro-ornament" aria-hidden="true">
     <span>读</span>
@@ -21,8 +21,8 @@ title: Home
 {% assign articles = site.posts | group_by: "article_id" %}
 <section class="article-list wide-container" aria-label="Articles">
   <header class="section-heading">
-    <p class="eyebrow">The journal</p>
-    <p>{{ articles | size }} idea{% if articles.size != 1 %}s{% endif %} · {{ site.posts | size }} editions</p>
+    <p class="eyebrow">Latest summaries</p>
+    <p>{{ articles | size }} episode{% if articles.size != 1 %}s{% endif %} · {{ site.posts | size }} version{% if site.posts.size != 1 %}s{% endif %}</p>
   </header>
   {% for article in articles %}
     {% assign variants = article.items | sort: "variant_rank" %}
@@ -35,7 +35,7 @@ title: Home
         <p>{{ representative.excerpt | strip_html | strip_newlines | truncate: 210 }}</p>
       </div>
       <div class="edition-list">
-        <p class="edition-label">Available editions</p>
+        <p class="edition-label">Choose a language</p>
         <ul class="variant-links">
           {% for variant in variants %}
             <li>
