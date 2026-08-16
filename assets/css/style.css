@@ -54,6 +54,13 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
 .site-mark { display: grid; width: 2.2rem; height: 2.2rem; place-items: center; border-radius: 50%; color: var(--paper); background: var(--accent); font-family: var(--mono); font-size: .82rem; font-weight: 500; }
 .site-deck { margin: 0; text-align: center; font-size: .78rem; font-style: italic; line-height: 1.25; }
 .issue-stamp { display: flex; flex-direction: column; justify-self: end; margin: 0; font-family: var(--mono); font-size: .61rem; letter-spacing: .1em; line-height: 1.7; text-align: right; text-transform: uppercase; }
+.collection-nav { border-top: 1px solid var(--rule); }
+.collection-nav-inner { display: flex; align-items: stretch; min-height: 2.7rem; }
+.collection-nav-label { display: flex; align-items: center; padding-right: 2rem; color: var(--muted); border-right: 1px solid var(--rule); font-family: var(--mono); font-size: .58rem; letter-spacing: .12em; text-transform: uppercase; }
+.collection-nav ul { display: flex; flex-wrap: wrap; margin: 0; padding: 0; list-style: none; }
+.collection-nav li { display: flex; }
+.collection-nav a { display: flex; align-items: center; padding: .6rem 1.25rem; border-right: 1px solid var(--rule); font-size: .85rem; font-style: italic; text-decoration: none; transition: color .2s ease, background .2s ease; }
+.collection-nav a:hover, .collection-nav a[aria-current="page"] { color: var(--paper); background: var(--accent); }
 
 .intro { display: grid; grid-template-columns: 10rem 1fr 12rem; min-height: 34rem; padding-block: clamp(5rem, 11vw, 9rem); border-bottom: 1px solid var(--ink); }
 .intro-label { display: flex; flex-direction: column; gap: .4rem; padding-top: .65rem; font-family: var(--mono); font-size: .64rem; letter-spacing: .1em; text-transform: uppercase; }
@@ -114,6 +121,23 @@ a.variant-option:hover { color: var(--ink); background: #ef715a; }
 .variant-option.is-current { color: var(--ink); background: var(--paper); }
 .variant-option.is-current > span, .variant-option.is-current em { color: var(--muted); }
 
+.collection-hero { padding-block: 2rem 6rem; border-bottom: 1px solid var(--ink); }
+.collection-breadcrumb { display: flex; gap: .65rem; padding: 1rem 0 clamp(4rem, 9vw, 8rem); color: var(--muted); font-family: var(--mono); font-size: .65rem; letter-spacing: .08em; text-transform: uppercase; }
+.collection-hero-grid { display: grid; grid-template-columns: 8rem 1fr minmax(16rem, 24rem); gap: clamp(2rem, 5vw, 5rem); align-items: end; }
+.collection-number { align-self: start; margin: .4rem 0 0; color: var(--accent); font-family: var(--mono); font-size: .66rem; letter-spacing: .1em; line-height: 1.7; text-transform: uppercase; }
+.collection-hero h1 { margin: 0; font-size: clamp(4rem, 9vw, 8.3rem); font-weight: 400; letter-spacing: -.065em; line-height: .8; }
+.collection-intro > p { margin: 0 0 2.5rem; font-size: clamp(1.05rem, 1.6vw, 1.25rem); line-height: 1.55; }
+.collection-intro dl { display: grid; grid-template-columns: repeat(2, 1fr); margin: 0; border-top: 1px solid var(--ink); }
+.collection-intro dl div { display: flex; align-items: baseline; justify-content: space-between; padding: .7rem 0; border-bottom: 1px solid var(--rule); }
+.collection-intro dl div + div { margin-left: 1.5rem; }
+.collection-intro dt { color: var(--muted); font-family: var(--mono); font-size: .59rem; letter-spacing: .1em; text-transform: uppercase; }
+.collection-intro dd { margin: 0; color: var(--accent); font-size: 1.35rem; font-style: italic; }
+.collection-entries { padding-block: 5rem 8rem; }
+.collection-entry { display: grid; grid-template-columns: 8rem 1.25fr 1fr; gap: clamp(2rem, 5vw, 5rem); padding-block: clamp(3rem, 7vw, 6rem); border-bottom: 1px solid var(--rule); }
+.collection-entry-index { margin: -.5rem 0 0; color: var(--accent); font-size: clamp(3rem, 6vw, 5.5rem); font-style: italic; line-height: 1; }
+.collection-entry-copy h2 { margin: 0 0 1.25rem; font-size: clamp(2.8rem, 5vw, 5rem); font-weight: 500; letter-spacing: -.05em; line-height: .9; }
+.collection-entry-copy > p:last-child { max-width: 36rem; margin: 0; font-size: 1.08rem; }
+
 .site-footer { border-top: 1px solid var(--ink); }
 .footer-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3rem; padding-block: 3.5rem; }
 .footer-grid p { margin: 0; }
@@ -133,6 +157,10 @@ a.variant-option:hover { color: var(--ink); background: #ef715a; }
   .post-body { grid-template-columns: 1fr; max-width: 42rem; margin-inline: auto; }
   .margin-note { display: none; }
   .variants-inner { grid-template-columns: 1fr; }
+  .collection-hero-grid { grid-template-columns: 5rem 1fr; }
+  .collection-intro { grid-column: 2; }
+  .collection-entry { grid-template-columns: 5rem 1fr; }
+  .collection-entry .edition-list { grid-column: 2; }
 }
 
 @media (max-width: 38rem) {
@@ -140,6 +168,10 @@ a.variant-option:hover { color: var(--ink); background: #ef715a; }
   .masthead { grid-template-columns: 1fr auto; min-height: 5.5rem; }
   .site-deck { display: none; }
   .issue-stamp span:first-child { display: none; }
+  .collection-nav-inner { align-items: stretch; width: 100%; padding-left: 1rem; overflow-x: auto; }
+  .collection-nav-label { position: sticky; left: 0; z-index: 1; padding-right: 1rem; background: var(--paper); }
+  .collection-nav ul { flex-wrap: nowrap; }
+  .collection-nav a { white-space: nowrap; }
   .intro { display: block; min-height: auto; padding-block: 4.5rem; }
   .intro-label { margin-bottom: 3rem; }
   .intro h1 { font-size: clamp(3.35rem, 17vw, 5rem); }
@@ -156,6 +188,17 @@ a.variant-option:hover { color: var(--ink); background: #ef715a; }
   .post-meta p + p { padding-left: 0; border-top: 1px solid var(--rule); border-left: 0; }
   .variants ol { grid-template-columns: 1fr; }
   .variants li:nth-child(odd) { border-right: 0; }
+  .collection-hero { padding-bottom: 4rem; }
+  .collection-breadcrumb { padding-bottom: 4rem; }
+  .collection-hero-grid { display: block; }
+  .collection-number { margin-bottom: 2rem; }
+  .collection-hero h1 { font-size: clamp(4rem, 19vw, 6rem); }
+  .collection-intro { margin-top: 3rem; }
+  .collection-entries { padding-block: 3.5rem 5rem; }
+  .collection-entry { display: block; }
+  .collection-entry-index { margin-bottom: 2rem; }
+  .collection-entry-copy h2 { font-size: 3.2rem; }
+  .collection-entry .edition-list { margin-top: 2.5rem; }
   .footer-grid { grid-template-columns: 1fr; gap: 1.25rem; }
   .footer-note { justify-self: start; text-align: left; }
 }

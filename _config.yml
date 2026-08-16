@@ -1,7 +1,7 @@
 title: Variant Notes
 description: One article, many useful forms and languages.
-url: "https://<account>.github.io"
-baseurl: ""
+url: "https://allenlsy.github.io"
+baseurl: "/lex-summary"
 markdown: kramdown
 permalink: /:categories/:title/
 

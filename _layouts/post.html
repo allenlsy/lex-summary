@@ -2,12 +2,17 @@
 layout: default
 ---
 {% assign variants = site.posts | where: "article_id", page.article_id | sort: "variant_rank" %}
+{% assign post_collection = site.data.collections | where: "id", page.collection_id | first %}
 <article class="post wide-container">
   <header class="post-header">
     <div class="post-kicker">
       <a href="{{ '/' | relative_url }}">Journal</a>
       <span aria-hidden="true">/</span>
       <span>{{ page.article_title }}</span>
+      {% if post_collection %}
+        <span aria-hidden="true">/</span>
+        <a class="post-collection" href="{{ post_collection.url | relative_url }}">{{ post_collection.title }}</a>
+      {% endif %}
     </div>
     <div class="post-heading">
       <p class="edition-number">Edition {{ page.variant_rank | prepend: '0' }}</p>

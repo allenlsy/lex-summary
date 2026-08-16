@@ -4,6 +4,7 @@ title: "Ship Small: A Longer Guide"
 date: 2025-01-11 09:00:00 +0000
 article_id: ship-small
 article_title: "Ship Small"
+collection_id: practice-notes
 language: en
 format: long
 variant_rank: 2

@@ -21,6 +21,16 @@
         <p class="site-deck">One idea.<br>Every useful form.</p>
         <p class="issue-stamp"><span>Independent journal</span><span>Est. 2025</span></p>
       </div>
+      <nav class="collection-nav" aria-label="Collections">
+        <div class="wide-container collection-nav-inner">
+          <span class="collection-nav-label">Collections</span>
+          <ul>
+            {% for collection in site.data.collections %}
+              <li><a href="{{ collection.url | relative_url }}"{% if page.collection_id == collection.id %} aria-current="page"{% endif %}>{{ collection.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      </nav>
     </header>
     <main id="content">{{ content }}</main>
     <footer class="site-footer">

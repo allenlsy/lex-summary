@@ -4,6 +4,7 @@ title: "小步发布：完整指南"
 date: 2025-01-13 09:00:00 +0000
 article_id: ship-small
 article_title: "Ship Small"
+collection_id: practice-notes
 language: zh
 format: long
 variant_rank: 4

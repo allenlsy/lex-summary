@@ -1,16 +1,16 @@
 # Variant Notes
 
-This is a small, GitHub Pages-compatible Jekyll blog. Each Markdown post is one variant of a logical article. The shared `article_id` and `article_title` in front matter let Liquid group variants on the home page and show related links on every article page. The sample `Ship Small` article demonstrates English and Chinese, short and long forms.
+This is a small, GitHub Pages-compatible Jekyll blog. Each Markdown post is one variant of a logical article. The shared `article_id` and `article_title` in front matter let Liquid group variants on the home page and show related links on every article page. A logical article can also belong to a named collection through `collection_id`. The sample `Ship Small` article demonstrates English and Chinese, short and long forms inside the `Practice Notes` collection.
 
 This intentionally has no CMS, database, user accounts, comments, scheduled publishing, custom domain, or custom application server.
 
 ## One-time GitHub Pages setup
 
-1. Create (or rename) the GitHub repository to **`<account>.github.io`**, replacing `<account>` with the GitHub user or organization account name.
-2. Push this repository's default branch to GitHub.
-3. In **Settings → Pages**, choose deployment from that branch and the repository **root** (or use the repository's configured Pages branch/root option).
+1. Push this repository's default branch to GitHub.
+2. In **Settings → Pages**, choose deployment from that branch and the repository **root**.
+3. Set `url` and `baseurl` in `_config.yml` for the chosen repository URL.
 
-That exact repository name makes this a user/organization site at `https://<account>.github.io/`. A project repository instead normally produces a `/project-name/` URL. Replace the placeholder `url` in `_config.yml` with the real account URL before publishing.
+The current configuration publishes this project repository at `https://allenlsy.github.io/lex-summary/`. If the repository is renamed to `allenlsy.github.io` for a root user site, change `baseurl` to an empty string.
 
 ## Local preview and build
 
@@ -40,6 +40,7 @@ title: "Ship Small: Spanish Short Guide"
 date: 2025-02-01 09:00:00 +0000
 article_id: ship-small
 article_title: "Ship Small"
+collection_id: practice-notes
 language: es
 format: short
 variant_rank: 5
@@ -49,7 +50,26 @@ permalink: /articles/ship-small/es/short/
 Write the variant here.
 ```
 
-Use the language and form that describe the body (`en`/`zh` and `short`/`long` for the common cases), and choose a new combination and permalink when adding another variant—for example `/articles/ship-small/zh/long/` or `/articles/new-idea/en/short/`. Keep ranks unique so the related list has a predictable order. The shared ID automatically creates one home-page article group and links every related variant on each post.
+Use the language and form that describe the body (`en`/`zh` and `short`/`long` for the common cases), and choose a new combination and permalink when adding another variant—for example `/articles/ship-small/zh/long/` or `/articles/new-idea/en/short/`. Keep ranks unique so the related list has a predictable order. The shared ID automatically creates one home-page article group and links every related variant on each post. Give every variant of one logical article the same `collection_id`.
+
+## Add a collection
+
+Collections are listed in `_data/collections.yml`. Add one stable ID, display title, URL, and description:
+
+```yaml
+- id: design-systems
+  title: Design Systems
+  url: /collections/design-systems/
+  description: Notes on building coherent interfaces at scale.
+```
+
+Then create `collections/design-systems.html` using `collections/practice-notes.html` as the template, changing its `title`, `collection_id`, and `permalink`. Assign an article by adding `collection_id: design-systems` to every one of its variants. The collection automatically appears in the masthead, its landing page groups related editions by `article_id`, and each article links back to the collection.
+
+Run the collection regression test after changing collection metadata or URLs:
+
+```sh
+sh tests/collection_links_test.sh
+```
 
 ## Git publishing workflow
 

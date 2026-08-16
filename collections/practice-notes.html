@@ -1,0 +1,65 @@
+---
+layout: default
+title: Practice Notes
+collection_id: practice-notes
+permalink: /collections/practice-notes/
+---
+{% assign collection = site.data.collections | where: "id", page.collection_id | first %}
+{% assign collection_posts = site.posts | where: "collection_id", page.collection_id | sort: "variant_rank" %}
+{% assign articles = collection_posts | group_by: "article_id" %}
+
+<section class="collection-hero wide-container">
+  <div class="collection-breadcrumb">
+    <a href="{{ '/' | relative_url }}">Journal</a>
+    <span aria-hidden="true">/</span>
+    <span>Collections</span>
+  </div>
+  <div class="collection-hero-grid">
+    <p class="collection-number">Collection<br>№ 01</p>
+    <div>
+      <p class="eyebrow">A gathered line of thought</p>
+      <h1>{{ collection.title }}</h1>
+    </div>
+    <div class="collection-intro">
+      <p>{{ collection.description }}</p>
+      <dl>
+        <div><dt>Ideas</dt><dd>{{ articles | size }}</dd></div>
+        <div><dt>Editions</dt><dd>{{ collection_posts | size }}</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="collection-entries wide-container" aria-label="Articles in {{ collection.title }}">
+  <header class="section-heading">
+    <p class="eyebrow">In this collection</p>
+    <p>Choose your edition</p>
+  </header>
+
+  {% for article in articles %}
+    {% assign variants = article.items | sort: "variant_rank" %}
+    {% assign representative = variants | first %}
+    <article class="collection-entry">
+      <p class="collection-entry-index">{{ forloop.index | prepend: '0' }}</p>
+      <div class="collection-entry-copy">
+        <p class="article-date">{{ representative.date | date: "%d %B %Y" }}</p>
+        <h2>{{ representative.article_title }}</h2>
+        <p>{{ representative.excerpt | strip_html | strip_newlines | truncate: 210 }}</p>
+      </div>
+      <div class="edition-list">
+        <p class="edition-label">Read this idea</p>
+        <ul class="variant-links">
+          {% for post in variants %}
+            <li>
+              <a href="{{ post.url | relative_url }}">
+                <span>{{ post.language | upcase }}</span>
+                <span>{{ post.format }}</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </article>
+  {% endfor %}
+</section>
