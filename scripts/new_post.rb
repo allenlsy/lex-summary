@@ -42,9 +42,10 @@ File.write(path, <<~MARKDOWN)
   date: #{post_date} 09:00:00 +0000
   article_id: #{slug}
   article_title: #{JSON.generate(title)}
-  collection_id: practice-notes
+  collection_id: lex-fridman
   language: #{language}
   variant_rank: #{variant_rank}
+  original_link: ""
   permalink: /articles/#{slug}/#{language}/
   ---
 

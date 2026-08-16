@@ -5,6 +5,9 @@ baseurl: "/lex-tldr"
 markdown: kramdown
 permalink: /:categories/:title/
 
+disqus:
+  shortname: lex-tldr
+
 exclude:
   - adws
   - specs

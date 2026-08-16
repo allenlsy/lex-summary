@@ -41,6 +41,8 @@ Each variant also has:
 - `permalink`: explicit public route
 - `spec`: optional ordered YAML list for distinctions beyond language
 
+Language display names live in `_data/languages.yml`. Templates must use the shared language-label include so every number of variants is supported and known languages show their native names.
+
 When language is the only distinction, omit `spec` and end the URL after the language:
 
 ```yaml
@@ -66,7 +68,7 @@ The public sample intentionally has only two variants, `en` and `cn`. Do not rei
 
 Collections represent podcasters in the visible interface. Add a collection entry to `_data/collections.yml`, add its landing page under `collections/`, and give all related summary variants the same `collection_id`.
 
-The first collection is displayed as `Lex Fridman Podcast`. Its current internal ID and route are the legacy values `practice-notes` and `/collections/practice-notes/`. Preserve that public route unless a task includes a deliberate URL migration and compatibility plan.
+The first collection is displayed as `Lex Fridman Podcast` and uses the internal ID `lex-fridman`. Its `/collections/practice-notes/` route is a legacy public URL; preserve that route unless a task includes a deliberate URL migration and compatibility plan.
 
 ## Public copy and design
 

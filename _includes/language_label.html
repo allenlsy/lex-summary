@@ -1,0 +1,3 @@
+{%- assign language_code = include.language | downcase -%}
+{%- assign native_name = site.data.languages[language_code] -%}
+{{- language_code | upcase -}}{%- if native_name %} · {{ native_name }}{% endif -%}

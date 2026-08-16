@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Lex Fridman Podcast
-collection_id: practice-notes
+collection_id: lex-fridman
 permalink: /collections/practice-notes/
 ---
 {% assign collection = site.data.collections | where: "id", page.collection_id | first %}
@@ -10,22 +10,20 @@ permalink: /collections/practice-notes/
 
 <section class="collection-hero wide-container">
   <div class="collection-breadcrumb">
-    <a href="{{ '/' | relative_url }}">Journal</a>
-    <span aria-hidden="true">/</span>
     <span>Collections</span>
   </div>
   <div class="collection-hero-grid">
     <p class="collection-number">Collection<br>№ 01</p>
-    <div>
+    <div class="collection-heading">
       <p class="eyebrow">A gathered line of thought</p>
       <h1>{{ collection.title }}</h1>
-    </div>
-    <div class="collection-intro">
-      <p>{{ collection.description }}</p>
-      <dl>
-        <div><dt>Ideas</dt><dd>{{ articles | size }}</dd></div>
-        <div><dt>Editions</dt><dd>{{ collection_posts | size }}</dd></div>
-      </dl>
+      <div class="collection-intro">
+        <p>{{ collection.description }}</p>
+        <dl>
+          <div><dt>Ideas</dt><dd>{{ articles | size }}</dd></div>
+          <div><dt>Editions</dt><dd>{{ collection_posts | size }}</dd></div>
+        </dl>
+      </div>
     </div>
   </div>
 </section>
@@ -42,23 +40,25 @@ permalink: /collections/practice-notes/
     <article class="collection-entry">
       <p class="collection-entry-index">{{ forloop.index | prepend: '0' }}</p>
       <div class="collection-entry-copy">
-        <p class="article-date">{{ representative.date | date: "%d %B %Y" }}</p>
         <h2>{{ representative.article_title }}</h2>
-        <p>{{ representative.excerpt | strip_html | strip_newlines | truncate: 210 }}</p>
-      </div>
-      <div class="edition-list">
-        <p class="edition-label">Read this idea</p>
-        <ul class="variant-links">
-          {% for post in variants %}
-            <li>
-              <a href="{{ post.url | relative_url }}">
-                <span>{{ post.language | upcase }}</span>
-                {% if post.spec %}<span>{{ post.spec | join: " / " }}</span>{% endif %}
-                <span aria-hidden="true">↗</span>
-              </a>
-            </li>
-          {% endfor %}
-        </ul>
+        <div class="collection-entry-meta">
+          <p class="collection-published">
+            <span>Published</span>
+            <time datetime="{{ representative.date | date_to_xmlschema }}">{{ representative.date | date: "%d %B %Y" }}</time>
+          </p>
+          <nav class="collection-languages" aria-label="Languages for {{ representative.article_title }}">
+            <span>Choose language</span>
+            <span class="collection-language-links">
+              {% for post in variants %}
+                <a href="{{ post.url | relative_url }}">
+                  {% include language_label.html language=post.language %}{% if post.spec %} · {{ post.spec | join: " / " | upcase }}{% endif %}
+                  <span aria-hidden="true">↗</span>
+                </a>
+              {% endfor %}
+            </span>
+          </nav>
+        </div>
+        <p class="collection-entry-excerpt">{{ representative.excerpt | strip_html | strip_newlines | truncate: 210 }}</p>
       </div>
     </article>
   {% endfor %}

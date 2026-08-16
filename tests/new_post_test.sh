@@ -22,9 +22,10 @@ for expected in \
   'title: "456 - Ukraine, War, Peace, Putin, Trump, NATO, and Freedom"' \
   "article_id: $slug" \
   'article_title: "456 - Ukraine, War, Peace, Putin, Trump, NATO, and Freedom"' \
-  'collection_id: practice-notes' \
+  'collection_id: lex-fridman' \
   'language: en' \
   'variant_rank: 1' \
+  'original_link: ""' \
   "permalink: /articles/$slug/en/" \
   'Write the summary here.'
 do

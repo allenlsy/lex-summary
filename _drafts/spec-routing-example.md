@@ -3,7 +3,7 @@ layout: post
 title: "Spec Routing Example"
 article_id: spec-routing-example
 article_title: "Spec Routing Example"
-collection_id: practice-notes
+collection_id: lex-fridman
 language: en
 spec:
   - long

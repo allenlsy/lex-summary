@@ -1,17 +1,15 @@
 ---
 layout: post
-title: "456 - Ukraine, War, Peace, Putin, Trump, NATO, and Freedom"
+title: "456 - 乌克兰、战争、和平、普京、特朗普、北约与自由"
 date: 2026-08-16 09:00:00 +0000
 article_id: 456-ukraine-war-peace-putin-trump-nato-and-freedom
-article_title: "456 - Ukraine, War, Peace, Putin, Trump, NATO, and Freedom"
-collection_id: practice-notes
+article_title: "456 - 乌克兰、战争、和平、普京、特朗普、北约与自由"
+collection_id: lex-fridman
 language: cn
 variant_rank: 2
+original_link: "https://www.youtube.com/watch?v=u321m25rKXc"
 permalink: /articles/456-ukraine-war-peace-putin-trump-nato-and-freedom/cn/
 ---
-
-[原视频链接](https://www.youtube.com/watch?v=u321m25rKXc)
-
 
 **全面转述：弗里德曼与泽连斯基对话的纪录片式叙述**
 

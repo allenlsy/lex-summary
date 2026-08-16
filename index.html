@@ -2,26 +2,10 @@
 layout: default
 title: Home
 ---
-<section class="intro wide-container">
-  <div class="intro-label">
-    <span>Now summarizing</span>
-    <span>Lex Fridman Podcast</span>
-  </div>
-  <div class="intro-copy">
-    <p class="eyebrow">Podcast summaries</p>
-    <h1>Long conversations,<br><em>made concise.</em></h1>
-    <p class="intro-description">Short summaries of long conversations. Lex TL;DR turns Lex Fridman podcast episodes into concise, readable takeaways, with other leading podcasters to come.</p>
-  </div>
-  <div class="intro-ornament" aria-hidden="true">
-    <span>读</span>
-    <svg viewBox="0 0 140 140" role="presentation"><circle cx="70" cy="70" r="66"/><path d="M30 70h80M70 30v80"/><circle cx="70" cy="70" r="24"/></svg>
-  </div>
-</section>
-
 {% assign articles = site.posts | group_by: "article_id" %}
 <section class="article-list wide-container" aria-label="Articles">
   <header class="section-heading">
-    <p class="eyebrow">Latest summaries</p>
+    <h1>Latest summaries</h1>
     <p>{{ articles | size }} episode{% if articles.size != 1 %}s{% endif %} · {{ site.posts | size }} version{% if site.posts.size != 1 %}s{% endif %}</p>
   </header>
   {% for article in articles %}
@@ -32,21 +16,21 @@ title: Home
       <div class="article-summary">
         <p class="article-date">{{ representative.date | date: "%d %B %Y" }}</p>
         <h2>{{ representative.article_title }}</h2>
-        <p>{{ representative.excerpt | strip_html | strip_newlines | truncate: 210 }}</p>
-      </div>
-      <div class="edition-list">
-        <p class="edition-label">Choose a language</p>
-        <ul class="variant-links">
-          {% for variant in variants %}
-            <li>
-              <a href="{{ variant.url | relative_url }}">
-                <span>{{ variant.language | upcase }}</span>
-                {% if variant.spec %}<span>{{ variant.spec | join: " / " }}</span>{% endif %}
-                <span aria-hidden="true">↗</span>
-              </a>
-            </li>
-          {% endfor %}
-        </ul>
+        <div class="edition-list">
+          <p class="edition-label">Choose a language</p>
+          <ul class="variant-links">
+            {% for variant in variants %}
+              <li>
+                <a href="{{ variant.url | relative_url }}">
+                  <span>{% include language_label.html language=variant.language %}</span>
+                  {% if variant.spec %}<span>{{ variant.spec | join: " / " }}</span>{% endif %}
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <p class="article-excerpt">{{ representative.excerpt | strip_html | strip_newlines | truncate: 210 }}</p>
       </div>
     </article>
   {% endfor %}
