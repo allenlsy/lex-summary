@@ -5,3 +5,8 @@ adws/adw_data/sssf.db*
 .env
 __pycache__/
 *.pyc
+
+# Local Ruby/Bundler and Jekyll build output
+.bundle/
+vendor/bundle/
+_site/
