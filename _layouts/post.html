@@ -1,21 +1,57 @@
 ---
 layout: default
 ---
-<article class="post">
-  <header>
-    <p class="eyebrow">{{ page.article_title }}</p>
-    <h1>{{ page.title }}</h1>
-    <p class="metadata"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time> · {{ page.language | upcase }} · {{ page.format }}</p>
+{% assign variants = site.posts | where: "article_id", page.article_id | sort: "variant_rank" %}
+<article class="post wide-container">
+  <header class="post-header">
+    <div class="post-kicker">
+      <a href="{{ '/' | relative_url }}">Journal</a>
+      <span aria-hidden="true">/</span>
+      <span>{{ page.article_title }}</span>
+    </div>
+    <div class="post-heading">
+      <p class="edition-number">Edition {{ page.variant_rank | prepend: '0' }}</p>
+      <div>
+        <p class="eyebrow">{{ page.language | upcase }} · {{ page.format }} form</p>
+        <h1>{{ page.title }}</h1>
+      </div>
+    </div>
+    <div class="post-meta">
+      <p><span>Published</span><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time></p>
+      <p><span>Language</span>{{ page.language | upcase }}</p>
+      <p><span>Reading form</span>{{ page.format | capitalize }}</p>
+    </div>
   </header>
-  <div class="post-content">{{ content }}</div>
+
+  <div class="post-body">
+    <aside class="margin-note" aria-label="Article note">
+      <span class="margin-rule"></span>
+      <p>This text is one expression of a larger idea. Change edition without losing your place.</p>
+    </aside>
+    <div class="post-content">{{ content }}</div>
+  </div>
 </article>
 
-{% assign variants = site.posts | where: "article_id", page.article_id | sort: "variant_rank" %}
-<nav class="variants" aria-label="Related variants">
-  <h2>Related variants</h2>
-  <ul>
-    {% for variant in variants %}
-      <li>{% if variant.url == page.url %}<span aria-current="page">{{ variant.language | upcase }} · {{ variant.format }} (this page)</span>{% else %}<a href="{{ variant.url | relative_url }}">{{ variant.language | upcase }} · {{ variant.format }}</a>{% endif %}</li>
-    {% endfor %}
-  </ul>
+<nav class="variants" aria-label="Related editions">
+  <div class="wide-container variants-inner">
+    <div>
+      <p class="eyebrow">Continue the idea</p>
+      <h2>Choose another edition.</h2>
+    </div>
+    <ol>
+      {% for variant in variants %}
+        <li>
+          {% if variant.url == page.url %}
+            <span class="variant-option is-current" aria-current="page">
+              <span>0{{ forloop.index }}</span><strong>{{ variant.language | upcase }}</strong><em>{{ variant.format }}</em>
+            </span>
+          {% else %}
+            <a class="variant-option" href="{{ variant.url | relative_url }}">
+              <span>0{{ forloop.index }}</span><strong>{{ variant.language | upcase }}</strong><em>{{ variant.format }}</em>
+            </a>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ol>
+  </div>
 </nav>

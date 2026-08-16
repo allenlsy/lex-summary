@@ -3,14 +3,32 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | strip_newlines | truncate: 160 }}">
     <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   </head>
   <body>
+    <a class="skip-link" href="#content">Skip to content</a>
     <header class="site-header">
-      <div class="container"><a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a></div>
+      <div class="wide-container masthead">
+        <a class="site-title" href="{{ '/' | relative_url }}" aria-label="{{ site.title }} home">
+          <span class="site-mark" aria-hidden="true">V</span>
+          <span>{{ site.title }}</span>
+        </a>
+        <p class="site-deck">One idea.<br>Every useful form.</p>
+        <p class="issue-stamp"><span>Independent journal</span><span>Est. 2025</span></p>
+      </div>
     </header>
-    <main class="container">{{ content }}</main>
-    <footer class="site-footer"><div class="container">Published from Git.</div></footer>
+    <main id="content">{{ content }}</main>
+    <footer class="site-footer">
+      <div class="wide-container footer-grid">
+        <p class="footer-title">{{ site.title }}</p>
+        <p>{{ site.description }}</p>
+        <p class="footer-note">Written in Markdown.<br>Published from Git.</p>
+      </div>
+    </footer>
   </body>
 </html>
