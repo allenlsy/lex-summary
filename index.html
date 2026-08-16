@@ -1,0 +1,24 @@
+---
+layout: default
+title: Home
+---
+<section class="intro">
+  <p class="eyebrow">A multi-form blog</p>
+  <h1>Ideas, in the form that fits.</h1>
+  <p>Each logical article can offer language and length variants. Choose the version you want to read.</p>
+</section>
+
+{% assign articles = site.posts | group_by: "article_id" %}
+<section class="article-list" aria-label="Articles">
+  {% for article in articles %}
+    {% assign variants = article.items | sort: "variant_rank" %}
+    {% assign representative = variants[0] %}
+    <article class="article-card">
+      <h2>{{ representative.article_title }}</h2>
+      <p>{{ representative.excerpt | strip_html | strip_newlines | truncate: 180 }}</p>
+      <ul class="variant-links">
+        {% for variant in variants %}<li><a href="{{ variant.url | relative_url }}">{{ variant.language | upcase }} · {{ variant.format }}</a></li>{% endfor %}
+      </ul>
+    </article>
+  {% endfor %}
+</section>

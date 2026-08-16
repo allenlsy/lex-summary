@@ -1,0 +1,15 @@
+title: Variant Notes
+description: One article, many useful forms and languages.
+url: "https://<account>.github.io"
+baseurl: ""
+markdown: kramdown
+permalink: /:categories/:title/
+
+exclude:
+  - adws
+  - specs
+  - justfile
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor

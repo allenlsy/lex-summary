@@ -1,0 +1,21 @@
+---
+layout: default
+---
+<article class="post">
+  <header>
+    <p class="eyebrow">{{ page.article_title }}</p>
+    <h1>{{ page.title }}</h1>
+    <p class="metadata"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time> · {{ page.language | upcase }} · {{ page.format }}</p>
+  </header>
+  <div class="post-content">{{ content }}</div>
+</article>
+
+{% assign variants = site.posts | where: "article_id", page.article_id | sort: "variant_rank" %}
+<nav class="variants" aria-label="Related variants">
+  <h2>Related variants</h2>
+  <ul>
+    {% for variant in variants %}
+      <li>{% if variant.url == page.url %}<span aria-current="page">{{ variant.language | upcase }} · {{ variant.format }} (this page)</span>{% else %}<a href="{{ variant.url | relative_url }}">{{ variant.language | upcase }} · {{ variant.format }}</a>{% endif %}</li>
+    {% endfor %}
+  </ul>
+</nav>
