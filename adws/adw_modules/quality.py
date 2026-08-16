@@ -139,7 +139,7 @@ def test(run) -> QualityCheckResult:
     """Build the Jekyll site with the same bundle used by GitHub Pages."""
     return _run(QualityCheckSpec(
         name="test",
-        area="site",
+        area="frontend",
         operation="build",
         argv=["bundle", "exec", "jekyll", "build"],
         timeout_seconds=600,
