@@ -41,7 +41,7 @@ title: Home
             <li>
               <a href="{{ variant.url | relative_url }}">
                 <span>{{ variant.language | upcase }}</span>
-                <span>{{ variant.format }}</span>
+                <span>{{ variant.spec | join: " / " }}</span>
                 <span aria-hidden="true">↗</span>
               </a>
             </li>

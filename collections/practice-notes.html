@@ -53,7 +53,7 @@ permalink: /collections/practice-notes/
             <li>
               <a href="{{ post.url | relative_url }}">
                 <span>{{ post.language | upcase }}</span>
-                <span>{{ post.format }}</span>
+                <span>{{ post.spec | join: " / " }}</span>
                 <span aria-hidden="true">↗</span>
               </a>
             </li>

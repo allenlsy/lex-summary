@@ -31,7 +31,7 @@ The generated site is in `_site/`.
 
 ## Add or relate a variant
 
-Create a date-prefixed Markdown file in `_posts/`, for example `2025-02-01-ship-small-es-short.md`. To relate it to the existing logical article, retain its `article_id` and `article_title`; to start a new logical article, choose a new ID and title. Set a unique, stable `variant_rank` within that article, and provide a unique explicit permalink:
+Create a date-prefixed Markdown file in `_posts/`, for example `2025-02-01-ship-small-es-short-audio.md`. To relate it to the existing logical article, retain its `article_id` and `article_title`; to start a new logical article, choose a new ID and title. Set a unique, stable `variant_rank` within that article. `spec` is an ordered YAML list describing the edition. Join its values with `-` for the final permalink segment:
 
 ```yaml
 ---
@@ -42,15 +42,17 @@ article_id: ship-small
 article_title: "Ship Small"
 collection_id: practice-notes
 language: es
-format: short
+spec:
+  - short
+  - audio
 variant_rank: 5
-permalink: /articles/ship-small/es/short/
+permalink: /articles/ship-small/es/short-audio/
 ---
 
 Write the variant here.
 ```
 
-Use the language and form that describe the body (`en`/`zh` and `short`/`long` for the common cases), and choose a new combination and permalink when adding another variant—for example `/articles/ship-small/zh/long/` or `/articles/new-idea/en/short/`. Keep ranks unique so the related list has a predictable order. The shared ID automatically creates one home-page article group and links every related variant on each post. Give every variant of one logical article the same `collection_id`.
+Use the language and ordered specs that describe the body (`en`/`zh` for language and values such as `short`, `long`, `guide`, or `audio` for specs). A one-item list such as `[short]` produces `short`; `[long, guide]` produces `long-guide`. Keep the list order stable because it defines the URL. Keep ranks unique so the related list has a predictable order. The shared ID automatically creates one home-page article group and links every related variant on each post. Give every variant of one logical article the same `collection_id`.
 
 ## Add a collection
 

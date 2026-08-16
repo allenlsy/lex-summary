@@ -6,7 +6,8 @@ article_id: ship-small
 article_title: "Ship Small"
 collection_id: practice-notes
 language: en
-format: long
+spec:
+  - long
 variant_rank: 2
 permalink: /articles/ship-small/en/long/
 ---

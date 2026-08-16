@@ -6,7 +6,7 @@ site_dir=$(mktemp -d "${TMPDIR:-/tmp}/variant-notes-test.XXXXXX")
 trap 'rm -rf "$site_dir"' EXIT
 
 cd "$repo_dir"
-bundle exec jekyll build --quiet --destination "$site_dir"
+bundle exec jekyll build --quiet --drafts --destination "$site_dir"
 
 home_page="$site_dir/index.html"
 
@@ -28,7 +28,8 @@ for edition_path in \
   /lex-summary/articles/ship-small/en/short/ \
   /lex-summary/articles/ship-small/en/long/ \
   /lex-summary/articles/ship-small/zh/short/ \
-  /lex-summary/articles/ship-small/zh/long/
+  /lex-summary/articles/ship-small/zh/long/ \
+  /lex-summary/articles/spec-routing-example/en/long-guide/
 do
   if ! grep -Fq "href=\"$edition_path\"" "$collection_page"; then
     echo "FAIL: collection page does not link to $edition_path" >&2
@@ -46,3 +47,12 @@ if ! grep -Fq 'class="post-collection" href="/lex-summary/collections/practice-n
 fi
 
 echo "PASS: article links back to its collection"
+
+long_article_page="$site_dir/articles/spec-routing-example/en/long-guide/index.html"
+
+if ! grep -Fq 'EN · LONG / GUIDE' "$long_article_page"; then
+  echo "FAIL: article does not render the ordered spec list" >&2
+  exit 1
+fi
+
+echo "PASS: article renders the ordered spec list"
