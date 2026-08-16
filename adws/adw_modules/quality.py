@@ -136,12 +136,12 @@ def _run(spec: QualityCheckSpec, run) -> QualityCheckResult:
 # Replace every argv below. See the banner at the top of this file.
 
 def test(run) -> QualityCheckResult:
-    """Run the project's test suite. The highest-value block to wire up first."""
+    """Build the Jekyll site with the same bundle used by GitHub Pages."""
     return _run(QualityCheckSpec(
         name="test",
-        area="backend",
+        area="site",
         operation="build",
-        argv=_placeholder("test"),        # e.g. ["bun", "test"] or ["uv", "run", "pytest", "-q"]
+        argv=["bundle", "exec", "jekyll", "build"],
         timeout_seconds=600,
     ), run)
 
@@ -220,9 +220,6 @@ def run_quality(run) -> QualityResult:
     """
     blocks: list[Callable] = [
         test,
-        lint,
-        typecheck,
-        build,
     ]
     checks = [block(run) for block in blocks]
     # A failure is the command, its exit code, and what it actually printed —
