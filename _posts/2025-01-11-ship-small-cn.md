@@ -1,15 +1,13 @@
 ---
 layout: post
-title: "小步发布：完整指南"
-date: 2025-01-13 09:00:00 +0000
+title: "小步发布"
+date: 2025-01-11 09:00:00 +0000
 article_id: ship-small
 article_title: "Ship Small"
 collection_id: practice-notes
-language: zh
-spec:
-  - long
-variant_rank: 4
-permalink: /articles/ship-small/zh/long/
+language: cn
+variant_rank: 2
+permalink: /articles/ship-small/cn/
 ---
 
 ## 先提出问题

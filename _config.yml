@@ -1,7 +1,7 @@
-title: Variant Notes
+title: Lex TL;DR
 description: One article, many useful forms and languages.
 url: "https://allenlsy.github.io"
-baseurl: "/lex-summary"
+baseurl: "/lex-tldr"
 markdown: kramdown
 permalink: /:categories/:title/
 

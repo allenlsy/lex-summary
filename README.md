@@ -1,6 +1,6 @@
-# Variant Notes
+# Lex TL;DR
 
-This is a small, GitHub Pages-compatible Jekyll blog. Each Markdown post is one variant of a logical article. The shared `article_id` and `article_title` in front matter let Liquid group variants on the home page and show related links on every article page. A logical article can also belong to a named collection through `collection_id`. The sample `Ship Small` article demonstrates English and Chinese, short and long forms inside the `Practice Notes` collection.
+This is a small, GitHub Pages-compatible Jekyll blog. Each Markdown post is one variant of a logical article. The shared `article_id` and `article_title` in front matter let Liquid group variants on the home page and show related links on every article page. A logical article can also belong to a named collection through `collection_id`. The sample `Ship Small` article demonstrates English and Chinese editions inside the `Practice Notes` collection.
 
 This intentionally has no CMS, database, user accounts, comments, scheduled publishing, custom domain, or custom application server.
 
@@ -10,7 +10,7 @@ This intentionally has no CMS, database, user accounts, comments, scheduled publ
 2. In **Settings → Pages**, choose deployment from that branch and the repository **root**.
 3. Set `url` and `baseurl` in `_config.yml` for the chosen repository URL.
 
-The current configuration publishes this project repository at `https://allenlsy.github.io/lex-summary/`. If the repository is renamed to `allenlsy.github.io` for a root user site, change `baseurl` to an empty string.
+The current configuration publishes this project repository at `https://allenlsy.github.io/lex-tldr/`. If the repository is renamed to `allenlsy.github.io` for a root user site, change `baseurl` to an empty string.
 
 ## Local preview and build
 
@@ -52,7 +52,7 @@ permalink: /articles/ship-small/es/short-audio/
 Write the variant here.
 ```
 
-Use the language and ordered specs that describe the body (`en`/`zh` for language and values such as `short`, `long`, `guide`, or `audio` for specs). A one-item list such as `[short]` produces `short`; `[long, guide]` produces `long-guide`. Keep the list order stable because it defines the URL. Keep ranks unique so the related list has a predictable order. The shared ID automatically creates one home-page article group and links every related variant on each post. Give every variant of one logical article the same `collection_id`.
+Use the language and ordered specs that describe the body (`en`/`cn` for language and values such as `short`, `long`, `guide`, or `audio` for specs). A one-item list such as `[short]` produces `short`; `[long, guide]` produces `long-guide`. Keep the list order stable because it defines the URL. Omit `spec` when language is the only distinction and end the permalink after the language, such as `/articles/ship-small/cn/`. Keep ranks unique so the related list has a predictable order. The shared ID automatically creates one home-page article group and links every related variant on each post. Give every variant of one logical article the same `collection_id`.
 
 ## Add a collection
 

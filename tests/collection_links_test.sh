@@ -10,7 +10,7 @@ bundle exec jekyll build --quiet --drafts --destination "$site_dir"
 
 home_page="$site_dir/index.html"
 
-if ! grep -Fq 'href="/lex-summary/collections/practice-notes/"' "$home_page"; then
+if ! grep -Fq 'href="/lex-tldr/collections/practice-notes/"' "$home_page"; then
   echo "FAIL: homepage does not link to the Practice Notes collection with the project base URL" >&2
   exit 1
 fi
@@ -25,11 +25,9 @@ if [ ! -f "$collection_page" ]; then
 fi
 
 for edition_path in \
-  /lex-summary/articles/ship-small/en/short/ \
-  /lex-summary/articles/ship-small/en/long/ \
-  /lex-summary/articles/ship-small/zh/short/ \
-  /lex-summary/articles/ship-small/zh/long/ \
-  /lex-summary/articles/spec-routing-example/en/long-guide/
+  /lex-tldr/articles/ship-small/en/ \
+  /lex-tldr/articles/ship-small/cn/ \
+  /lex-tldr/articles/spec-routing-example/en/long-guide/
 do
   if ! grep -Fq "href=\"$edition_path\"" "$collection_page"; then
     echo "FAIL: collection page does not link to $edition_path" >&2
@@ -39,14 +37,21 @@ done
 
 echo "PASS: collection page links to every article edition"
 
-article_page="$site_dir/articles/ship-small/en/short/index.html"
+article_page="$site_dir/articles/ship-small/en/index.html"
 
-if ! grep -Fq 'class="post-collection" href="/lex-summary/collections/practice-notes/"' "$article_page"; then
+if ! grep -Fq 'class="post-collection" href="/lex-tldr/collections/practice-notes/"' "$article_page"; then
   echo "FAIL: article does not identify and link back to its collection" >&2
   exit 1
 fi
 
 echo "PASS: article links back to its collection"
+
+if grep -Fq '<span>Specification</span>' "$article_page"; then
+  echo "FAIL: an edition without specs renders an empty specification field" >&2
+  exit 1
+fi
+
+echo "PASS: article omits empty specification metadata"
 
 long_article_page="$site_dir/articles/spec-routing-example/en/long-guide/index.html"
 

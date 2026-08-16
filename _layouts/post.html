@@ -17,14 +17,14 @@ layout: default
     <div class="post-heading">
       <p class="edition-number">Edition {{ page.variant_rank | prepend: '0' }}</p>
       <div>
-        <p class="eyebrow">{{ page.language | upcase }} · {{ page.spec | join: " / " | upcase }}</p>
+        <p class="eyebrow">{{ page.language | upcase }}{% if page.spec %} · {{ page.spec | join: " / " | upcase }}{% endif %}</p>
         <h1>{{ page.title }}</h1>
       </div>
     </div>
     <div class="post-meta">
       <p><span>Published</span><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time></p>
       <p><span>Language</span>{{ page.language | upcase }}</p>
-      <p><span>Specification</span>{{ page.spec | join: " / " }}</p>
+      {% if page.spec %}<p><span>Specification</span>{{ page.spec | join: " / " }}</p>{% endif %}
     </div>
   </header>
 
@@ -48,11 +48,11 @@ layout: default
         <li>
           {% if variant.url == page.url %}
             <span class="variant-option is-current" aria-current="page">
-              <span>0{{ forloop.index }}</span><strong>{{ variant.language | upcase }}</strong><em>{{ variant.spec | join: " / " }}</em>
+              <span>0{{ forloop.index }}</span><strong>{{ variant.language | upcase }}</strong>{% if variant.spec %}<em>{{ variant.spec | join: " / " }}</em>{% endif %}
             </span>
           {% else %}
             <a class="variant-option" href="{{ variant.url | relative_url }}">
-              <span>0{{ forloop.index }}</span><strong>{{ variant.language | upcase }}</strong><em>{{ variant.spec | join: " / " }}</em>
+              <span>0{{ forloop.index }}</span><strong>{{ variant.language | upcase }}</strong>{% if variant.spec %}<em>{{ variant.spec | join: " / " }}</em>{% endif %}
             </a>
           {% endif %}
         </li>
