@@ -31,6 +31,14 @@ The generated site is in `_site/`.
 
 ## Add or relate a variant
 
+Create a language-only summary from the command line:
+
+```sh
+just new-post "456 - Ukraine, War, Peace, Putin, Trump, NATO, and Freedom" en
+```
+
+The recipe creates a date-prefixed file under `_posts/`, derives a stable episode slug and permalink from the title, assigns the next `variant_rank`, and omits `spec`. Run the same title with another language such as `cn` to create a related language variant. It refuses to create the same episode-language combination twice. Review the generated front matter and replace the placeholder body before publishing.
+
 Create a date-prefixed Markdown file in `_posts/`, for example `2025-02-01-ship-small-es-short-audio.md`. To relate it to the existing logical article, retain its `article_id` and `article_title`; to start a new logical article, choose a new ID and title. Set a unique, stable `variant_rank` within that article. `spec` is an ordered YAML list describing the edition. Join its values with `-` for the final permalink segment:
 
 ```yaml

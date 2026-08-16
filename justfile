@@ -17,6 +17,10 @@ db     := "adws/adw_data/sssf.db"
 default:
     @just --list
 
+# create a language-only podcast summary draft in _posts/
+new-post TITLE LANGUAGE:
+    ruby scripts/new_post.rb {{quote(TITLE)}} {{quote(LANGUAGE)}}
+
 # ── first run ───────────────────────────────────────────────────────────────
 
 # Proves the whole path works: config validated, session minted, agent ran,
