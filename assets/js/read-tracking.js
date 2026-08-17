@@ -53,8 +53,9 @@
     if (!link) return;
     var mark = document.createElement("span");
     mark.className = "read-mark";
-    mark.textContent = "✅";
+    mark.textContent = "✓";
     mark.setAttribute("aria-label", "Read");
+    mark.setAttribute("data-tooltip", "Read");
     link.insertBefore(mark, link.firstChild);
   });
 }());
