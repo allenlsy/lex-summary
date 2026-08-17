@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "472 - Terence Tao: Hardest Problems in Mathematics, Physics & the Future of AI"
+title: "472 - 陶哲轩：数学和物理学中最难的问题，以及人工智能的未来"
 date: 2025-06-14 09:00:00 +0000
 article_id: 472-terence-tao-hardest-problems-in-mathematics-physics-the-future-of-ai
 article_title: "472 - Terence Tao: Hardest Problems in Mathematics, Physics & the Future of AI"

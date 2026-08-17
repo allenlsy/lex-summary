@@ -29,6 +29,11 @@
               <li><a href="{{ collection.url | relative_url }}"{% if page.collection_id == collection.id %} aria-current="page"{% endif %}>{{ collection.title }}</a></li>
             {% endfor %}
           </ul>
+          <form class="site-search" action="{{ '/search/' | relative_url }}" method="get" role="search">
+            <label class="visually-hidden" for="site-search-input">Search summaries</label>
+            <input id="site-search-input" type="search" name="q" placeholder="Search summaries" autocomplete="off">
+            <button type="submit">Search</button>
+          </form>
         </div>
       </nav>
     </header>

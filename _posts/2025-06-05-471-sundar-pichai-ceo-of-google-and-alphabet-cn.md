@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "471 - Sundar Pichai: CEO of Google and Alphabet"
+title: "471 - Sundar Pichai：Google 与 Alphabet 首席执行官"
 date: 2025-06-05 09:00:00 +0000
 article_id: 471-sundar-pichai-ceo-of-google-and-alphabet
 article_title: "471 - Sundar Pichai: CEO of Google and Alphabet"

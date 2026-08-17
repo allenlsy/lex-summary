@@ -42,6 +42,7 @@ permalink: /collections/practice-notes/
     <article class="collection-entry">
       <div class="collection-entry-copy">
         <h2><a href="{{ title_variant.url | relative_url }}">{{ representative.article_title }}</a></h2>
+        {% include alternate_titles.html variants=variants primary_language=title_variant.language %}
         <div class="collection-entry-meta">
           <p class="collection-published">
             <span>Published</span>

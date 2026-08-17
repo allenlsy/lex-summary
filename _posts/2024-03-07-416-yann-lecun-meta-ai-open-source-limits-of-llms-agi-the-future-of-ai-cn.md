@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "416 - Yann LeCun: Meta AI, Open Source, Limits of LLMs, AGI & the Future of AI"
+title: "416 - Yann LeCun：Meta AI、开源、大语言模型的局限、通用人工智能与人工智能的未来"
 date: 2024-03-07 09:00:00 +0000
 article_id: 416-yann-lecun-meta-ai-open-source-limits-of-llms-agi-the-future-of-ai
 article_title: "416 - Yann LeCun: Meta AI, Open Source, Limits of LLMs, AGI & the Future of AI"

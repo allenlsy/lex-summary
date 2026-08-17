@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "389 - Benjamin Netanyahu: Israel, Palestine, Power, Corruption, Hate, and Peace"
+title: "389 - Benjamin Netanyahu：以色列、巴勒斯坦、权力、腐败、仇恨与和平"
 date: 2023-07-12 09:00:00 +0000
 article_id: 389-benjamin-netanyahu-israel-palestine-power-corruption-hate-and-peace
 article_title: "389 - Benjamin Netanyahu: Israel, Palestine, Power, Corruption, Hate, and Peace"

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "475 - Demis Hassabis: Future of AI, Simulating Reality, Physics and Video Games"
+title: "475 - Demis Hassabis：人工智能的未来、模拟现实、物理学与电子游戏"
 date: 2025-07-23 09:00:00 +0000
 article_id: 475-demis-hassabis-future-of-ai-simulating-reality-physics-and-video-games
 article_title: "475 - Demis Hassabis: Future of AI, Simulating Reality, Physics and Video Games"

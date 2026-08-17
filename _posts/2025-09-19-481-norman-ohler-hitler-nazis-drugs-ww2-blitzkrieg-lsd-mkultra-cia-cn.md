@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "481 - Norman Ohler: Hitler, Nazis, Drugs, WW2, Blitzkrieg, LSD, MKUltra & CIA"
+title: "481 - Norman Ohler：希特勒、纳粹、毒品、二战、闪电战、LSD、MKUltra 与 CIA"
 date: 2025-09-19 09:00:00 +0000
 article_id: 481-norman-ohler-hitler-nazis-drugs-ww2-blitzkrieg-lsd-mkultra-cia
 article_title: "481 - Norman Ohler: Hitler, Nazis, Drugs, WW2, Blitzkrieg, LSD, MKUltra & CIA"

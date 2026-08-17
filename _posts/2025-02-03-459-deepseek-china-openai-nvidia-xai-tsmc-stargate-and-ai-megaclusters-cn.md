@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "459 - DeepSeek, China, OpenAI, NVIDIA, xAI, TSMC, Stargate, and AI Megaclusters"
+title: "459 - DeepSeek、中国、OpenAI、英伟达、xAI、台积电、星际之门与 AI 超级集群"
 date: 2025-02-03 09:00:00 +0000
 article_id: 459-deepseek-china-openai-nvidia-xai-tsmc-stargate-and-ai-megaclusters
 article_title: "459 - DeepSeek, China, OpenAI, NVIDIA, xAI, TSMC, Stargate, and AI Megaclusters"

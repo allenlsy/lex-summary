@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "464 - Dave Smith: Israel, Hamas, Ukraine, Russia, Conspiracies & Antisemitism"
+title: "464 - Dave Smith：以色列、哈马斯、乌克兰、俄罗斯、阴谋论与反犹主义"
 date: 2025-04-08 09:00:00 +0000
 article_id: 464-dave-smith-israel-hamas-ukraine-russia-conspiracies-antisemitism
 article_title: "464 - Dave Smith: Israel, Hamas, Ukraine, Russia, Conspiracies & Antisemitism"

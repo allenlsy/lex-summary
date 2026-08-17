@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "432 - Kevin Spacey: Power, Controversy, Betrayal, Truth & Love in Film and Life"
+title: "432 - Kevin Spacey：电影与人生中的权力、争议、背叛、真相与爱"
 date: 2024-06-05 09:00:00 +0000
 article_id: 432-kevin-spacey-power-controversy-betrayal-truth-love-in-film-and-life
 article_title: "432 - Kevin Spacey: Power, Controversy, Betrayal, Truth & Love in Film and Life"

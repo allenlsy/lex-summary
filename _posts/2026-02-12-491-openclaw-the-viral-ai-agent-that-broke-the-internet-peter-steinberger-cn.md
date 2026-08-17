@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "491 - OpenClaw: The Viral AI Agent that Broke the Internet - Peter Steinberger"
+title: "491 - OpenClaw：引爆互联网的病毒式 AI 智能体——Peter Steinberger"
 date: 2026-02-12 09:00:00 +0000
 article_id: 491-openclaw-the-viral-ai-agent-that-broke-the-internet-peter-steinberger
 article_title: "491 - OpenClaw: The Viral AI Agent that Broke the Internet - Peter Steinberger"

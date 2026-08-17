@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "458 - Marc Andreessen: Trump, Power, Tech, AI, Immigration & Future of America"
+title: "458 - Marc Andreessen：特朗普、权力、科技、人工智能、移民与美国的未来"
 date: 2025-01-26 09:00:00 +0000
 article_id: 458-marc-andreessen-trump-power-tech-ai-immigration-future-of-america
 article_title: "458 - Marc Andreessen: Trump, Power, Tech, AI, Immigration & Future of America"

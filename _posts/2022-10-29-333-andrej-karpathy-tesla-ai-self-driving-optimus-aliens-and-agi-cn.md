@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "333 - Andrej Karpathy: Tesla AI, Self-Driving, Optimus, Aliens, and AGI"
+title: "333 - Andrej Karpathy：特斯拉人工智能、自动驾驶、Optimus、外星人与通用人工智能"
 date: 2022-10-29 09:00:00 +0000
 article_id: 333-andrej-karpathy-tesla-ai-self-driving-optimus-aliens-and-agi
 article_title: "333 - Andrej Karpathy: Tesla AI, Self-Driving, Optimus, Aliens, and AGI"

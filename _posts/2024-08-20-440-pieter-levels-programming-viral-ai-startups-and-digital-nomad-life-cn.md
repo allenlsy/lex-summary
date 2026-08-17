@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "440 - Pieter Levels: Programming, Viral AI Startups, and Digital Nomad Life"
+title: "440 - Pieter Levels：编程、病毒式 AI 创业与数字游民生活"
 date: 2024-08-20 09:00:00 +0000
 article_id: 440-pieter-levels-programming-viral-ai-startups-and-digital-nomad-life
 article_title: "440 - Pieter Levels: Programming, Viral AI Startups, and Digital Nomad Life"

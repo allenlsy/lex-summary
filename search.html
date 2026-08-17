@@ -1,0 +1,25 @@
+---
+layout: default
+title: Search
+permalink: /search/
+---
+<section class="search-page wide-container" aria-labelledby="search-title">
+  <header class="search-heading">
+    <p class="eyebrow">Find a conversation</p>
+    <h1 id="search-title">Search summaries</h1>
+    <p>Search episode titles and summary text in English or Chinese.</p>
+  </header>
+
+  <form class="search-page-form" action="{{ '/search/' | relative_url }}" method="get" role="search">
+    <label for="search-query">Search all summaries</label>
+    <div>
+      <input id="search-query" type="search" name="q" placeholder="Guest, topic, or phrase" autocomplete="off" autofocus>
+      <button type="submit">Search</button>
+    </div>
+  </form>
+
+  <p id="search-status" class="search-status" aria-live="polite">Enter a guest, topic, or phrase.</p>
+  <ol id="search-results" class="search-results"></ol>
+  <noscript><p class="search-noscript">JavaScript is required to search this static site.</p></noscript>
+</section>
+<script src="{{ '/assets/js/search.js' | relative_url }}" defer data-search-index="{{ '/search.json' | relative_url }}"></script>

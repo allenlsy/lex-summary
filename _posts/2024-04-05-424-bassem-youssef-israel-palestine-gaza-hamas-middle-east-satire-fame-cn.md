@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "424 - Bassem Youssef: Israel-Palestine, Gaza, Hamas, Middle East, Satire & Fame"
+title: "424 - Bassem Youssef：以色列与巴勒斯坦、加沙、哈马斯、中东、讽刺与名声"
 date: 2024-04-05 09:00:00 +0000
 article_id: 424-bassem-youssef-israel-palestine-gaza-hamas-middle-east-satire-fame
 article_title: "424 - Bassem Youssef: Israel-Palestine, Gaza, Hamas, Middle East, Satire & Fame"

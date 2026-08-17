@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "477 - Keyu Jin: China's Economy, Tariffs, Trade, Trump, Communism & Capitalism"
+title: "477 - 金刻羽：中国经济、关税、贸易、特朗普、共产主义与资本主义"
 date: 2025-08-13 09:00:00 +0000
 article_id: 477-keyu-jin-china-s-economy-tariffs-trade-trump-communism-capitalism
 article_title: "477 - Keyu Jin: China's Economy, Tariffs, Trade, Trump, Communism & Capitalism"

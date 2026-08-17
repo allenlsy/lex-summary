@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "435 - Andrew Huberman: Focus, Controversy, Politics, and Relationships"
+title: "435 - Andrew Huberman：专注、争议、政治与人际关系"
 date: 2024-06-27 09:00:00 +0000
 article_id: 435-andrew-huberman-focus-controversy-politics-and-relationships
 article_title: "435 - Andrew Huberman: Focus, Controversy, Politics, and Relationships"

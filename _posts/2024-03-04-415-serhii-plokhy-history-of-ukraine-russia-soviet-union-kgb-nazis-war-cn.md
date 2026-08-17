@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "415 - Serhii Plokhy: History of Ukraine, Russia, Soviet Union, KGB, Nazis & War"
+title: "415 - Serhii Plokhy：乌克兰、俄罗斯、苏联、克格勃、纳粹与战争史"
 date: 2024-03-04 09:00:00 +0000
 article_id: 415-serhii-plokhy-history-of-ukraine-russia-soviet-union-kgb-nazis-war
 article_title: "415 - Serhii Plokhy: History of Ukraine, Russia, Soviet Union, KGB, Nazis & War"

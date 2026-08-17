@@ -3,7 +3,7 @@ layout: post
 title: "456 - 乌克兰、战争、和平、普京、特朗普、北约与自由"
 date: 2026-08-16 09:00:00 +0000
 article_id: 456-ukraine-war-peace-putin-trump-nato-and-freedom
-article_title: "456 - 乌克兰、战争、和平、普京、特朗普、北约与自由"
+article_title: "456 - Ukraine, War, Peace, Putin, Trump, NATO, and Freedom"
 collection_id: lex-fridman
 language: cn
 variant_rank: 2

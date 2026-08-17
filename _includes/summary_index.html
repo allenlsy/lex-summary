@@ -19,6 +19,7 @@
       <div class="article-summary">
         <p class="article-date">{{ representative.date | date: "%d %B %Y" }}</p>
         <h2><a href="{{ title_variant.url | relative_url }}">{{ representative.article_title }}</a></h2>
+        {% include alternate_titles.html variants=variants primary_language=title_variant.language %}
         <div class="edition-list">
           <p class="edition-label">Choose a language</p>
           <ul class="variant-links">

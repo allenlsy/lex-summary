@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "A day in my life"
+title: "我的一天"
 date: 2020-08-27 09:00:00 +0000
 article_id: a-day-in-my-life
 article_title: "A day in my life"

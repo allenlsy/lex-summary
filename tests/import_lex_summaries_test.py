@@ -69,6 +69,7 @@ class ImportLexSummariesTest(unittest.TestCase):
         self.assertTrue(cn_post.read_bytes().endswith(sources["Ilya Sutskever_ Deep Learning _ Lex Fridman Podcast #94-zh-cn-summary.md"]))
         self.assertIn("language: cn", cn_post.read_text())
         self.assertIn("variant_rank: 2", cn_post.read_text())
+        self.assertIn('title: "94 - Ilya Sutskever：深度学习"', cn_post.read_text())
         self.assertIn("original_link: \"https://www.youtube.com/watch?v=13CZPWmke6A\"", cn_post.read_text())
 
         after = {name: hashlib.sha256(path.read_bytes()).hexdigest() for name, path in paths.items()}

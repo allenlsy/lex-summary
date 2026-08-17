@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "484 - Dan Houser: GTA, Red Dead Redemption, Rockstar, Absurd & Future of Gaming"
+title: "484 - Dan Houser：GTA、《荒野大镖客》、Rockstar、荒诞与游戏的未来"
 date: 2025-10-31 09:00:00 +0000
 article_id: 484-dan-houser-gta-red-dead-redemption-rockstar-absurd-future-of-gaming
 article_title: "484 - Dan Houser: GTA, Red Dead Redemption, Rockstar, Absurd & Future of Gaming"

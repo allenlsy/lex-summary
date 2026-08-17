@@ -58,6 +58,37 @@ VIDEOS = {
     "A day in my life | Lex Fridman": Video("A day in my life", "2020-08-27", "0m3hGZvD-0s"),
 }
 
+CHINESE_TITLES = {
+    "#94": "94 - Ilya Sutskever：深度学习",
+    "#333": "333 - Andrej Karpathy：特斯拉人工智能、自动驾驶、Optimus、外星人与通用人工智能",
+    "#358": "358 - Aella：性工作、OnlyFans、色情内容、伴游、约会与人类性行为",
+    "#389": "389 - Benjamin Netanyahu：以色列、巴勒斯坦、权力、腐败、仇恨与和平",
+    "#390": "390 - Yuval Noah Harari：人性、智慧、权力与阴谋论",
+    "#415": "415 - Serhii Plokhy：乌克兰、俄罗斯、苏联、克格勃、纳粹与战争史",
+    "#416": "416 - Yann LeCun：Meta AI、开源、大语言模型的局限、通用人工智能与人工智能的未来",
+    "#424": "424 - Bassem Youssef：以色列与巴勒斯坦、加沙、哈马斯、中东、讽刺与名声",
+    "#432": "432 - Kevin Spacey：电影与人生中的权力、争议、背叛、真相与爱",
+    "#435": "435 - Andrew Huberman：专注、争议、政治与人际关系",
+    "#440": "440 - Pieter Levels：编程、病毒式 AI 创业与数字游民生活",
+    "#452": "452 - Dario Amodei：Anthropic CEO 谈 Claude、通用人工智能、AI 与人类的未来",
+    "#456": "456 - 乌克兰、战争、和平、普京、特朗普、北约与自由",
+    "#458": "458 - Marc Andreessen：特朗普、权力、科技、人工智能、移民与美国的未来",
+    "#459": "459 - DeepSeek、中国、OpenAI、英伟达、xAI、台积电、星际之门与 AI 超级集群",
+    "#464": "464 - Dave Smith：以色列、哈马斯、乌克兰、俄罗斯、阴谋论与反犹主义",
+    "#471": "471 - Sundar Pichai：Google 与 Alphabet 首席执行官",
+    "#472": "472 - 陶哲轩：数学和物理学中最难的问题，以及人工智能的未来",
+    "#474": "474 - DHH：编程、人工智能、Ruby on Rails、生产力与育儿的未来",
+    "#475": "475 - Demis Hassabis：人工智能的未来、模拟现实、物理学与电子游戏",
+    "#477": "477 - 金刻羽：中国经济、关税、贸易、特朗普、共产主义与资本主义",
+    "#481": "481 - Norman Ohler：希特勒、纳粹、毒品、二战、闪电战、LSD、MKUltra 与 CIA",
+    "#484": "484 - Dan Houser：GTA、《荒野大镖客》、Rockstar、荒诞与游戏的未来",
+    "#490": "490 - 2026 年人工智能现状：大语言模型、编程、缩放定律、中国、智能体、GPU 与通用人工智能",
+    "#491": "491 - OpenClaw：引爆互联网的病毒式 AI 智能体——Peter Steinberger",
+    "#494": "494 - 黄仁勋：英伟达——4 万亿美元公司与人工智能革命",
+    "1984 by George Orwell _ Lex Fridman": "George Orwell 的《1984》",
+    "A day in my life | Lex Fridman": "我的一天",
+}
+
 EXCLUDED_LEX_CLIPS = {
     "A machine learning approach to stock trading | Richard Craib and Lex Fridman",
     "Advice for machine learning beginners | Andrej Karpathy and Lex Fridman",
@@ -325,10 +356,11 @@ def deduplicate_sources(sources: list[SourceSummary]) -> tuple[list[SourceSummar
 def make_front_matter(video: Video, source: SourceSummary, rank: int) -> bytes:
     slug = slugify(video.title)
     suffix = f"/{source.spec}/" if source.spec else "/"
+    title = CHINESE_TITLES[source.key] if source.language == "cn" else video.title
     lines = [
         "---",
         "layout: post",
-        f"title: {json.dumps(video.title, ensure_ascii=False)}",
+        f"title: {json.dumps(title, ensure_ascii=False)}",
         f"date: {video.upload_date} 09:00:00 +0000",
         f"article_id: {slug}",
         f"article_title: {json.dumps(video.title, ensure_ascii=False)}",

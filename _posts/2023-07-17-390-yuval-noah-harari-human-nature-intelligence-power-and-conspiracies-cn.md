@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "390 - Yuval Noah Harari: Human Nature, Intelligence, Power, and Conspiracies"
+title: "390 - Yuval Noah Harari：人性、智慧、权力与阴谋论"
 date: 2023-07-17 09:00:00 +0000
 article_id: 390-yuval-noah-harari-human-nature-intelligence-power-and-conspiracies
 article_title: "390 - Yuval Noah Harari: Human Nature, Intelligence, Power, and Conspiracies"

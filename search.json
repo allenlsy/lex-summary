@@ -1,0 +1,19 @@
+---
+layout: null
+permalink: /search.json
+---
+[
+  {% for post in site.posts %}
+    {% assign language_name = site.data.languages[post.language] %}
+    {
+      "title": {{ post.title | jsonify }},
+      "article_title": {{ post.article_title | jsonify }},
+      "language": {{ post.language | jsonify }},
+      "language_name": {{ language_name | default: post.language | jsonify }},
+      "date": {{ post.date | date: "%Y-%m-%d" | jsonify }},
+      "url": {{ post.url | relative_url | jsonify }},
+      "excerpt": {{ post.excerpt | strip_html | strip_newlines | truncate: 240 | jsonify }},
+      "content": {{ post.content | strip_html | jsonify }}
+    }{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]

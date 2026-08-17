@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "452 - Dario Amodei: Anthropic CEO on Claude, AGI & the Future of AI & Humanity"
+title: "452 - Dario Amodei：Anthropic CEO 谈 Claude、通用人工智能、AI 与人类的未来"
 date: 2024-11-11 09:00:00 +0000
 article_id: 452-dario-amodei-anthropic-ceo-on-claude-agi-the-future-of-ai-humanity
 article_title: "452 - Dario Amodei: Anthropic CEO on Claude, AGI & the Future of AI & Humanity"

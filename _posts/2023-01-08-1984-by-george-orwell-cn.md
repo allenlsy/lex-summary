@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "1984 by George Orwell"
+title: "George Orwell 的《1984》"
 date: 2023-01-08 09:00:00 +0000
 article_id: 1984-by-george-orwell
 article_title: "1984 by George Orwell"

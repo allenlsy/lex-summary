@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "490 - State of AI in 2026: LLMs, Coding, Scaling Laws, China, Agents, GPUs, AGI"
+title: "490 - 2026 年人工智能现状：大语言模型、编程、缩放定律、中国、智能体、GPU 与通用人工智能"
 date: 2026-01-31 09:00:00 +0000
 article_id: 490-state-of-ai-in-2026-llms-coding-scaling-laws-china-agents-gpus-agi
 article_title: "490 - State of AI in 2026: LLMs, Coding, Scaling Laws, China, Agents, GPUs, AGI"

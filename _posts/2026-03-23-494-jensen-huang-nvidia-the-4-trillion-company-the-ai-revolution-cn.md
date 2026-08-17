@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "494 - Jensen Huang: NVIDIA - The $4 Trillion Company & the AI Revolution"
+title: "494 - 黄仁勋：英伟达——4 万亿美元公司与人工智能革命"
 date: 2026-03-23 09:00:00 +0000
 article_id: 494-jensen-huang-nvidia-the-4-trillion-company-the-ai-revolution
 article_title: "494 - Jensen Huang: NVIDIA - The $4 Trillion Company & the AI Revolution"

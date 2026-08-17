@@ -1,0 +1,12 @@
+{% assign alternate_language_groups = include.variants | group_by: "language" %}
+{% if alternate_language_groups.size > 1 %}
+  <ul class="alternate-titles" aria-label="Titles in other languages">
+    {% for language_group in alternate_language_groups %}
+      {% assign alternate_variants = language_group.items | sort: "variant_rank" %}
+      {% assign alternate_variant = alternate_variants | first %}
+      {% unless alternate_variant.language == include.primary_language %}
+        <li><a class="alternate-title-link" href="{{ alternate_variant.url | relative_url }}"><span class="alternate-title-language">{% include language_label.html language=alternate_variant.language %}</span><span>{{ alternate_variant.title }}</span></a></li>
+      {% endunless %}
+    {% endfor %}
+  </ul>
+{% endif %}

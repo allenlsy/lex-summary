@@ -22,6 +22,7 @@ The production repository is `allenlsy/lex-tldr`, and GitHub Pages serves it at 
 - `collections/` contains collection landing pages.
 - `index.html` is the first homepage summary page; `page/*/index.html` contains the remaining static pagination routes.
 - `_includes/summary_index.html` renders the shared paginated episode list, and `_data/summary_pages.yml` defines its routes.
+- `search.html`, `search.json`, and `assets/js/search.js` provide static bilingual full-text search; keep search GitHub Pages-compatible and client-side.
 - `assets/css/style.css` is the site stylesheet.
 - `_config.yml` must keep `url: "https://allenlsy.github.io"` and `baseurl: "/lex-tldr"` while the site remains a project Pages site.
 
@@ -39,6 +40,7 @@ Treat one podcast episode as one logical article. Every published variant of tha
 
 Each variant also has:
 
+- `title`: localized display title for that variant; Chinese variants should use a Chinese title while `article_title` remains shared across languages. Preserve non-Chinese personal names in their original spelling; use Chinese characters for people whose original name is Chinese.
 - `language`: currently use `en` and `cn` for the example
 - `variant_rank`: unique, stable ordering within the logical article
 - `permalink`: explicit public route

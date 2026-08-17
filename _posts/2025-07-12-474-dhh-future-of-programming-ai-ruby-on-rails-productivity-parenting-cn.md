@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "474 - DHH: Future of Programming, AI, Ruby on Rails, Productivity & Parenting"
+title: "474 - DHH：编程、人工智能、Ruby on Rails、生产力与育儿的未来"
 date: 2025-07-12 09:00:00 +0000
 article_id: 474-dhh-future-of-programming-ai-ruby-on-rails-productivity-parenting
 article_title: "474 - DHH: Future of Programming, AI, Ruby on Rails, Productivity & Parenting"

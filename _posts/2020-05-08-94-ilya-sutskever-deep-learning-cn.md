@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "94 - Ilya Sutskever: Deep Learning"
+title: "94 - Ilya Sutskever：深度学习"
 date: 2020-05-08 09:00:00 +0000
 article_id: 94-ilya-sutskever-deep-learning
 article_title: "94 - Ilya Sutskever: Deep Learning"

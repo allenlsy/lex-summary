@@ -15,6 +15,8 @@ fi
 
 echo "PASS: Lex Fridman content uses the lex-fridman collection ID"
 
+ruby tests/post_titles_test.rb
+
 for lex_clips_id in \
   NCNXbAFbWn8 I2ZK3ngNvvI QJ38en58Onk IQBA4aytp_U MPXUCoWeKM8 IACy_jZUkiE bzMh4b5awHw
 do
@@ -29,6 +31,37 @@ echo "PASS: Lex Clips videos are excluded from published posts"
 bundle exec jekyll build --quiet --drafts --destination "$site_dir"
 
 home_page="$site_dir/index.html"
+search_page="$site_dir/search/index.html"
+search_index="$site_dir/search.json"
+
+if [ ! -f "$search_page" ] || [ ! -f "$search_index" ]; then
+  echo "FAIL: static search page or search index was not generated" >&2
+  exit 1
+fi
+
+for page_with_search in "$home_page" "$search_page"
+do
+  if ! grep -Fq 'class="site-search" action="/lex-tldr/search/"' "$page_with_search" || \
+     ! grep -Fq 'type="search" name="q"' "$page_with_search"; then
+    echo "FAIL: site page does not provide the baseurl-aware search form" >&2
+    exit 1
+  fi
+done
+
+if ! grep -Fq 'id="search-results"' "$search_page" || \
+   ! grep -Fq 'data-search-index="/lex-tldr/search.json"' "$search_page"; then
+  echo "FAIL: search page does not expose an accessible result target and index" >&2
+  exit 1
+fi
+
+ruby -rjson -e '
+  entries = JSON.parse(File.read(ARGV.fetch(0)))
+  abort "missing English search title" unless entries.any? { |entry| entry["title"] == "94 - Ilya Sutskever: Deep Learning" }
+  abort "missing Chinese search title" unless entries.any? { |entry| entry["title"] == "94 - Ilya Sutskever：深度学习" }
+  abort "missing baseurl-aware search URL" unless entries.all? { |entry| entry["url"].start_with?("/lex-tldr/articles/") }
+' "$search_index"
+
+echo "PASS: site generates a bilingual static search experience"
 
 for purpose_text in \
   'Podcast summaries' \
@@ -123,8 +156,9 @@ echo "PASS: homepage pagination splits logical episodes into ten-card pages"
 echo "PASS: summary pages omit the obsolete post index block"
 
 if ! grep -Fq '.article-summary { display: grid; grid-template-columns: minmax(0, 1fr) minmax(18rem, .65fr);' "$site_dir/assets/css/style.css" || \
-   ! grep -Fq '.article-summary .edition-list { grid-column: 2; grid-row: 3;' "$site_dir/assets/css/style.css" || \
-   ! grep -Fq '.article-excerpt { grid-column: 1; grid-row: 3;' "$site_dir/assets/css/style.css"; then
+   ! grep -Fq '.article-summary .alternate-titles { grid-column: 1 / -1; grid-row: 3;' "$site_dir/assets/css/style.css" || \
+   ! grep -Fq '.article-summary .edition-list { grid-column: 2; grid-row: 4;' "$site_dir/assets/css/style.css" || \
+   ! grep -Fq '.article-excerpt { grid-column: 1; grid-row: 4;' "$site_dir/assets/css/style.css"; then
   echo "FAIL: summary cards do not reuse the former index space with a balanced content grid" >&2
   exit 1
 fi
@@ -165,6 +199,27 @@ if [ ! -f "$collection_page" ]; then
   echo "FAIL: Practice Notes collection page was not generated" >&2
   exit 1
 fi
+
+alternate_title_link='<a class="alternate-title-link" href="/lex-tldr/articles/494-jensen-huang-nvidia-the-4-trillion-company-the-ai-revolution/cn/"><span class="alternate-title-language">CN · 中文</span><span>494 - 黄仁勋：英伟达——4 万亿美元公司与人工智能革命</span></a>'
+for listing_page in "$home_page" "$collection_page"
+do
+  if ! grep -Fq "$alternate_title_link" "$listing_page"; then
+    echo "FAIL: listing page does not link the translated title to its language version" >&2
+    exit 1
+  fi
+done
+
+echo "PASS: listing pages link translated titles to their language versions"
+
+if ! grep -Fq '.alternate-titles { display: flex; flex-wrap: wrap; width: 100%;' "$site_dir/assets/css/style.css" || \
+   ! grep -Fq '.alternate-titles > li { flex: 0 0 100%; }' "$site_dir/assets/css/style.css" || \
+   ! grep -Fq 'width: 100%; color: var(--muted);' "$site_dir/assets/css/style.css" || \
+   ! grep -Fq '.article-summary .alternate-titles { grid-column: 1 / -1; grid-row: 3; max-width: 68rem;' "$site_dir/assets/css/style.css"; then
+  echo "FAIL: translated title links do not share the main title's right edge" >&2
+  exit 1
+fi
+
+echo "PASS: translated title links share the main title's right edge"
 
 if grep -Fq '>Journal</a>' "$collection_page"; then
   echo "FAIL: collection navigation still includes the redundant Journal link" >&2
@@ -247,6 +302,13 @@ echo "PASS: collection entry title uses the compact single-line treatment"
 
 article_page="$site_dir/articles/456-ukraine-war-peace-putin-trump-nato-and-freedom/en/index.html"
 cn_article_page="$site_dir/articles/456-ukraine-war-peace-putin-trump-nato-and-freedom/cn/index.html"
+
+if ! grep -Fq '<title>456 - 乌克兰、战争、和平、普京、特朗普、北约与自由 · Lex TL;DR</title>' "$cn_article_page"; then
+  echo "FAIL: Chinese summary does not use its translated HTML title" >&2
+  exit 1
+fi
+
+echo "PASS: Chinese summary uses its translated HTML title"
 
 if grep -Fq '>Journal</a>' "$article_page"; then
   echo "FAIL: article navigation still includes the redundant Journal link" >&2
