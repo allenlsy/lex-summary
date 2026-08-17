@@ -429,9 +429,10 @@ echo "PASS: article tables use the styled reading treatment"
 
 if ! grep -Fq 'data-article-id="456-ukraine-war-peace-putin-trump-nato-and-freedom"' "$article_page" || \
    ! grep -Fq 'data-article-id="456-ukraine-war-peace-putin-trump-nato-and-freedom"' "$home_page" || \
+   ! grep -Fq 'data-read-toggle' "$article_page" || \
    ! grep -Fq 'src="/assets/js/read-tracking.js"' "$article_page" || \
    ! grep -Fq 'var STORAGE_KEY = "readArticles"' "$site_dir/assets/js/read-tracking.js" || \
-   ! grep -Fq 'localStorage.getItem' "$site_dir/assets/js/read-tracking.js" || \
+   ! grep -Fq 'addEventListener("change"' "$site_dir/assets/js/read-tracking.js" || \
    ! grep -Fq '.article-card .read-mark {' "$site_dir/assets/css/style.css"; then
   echo "FAIL: read tracking is not wired through article IDs and localStorage" >&2
   exit 1

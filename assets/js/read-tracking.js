@@ -23,11 +23,22 @@
     saveSet(ids);
   }
 
-  // Article page: record the episode as read
+  // Article page: expose a manual read toggle persisted to localStorage
   var article = document.querySelector("article.post[data-article-id]");
   if (article) {
     var articleId = article.getAttribute("data-article-id");
-    if (articleId) markRead(articleId);
+    var toggle = article.querySelector("[data-read-toggle]");
+    if (toggle && articleId) {
+      toggle.checked = readSet().indexOf(articleId) !== -1;
+      toggle.addEventListener("change", function () {
+        if (toggle.checked) {
+          markRead(articleId);
+        } else {
+          var ids = readSet().filter(function (id) { return id !== articleId; });
+          saveSet(ids);
+        }
+      });
+    }
     return;
   }
 
@@ -42,7 +53,7 @@
     if (!link) return;
     var mark = document.createElement("span");
     mark.className = "read-mark";
-    mark.textContent = "✓";
+    mark.textContent = "✅";
     mark.setAttribute("aria-label", "Read");
     link.insertBefore(mark, link.firstChild);
   });
