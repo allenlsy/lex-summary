@@ -30,14 +30,13 @@
   }
 
   function updateControl(choice) {
-    var next = nextChoice(choice);
-    var nextLabel = next === "system" ? "Auto" : next.charAt(0).toUpperCase() + next.slice(1);
-    var iconChar = next === "dark" ? "◐" : next === "system" ? "◑" : "☀";
+    var labelText = choice === "system" ? "Auto" : choice.charAt(0).toUpperCase() + choice.slice(1);
+    var iconChar = choice === "light" ? "☀" : choice === "dark" ? "◐" : "◑";
     var pressed = choice === "dark" || (choice === "system" && systemPreference.matches);
-    toggle.setAttribute("aria-label", "Use " + next + " theme");
-    toggle.setAttribute("title", "Use " + next + " theme");
+    toggle.setAttribute("aria-label", "Use " + nextChoice(choice) + " theme");
+    toggle.setAttribute("title", "Use " + nextChoice(choice) + " theme");
     toggle.setAttribute("aria-pressed", pressed ? "true" : "false");
-    label.textContent = nextLabel;
+    label.textContent = labelText;
     icon.textContent = iconChar;
   }
 
