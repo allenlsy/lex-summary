@@ -90,18 +90,15 @@ fi
 
 echo "PASS: site provides a persistent, system-aware dark theme"
 
-if ! grep -Fq 'google_analytics: ""' _config.yml || \
-   ! grep -Fq 'googletagmanager.com/gtag/js?id={{ site.google_analytics }}' _includes/analytics.html; then
-  echo "FAIL: analytics is not configurable through _config.yml" >&2
+if ! grep -Fq 'google_analytics: "G-CDJ0857TTC"' _config.yml || \
+   ! grep -Fq 'googletagmanager.com/gtag/js?id={{ site.google_analytics }}' _includes/analytics.html || \
+   ! grep -Fq 'googletagmanager.com/gtag/js?id=G-CDJ0857TTC' "$home_page" || \
+   ! grep -Fq "gtag('config', 'G-CDJ0857TTC')" "$home_page"; then
+  echo "FAIL: analytics is not configured with the site measurement ID" >&2
   exit 1
 fi
 
-if grep -Fq 'googletagmanager.com/gtag' "$home_page"; then
-  echo "FAIL: analytics script renders while the measurement ID is empty" >&2
-  exit 1
-fi
-
-echo "PASS: analytics loads only when a measurement ID is configured"
+echo "PASS: analytics loads the configured measurement ID on every page"
 
 for purpose_text in \
   'Podcast summaries' \
