@@ -37,10 +37,11 @@ permalink: /collections/practice-notes/
   {% for article in articles %}
     {% assign variants = article.items | sort: "variant_rank" %}
     {% assign representative = variants | first %}
+    {% assign english_variant = variants | where: "language", "en" | first %}
+    {% assign title_variant = english_variant | default: representative %}
     <article class="collection-entry">
-      <p class="collection-entry-index">{{ forloop.index | prepend: '0' }}</p>
       <div class="collection-entry-copy">
-        <h2>{{ representative.article_title }}</h2>
+        <h2><a href="{{ title_variant.url | relative_url }}">{{ representative.article_title }}</a></h2>
         <div class="collection-entry-meta">
           <p class="collection-published">
             <span>Published</span>

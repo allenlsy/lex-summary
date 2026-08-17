@@ -15,6 +15,17 @@ fi
 
 echo "PASS: Lex Fridman content uses the lex-fridman collection ID"
 
+for lex_clips_id in \
+  NCNXbAFbWn8 I2ZK3ngNvvI QJ38en58Onk IQBA4aytp_U MPXUCoWeKM8 IACy_jZUkiE bzMh4b5awHw
+do
+  if grep -R -Fq "$lex_clips_id" _posts; then
+    echo "FAIL: Lex Clips video remains published: $lex_clips_id" >&2
+    exit 1
+  fi
+done
+
+echo "PASS: Lex Clips videos are excluded from published posts"
+
 bundle exec jekyll build --quiet --drafts --destination "$site_dir"
 
 home_page="$site_dir/index.html"
@@ -67,6 +78,68 @@ fi
 
 echo "PASS: homepage groups the language chooser below the article heading"
 
+for page_spec in \
+  "index.html:10" \
+  "page/2/index.html:10" \
+  "page/3/index.html:9" \
+  "per-page/20/index.html:20" \
+  "per-page/20/page/2/index.html:9" \
+  "per-page/50/index.html:29"
+do
+  page_path=${page_spec%:*}
+  expected_count=${page_spec##*:}
+  rendered_page="$site_dir/$page_path"
+
+  if [ ! -f "$rendered_page" ]; then
+    echo "FAIL: summary pagination page was not generated: $page_path" >&2
+    exit 1
+  fi
+
+  actual_count=$(grep -Foc 'class="article-card"' "$rendered_page")
+  if [ "$actual_count" -ne "$expected_count" ]; then
+    echo "FAIL: $page_path renders $actual_count episode cards; expected $expected_count" >&2
+    exit 1
+  fi
+
+  if grep -Fq 'class="article-index"' "$rendered_page"; then
+    echo "FAIL: $page_path still renders the obsolete post index block" >&2
+    exit 1
+  fi
+done
+
+echo "PASS: homepage pagination splits logical episodes into ten-card pages"
+echo "PASS: summary pages omit the obsolete post index block"
+
+if ! grep -Fq '.article-summary { display: grid; grid-template-columns: minmax(0, 1fr) minmax(18rem, .65fr);' "$site_dir/assets/css/style.css" || \
+   ! grep -Fq '.article-summary .edition-list { grid-column: 2; grid-row: 3;' "$site_dir/assets/css/style.css" || \
+   ! grep -Fq '.article-excerpt { grid-column: 1; grid-row: 3;' "$site_dir/assets/css/style.css"; then
+  echo "FAIL: summary cards do not reuse the former index space with a balanced content grid" >&2
+  exit 1
+fi
+
+echo "PASS: summary cards reuse the former index space with a balanced content grid"
+
+if ! grep -Fq 'aria-label="Episodes per page"' "$home_page" || \
+   ! grep -Fq 'aria-current="page">10</a>' "$home_page" || \
+   ! grep -Fq 'href="/lex-tldr/per-page/20/">20</a>' "$home_page" || \
+   ! grep -Fq 'href="/lex-tldr/per-page/50/">50</a>' "$home_page" || \
+   ! grep -Fq 'aria-current="page">20</a>' "$site_dir/per-page/20/index.html"; then
+  echo "FAIL: summary index does not offer accessible 10, 20, and 50 episode page sizes" >&2
+  exit 1
+fi
+
+echo "PASS: summary index offers 10, 20, and 50 episode page sizes"
+
+if ! grep -Fq 'aria-label="Summary pages"' "$home_page" || \
+   ! grep -Fq 'href="/lex-tldr/page/2/"' "$home_page" || \
+   ! grep -Fq 'aria-current="page">2</a>' "$site_dir/page/2/index.html" || \
+   ! grep -Fq 'href="/lex-tldr/page/3/"' "$site_dir/page/2/index.html"; then
+  echo "FAIL: summary pagination does not provide accessible baseurl-aware navigation" >&2
+  exit 1
+fi
+
+echo "PASS: homepage pagination provides accessible baseurl-aware navigation"
+
 if ! grep -Fq 'href="/lex-tldr/collections/practice-notes/"' "$home_page"; then
   echo "FAIL: homepage does not link to the Practice Notes collection with the project base URL" >&2
   exit 1
@@ -100,6 +173,20 @@ do
 done
 
 echo "PASS: collection page links to every article edition"
+
+if grep -Fq 'class="collection-entry-index"' "$collection_page"; then
+  echo "FAIL: collection entries still render the obsolete index block" >&2
+  exit 1
+fi
+
+echo "PASS: collection entries omit the obsolete index block"
+
+if ! grep -Fq '<h2><a href="/lex-tldr/articles/456-ukraine-war-peace-putin-trump-nato-and-freedom/en/">456 - Ukraine, War, Peace, Putin, Trump, NATO, and Freedom</a></h2>' "$collection_page"; then
+  echo "FAIL: collection entry title does not link directly to its English version" >&2
+  exit 1
+fi
+
+echo "PASS: collection entry title links directly to its English version"
 
 for language_page in "$home_page" "$collection_page"
 do

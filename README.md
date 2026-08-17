@@ -64,6 +64,22 @@ Use the language and ordered specs that describe the body (`en`/`cn` for languag
 
 Native language names are defined in `_data/languages.yml` and displayed after each language code, such as `EN · English` and `CN · 中文`. Add a mapping there when introducing another language. Codes without a mapping still render safely as their uppercase code.
 
+## Import local Lex Fridman summaries
+
+The repository includes a safe importer for the summary Markdown files stored in the local iCloud folder. It defaults to a dry run:
+
+```sh
+python3 scripts/import_lex_summaries.py
+```
+
+Review the complete plan, then create the missing Jekyll posts with:
+
+```sh
+python3 scripts/import_lex_summaries.py --apply
+```
+
+The importer only reads the source directory. It preflights every destination before writing, refuses to overwrite different files, skips byte-identical duplicates and Lex Clips sources, and is safe to run again after a successful import. Verified Lex Fridman channel URLs and publication dates are maintained in the script's metadata table.
+
 ## Add a collection
 
 Collections are listed in `_data/collections.yml`. Add one stable ID, display title, URL, and description:

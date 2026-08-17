@@ -1,0 +1,61 @@
+{% assign articles = site.posts | group_by: "article_id" %}
+{% assign page_size = page.summary_page_size | default: 10 %}
+{% assign previous_pages = page.summary_page | minus: 1 %}
+{% assign summary_offset = previous_pages | times: page_size %}
+{% assign page_articles = articles | slice: summary_offset, page_size %}
+{% assign page_size_key = page_size | append: "" %}
+{% assign summary_pages = site.data.summary_pages[page_size_key] %}
+<section class="article-list wide-container" aria-label="Articles">
+  <header class="section-heading">
+    <h1>Latest summaries{% if page.summary_page > 1 %} · Page {{ page.summary_page }}{% endif %}</h1>
+    <p>{{ articles | size }} episode{% if articles.size != 1 %}s{% endif %} · {{ site.posts | size }} version{% if site.posts.size != 1 %}s{% endif %}</p>
+  </header>
+  {% for article in page_articles %}
+    {% assign variants = article.items | sort: "variant_rank" %}
+    {% assign representative = variants[0] %}
+    <article class="article-card">
+      <div class="article-summary">
+        <p class="article-date">{{ representative.date | date: "%d %B %Y" }}</p>
+        <h2>{{ representative.article_title }}</h2>
+        <div class="edition-list">
+          <p class="edition-label">Choose a language</p>
+          <ul class="variant-links">
+            {% for variant in variants %}
+              <li>
+                <a href="{{ variant.url | relative_url }}">
+                  <span>{% include language_label.html language=variant.language %}</span>
+                  {% if variant.spec %}<span>{{ variant.spec | join: " / " }}</span>{% endif %}
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <p class="article-excerpt">{{ representative.excerpt | strip_html | strip_newlines | truncate: 210 }}</p>
+      </div>
+    </article>
+  {% endfor %}
+
+  <div class="summary-controls">
+    <nav class="summary-page-size" aria-label="Episodes per page">
+      <p>Episodes per page</p>
+      <ol>
+        {% for option in site.data.summary_page_sizes %}
+          <li>
+            <a href="{{ option.url | relative_url }}"{% if option.size == page_size %} aria-current="page"{% endif %}>{{ option.size }}</a>
+          </li>
+        {% endfor %}
+      </ol>
+    </nav>
+    <nav class="summary-pagination" aria-label="Summary pages">
+      <p>Page {{ page.summary_page }} of {{ summary_pages | size }}</p>
+      <ol>
+        {% for summary_page in summary_pages %}
+          <li>
+            <a href="{{ summary_page.url | relative_url }}"{% if summary_page.number == page.summary_page %} aria-current="page"{% endif %}>{{ summary_page.number }}</a>
+          </li>
+        {% endfor %}
+      </ol>
+    </nav>
+  </div>
+</section>
