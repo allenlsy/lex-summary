@@ -12,6 +12,9 @@ plugins:
 disqus:
   shortname: lex-tldr
 
+# Google Analytics 4 measurement ID (G-XXXXXXXXXX); leave empty to disable analytics
+google_analytics: ""
+
 exclude:
   - adws
   - specs

@@ -90,6 +90,19 @@ fi
 
 echo "PASS: site provides a persistent, system-aware dark theme"
 
+if ! grep -Fq 'google_analytics: ""' _config.yml || \
+   ! grep -Fq 'googletagmanager.com/gtag/js?id={{ site.google_analytics }}' _includes/analytics.html; then
+  echo "FAIL: analytics is not configurable through _config.yml" >&2
+  exit 1
+fi
+
+if grep -Fq 'googletagmanager.com/gtag' "$home_page"; then
+  echo "FAIL: analytics script renders while the measurement ID is empty" >&2
+  exit 1
+fi
+
+echo "PASS: analytics loads only when a measurement ID is configured"
+
 for purpose_text in \
   'Podcast summaries' \
   'Lex Fridman first' \
