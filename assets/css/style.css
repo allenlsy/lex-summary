@@ -103,6 +103,7 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
 .article-summary h2 { max-width: 68rem; margin: 0 0 2rem; font-size: clamp(1.9rem, 3.5vw, 3rem); font-weight: 500; letter-spacing: -.035em; line-height: 1; }
 .article-summary h2 a { text-decoration-color: var(--rule); text-decoration-thickness: .04em; transition: color .2s ease, text-decoration-color .2s ease; }
 .article-summary h2 a:hover { color: var(--accent-dark); text-decoration-color: var(--accent); }
+.article-card .read-mark { margin-right: .35rem; color: var(--accent); font-family: var(--mono); font-size: .75em; }
 .alternate-titles { display: flex; flex-wrap: wrap; width: 100%; gap: .45rem 1.5rem; margin: 0; padding: 0; list-style: none; }
 .alternate-titles > li { flex: 0 0 100%; }
 .alternate-title-link { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: .65rem; align-items: baseline; width: 100%; color: var(--muted); font-size: 1.15rem; line-height: 1.4; text-decoration: none; transition: color .2s ease; }

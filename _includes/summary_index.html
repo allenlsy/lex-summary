@@ -15,7 +15,7 @@
     {% assign representative = variants[0] %}
     {% assign english_variant = variants | where: "language", "en" | first %}
     {% assign title_variant = english_variant | default: representative %}
-    <article class="article-card">
+    <article class="article-card" data-article-id="{{ representative.article_id }}">
       <div class="article-summary">
         <p class="article-date">{{ representative.date | date: "%d %B %Y" }}</p>
         <h2><a href="{{ title_variant.url | relative_url }}">{{ representative.article_title }}</a></h2>

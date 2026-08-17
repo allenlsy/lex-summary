@@ -3,7 +3,7 @@ layout: default
 ---
 {% assign variants = site.posts | where: "article_id", page.article_id | sort: "variant_rank" %}
 {% assign post_collection = site.data.collections | where: "id", page.collection_id | first %}
-<article class="post wide-container">
+<article class="post wide-container" data-article-id="{{ page.article_id }}">
   <header class="post-header">
     <div class="post-kicker">
       <span>{{ page.article_title }}</span>
