@@ -60,7 +60,7 @@
   });
 
   toc.hidden = false;
-  details.open = window.matchMedia("(min-width: 79.01rem)").matches;
+  details.open = true;
 
   function markCurrent(id) {
     Object.keys(linksById).forEach(function (key) {
