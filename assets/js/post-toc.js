@@ -6,11 +6,7 @@
   if (!toc || !content) return;
 
   var headings = Array.prototype.slice.call(content.querySelectorAll("h2, h3"));
-  if (!headings.length) {
-    var postBody = document.querySelector(".post-body");
-    if (postBody) postBody.classList.add("no-toc");
-    return;
-  }
+  if (!headings.length) return;
 
   var list = toc.querySelector("[data-post-toc-list]");
   var details = toc.querySelector("[data-post-toc-details]");
@@ -64,7 +60,7 @@
   });
 
   toc.hidden = false;
-  details.open = window.matchMedia("(min-width: 52.01rem)").matches;
+  details.open = window.matchMedia("(min-width: 79.01rem)").matches;
 
   function markCurrent(id) {
     Object.keys(linksById).forEach(function (key) {
@@ -90,6 +86,6 @@
     var link = event.target.closest("a");
     if (!link) return;
     markCurrent(decodeURIComponent(link.hash.slice(1)));
-    if (window.matchMedia("(max-width: 52rem)").matches) details.open = false;
+    if (window.matchMedia("(max-width: 79rem)").matches) details.open = false;
   });
 }());

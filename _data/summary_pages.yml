@@ -1,15 +1,8 @@
-"10":
+"20":
   - number: 1
     url: /
   - number: 2
     url: /page/2/
-  - number: 3
-    url: /page/3/
-"20":
-  - number: 1
-    url: /per-page/20/
-  - number: 2
-    url: /per-page/20/page/2/
 "50":
   - number: 1
     url: /per-page/50/

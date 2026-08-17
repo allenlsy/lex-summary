@@ -1,6 +1,4 @@
-- size: 10
-  url: /
 - size: 20
-  url: /per-page/20/
+  url: /
 - size: 50
   url: /per-page/50/

@@ -1,5 +1,5 @@
 {% assign articles = site.posts | group_by: "article_id" %}
-{% assign page_size = page.summary_page_size | default: 10 %}
+{% assign page_size = page.summary_page_size | default: 20 %}
 {% assign previous_pages = page.summary_page | minus: 1 %}
 {% assign summary_offset = previous_pages | times: page_size %}
 {% assign page_articles = articles | slice: summary_offset, page_size %}

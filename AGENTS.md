@@ -31,7 +31,7 @@ The production repository is `allenlsy/lex-tldr`, and GitHub Pages serves it at 
 
 The repository also contains SSSF automation under `adws/` and related recipes in `justfile`. The `new-post` recipe is the blog-specific exception. Keep other blog work independent from SSSF unless the task explicitly concerns that machinery.
 
-Homepage pagination operates on logical episodes after grouping variants by `article_id`, never on individual language or spec variants. It offers 10, 20, and 50 episodes per page, with 10 as the default. `_data/summary_page_sizes.yml` defines the choices, and `_data/summary_pages.yml` defines their static routes. When the episode count outgrows one of those route sets, add its next page file with the matching `summary_page` and `summary_page_size` front matter.
+Homepage pagination operates on logical episodes after grouping variants by `article_id`, never on individual language or spec variants. It offers 20 and 50 episodes per page, with 20 as the default. `_data/summary_page_sizes.yml` defines the choices, and `_data/summary_pages.yml` defines their static routes. When the episode count outgrows one of those route sets, add its next page file with the matching `summary_page` and `summary_page_size` front matter.
 
 Keep indexable pages self-canonical. Podcast summary variants must emit reciprocal `hreflang` links, using valid BCP 47 language tags (`en` and `zh-CN`) and the English variant as `x-default` when available. Search is `noindex,follow` and excluded from the sitemap. Do not add fabricated authors, ratings, images, or other structured data that the page does not substantiate.
 

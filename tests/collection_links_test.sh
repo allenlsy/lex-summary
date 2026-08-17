@@ -151,11 +151,8 @@ fi
 echo "PASS: homepage post titles link to English with a first-variation fallback"
 
 for page_spec in \
-  "index.html:10" \
-  "page/2/index.html:10" \
-  "page/3/index.html:9" \
-  "per-page/20/index.html:20" \
-  "per-page/20/page/2/index.html:9" \
+  "index.html:20" \
+  "page/2/index.html:9" \
   "per-page/50/index.html:29"
 do
   page_path=${page_spec%:*}
@@ -179,7 +176,7 @@ do
   fi
 done
 
-echo "PASS: homepage pagination splits logical episodes into ten-card pages"
+echo "PASS: homepage pagination splits logical episodes into twenty-card pages"
 echo "PASS: summary pages omit the obsolete post index block"
 
 if ! grep -Fq '.article-summary { display: grid; grid-template-columns: minmax(0, 1fr) minmax(18rem, .65fr);' "$site_dir/assets/css/style.css" || \
@@ -193,20 +190,18 @@ fi
 echo "PASS: summary cards reuse the former index space with a balanced content grid"
 
 if ! grep -Fq 'aria-label="Episodes per page"' "$home_page" || \
-   ! grep -Fq 'aria-current="page">10</a>' "$home_page" || \
-   ! grep -Fq 'href="/per-page/20/">20</a>' "$home_page" || \
+   ! grep -Fq 'aria-current="page">20</a>' "$home_page" || \
    ! grep -Fq 'href="/per-page/50/">50</a>' "$home_page" || \
-   ! grep -Fq 'aria-current="page">20</a>' "$site_dir/per-page/20/index.html"; then
-  echo "FAIL: summary index does not offer accessible 10, 20, and 50 episode page sizes" >&2
+   ! grep -Fq 'aria-current="page">50</a>' "$site_dir/per-page/50/index.html"; then
+  echo "FAIL: summary index does not offer accessible 20 and 50 episode page sizes" >&2
   exit 1
 fi
 
-echo "PASS: summary index offers 10, 20, and 50 episode page sizes"
+echo "PASS: summary index offers 20 and 50 episode page sizes"
 
 if ! grep -Fq 'aria-label="Summary pages"' "$home_page" || \
    ! grep -Fq 'href="/page/2/"' "$home_page" || \
-   ! grep -Fq 'aria-current="page">2</a>' "$site_dir/page/2/index.html" || \
-   ! grep -Fq 'href="/page/3/"' "$site_dir/page/2/index.html"; then
+   ! grep -Fq 'aria-current="page">2</a>' "$site_dir/page/2/index.html"; then
   echo "FAIL: summary pagination does not provide accessible baseurl-aware navigation" >&2
   exit 1
 fi
@@ -388,12 +383,13 @@ fi
 
 echo "PASS: article content omits the obsolete editorial aside"
 
-if ! grep -Fq '.post-body { display: grid; grid-template-columns: minmax(11rem, 13rem) minmax(0, 64rem);' "$site_dir/assets/css/style.css"; then
-  echo "FAIL: article content does not provide a dedicated reading and navigation grid" >&2
+if ! grep -Fq '.post-body { display: block; max-width: 64rem; margin-inline: 0 auto; }' "$site_dir/assets/css/style.css" || \
+   ! grep -Fq '.post-toc { position: fixed; top: 50%; left: 1.5rem; width: 13rem;' "$site_dir/assets/css/style.css"; then
+  echo "FAIL: article content does not provide a full-width reading column with a floating nav" >&2
   exit 1
 fi
 
-echo "PASS: article content uses a dedicated reading and navigation grid"
+echo "PASS: article content keeps a full-width reading column with a floating left nav"
 
 if ! grep -Fq 'class="post-toc" data-post-toc hidden' "$article_page" || \
    ! grep -Fq 'aria-label="In this summary"' "$article_page" || \
@@ -402,22 +398,15 @@ if ! grep -Fq 'class="post-toc" data-post-toc hidden' "$article_page" || \
   exit 1
 fi
 
-if ! grep -Fq '.post-toc-inner { position: sticky; top: 1.5rem;' "$site_dir/assets/css/style.css" || \
-   ! grep -Fq 'content.querySelectorAll("h2, h3")' "$site_dir/assets/js/post-toc.js" || \
-   ! grep -Fq 'new IntersectionObserver' "$site_dir/assets/js/post-toc.js"; then
-  echo "FAIL: article heading navigation is not sticky or scroll-aware" >&2
+if ! grep -Fq 'content.querySelectorAll("h2, h3")' "$site_dir/assets/js/post-toc.js" || \
+   ! grep -Fq 'new IntersectionObserver' "$site_dir/assets/js/post-toc.js" || \
+   ! grep -Fq '@media (max-width: 79rem) {' "$site_dir/assets/css/style.css" || \
+   ! grep -Fq '.post-toc { position: static;' "$site_dir/assets/css/style.css"; then
+  echo "FAIL: article heading navigation is not scroll-aware or responsive" >&2
   exit 1
 fi
 
-echo "PASS: article provides a sticky, scroll-aware heading navigation"
-
-if ! grep -Fq 'classList.add("no-toc")' "$site_dir/assets/js/post-toc.js" || \
-   ! grep -Fq '.post-body.no-toc { display: block; max-width: 64rem; }' "$site_dir/assets/css/style.css"; then
-  echo "FAIL: headingless articles do not restore the full-width reading column" >&2
-  exit 1
-fi
-
-echo "PASS: headingless articles keep the full-width reading column"
+echo "PASS: article provides a scroll-aware heading navigation that folds on narrower screens"
 
 if grep -Fq 'class="edition-number"' "$article_page" || \
    awk '
@@ -438,7 +427,7 @@ fi
 
 echo "PASS: article heading removes redundant labels and reclaims their space"
 
-if ! grep -Fq '.post-header { width: min(100%, 80rem); margin-inline: auto; }' "$site_dir/assets/css/style.css" || \
+if ! grep -Fq '.post-header { width: min(100%, 64rem); margin-inline: 0 auto; }' "$site_dir/assets/css/style.css" || \
    ! grep -Fq '.post-meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); max-width: 64rem; margin: 3rem 0 4rem;' "$site_dir/assets/css/style.css"; then
   echo "FAIL: article header, metadata, and reading column do not share a left edge" >&2
   exit 1

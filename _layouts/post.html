@@ -56,31 +56,31 @@ layout: default
     </aside>
     <div class="post-content">{{ content }}</div>
   </div>
+
+  {% if site.disqus.shortname %}
+  <section class="comments wide-container" aria-labelledby="comments-title">
+    <header class="comments-heading">
+      <p class="eyebrow">Continue the conversation</p>
+      <h2 id="comments-title">Discussion</h2>
+    </header>
+    <div id="disqus_thread"></div>
+    <script>
+      var disqus_config = function () {
+        this.page.url = {{ page.url | absolute_url | jsonify }};
+        this.page.identifier = {{ page.permalink | jsonify }};
+      };
+
+      (function () {
+        var d = document;
+        var s = d.createElement('script');
+        s.src = 'https://{{ site.disqus.shortname }}.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus</a>.</noscript>
+  </section>
+  {% endif %}
 </article>
 
 <script src="{{ '/assets/js/post-toc.js' | relative_url }}" defer></script>
-
-{% if site.disqus.shortname %}
-<section class="comments wide-container" aria-labelledby="comments-title">
-  <header class="comments-heading">
-    <p class="eyebrow">Continue the conversation</p>
-    <h2 id="comments-title">Discussion</h2>
-  </header>
-  <div id="disqus_thread"></div>
-  <script>
-    var disqus_config = function () {
-      this.page.url = {{ page.url | absolute_url | jsonify }};
-      this.page.identifier = {{ page.permalink | jsonify }};
-    };
-
-    (function () {
-      var d = document;
-      var s = d.createElement('script');
-      s.src = 'https://{{ site.disqus.shortname }}.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-    })();
-  </script>
-  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus</a>.</noscript>
-</section>
-{% endif %}
