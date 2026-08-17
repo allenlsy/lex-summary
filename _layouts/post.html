@@ -37,13 +37,6 @@ layout: default
       {% if page.original_link and page.original_link != empty %}
         <p><span>Original episode</span><a class="post-original-link" href="{{ page.original_link }}">Original Link <span aria-hidden="true">↗</span></a></p>
       {% endif %}
-      <p class="post-read-status">
-        <span>{% if page.language == 'cn' %}阅读状态{% else %}Read status{% endif %}</span>
-        <label class="read-toggle">
-          <input type="checkbox" data-read-toggle>
-          <span>{% if page.language == 'cn' %}标记为已读{% else %}Mark as read{% endif %}</span>
-        </label>
-      </p>
     </div>
   </header>
 
@@ -59,6 +52,10 @@ layout: default
             <ol data-post-toc-list></ol>
           </nav>
         </details>
+        <label class="read-toggle read-toggle-rail">
+          <input type="checkbox" data-read-toggle>
+          <span>{% if page.language == 'cn' %}标记为已读{% else %}Mark as read{% endif %}</span>
+        </label>
       </div>
     </aside>
     <div class="post-content">{{ content }}</div>

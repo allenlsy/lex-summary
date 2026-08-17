@@ -163,6 +163,9 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
 .post-read-status label { display: inline-flex; align-items: center; gap: .55rem; cursor: pointer; }
 .read-toggle input { width: 1.1rem; height: 1.1rem; margin: 0; accent-color: var(--accent); cursor: pointer; }
 .read-toggle input:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.read-toggle-rail { display: flex; align-items: center; gap: .55rem; margin-top: 1.1rem; padding-top: 1rem; border-top: 1px solid var(--rule); color: var(--muted); font-family: var(--mono); font-size: .66rem; letter-spacing: .06em; text-transform: uppercase; cursor: pointer; }
+.read-toggle-rail:hover { color: var(--ink); }
+.read-toggle-rail span { line-height: 1.3; }
 .post-body { display: block; max-width: 64rem; margin-inline: 0 auto; }
 .post-content { font-size: clamp(1.15rem, 2vw, 1.38rem); line-height: 1.75; }
 .post-content > p:first-child::first-letter { float: left; margin: .11em .1em 0 0; color: var(--accent); font-size: 4.8em; line-height: .7; }
