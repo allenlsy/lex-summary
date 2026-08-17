@@ -408,6 +408,15 @@ fi
 
 echo "PASS: article provides a scroll-aware heading navigation that folds on narrower screens"
 
+if ! grep -Fq '.post-content table { display: block; width: 100%; max-width: 100%; margin: 1.75em 0 2.5em; overflow-x: auto;' "$site_dir/assets/css/style.css" || \
+   ! grep -Fq '.post-content th { padding: .6em .9em; color: var(--muted); font-family: var(--mono);' "$site_dir/assets/css/style.css" || \
+   ! grep -Fq '.post-content tbody tr:nth-child(even) { background: var(--paper-deep); }' "$site_dir/assets/css/style.css"; then
+  echo "FAIL: article tables do not use the styled reading treatment" >&2
+  exit 1
+fi
+
+echo "PASS: article tables use the styled reading treatment"
+
 if grep -Fq 'class="edition-number"' "$article_page" || \
    awk '
      /class="post-heading"/ { in_heading = 1 }
