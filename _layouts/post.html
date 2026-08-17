@@ -3,7 +3,7 @@ layout: default
 ---
 {% assign variants = site.posts | where: "article_id", page.article_id | sort: "variant_rank" %}
 {% assign post_collection = site.data.collections | where: "id", page.collection_id | first %}
-<article class="post wide-container" data-article-id="{{ page.article_id }}">
+<article class="post wide-container">
   <header class="post-header">
     <div class="post-kicker">
       <span>{{ page.article_title }}</span>
@@ -53,18 +53,9 @@ layout: default
           </nav>
         </details>
       </div>
-      <label class="read-toggle read-toggle-rail">
-        <input type="checkbox" data-read-toggle>
-        <span>{% if page.language == 'cn' %}标记为已读{% else %}Mark as read{% endif %}</span>
-      </label>
     </aside>
     <div class="post-content">{{ content }}</div>
   </div>
-
-  <label class="read-toggle read-toggle-rail read-toggle-float" hidden>
-    <input type="checkbox" data-read-toggle>
-    <span>{% if page.language == 'cn' %}标记为已读{% else %}Mark as read{% endif %}</span>
-  </label>
 
   {% if site.disqus.shortname %}
   <section class="comments wide-container" aria-labelledby="comments-title">
