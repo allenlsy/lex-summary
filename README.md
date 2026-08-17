@@ -2,15 +2,15 @@
 
 This is a small, GitHub Pages-compatible Jekyll blog for concise summaries of Lex Fridman podcast episodes, with support for adding other podcasters later. Each Markdown post is one variant of a logical summary. The shared `article_id` and `article_title` in front matter let Liquid group language or format variants on the home page and show related links on every summary page. A summary can also belong to a podcaster collection through `collection_id`. The sample episode demonstrates English and Chinese editions inside the first collection.
 
-This intentionally has no CMS, database, user accounts, scheduled publishing, custom domain, or custom application server. Post comments are provided by the client-side Disqus embed.
+This intentionally has no CMS, database, user accounts, scheduled publishing, or custom application server. Post comments are provided by the client-side Disqus embed.
 
 ## One-time GitHub Pages setup
 
 1. Push this repository's default branch to GitHub.
 2. In **Settings → Pages**, choose deployment from that branch and the repository **root**.
-3. Set `url` and `baseurl` in `_config.yml` for the chosen repository URL.
+3. Configure `lextldr.com` as the custom domain and enable HTTPS.
 
-The current configuration publishes this project repository at `https://allenlsy.github.io/lex-tldr/`. If the repository is renamed to `allenlsy.github.io` for a root user site, change `baseurl` to an empty string.
+The production site is published at `https://lextldr.com/`. The repository keeps `CNAME` set to `lextldr.com`, with `url: "https://lextldr.com"` and an empty `baseurl` in `_config.yml` so public routes start at the domain root.
 
 ## Local preview and build
 

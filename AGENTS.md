@@ -10,7 +10,7 @@ Keep public copy centered on this purpose. Avoid generic positioning such as a j
 2. Lex Fridman is the first podcaster covered.
 3. Other podcasters may be added later.
 
-The production repository is `allenlsy/lex-tldr`, and GitHub Pages serves it at `https://allenlsy.github.io/lex-tldr/`.
+The production repository is `allenlsy/lex-tldr`, and GitHub Pages serves it at `https://lextldr.com/`.
 
 ## Architecture
 
@@ -25,7 +25,7 @@ The production repository is `allenlsy/lex-tldr`, and GitHub Pages serves it at 
 - `_includes/seo.html` renders canonical, social, multilingual, and JSON-LD metadata; `jekyll-sitemap` generates the public sitemap.
 - `search.html`, `search.json`, and `assets/js/search.js` provide static bilingual full-text search; keep search GitHub Pages-compatible and client-side.
 - `assets/css/style.css` is the site stylesheet.
-- `_config.yml` must keep `url: "https://allenlsy.github.io"` and `baseurl: "/lex-tldr"` while the site remains a project Pages site.
+- `CNAME` must remain `lextldr.com`, and `_config.yml` must keep `url: "https://lextldr.com"` with an empty `baseurl` while the custom domain is active.
 
 The repository also contains SSSF automation under `adws/` and related recipes in `justfile`. The `new-post` recipe is the blog-specific exception. Keep other blog work independent from SSSF unless the task explicitly concerns that machinery.
 
@@ -88,7 +88,7 @@ The first collection is displayed as `Lex Fridman Podcast` and uses the internal
 - Do not describe summaries as unrelated articles or generic ideas in prominent UI copy.
 - Keep the editorial visual theme and its responsive behavior unless redesign is requested.
 - Preserve accessible navigation, semantic headings, visible focus states, and readable English and Chinese typography.
-- Use Jekyll's `relative_url` for internal links so the `/lex-tldr` base path works locally and on GitHub Pages.
+- Use Jekyll's `relative_url` for internal links so routes work locally and at the production domain root.
 
 ## Local commands
 
@@ -147,7 +147,7 @@ The recipe derives the episode ID and URL slug from the title, assigns the next 
 6. Stage only intended files. Do not use broad staging when unrelated files exist.
 7. Commit and push only when the user requests publication.
 
-Pushing `main` triggers GitHub Pages. After publishing, verify the Pages workflow succeeds and confirm the changed routes at `https://allenlsy.github.io/lex-tldr/`.
+Pushing `main` triggers GitHub Pages. After publishing, verify the Pages workflow succeeds and confirm the changed routes at `https://lextldr.com/`.
 
 ## Repository hygiene
 

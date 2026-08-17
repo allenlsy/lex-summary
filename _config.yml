@@ -1,7 +1,7 @@
 title: Lex TL;DR
 description: Concise summaries of one-hour-plus interviews from leading podcasters, led by the Lex Fridman Podcast, with more podcasters to come.
-url: "https://allenlsy.github.io"
-baseurl: "/lex-tldr"
+url: "https://lextldr.com"
+baseurl: ""
 lang: en
 markdown: kramdown
 permalink: /:categories/:title/

@@ -7,6 +7,15 @@ trap 'rm -rf "$site_dir"' EXIT
 
 cd "$repo_dir"
 
+if [ "$(cat CNAME)" != "lextldr.com" ] || \
+   ! grep -Fq 'url: "https://lextldr.com"' _config.yml || \
+   ! grep -Fq 'baseurl: ""' _config.yml; then
+  echo "FAIL: repository is not configured for the lextldr.com root domain" >&2
+  exit 1
+fi
+
+echo "PASS: repository targets the lextldr.com root domain"
+
 if ! grep -Fq -- '- id: lex-fridman' _data/collections.yml || \
    grep -R -Fq 'collection_id: practice-notes' _posts _drafts collections; then
   echo "FAIL: Lex Fridman content does not consistently use the lex-fridman collection ID" >&2
@@ -43,7 +52,7 @@ fi
 
 for page_with_search in "$home_page" "$search_page"
 do
-  if ! grep -Fq 'class="site-search" action="/lex-tldr/search/"' "$page_with_search" || \
+  if ! grep -Fq 'class="site-search" action="/search/"' "$page_with_search" || \
      ! grep -Fq 'type="search" name="q"' "$page_with_search"; then
     echo "FAIL: site page does not provide the baseurl-aware search form" >&2
     exit 1
@@ -51,7 +60,7 @@ do
 done
 
 if ! grep -Fq 'id="search-results"' "$search_page" || \
-   ! grep -Fq 'data-search-index="/lex-tldr/search.json"' "$search_page"; then
+   ! grep -Fq 'data-search-index="/search.json"' "$search_page"; then
   echo "FAIL: search page does not expose an accessible result target and index" >&2
   exit 1
 fi
@@ -60,7 +69,7 @@ ruby -rjson -e '
   entries = JSON.parse(File.read(ARGV.fetch(0)))
   abort "missing English search title" unless entries.any? { |entry| entry["title"] == "94 - Ilya Sutskever: Deep Learning" }
   abort "missing Chinese search title" unless entries.any? { |entry| entry["title"] == "94 - Ilya Sutskever：深度学习" }
-  abort "missing baseurl-aware search URL" unless entries.all? { |entry| entry["url"].start_with?("/lex-tldr/articles/") }
+  abort "missing root-relative search URL" unless entries.all? { |entry| entry["url"].start_with?("/articles/") }
 ' "$search_index"
 
 echo "PASS: site generates a bilingual static search experience"
@@ -113,7 +122,7 @@ fi
 
 echo "PASS: homepage groups the language chooser below the article heading"
 
-if ! grep -Fq '<h2><a href="/lex-tldr/articles/456-ukraine-war-peace-putin-trump-nato-and-freedom/en/">456 - Ukraine, War, Peace, Putin, Trump, NATO, and Freedom</a></h2>' "$home_page"; then
+if ! grep -Fq '<h2><a href="/articles/456-ukraine-war-peace-putin-trump-nato-and-freedom/en/">456 - Ukraine, War, Peace, Putin, Trump, NATO, and Freedom</a></h2>' "$home_page"; then
   echo "FAIL: homepage post title does not link directly to its English version" >&2
   exit 1
 fi
@@ -169,8 +178,8 @@ echo "PASS: summary cards reuse the former index space with a balanced content g
 
 if ! grep -Fq 'aria-label="Episodes per page"' "$home_page" || \
    ! grep -Fq 'aria-current="page">10</a>' "$home_page" || \
-   ! grep -Fq 'href="/lex-tldr/per-page/20/">20</a>' "$home_page" || \
-   ! grep -Fq 'href="/lex-tldr/per-page/50/">50</a>' "$home_page" || \
+   ! grep -Fq 'href="/per-page/20/">20</a>' "$home_page" || \
+   ! grep -Fq 'href="/per-page/50/">50</a>' "$home_page" || \
    ! grep -Fq 'aria-current="page">20</a>' "$site_dir/per-page/20/index.html"; then
   echo "FAIL: summary index does not offer accessible 10, 20, and 50 episode page sizes" >&2
   exit 1
@@ -179,16 +188,16 @@ fi
 echo "PASS: summary index offers 10, 20, and 50 episode page sizes"
 
 if ! grep -Fq 'aria-label="Summary pages"' "$home_page" || \
-   ! grep -Fq 'href="/lex-tldr/page/2/"' "$home_page" || \
+   ! grep -Fq 'href="/page/2/"' "$home_page" || \
    ! grep -Fq 'aria-current="page">2</a>' "$site_dir/page/2/index.html" || \
-   ! grep -Fq 'href="/lex-tldr/page/3/"' "$site_dir/page/2/index.html"; then
+   ! grep -Fq 'href="/page/3/"' "$site_dir/page/2/index.html"; then
   echo "FAIL: summary pagination does not provide accessible baseurl-aware navigation" >&2
   exit 1
 fi
 
 echo "PASS: homepage pagination provides accessible baseurl-aware navigation"
 
-if ! grep -Fq 'href="/lex-tldr/collections/practice-notes/"' "$home_page"; then
+if ! grep -Fq 'href="/collections/practice-notes/"' "$home_page"; then
   echo "FAIL: homepage does not link to the Practice Notes collection with the project base URL" >&2
   exit 1
 fi
@@ -202,7 +211,7 @@ if [ ! -f "$collection_page" ]; then
   exit 1
 fi
 
-alternate_title_link='<a class="alternate-title-link" href="/lex-tldr/articles/494-jensen-huang-nvidia-the-4-trillion-company-the-ai-revolution/cn/"><span class="alternate-title-language">CN · 中文</span><span>494 - 黄仁勋：英伟达——4 万亿美元公司与人工智能革命</span></a>'
+alternate_title_link='<a class="alternate-title-link" href="/articles/494-jensen-huang-nvidia-the-4-trillion-company-the-ai-revolution/cn/"><span class="alternate-title-language">CN · 中文</span><span>494 - 黄仁勋：英伟达——4 万亿美元公司与人工智能革命</span></a>'
 for listing_page in "$home_page" "$collection_page"
 do
   if ! grep -Fq "$alternate_title_link" "$listing_page"; then
@@ -231,9 +240,9 @@ fi
 echo "PASS: collection navigation omits the redundant Journal link"
 
 for edition_path in \
-  /lex-tldr/articles/456-ukraine-war-peace-putin-trump-nato-and-freedom/en/ \
-  /lex-tldr/articles/456-ukraine-war-peace-putin-trump-nato-and-freedom/cn/ \
-  /lex-tldr/articles/spec-routing-example/en/long-guide/
+  /articles/456-ukraine-war-peace-putin-trump-nato-and-freedom/en/ \
+  /articles/456-ukraine-war-peace-putin-trump-nato-and-freedom/cn/ \
+  /articles/spec-routing-example/en/long-guide/
 do
   if ! grep -Fq "href=\"$edition_path\"" "$collection_page"; then
     echo "FAIL: collection page does not link to $edition_path" >&2
@@ -250,7 +259,7 @@ fi
 
 echo "PASS: collection entries omit the obsolete index block"
 
-if ! grep -Fq '<h2><a href="/lex-tldr/articles/456-ukraine-war-peace-putin-trump-nato-and-freedom/en/">456 - Ukraine, War, Peace, Putin, Trump, NATO, and Freedom</a></h2>' "$collection_page"; then
+if ! grep -Fq '<h2><a href="/articles/456-ukraine-war-peace-putin-trump-nato-and-freedom/en/">456 - Ukraine, War, Peace, Putin, Trump, NATO, and Freedom</a></h2>' "$collection_page"; then
   echo "FAIL: collection entry title does not link directly to its English version" >&2
   exit 1
 fi
@@ -328,7 +337,7 @@ fi
 
 echo "PASS: article pages display native language names"
 
-if ! grep -Fq 'class="post-collection" href="/lex-tldr/collections/practice-notes/"' "$article_page"; then
+if ! grep -Fq 'class="post-collection" href="/collections/practice-notes/"' "$article_page"; then
   echo "FAIL: article does not identify and link back to its collection" >&2
   exit 1
 fi
@@ -339,7 +348,7 @@ if ! awk '
   /class="post-meta"/ { in_meta = 1 }
   in_meta && /class="post-other-versions"/ { found = 1; exit }
   END { exit !found }
-' "$article_page" || ! grep -Fq 'href="/lex-tldr/articles/456-ukraine-war-peace-putin-trump-nato-and-freedom/cn/"' "$article_page"; then
+' "$article_page" || ! grep -Fq 'href="/articles/456-ukraine-war-peace-putin-trump-nato-and-freedom/cn/"' "$article_page"; then
   echo "FAIL: article metadata does not link to another language version" >&2
   exit 1
 fi
@@ -383,7 +392,7 @@ if ! grep -Fq 'id="disqus_thread"' "$article_page" || \
   exit 1
 fi
 
-if ! grep -Fq 'this.page.url = "https://allenlsy.github.io/lex-tldr/articles/456-ukraine-war-peace-putin-trump-nato-and-freedom/en/";' "$article_page" || \
+if ! grep -Fq 'this.page.url = "https://lextldr.com/articles/456-ukraine-war-peace-putin-trump-nato-and-freedom/en/";' "$article_page" || \
    ! grep -Fq 'this.page.identifier = "/articles/456-ukraine-war-peace-putin-trump-nato-and-freedom/en/";' "$article_page"; then
   echo "FAIL: Disqus does not use the canonical article URL and stable permalink identifier" >&2
   exit 1
