@@ -52,14 +52,19 @@ layout: default
             <ol data-post-toc-list></ol>
           </nav>
         </details>
-        <label class="read-toggle read-toggle-rail">
-          <input type="checkbox" data-read-toggle>
-          <span>{% if page.language == 'cn' %}标记为已读{% else %}Mark as read{% endif %}</span>
-        </label>
       </div>
+      <label class="read-toggle read-toggle-rail">
+        <input type="checkbox" data-read-toggle>
+        <span>{% if page.language == 'cn' %}标记为已读{% else %}Mark as read{% endif %}</span>
+      </label>
     </aside>
     <div class="post-content">{{ content }}</div>
   </div>
+
+  <label class="read-toggle read-toggle-rail read-toggle-float" hidden>
+    <input type="checkbox" data-read-toggle>
+    <span>{% if page.language == 'cn' %}标记为已读{% else %}Mark as read{% endif %}</span>
+  </label>
 
   {% if site.disqus.shortname %}
   <section class="comments wide-container" aria-labelledby="comments-title">

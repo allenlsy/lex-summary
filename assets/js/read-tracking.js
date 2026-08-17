@@ -23,21 +23,29 @@
     saveSet(ids);
   }
 
-  // Article page: expose a manual read toggle persisted to localStorage
+  // Article page: read toggles persisted to localStorage, synced across variants
   var article = document.querySelector("article.post[data-article-id]");
   if (article) {
     var articleId = article.getAttribute("data-article-id");
-    var toggle = article.querySelector("[data-read-toggle]");
-    if (toggle && articleId) {
-      toggle.checked = readSet().indexOf(articleId) !== -1;
-      toggle.addEventListener("change", function () {
-        if (toggle.checked) {
-          markRead(articleId);
-        } else {
-          var ids = readSet().filter(function (id) { return id !== articleId; });
-          saveSet(ids);
-        }
+    var toggles = article.querySelectorAll("[data-read-toggle]");
+    if (toggles.length && articleId) {
+      var isRead = readSet().indexOf(articleId) !== -1;
+      Array.prototype.forEach.call(toggles, function (toggle) {
+        toggle.checked = isRead;
+        toggle.addEventListener("change", function () {
+          var nowChecked = toggle.checked;
+          Array.prototype.forEach.call(toggles, function (other) { other.checked = nowChecked; });
+          if (nowChecked) {
+            markRead(articleId);
+          } else {
+            saveSet(readSet().filter(function (id) { return id !== articleId; }));
+          }
+        });
       });
+      // Articles without a heading tree get a floating toggle in the nav area
+      var toc = article.querySelector(".post-toc");
+      var floatToggle = article.querySelector(".read-toggle-float");
+      if (toc && toc.hidden && floatToggle) floatToggle.hidden = false;
     }
     return;
   }

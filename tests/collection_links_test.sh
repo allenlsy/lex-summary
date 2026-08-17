@@ -433,6 +433,8 @@ if ! grep -Fq 'data-article-id="456-ukraine-war-peace-putin-trump-nato-and-freed
    ! grep -Fq 'src="/assets/js/read-tracking.js"' "$article_page" || \
    ! grep -Fq 'var STORAGE_KEY = "readArticles"' "$site_dir/assets/js/read-tracking.js" || \
    ! grep -Fq 'addEventListener("change"' "$site_dir/assets/js/read-tracking.js" || \
+   ! grep -Fq 'class="read-toggle read-toggle-rail read-toggle-float" hidden' "$article_page" || \
+   ! grep -Fq 'if (toc && toc.hidden && floatToggle) floatToggle.hidden = false;' "$site_dir/assets/js/read-tracking.js" || \
    ! grep -Fq '.article-card .read-mark {' "$site_dir/assets/css/style.css"; then
   echo "FAIL: read tracking is not wired through article IDs and localStorage" >&2
   exit 1
