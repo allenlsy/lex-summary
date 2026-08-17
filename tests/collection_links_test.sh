@@ -74,6 +74,22 @@ ruby -rjson -e '
 
 echo "PASS: site generates a bilingual static search experience"
 
+if ! grep -Fq 'data-theme-toggle' "$home_page" || \
+   ! grep -Fq 'src="/assets/js/theme.js"' "$home_page" || \
+   ! grep -Fq 'localStorage.getItem("theme")' "$home_page"; then
+  echo "FAIL: site does not provide an early, persistent theme control" >&2
+  exit 1
+fi
+
+if ! grep -Fq 'html[data-theme="dark"] {' "$site_dir/assets/css/style.css" || \
+   ! grep -Fq 'color-scheme: dark;' "$site_dir/assets/css/style.css" || \
+   ! grep -Fq 'prefers-color-scheme: dark' "$site_dir/assets/js/theme.js"; then
+  echo "FAIL: site does not provide a system-aware dark theme" >&2
+  exit 1
+fi
+
+echo "PASS: site provides a persistent, system-aware dark theme"
+
 for purpose_text in \
   'Podcast summaries' \
   'Lex Fridman first' \
@@ -365,26 +381,70 @@ fi
 
 echo "PASS: article renders its original_link metadata"
 
-if grep -Fq '<aside' "$episode_article_page"; then
-  echo "FAIL: article content still renders an aside" >&2
+if grep -Fq 'class="post-aside"' "$episode_article_page"; then
+  echo "FAIL: article content still renders the obsolete editorial aside" >&2
   exit 1
 fi
 
-echo "PASS: article content omits the aside"
+echo "PASS: article content omits the obsolete editorial aside"
 
-if ! grep -Fq '.post-body { max-width: 64rem;' "$site_dir/assets/css/style.css"; then
-  echo "FAIL: article content does not reclaim the former aside space" >&2
+if ! grep -Fq '.post-body { display: grid; grid-template-columns: minmax(11rem, 13rem) minmax(0, 64rem);' "$site_dir/assets/css/style.css"; then
+  echo "FAIL: article content does not provide a dedicated reading and navigation grid" >&2
   exit 1
 fi
 
-echo "PASS: article content reclaims the former aside space"
+echo "PASS: article content uses a dedicated reading and navigation grid"
 
-if ! grep -Fq '.post-heading h1 { max-width: 62rem; margin: 0; font-size: clamp(2.75rem, 6vw, 5.25rem);' "$site_dir/assets/css/style.css"; then
-  echo "FAIL: article heading still uses the oversized type scale" >&2
+if ! grep -Fq 'class="post-toc" data-post-toc hidden' "$article_page" || \
+   ! grep -Fq 'aria-label="In this summary"' "$article_page" || \
+   ! grep -Fq 'src="/assets/js/post-toc.js"' "$article_page"; then
+  echo "FAIL: article does not provide the progressive heading navigation" >&2
   exit 1
 fi
 
-echo "PASS: article heading uses the reduced type scale"
+if ! grep -Fq '.post-toc-inner { position: sticky; top: 1.5rem;' "$site_dir/assets/css/style.css" || \
+   ! grep -Fq 'content.querySelectorAll("h2, h3")' "$site_dir/assets/js/post-toc.js" || \
+   ! grep -Fq 'new IntersectionObserver' "$site_dir/assets/js/post-toc.js"; then
+  echo "FAIL: article heading navigation is not sticky or scroll-aware" >&2
+  exit 1
+fi
+
+echo "PASS: article provides a sticky, scroll-aware heading navigation"
+
+if ! grep -Fq 'classList.add("no-toc")' "$site_dir/assets/js/post-toc.js" || \
+   ! grep -Fq '.post-body.no-toc { display: block; max-width: 64rem; }' "$site_dir/assets/css/style.css"; then
+  echo "FAIL: headingless articles do not restore the full-width reading column" >&2
+  exit 1
+fi
+
+echo "PASS: headingless articles keep the full-width reading column"
+
+if grep -Fq 'class="edition-number"' "$article_page" || \
+   awk '
+     /class="post-heading"/ { in_heading = 1 }
+     in_heading && /class="eyebrow"/ { found = 1; exit }
+     in_heading && /<\/div>/ { in_heading = 0 }
+     END { exit !found }
+   ' "$article_page"; then
+  echo "FAIL: article heading still renders redundant edition or language labels" >&2
+  exit 1
+fi
+
+if ! grep -Fq '.post-heading { display: block; }' "$site_dir/assets/css/style.css" || \
+   ! grep -Fq '.post-heading h1 { max-width: 70rem; margin: 0; font-size: clamp(2.75rem, 6vw, 5.25rem);' "$site_dir/assets/css/style.css"; then
+  echo "FAIL: article title does not reclaim the removed heading-label space" >&2
+  exit 1
+fi
+
+echo "PASS: article heading removes redundant labels and reclaims their space"
+
+if ! grep -Fq '.post-header { width: min(100%, 80rem); margin-inline: auto; }' "$site_dir/assets/css/style.css" || \
+   ! grep -Fq '.post-meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); max-width: 64rem; margin: 3rem 0 4rem;' "$site_dir/assets/css/style.css"; then
+  echo "FAIL: article header, metadata, and reading column do not share a left edge" >&2
+  exit 1
+fi
+
+echo "PASS: article header, metadata, and reading column share a left edge"
 
 if ! grep -Fq 'id="disqus_thread"' "$article_page" || \
    ! grep -Fq "https://lex-tldr.disqus.com/embed.js" "$article_page"; then
@@ -402,15 +462,22 @@ echo "PASS: article configures a stable Disqus thread"
 
 if ! awk '
   /class="post-content"/ { saw_content = 1 }
-  saw_content && /id="disqus_thread"/ { saw_comments = 1 }
-  saw_comments && /class="variants"/ { found = 1; exit }
+  saw_content && /id="disqus_thread"/ { found = 1; exit }
   END { exit !found }
 ' "$article_page"; then
-  echo "FAIL: Disqus comments are not placed below the article content and above version navigation" >&2
+  echo "FAIL: Disqus comments are not placed below the article content" >&2
   exit 1
 fi
 
 echo "PASS: article places Disqus comments below its content"
+
+if grep -Fq 'class="variants"' "$article_page" || \
+   grep -Fq 'Continue the idea' "$article_page"; then
+  echo "FAIL: article still renders the redundant bottom edition navigation" >&2
+  exit 1
+fi
+
+echo "PASS: article omits the redundant bottom edition navigation"
 
 if grep -Fq '<span>Specification</span>' "$article_page"; then
   echo "FAIL: an edition without specs renders an empty specification field" >&2
@@ -421,7 +488,7 @@ echo "PASS: article omits empty specification metadata"
 
 long_article_page="$site_dir/articles/spec-routing-example/en/long-guide/index.html"
 
-if ! grep -Fq 'EN · English · LONG / GUIDE' "$long_article_page"; then
+if ! grep -Fq '<span>Specification</span>long / guide' "$long_article_page"; then
   echo "FAIL: article does not render the ordered spec list" >&2
   exit 1
 fi

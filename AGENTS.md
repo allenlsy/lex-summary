@@ -24,6 +24,8 @@ The production repository is `allenlsy/lex-tldr`, and GitHub Pages serves it at 
 - `_includes/summary_index.html` renders the shared paginated episode list, and `_data/summary_pages.yml` defines its routes.
 - `_includes/seo.html` renders canonical, social, multilingual, and JSON-LD metadata; `jekyll-sitemap` generates the public sitemap.
 - `search.html`, `search.json`, and `assets/js/search.js` provide static bilingual full-text search; keep search GitHub Pages-compatible and client-side.
+- `assets/js/post-toc.js` progressively builds the article heading tree from rendered `h2` and `h3` elements; articles without headings must not show an empty navigation.
+- `assets/js/theme.js` controls the persistent light/dark theme toggle; the first visit follows the operating-system preference and the early inline setup prevents a color flash.
 - `assets/css/style.css` is the site stylesheet.
 - `CNAME` must remain `lextldr.com`, and `_config.yml` must keep `url: "https://lextldr.com"` with an empty `baseurl` while the custom domain is active.
 

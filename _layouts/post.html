@@ -13,11 +13,7 @@ layout: default
       {% endif %}
     </div>
     <div class="post-heading">
-      <p class="edition-number">Edition {{ page.variant_rank | prepend: '0' }}</p>
-      <div>
-        <p class="eyebrow">{% include language_label.html language=page.language %}{% if page.spec %} · {{ page.spec | join: " / " | upcase }}{% endif %}</p>
-        <h1>{{ page.title }}</h1>
-      </div>
+      <h1>{{ page.title }}</h1>
     </div>
     <div class="post-meta">
       <p><span>Published</span><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time></p>
@@ -45,9 +41,24 @@ layout: default
   </header>
 
   <div class="post-body">
+    <aside class="post-toc" data-post-toc hidden>
+      <div class="post-toc-inner">
+        <details data-post-toc-details>
+          <summary>
+            <span>{% if page.language == 'cn' %}本文目录{% else %}On this page{% endif %}</span>
+            <span class="post-toc-summary-note">{% if page.language == 'cn' %}章节{% else %}Sections{% endif %}</span>
+          </summary>
+          <nav aria-label="{% if page.language == 'cn' %}本文目录{% else %}In this summary{% endif %}">
+            <ol data-post-toc-list></ol>
+          </nav>
+        </details>
+      </div>
+    </aside>
     <div class="post-content">{{ content }}</div>
   </div>
 </article>
+
+<script src="{{ '/assets/js/post-toc.js' | relative_url }}" defer></script>
 
 {% if site.disqus.shortname %}
 <section class="comments wide-container" aria-labelledby="comments-title">
@@ -73,27 +84,3 @@ layout: default
   <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus</a>.</noscript>
 </section>
 {% endif %}
-
-<nav class="variants" aria-label="Related editions">
-  <div class="wide-container variants-inner">
-    <div>
-      <p class="eyebrow">Continue the idea</p>
-      <h2>Choose another edition.</h2>
-    </div>
-    <ol>
-      {% for variant in variants %}
-        <li>
-          {% if variant.url == page.url %}
-            <span class="variant-option is-current" aria-current="page">
-              <span>0{{ forloop.index }}</span><strong>{% include language_label.html language=variant.language %}</strong>{% if variant.spec %}<em>{{ variant.spec | join: " / " }}</em>{% endif %}
-            </span>
-          {% else %}
-            <a class="variant-option" href="{{ variant.url | relative_url }}">
-              <span>0{{ forloop.index }}</span><strong>{% include language_label.html language=variant.language %}</strong>{% if variant.spec %}<em>{{ variant.spec | join: " / " }}</em>{% endif %}
-            </a>
-          {% endif %}
-        </li>
-      {% endfor %}
-    </ol>
-  </div>
-</nav>
