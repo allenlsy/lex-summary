@@ -30,6 +30,8 @@ echo "PASS: Lex Clips videos are excluded from published posts"
 
 bundle exec jekyll build --quiet --drafts --destination "$site_dir"
 
+ruby tests/seo_test.rb "$site_dir"
+
 home_page="$site_dir/index.html"
 search_page="$site_dir/search/index.html"
 search_index="$site_dir/search.json"

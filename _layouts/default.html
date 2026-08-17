@@ -1,10 +1,11 @@
 <!doctype html>
-<html lang="{{ page.language | default: 'en' }}">
+{% assign document_language = page.language | default: site.lang | default: 'en' %}
+{% if document_language == 'cn' %}{% assign document_language = 'zh-CN' %}{% endif %}
+<html lang="{{ document_language }}">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | strip_newlines | truncate: 160 }}">
-    <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+    {% include seo.html %}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet">
@@ -18,7 +19,7 @@
           <span class="site-mark" aria-hidden="true">L</span>
           <span>{{ site.title }}</span>
         </a>
-        <p class="site-deck">Long conversations.<br>Clear takeaways.</p>
+        <p class="site-deck">Long-form podcasts.<br>Clear summaries.</p>
         <p class="issue-stamp"><span>Podcast summaries</span><span>Lex Fridman first</span></p>
       </div>
       <nav class="collection-nav" aria-label="Collections">

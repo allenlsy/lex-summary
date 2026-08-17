@@ -1,0 +1,87 @@
+{% assign seo_title = page.seo_title | default: page.title %}
+{% assign seo_description_source = page.description | default: page.excerpt | default: site.description %}
+{% assign seo_description = seo_description_source | strip_html | normalize_whitespace | truncate: 160 %}
+{% assign seo_canonical_url = page.url | absolute_url %}
+{% assign seo_language = page.language | default: site.lang | default: "en" %}
+{% if seo_language == "cn" %}{% assign seo_language = "zh-CN" %}{% endif %}
+{% assign seo_og_locale = "en_US" %}
+{% if seo_language == "zh-CN" %}{% assign seo_og_locale = "zh_CN" %}{% endif %}
+{% assign seo_type = "website" %}
+{% if page.layout == "post" %}{% assign seo_type = "article" %}{% endif %}
+
+<title>{% if seo_title %}{{ seo_title | escape }} · {% endif %}{{ site.title | escape }}</title>
+<meta name="description" content="{{ seo_description | escape }}">
+{% if page.robots %}<meta name="robots" content="{{ page.robots }}">{% endif %}
+<link rel="canonical" href="{{ seo_canonical_url }}">
+<link rel="sitemap" type="application/xml" href="{{ '/sitemap.xml' | absolute_url }}">
+
+<meta property="og:type" content="{{ seo_type }}">
+<meta property="og:title" content="{% if seo_title %}{{ seo_title | escape }}{% else %}{{ site.title | escape }}{% endif %}">
+<meta property="og:description" content="{{ seo_description | escape }}">
+<meta property="og:url" content="{{ seo_canonical_url }}">
+<meta property="og:site_name" content="{{ site.title | escape }}">
+<meta property="og:locale" content="{{ seo_og_locale }}">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{% if seo_title %}{{ seo_title | escape }}{% else %}{{ site.title | escape }}{% endif %}">
+<meta name="twitter:description" content="{{ seo_description | escape }}">
+
+{% if page.layout == "post" and page.article_id %}
+  {% assign seo_variants = site.posts | where: "article_id", page.article_id | sort: "variant_rank" %}
+  {% assign seo_default_variant = seo_variants | where: "language", "en" | first | default: seo_variants.first %}
+  {% for variant in seo_variants %}
+    {% assign alternate_language = variant.language %}
+    {% if alternate_language == "cn" %}{% assign alternate_language = "zh-CN" %}{% endif %}
+    <link rel="alternate" hreflang="{{ alternate_language }}" href="{{ variant.url | absolute_url }}">
+  {% endfor %}
+  <link rel="alternate" hreflang="x-default" href="{{ seo_default_variant.url | absolute_url }}">
+  <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+{% endif %}
+
+<script type="application/ld+json">
+{% if page.url == "/" %}
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": {{ '/' | absolute_url | append: '#website' | jsonify }},
+  "name": {{ site.title | jsonify }},
+  "alternateName": "Lex Fridman Podcast Summaries",
+  "url": {{ '/' | absolute_url | jsonify }},
+  "description": {{ site.description | jsonify }},
+  "inLanguage": ["en", "zh-CN"]
+}
+{% elsif page.layout == "post" %}
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ page.title | jsonify }},
+  "description": {{ seo_description | jsonify }},
+  "url": {{ seo_canonical_url | jsonify }},
+  "mainEntityOfPage": {{ seo_canonical_url | jsonify }},
+  "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
+  "inLanguage": {{ seo_language | jsonify }},
+  "isPartOf": {
+    "@type": "WebSite",
+    "@id": {{ '/' | absolute_url | append: '#website' | jsonify }},
+    "name": {{ site.title | jsonify }},
+    "url": {{ '/' | absolute_url | jsonify }}
+  },
+  "about": {
+    "@type": "PodcastEpisode",
+    "name": {{ page.article_title | jsonify }}{% if page.original_link %},
+    "url": {{ page.original_link | jsonify }}{% endif %}
+  }
+}
+{% else %}
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": {% if seo_title %}{{ seo_title | jsonify }}{% else %}{{ site.title | jsonify }}{% endif %},
+  "description": {{ seo_description | jsonify }},
+  "url": {{ seo_canonical_url | jsonify }},
+  "isPartOf": {
+    "@type": "WebSite",
+    "@id": {{ '/' | absolute_url | append: '#website' | jsonify }}
+  }
+}
+{% endif %}
+</script>
