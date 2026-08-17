@@ -83,7 +83,8 @@ fi
 
 if ! grep -Fq 'html[data-theme="dark"] {' "$site_dir/assets/css/style.css" || \
    ! grep -Fq 'color-scheme: dark;' "$site_dir/assets/css/style.css" || \
-   ! grep -Fq 'prefers-color-scheme: dark' "$site_dir/assets/js/theme.js"; then
+   ! grep -Fq 'prefers-color-scheme: dark' "$site_dir/assets/js/theme.js" || \
+   ! grep -Fq 'return "system"' "$site_dir/assets/js/theme.js"; then
   echo "FAIL: site does not provide a system-aware dark theme" >&2
   exit 1
 fi

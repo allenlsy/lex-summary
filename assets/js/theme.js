@@ -13,31 +13,53 @@
     try { return localStorage.getItem("theme"); } catch (error) { return null; }
   }
 
-  function updateControl(theme) {
-    var isDark = theme === "dark";
-    var action = isDark ? "light" : "dark";
-    toggle.setAttribute("aria-label", "Use " + action + " theme");
-    toggle.setAttribute("title", "Use " + action + " theme");
-    toggle.setAttribute("aria-pressed", isDark ? "true" : "false");
-    label.textContent = isDark ? "Light" : "Dark";
-    icon.textContent = isDark ? "☀" : "◐";
+  function systemTheme() {
+    return systemPreference.matches ? "dark" : "light";
   }
 
-  function applyTheme(theme, persist) {
-    root.setAttribute("data-theme", theme);
-    updateControl(theme);
+  // The user's choice is "light", "dark", or "system"; missing storage means "system"
+  function currentChoice() {
+    var saved = savedTheme();
+    return saved === "light" || saved === "dark" || saved === "system" ? saved : "system";
+  }
+
+  function nextChoice(choice) {
+    if (choice === "light") return "dark";
+    if (choice === "dark") return "system";
+    return "light";
+  }
+
+  function updateControl(choice) {
+    var next = nextChoice(choice);
+    var nextLabel = next === "system" ? "Auto" : next.charAt(0).toUpperCase() + next.slice(1);
+    var iconChar = next === "dark" ? "◐" : next === "system" ? "◑" : "☀";
+    var pressed = choice === "dark" || (choice === "system" && systemPreference.matches);
+    toggle.setAttribute("aria-label", "Use " + next + " theme");
+    toggle.setAttribute("title", "Use " + next + " theme");
+    toggle.setAttribute("aria-pressed", pressed ? "true" : "false");
+    label.textContent = nextLabel;
+    icon.textContent = iconChar;
+  }
+
+  function applyTheme(choice, persist) {
+    var effective = choice === "system" ? systemTheme() : choice;
+    root.setAttribute("data-theme", effective);
+    updateControl(choice);
     if (persist) {
-      try { localStorage.setItem("theme", theme); } catch (error) {}
+      try { localStorage.setItem("theme", choice); } catch (error) {}
     }
   }
 
-  updateControl(root.getAttribute("data-theme") || "light");
+  applyTheme(currentChoice(), false);
 
   toggle.addEventListener("click", function () {
-    applyTheme(root.getAttribute("data-theme") === "dark" ? "light" : "dark", true);
+    applyTheme(nextChoice(currentChoice()), true);
   });
 
-  systemPreference.addEventListener("change", function (event) {
-    if (!savedTheme()) applyTheme(event.matches ? "dark" : "light", false);
+  systemPreference.addEventListener("change", function () {
+    var saved = savedTheme();
+    if (saved !== "light" && saved !== "dark") {
+      applyTheme("system", false);
+    }
   });
 }());
