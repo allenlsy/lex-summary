@@ -78,6 +78,18 @@ fi
 
 echo "PASS: homepage groups the language chooser below the article heading"
 
+if ! grep -Fq '<h2><a href="/lex-tldr/articles/456-ukraine-war-peace-putin-trump-nato-and-freedom/en/">456 - Ukraine, War, Peace, Putin, Trump, NATO, and Freedom</a></h2>' "$home_page"; then
+  echo "FAIL: homepage post title does not link directly to its English version" >&2
+  exit 1
+fi
+
+if ! grep -Fq 'assign title_variant = english_variant | default: representative' _includes/summary_index.html; then
+  echo "FAIL: homepage post title does not fall back to the first variation" >&2
+  exit 1
+fi
+
+echo "PASS: homepage post titles link to English with a first-variation fallback"
+
 for page_spec in \
   "index.html:10" \
   "page/2/index.html:10" \
