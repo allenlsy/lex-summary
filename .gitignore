@@ -13,3 +13,6 @@ _site/
 
 # Pending summaries to convert
 Pending/
+
+# macOS
+.DS_Store
