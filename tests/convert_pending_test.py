@@ -127,6 +127,12 @@ class ConvertTests(unittest.TestCase):
         self.assertIn("language: en", post_text)
         self.assertIn("/articles/416-yann-lecun-limits-of-llms/en/", post_text)
 
+    def test_destination_resolves_within_posts_dir(self) -> None:
+        source = self.tmp / "494-jensen.md"
+        source.write_text("# 494 - Jensen Huang\n\nBody.", encoding="utf-8")
+        destination, _ = cp.convert_file(source, "lex-fridman", apply=False)
+        self.assertEqual((cp.REPO_DIR / destination).parent, cp.POSTS_DIR)
+
     def test_skips_existing_destination(self) -> None:
         source = self.tmp / "494-jensen.md"
         source.write_text("# 494 - Jensen Huang\n\nBody.", encoding="utf-8")

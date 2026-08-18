@@ -293,7 +293,7 @@ def main() -> int:
         destination, post_text = result
 
         if args.apply:
-            POSTS_DIR.joinpath(destination).write_text(post_text, encoding="utf-8")
+            (REPO_DIR / destination).write_text(post_text, encoding="utf-8")
             processed_dir = pending / PROCESSED_DIR_NAME
             processed_dir.mkdir(exist_ok=True)
             path.rename(processed_dir / path.name)
