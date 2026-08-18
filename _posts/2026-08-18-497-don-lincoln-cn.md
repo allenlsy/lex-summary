@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "497 - lexfridman.com-don-lincoln-transcript-zh-cn-summary"
+title: "497 - 物理学界最大的谜团：反物质、暗能量与万有理论 —— 唐·林肯（Don Lincoln）"
 date: 2026-08-18 09:00:00 +0000
 article_id: 497-don-lincoln
 article_title: "497 - Biggest Mysteries in Physics: Antimatter, Dark Energy & ToE - Don Lincoln"

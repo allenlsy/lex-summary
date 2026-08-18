@@ -10,8 +10,6 @@ variant_rank: 1
 permalink: "/articles/493-jeff-kaplan/en/"
 ---
 
-**Introduction and Episode Highlight**
-
 The conversation centers on Jeff Kaplan, a foundational figure in modern video game development, renowned for his leadership on *World of Warcraft* and *Overwatch*. Kaplan’s career trajectory spans from a deeply immersed player in early massively multiplayer online role-playing games to a visionary game director who helped redefine digital entertainment. He categorizes gaming enjoyment into three distinct layers: fun for the player, fun for the designer, and fun for the computer. His professional journey has been deeply intertwined with PvP-focused environments, notably citing *Rust* as the most extreme manifestation of player-versus-player dynamics. Kaplan’s narrative is defined by a profound emotional arc: a complete immersion in *EverQuest* that ultimately funded his career and family, followed by years of relentless community feedback, forum criticism, and eventual emotional exhaustion. His departure from Blizzard Entertainment was marked by a profound sense of loss, describing the separation as deeply breaking him, despite his lifelong belief that Blizzard was his only viable professional home.
 
 **Early Gaming Foundations: Coin-Op Culture to Digital Immersion**

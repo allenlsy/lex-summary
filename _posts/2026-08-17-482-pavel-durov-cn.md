@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "482 - 纪实概述：帕维尔·杜罗夫、Telegram、自由、审查、金钱、权力与人性"
+title: "482 - 帕维尔·杜罗夫、Telegram、自由、审查、金钱、权力与人性"
 date: 2026-08-17 09:00:00 +0000
 article_id: 482-pavel-durov
 article_title: "482 - Pavel Durov: Telegram, Freedom, Censorship, Money, Power & Human Nature"

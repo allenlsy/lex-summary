@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "493 - 改写版纪录片叙事稿"
+title: "493 - Jeff Kaplan - 《魔兽世界》、《守望先锋》、暴雪与游戏行业的未来"
 date: 2026-08-17 09:00:00 +0000
 article_id: 493-jeff-kaplan
 article_title: "493 - Jeff Kaplan: World of Warcraft, Overwatch, Blizzard, and Future of Gaming"
@@ -9,8 +9,6 @@ language: cn
 variant_rank: 2
 permalink: "/articles/493-jeff-kaplan/cn/"
 ---
-
-**引言与剧集亮点**
 
 对话围绕杰夫·卡普兰（Jeff Kaplan）展开，他是现代电子游戏开发的奠基人之一，因领导《魔兽世界》与《守望先锋》而闻名。卡普兰的职业轨迹从早期大型多人在线角色扮演游戏（MMORPG）的深度玩家，转变为重新定义数字娱乐的极具远见的游戏总监。他将游戏乐趣分为三个截然不同的层次：玩家之乐、设计者之乐、以及系统/计算机之乐。他的职业经历始终与以玩家对战（PvP）为核心的环境紧密相连，并特别指出《Rust》（腐蚀）是玩家对抗机制最极致的体现。卡普兰的人生故事伴随着深刻的情感起伏：他完全沉浸于《EverQuest》（无尽的任务）中，这款游戏最终支撑了他的事业与家庭；此后则是数年不断涌入的玩家反馈、论坛批评，直至最终的情感耗尽。他从暴雪娱乐（Blizzard Entertainment）离职的经历伴随着深切的失落感。他形容这次分离让他深受打击，尽管他一生都坚信暴雪是他唯一能安身立命的职业归宿。
 

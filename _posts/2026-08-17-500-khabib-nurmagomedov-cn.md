@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "500 - 访谈内容释义：哈比布·努尔马戈梅多夫论达吉斯坦、格斗运动、文化与竞技"
+title: "500 - 哈比布·努尔马戈梅多夫论达吉斯坦、格斗运动、文化与竞技"
 date: 2026-08-17 09:00:00 +0000
 article_id: 500-khabib-nurmagomedov
 article_title: "500 - Khabib Nurmagomedov on Daghestan, Combat Sports, Culture, and Competition"
