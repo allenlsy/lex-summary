@@ -3,7 +3,7 @@ layout: post
 title: "访谈内容释义：哈比布·努尔马戈梅多夫论达吉斯坦、格斗运动、文化与竞技"
 date: 2026-08-17 09:00:00 +0000
 article_id: khabib-nurmagomedov
-article_title: "访谈内容释义：哈比布·努尔马戈梅多夫论达吉斯坦、格斗运动、文化与竞技"
+article_title: "Khabib Nurmagomedov on Daghestan, Combat Sports, Culture, and Competition"
 collection_id: lex-fridman
 language: cn
 variant_rank: 2

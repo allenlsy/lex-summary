@@ -674,11 +674,19 @@ def convert_file(path: Path, collection_id: str, *, apply: bool) -> tuple[str, s
         article_id = f"{title_number}-{slugify(body)}"
     elif table_number:
         article_id = f"{table_number}-{article_body_from_filename(path)}"
-        title = f"{table_number} - {title}"
+        if language == "en":
+            title = video.title
+        else:
+            title = f"{table_number} - {title}"
     else:
         article_id = slugify(article_body_from_filename(path))
 
-    article_title = title
+    # The article title is the shared, language-neutral English title from the
+    # verified table; the display title is localized (English uses the table
+    # title, Chinese keeps its translated heading).
+    article_title = video.title
+    if language == "en":
+        title = video.title
     permalink = f"/articles/{article_id}/{language}/"
 
     # Strip the first top-level heading from the body, if it was used as the title

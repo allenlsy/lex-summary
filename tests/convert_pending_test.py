@@ -80,11 +80,24 @@ class ConvertTests(unittest.TestCase):
         destination, post_text = result
         self.assertIn("416-yann-lecun-大语言模型的局限", destination)
         self.assertIn('title: "416 - Yann LeCun：大语言模型的局限"', post_text)
+        self.assertIn(
+            'article_title: "416 - Yann LeCun: Meta AI, Open Source, Limits of LLMs, AGI & the Future of AI"',
+            post_text,
+        )
         self.assertIn("language: cn", post_text)
         self.assertIn("collection_id: lex-fridman", post_text)
         self.assertIn("variant_rank: 1", post_text)
         self.assertIn("permalink: \"/articles/416-yann-lecun-大语言模型的局限/cn/\"", post_text)
         self.assertNotIn("# 416", post_text.split("---")[2])
+
+    def test_english_title_uses_table_title(self) -> None:
+        source = self.tmp / "416-yann-en.md"
+        source.write_text("# 416 - Yann LeCun: Limits of LLMs\n\nBody.", encoding="utf-8")
+        _, post_text = cp.convert_file(source, "lex-fridman", apply=False)
+        self.assertIn(
+            'title: "416 - Yann LeCun: Meta AI, Open Source, Limits of LLMs, AGI & the Future of AI"',
+            post_text,
+        )
 
     def test_numbered_post_gets_original_link(self) -> None:
         source = self.tmp / "416-yann.md"
