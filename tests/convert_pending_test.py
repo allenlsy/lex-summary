@@ -29,19 +29,53 @@ class LanguageTests(unittest.TestCase):
         content = "这是中文摘要，关于人工智能的对话。This is the summary."
         self.assertEqual(cp.detect_language(Path("416-xxx.md"), content), "cn")
 
+    def test_lang_mark_in_middle(self) -> None:
+        self.assertEqual(
+            cp.detect_language(Path("khabib-transcript-zh-cn-summary.md"), "any text"), "cn"
+        )
+        self.assertEqual(
+            cp.detect_language(Path("khabib-transcript-en-summary.md"), "any text"), "en"
+        )
+
     def test_english_default(self) -> None:
         self.assertEqual(cp.detect_language(Path("416-xxx.md"), "Plain english summary."), "en")
+
+
+class TitleCaseTests(unittest.TestCase):
+    def test_transcript_prefix_stripped(self) -> None:
+        content = "# TRANSCRIPT PARAPHRASE: KHABIB NURMAGOMEDOV ON DAGHESTAN, COMBAT SPORTS\n\nbody"
+        self.assertEqual(
+            cp.extract_title(Path("x.md"), content),
+            "Khabib Nurmagomedov on Daghestan, Combat Sports",
+        )
+
+    def test_keeps_episode_number(self) -> None:
+        content = "# 416 - YANN LECUN: LIMITS OF LLMS\n\nbody"
+        self.assertEqual(cp.extract_title(Path("x.md"), content), "416 - Yann Lecun: Limits of LLMS")
+
+    def test_mixed_case_title_preserved(self) -> None:
+        content = "# 416 - Yann LeCun: Limits of LLMs\n\nbody"
+        self.assertEqual(cp.extract_title(Path("x.md"), content), "416 - Yann LeCun: Limits of LLMs")
 
 
 class ArticleIdTests(unittest.TestCase):
     def test_numbered_title(self) -> None:
         self.assertEqual(
-            cp.derive_article_id("416 - Yann LeCun: AGI & the Future"),
+            cp.derive_article_id("416 - Yann LeCun: AGI & the Future", Path("x.md")),
             "416-yann-lecun-agi-the-future",
         )
 
-    def test_unnumbered_title(self) -> None:
-        self.assertEqual(cp.derive_article_id("A Day in My Life"), "a-day-in-my-life")
+    def test_unnumbered_title_uses_filename(self) -> None:
+        path = Path("lexfridman.com-khabib-nurmagomedov-transcript-en-summary.md")
+        self.assertEqual(cp.derive_article_id("Khabib Nurmagomedov on Dagestan", path), "khabib-nurmagomedov")
+
+    def test_variants_share_article_id(self) -> None:
+        en = Path("lexfridman.com-khabib-transcript-en-summary.md")
+        zh = Path("lexfridman.com-khabib-transcript-zh-cn-summary.md")
+        self.assertEqual(
+            cp.derive_article_id("Khabib on Dagestan", en),
+            cp.derive_article_id("哈比布论达吉斯坦", zh),
+        )
 
 
 class TitleTests(unittest.TestCase):

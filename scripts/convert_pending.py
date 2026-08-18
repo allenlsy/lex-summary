@@ -32,9 +32,33 @@ PROCESSED_DIR_NAME = "processed"
 
 CJK_RE = re.compile(r"[\u3400-\u4DBF\u4E00-\u9FFF]")
 EPISODE_RE = re.compile(r"^\s*(\d+)")
-LANG_SUFFIX_RE = re.compile(
-    r"[-_. ]?(cn|zh|zh-cn|中文|chinese|简体|繁體|繁體中文)\s*$", re.IGNORECASE
-)
+LANG_MARK_RE = re.compile(r"[-_.](zh-cn|zh|cn|en|中文)([-_.]|$)", re.IGNORECASE)
+
+LOWERCASE_WORDS = {
+    "a", "an", "and", "as", "at", "by", "for", "from", "in", "of", "on",
+    "or", "the", "to", "with", "vs",
+}
+
+ACRONYMS = {
+    "AGI", "AI", "API", "CEO", "CFO", "CPU", "EU", "GPU", "LLM", "LLMS",
+    "ML", "MIT", "NASA", "NLP", "TV", "UK", "USA",
+}
+
+
+def title_case(text: str) -> str:
+    """Headline capitalization for ALL-CAPS titles: major words title-cased,
+    short connector words lowered, and known acronyms preserved."""
+    words = text.split()
+    result = []
+    for index, word in enumerate(words):
+        lowered = word.lower()
+        if lowered in LOWERCASE_WORDS and index != 0 and index != len(words) - 1:
+            result.append(lowered)
+        elif word.upper() in ACRONYMS:
+            result.append(word.upper())
+        else:
+            result.append(word[0].upper() + word[1:].lower() if word else word)
+    return " ".join(result)
 
 
 def known_collection_ids() -> set[str]:
@@ -68,9 +92,12 @@ def slugify(text: str) -> str:
 
 
 def detect_language(path: Path, content: str) -> str:
-    """Chinese from the file name suffix or CJK ratio, otherwise English."""
-    if LANG_SUFFIX_RE.search(path.stem):
+    """Chinese from the file name language mark or CJK ratio, otherwise English."""
+    match = LANG_MARK_RE.search(path.stem)
+    if match and match.group(1).lower() in {"zh", "zh-cn", "cn", "中文"}:
         return "cn"
+    if match and match.group(1).lower() == "en":
+        return "en"
     chars = [c for c in content if not c.isspace()]
     if not chars:
         return "en"
@@ -82,7 +109,12 @@ def extract_title(path: Path, content: str) -> str:
     for line in content.splitlines():
         stripped = line.strip()
         if stripped.startswith("# ") and len(stripped) > 2:
-            return stripped[2:].strip()
+            raw = stripped[2:].strip()
+            cleaned = re.sub(r"^(transcript paraphrase|transcript|summary|paraphrase)\s*:\s*", "", raw, flags=re.IGNORECASE)
+            if cleaned:
+                if any(char.islower() for char in cleaned):
+                    return cleaned
+                return title_case(cleaned)
     return path.stem
 
 
@@ -91,13 +123,22 @@ def episode_number(title: str) -> str | None:
     return match.group(1) if match else None
 
 
-def derive_article_id(title: str) -> str:
+def derive_article_id(title: str, path: Path) -> str:
+    """Numbered titles use the number plus slug; otherwise derive the id from the
+    file name so language variants of the same episode share one article_id."""
     number = episode_number(title)
-    body = title
     if number:
         body = title[len(number):]
-    slug = slugify(body)
-    return f"{number}-{slug}" if number else slug
+        return f"{number}-{slugify(body)}"
+    return slugify(article_body_from_filename(path))
+
+
+def article_body_from_filename(path: Path) -> str:
+    """Strip language marks and common boilerplate words from the file name."""
+    stem = LANG_MARK_RE.sub(" ", path.stem)
+    for word in ("lexfridman.com", "lexfridman", "transcript", "summary"):
+        stem = re.sub(r"[-_.]?" + re.escape(word) + r"[-_.]?", " ", stem, flags=re.IGNORECASE)
+    return " ".join(stem.split())
 
 
 def next_variant_rank(article_id: str) -> int:
@@ -153,7 +194,7 @@ def convert_file(path: Path, collection_id: str, *, apply: bool) -> tuple[str, s
     content = path.read_text(encoding="utf-8")
     language = detect_language(path, content)
     title = extract_title(path, content)
-    article_id = derive_article_id(title)
+    article_id = derive_article_id(title, path)
     article_title = title
     permalink = f"/articles/{article_id}/{language}/"
 
