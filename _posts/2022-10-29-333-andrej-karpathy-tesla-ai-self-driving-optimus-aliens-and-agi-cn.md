@@ -11,7 +11,6 @@ original_link: "https://www.youtube.com/watch?v=cdiD-9MMpb0"
 permalink: /articles/333-andrej-karpathy-tesla-ai-self-driving-optimus-aliens-and-agi/cn/
 ---
 
-# 纪录片专题：智能的架构、自主性的未来与AGI的追寻——关于安德烈·卡尔帕齐（Andrej Karpathy）愿景的系统性报告
 
 ## 引言：神经网络作为数学抽象与涌现系统
 

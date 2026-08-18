@@ -74,9 +74,16 @@ permalink: /articles/example-episode/en/short-audio/
 
 Most imported summaries have two variants, `en` and `cn`. Episode 440 intentionally has four variants because two distinct source summary sets were imported as ordered `short` and `long` specs. Templates must support any number of variants and render cleanly when `spec` is absent.
 
-## Local summary imports
+## Local summary conversion
 
-`scripts/import_lex_summaries.py` imports verified summary files from the local Lex Fridman iCloud folder. It must remain dry-run by default, must never modify source files, and must refuse to overwrite a different destination file. Publish only videos from the main Lex Fridman YouTube channel; the importer must continue to exclude Lex Clips sources. Keep its verified video metadata table and `tests/import_lex_summaries_test.py` in sync when adding new source summaries.
+`scripts/convert_pending.py` converts pending summary files into Jekyll posts. Place summaries in `pending/<collection_id>/` (e.g. `pending/lex-fridman/`), preview with a dry run, then apply:
+
+```sh
+python3 scripts/convert_pending.py
+python3 scripts/convert_pending.py --apply
+```
+
+The script derives the episode id, title, and language from the file name and content, and rejects episodes that are not in its verified video metadata table (`VIDEOS`), so new source summaries must be added there (and in `tests/convert_pending_test.py`) first. It must remain dry-run by default, must never overwrite a different destination file, and moves converted sources to `pending/processed/`.
 
 ## Podcaster collections
 
@@ -130,21 +137,12 @@ Create a language-only podcast summary:
 just new-post "EPISODE TITLE" en
 ```
 
-Preview and apply the local Lex Fridman summary import:
+Preview and convert the pending Lex Fridman summaries:
 
 ```sh
-python3 scripts/import_lex_summaries.py
-python3 scripts/import_lex_summaries.py --apply
+python3 scripts/convert_pending.py
+python3 scripts/convert_pending.py --apply
 ```
-
-Convert pending summaries (in `pending/<collection>/`) into posts — dry-run first, then apply:
-
-```sh
-python3 scripts/import_lex_summaries.py --convert
-python3 scripts/import_lex_summaries.py --convert --apply
-```
-
-The single `import_lex_summaries.py` script handles both workflows and owns the verified video metadata table; conversion rejects episodes that are not in that table, so new source summaries must be added there (and in `tests/import_lex_summaries_test.py`) first.
 
 The recipe derives the episode ID and URL slug from the title, assigns the next variant rank, and rejects duplicate episode-language variants. Authors must replace the generated placeholder body before publication.
 

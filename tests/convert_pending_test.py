@@ -7,7 +7,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-import import_lex_summaries as cp
+import convert_pending as cp
 
 
 class SlugifyTests(unittest.TestCase):
