@@ -10,3 +10,6 @@ __pycache__/
 .bundle/
 vendor/bundle/
 _site/
+
+# Pending summaries to convert
+Pending/
