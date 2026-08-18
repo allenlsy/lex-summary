@@ -140,6 +140,18 @@ class ConvertTests(unittest.TestCase):
         destination.write_text("existing", encoding="utf-8")
         self.assertIsNone(cp.convert_file(source, "lex-fridman", apply=False))
 
+    def test_numbered_post_gets_original_link(self) -> None:
+        source = self.tmp / "416-yann.md"
+        source.write_text("# 416 - Yann LeCun: Limits of LLMs\n\nBody.", encoding="utf-8")
+        _, post_text = cp.convert_file(source, "lex-fridman", apply=False)
+        self.assertIn('original_link: "https://www.youtube.com/watch?v=5t1vTLU7s40"', post_text)
+
+    def test_unnumbered_post_omits_original_link(self) -> None:
+        source = self.tmp / "khabib-summary.md"
+        source.write_text("# TRANSCRIPT PARAPHRASE: KHABIB NURMAGOMEDOV\n\nBody.", encoding="utf-8")
+        _, post_text = cp.convert_file(source, "lex-fridman", apply=False)
+        self.assertNotIn("original_link:", post_text)
+
     def test_variant_rank_increments(self) -> None:
         (cp.POSTS_DIR / "2026-01-01-416-x-en.md").write_text(
             "---\nlayout: post\narticle_id: 416-x\nvariant_rank: 2\n---\n",

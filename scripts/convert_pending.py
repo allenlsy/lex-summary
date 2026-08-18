@@ -25,10 +25,12 @@ from datetime import datetime
 from pathlib import Path
 
 REPO_DIR = Path(__file__).resolve().parents[1]
-DEFAULT_PENDING_DIR = REPO_DIR / "Pending"
+DEFAULT_PENDING_DIR = REPO_DIR / "pending"
 POSTS_DIR = REPO_DIR / "_posts"
 COLLECTIONS_FILE = REPO_DIR / "_data" / "collections.yml"
 PROCESSED_DIR_NAME = "processed"
+
+from import_lex_summaries import VIDEOS, YOUTUBE_BASE  # noqa: E402
 
 CJK_RE = re.compile(r"[\u3400-\u4DBF\u4E00-\u9FFF]")
 EPISODE_RE = re.compile(r"^\s*(\d+)")
@@ -167,6 +169,7 @@ def build_front_matter(
     language: str,
     variant_rank: int,
     permalink: str,
+    original_link: str | None = None,
 ) -> str:
     def quote(value: str) -> str:
         return f'"{value}"'
@@ -182,6 +185,7 @@ def build_front_matter(
             f"collection_id: {collection_id}",
             f"language: {language}",
             f"variant_rank: {variant_rank}",
+            *([f"original_link: {quote(original_link)}"] if original_link else []),
             f"permalink: {quote(permalink)}",
             "---",
             "",
@@ -211,6 +215,10 @@ def convert_file(path: Path, collection_id: str, *, apply: bool) -> tuple[str, s
     variant_rank = next_variant_rank(article_id)
     destination = POSTS_DIR / f"{date}-{article_id}-{language}.md"
 
+    number = episode_number(title)
+    video = VIDEOS.get(f"#{number}") if number else None
+    original_link = f"{YOUTUBE_BASE}{video.youtube_id}" if video else None
+
     if destination.exists():
         return None
 
@@ -224,6 +232,7 @@ def convert_file(path: Path, collection_id: str, *, apply: bool) -> tuple[str, s
             language=language,
             variant_rank=variant_rank,
             permalink=permalink,
+            original_link=original_link,
         )
         + "\n"
         + body
