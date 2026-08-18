@@ -83,7 +83,7 @@ python3 scripts/convert_pending.py
 python3 scripts/convert_pending.py --apply
 ```
 
-The script derives the episode id, title, and language from the file name and content, and rejects episodes that are not in its verified video metadata table (`VIDEOS`), so new source summaries must be added there (and in `tests/convert_pending_test.py`) first. It must remain dry-run by default, must never overwrite a different destination file, and moves converted sources to `pending/processed/`.
+The script derives the episode id, title, and language from the file name and content. The episode number comes from the heading, then the verified video metadata table (`VIDEOS`), then a live lookup against `https://lexfridman.com/podcast` (title match plus the YouTube page title), and finally an interactive prompt when nothing else resolves it; the number drives `title`, `article_id`, `article_title`, and `permalink`. It must remain dry-run by default, must never overwrite a different destination file, and moves converted sources to `pending/processed/`.
 
 ## Podcaster collections
 

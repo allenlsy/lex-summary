@@ -1,13 +1,13 @@
 ---
 layout: post
-title: "Khabib Nurmagomedov on Daghestan, Combat Sports, Culture, and Competition"
+title: "500 - Khabib Nurmagomedov on Daghestan, Combat Sports, Culture, and Competition"
 date: 2026-08-17 09:00:00 +0000
-article_id: khabib-nurmagomedov
-article_title: "Khabib Nurmagomedov on Daghestan, Combat Sports, Culture, and Competition"
+article_id: 500-khabib-nurmagomedov
+article_title: "500 - Khabib Nurmagomedov on Daghestan, Combat Sports, Culture, and Competition"
 collection_id: lex-fridman
 language: en
 variant_rank: 1
-permalink: "/articles/khabib-nurmagomedov/en/"
+permalink: "/articles/500-khabib-nurmagomedov/en/"
 ---
 
 ## 1. Introduction and Regional Context

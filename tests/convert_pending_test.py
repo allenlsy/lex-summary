@@ -114,11 +114,56 @@ class ConvertTests(unittest.TestCase):
         self.assertIn("article_id: a-day-in-my-life", post_text)
         self.assertIn('original_link: "https://www.youtube.com/watch?v=0m3hGZvD-0s"', post_text)
 
-    def test_unknown_episode_rejected(self) -> None:
-        source = self.tmp / "khabib-summary.md"
-        source.write_text("# TRANSCRIPT PARAPHRASE: KHABIB NURMAGOMEDOV\n\nBody.", encoding="utf-8")
-        with self.assertRaises(cp.ConversionError):
-            cp.convert_file(source, "lex-fridman", apply=False)
+    def test_online_episode_resolution(self) -> None:
+        from unittest import mock
+
+        podcast_html = (
+            '<div class="episode-item"><div class="episode-title">'
+            '<a href="#">Khabib Nurmagomedov: Dagestan, MMA, UFC, Islam, Conor, Fedor & Football</a>'
+            '</div><div class="vid-materials">'
+            '<a href="https://www.youtube.com/watch?v=l6USUAIKJls">Video</a>'
+            '</div></div>'
+        )
+        youtube_html = (
+            "<title>Khabib Nurmagomedov: Dagestan, MMA, UFC, Islam, Conor, Fedor &amp; Football "
+            "| Lex Fridman Podcast #500 - YouTube</title>"
+        )
+        source = self.tmp / "khabib-nurmagomedov-summary.md"
+        source.write_text("# TRANSCRIPT PARAPHRASE: KHABIB NURMAGOMEDOV ON DAGHESTAN\n\nBody.", encoding="utf-8")
+        with mock.patch.object(cp, "fetch_url", return_value=youtube_html):
+            result = cp.convert_file(source, "lex-fridman", apply=False, page_html=podcast_html)
+        self.assertIsNotNone(result)
+        _, post_text = result
+        self.assertIn("article_id: 500-khabib-nurmagomedov", post_text)
+        self.assertIn(
+            'article_title: "500 - Khabib Nurmagomedov: Dagestan, MMA, UFC, Islam, Conor, Fedor & Football"',
+            post_text,
+        )
+        self.assertIn(
+            'title: "500 - Khabib Nurmagomedov: Dagestan, MMA, UFC, Islam, Conor, Fedor & Football"',
+            post_text,
+        )
+        self.assertIn("permalink: \"/articles/500-khabib-nurmagomedov/en/\"", post_text)
+
+    def test_prompt_for_episode_number(self) -> None:
+        from unittest import mock
+
+        source = self.tmp / "mystery-episode.md"
+        source.write_text("# A Mystery Conversation\n\nBody.", encoding="utf-8")
+        with mock.patch("builtins.input", return_value="501"):
+            result = cp.convert_file(source, "lex-fridman", apply=False, page_html="")
+        self.assertIsNotNone(result)
+        _, post_text = result
+        self.assertIn("article_id: 501-mystery-episode", post_text)
+
+    def test_eof_without_number_raises(self) -> None:
+        from unittest import mock
+
+        source = self.tmp / "mystery-episode.md"
+        source.write_text("# A Mystery Conversation\n\nBody.", encoding="utf-8")
+        with mock.patch("builtins.input", side_effect=EOFError):
+            with self.assertRaises(cp.ConversionError):
+                cp.convert_file(source, "lex-fridman", apply=False, page_html="")
 
     def test_destination_resolves_within_posts_dir(self) -> None:
         source = self.tmp / "494-jensen.md"
@@ -129,8 +174,9 @@ class ConvertTests(unittest.TestCase):
     def test_skips_existing_destination(self) -> None:
         source = self.tmp / "494-jensen.md"
         source.write_text("# 494 - Jensen Huang\n\nBody.", encoding="utf-8")
-        destination = cp.POSTS_DIR / "2026-08-17-494-jensen-huang-en.md"
-        destination.write_text("existing", encoding="utf-8")
+        destination, _ = cp.convert_file(source, "lex-fridman", apply=False)
+        self.assertIsNotNone(destination)
+        (cp.REPO_DIR / destination).write_text("existing", encoding="utf-8")
         self.assertIsNone(cp.convert_file(source, "lex-fridman", apply=False))
 
     def test_variant_rank_increments(self) -> None:

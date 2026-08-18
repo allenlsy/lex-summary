@@ -84,6 +84,8 @@ def ascii_slugify(title: str) -> str:
 CJK_RE = re.compile(r"[\u3400-\u4DBF\u4E00-\u9FFF]")
 EPISODE_RE = re.compile(r"^\s*(\d+)")
 LANG_MARK_RE = re.compile(r"[-_.](zh-cn|zh|cn|en|中文)([-_.]|$)", re.IGNORECASE)
+PODCAST_URL = "https://lexfridman.com/podcast"
+YOUTUBE_WATCH_URL = "https://www.youtube.com/watch?v={video_id}"
 
 LOWERCASE_WORDS = {
     "a", "an", "and", "as", "at", "by", "for", "from", "in", "of", "on",
@@ -186,6 +188,100 @@ def article_body_from_filename(path: Path) -> str:
     return " ".join(stem.split())
 
 
+def significant_words(text: str) -> set[str]:
+    """Lowercased content words of at least three letters, minus connectors."""
+    words = set()
+    for token in re.findall(r"[A-Za-z]{3,}", text.lower()):
+        if token not in LOWERCASE_WORDS:
+            words.add(token)
+    return words
+
+
+def parse_podcast_episodes(html: str) -> list[tuple[str, str]]:
+    """Extract (title, youtube_id) pairs from the lexfridman.com/podcast page."""
+    pairs = []
+    for part in html.split('<div class="episode-item">')[1:]:
+        title_match = re.search(r'<div class="episode-title">(.*?)</div>', part, re.S)
+        youtube_match = re.search(r"youtube\.com/watch\?v=([\w-]+)", part)
+        if title_match and youtube_match:
+            title = re.sub(r"<[^>]+>", "", title_match.group(1)).strip()
+            if title:
+                pairs.append((title, youtube_match.group(1)))
+    return pairs
+
+
+def match_episode(title: str, episodes: list[tuple[str, str]], extra_title: str = "") -> tuple[str, str] | None:
+    """Best title match by shared significant words; requires at least two."""
+    title_words = significant_words(title) | significant_words(extra_title)
+    if not title_words:
+        return None
+    best = None
+    best_score = 1
+    for episode_title, video_id in episodes:
+        score = len(title_words & significant_words(episode_title))
+        if score > best_score:
+            best = (episode_title, video_id)
+            best_score = score
+    return best
+
+
+def parse_youtube_number(page: str) -> tuple[str, str] | None:
+    """Return (episode_number, official_title) from a YouTube watch page title."""
+    match = re.search(
+        r"<title>(.*?)\| Lex Fridman Podcast #(\d+)\s*[-–—]?\s*YouTube</title>",
+        page,
+        re.IGNORECASE | re.S,
+    )
+    if not match:
+        return None
+    return match.group(2), match.group(1).strip().replace("&amp;", "&").strip()
+
+
+def fetch_url(url: str) -> str | None:
+    """Fetch a URL with a browser-like user agent; None on any failure."""
+    import urllib.request
+
+    try:
+        request = urllib.request.Request(
+            url,
+            headers={"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)"},
+        )
+        with urllib.request.urlopen(request, timeout=15) as response:
+            return response.read().decode("utf-8", errors="ignore")
+    except Exception:
+        return None
+
+
+def resolve_episode_number(
+    title: str, path: Path, page_html: str | None = None
+) -> tuple[str | None, str | None]:
+    """Look up the episode number and official title online.
+
+    Returns (episode_number, official_title); both None when the episode cannot
+    be found on the podcast page. The file name contributes significant words,
+    so Chinese variants of the same episode match through their shared slug.
+    Never blocks on user input.
+    """
+    page = page_html if page_html is not None else fetch_url(PODCAST_URL)
+    if page is None:
+        return None, None
+    episodes = parse_podcast_episodes(page)
+    if not episodes:
+        return None, None
+    match = match_episode(title, episodes, article_body_from_filename(path))
+    if match is None:
+        return None, None
+    episode_title, video_id = match
+    youtube_page = fetch_url(YOUTUBE_WATCH_URL.format(video_id=video_id))
+    if youtube_page is None:
+        return None, episode_title
+    parsed = parse_youtube_number(youtube_page)
+    if parsed is None:
+        return None, episode_title
+    number, official_title = parsed
+    return number, official_title or episode_title
+
+
 def find_video(title: str, path: Path) -> tuple[object | None, str | None]:
     """Locate the verified video entry: numbered titles check the table,
     unnumbered titles match the file name against verified unnumbered entries."""
@@ -250,38 +346,61 @@ def build_front_matter(
     )
 
 
-def convert_file(path: Path, collection_id: str, *, apply: bool) -> tuple[str, str] | None:
+def convert_file(
+    path: Path, collection_id: str, *, apply: bool, page_html: str | None = None
+) -> tuple[str, str] | None:
     """Convert one pending file. Returns (destination, post_text); None when the
-    destination already exists; raises ConversionError for unknown episodes."""
+    destination already exists.
+
+    The episode number comes from the heading, the verified video table, the
+    lexfridman.com/podcast page, or a user prompt, in that order.
+    """
     content = path.read_text(encoding="utf-8")
     language = detect_language(path, content)
-    title = extract_title(path, content)
-    video, table_number = find_video(title, path)
-    if video is None:
-        raise ConversionError(
-            f"no verified episode for '{title}'; add it to the video table "
-            "in scripts/import_lex_summaries.py before converting"
-        )
+    heading_title = extract_title(path, content)
 
-    title_number = episode_number(title)
+    title_number = episode_number(heading_title)
+    video = VIDEOS.get(f"#{title_number}") if title_number else None
+
+    # Unnumbered episodes: the verified table, then the podcast page, then the user
+    table_entry = None
+    online_number = None
+    official_title = None
+    if not title_number:
+        table_entry, _ = find_video(heading_title, path)
+        if table_entry is None:
+            online_number, official_title = resolve_episode_number(heading_title, path, page_html)
+            if online_number is None:
+                try:
+                    online_number = input(
+                        f"Enter the Lex Fridman episode number for '{heading_title}': "
+                    ).strip()
+                except EOFError:
+                    online_number = ""
+                if not online_number:
+                    raise ConversionError(
+                        f"could not determine an episode number for '{heading_title}'"
+                    )
+
     if title_number:
-        body = title[len(title_number):]
+        body = heading_title[len(title_number):]
         article_id = f"{title_number}-{slugify(body)}"
-    elif table_number:
-        article_id = f"{table_number}-{article_body_from_filename(path)}"
-        if language == "en":
-            title = video.title
-        else:
-            title = f"{table_number} - {title}"
-    else:
+    elif table_entry is not None:
         article_id = slugify(article_body_from_filename(path))
+    else:
+        article_id = f"{online_number}-{slugify(article_body_from_filename(path))}"
 
-    # The article title is the shared, language-neutral English title from the
-    # verified table; the display title is localized (English uses the table
-    # title, Chinese keeps its translated heading).
-    article_title = video.title
+    article_title = video.title if video else (
+        f"{online_number} - {official_title}" if online_number and official_title else heading_title
+    )
     if language == "en":
-        title = video.title
+        title = video.title if video else (
+            f"{online_number} - {official_title}" if online_number and official_title else heading_title
+        )
+    else:
+        title = heading_title
+        if online_number and not title_number:
+            title = f"{online_number} - {title}"
     permalink = f"/articles/{article_id}/{language}/"
 
     # Strip the first top-level heading from the body, if it was used as the title
@@ -297,7 +416,8 @@ def convert_file(path: Path, collection_id: str, *, apply: bool) -> tuple[str, s
     variant_rank = next_variant_rank(article_id)
     destination = POSTS_DIR / f"{date}-{article_id}-{language}.md"
 
-    original_link = f"{YOUTUBE_BASE}{video.youtube_id}" if video else None
+    source_video = video or table_entry
+    original_link = f"{YOUTUBE_BASE}{source_video.youtube_id}" if source_video else None
 
     if destination.exists():
         return None
