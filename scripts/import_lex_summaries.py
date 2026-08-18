@@ -9,6 +9,7 @@ import json
 import re
 import sys
 from dataclasses import dataclass
+from datetime import datetime
 from pathlib import Path
 
 
@@ -133,10 +134,25 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--source-dir", type=Path, default=DEFAULT_SOURCE_DIR)
     parser.add_argument("--posts-dir", type=Path, default=DEFAULT_POSTS_DIR)
     parser.add_argument("--apply", action="store_true", help="Create posts after a successful preflight")
+    parser.add_argument(
+        "--convert",
+        action="store_true",
+        help="Convert pending summaries into posts instead of importing from iCloud",
+    )
+    parser.add_argument(
+        "--pending",
+        type=Path,
+        default=DEFAULT_PENDING_DIR,
+        help=f"pending folder for --convert (default: {DEFAULT_PENDING_DIR})",
+    )
+    parser.add_argument(
+        "--collection",
+        help="override the collection id when converting (defaults to the subfolder name)",
+    )
     return parser.parse_args()
 
 
-def slugify(title: str) -> str:
+def ascii_slugify(title: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", title.lower()).strip("-")
 
 
@@ -354,7 +370,7 @@ def deduplicate_sources(sources: list[SourceSummary]) -> tuple[list[SourceSummar
 
 
 def make_front_matter(video: Video, source: SourceSummary, rank: int) -> bytes:
-    slug = slugify(video.title)
+    slug = ascii_slugify(video.title)
     suffix = f"/{source.spec}/" if source.spec else "/"
     title = CHINESE_TITLES[source.key] if source.language == "cn" else video.title
     lines = [
@@ -400,7 +416,7 @@ def plan_posts(sources: list[SourceSummary], posts_dir: Path) -> tuple[list[Plan
             )
         )
         for rank, source in enumerate(variants, start=1):
-            slug = slugify(video.title)
+            slug = ascii_slugify(video.title)
             spec_suffix = f"-{source.spec}" if source.spec else ""
             filename = f"{video.upload_date}-{slug}-{source.language}{spec_suffix}.md"
             payload = make_front_matter(video, source, rank) + clean_source_body(source.body)
@@ -423,6 +439,8 @@ def preflight(plans: list[PlannedPost]) -> tuple[list[PlannedPost], int]:
 
 def main() -> int:
     args = parse_args()
+    if args.convert:
+        return convert_main(args)
     try:
         sources, excluded_count = discover_sources(args.source_dir)
         plans, duplicate_count = plan_posts(sources, args.posts_dir)
@@ -455,6 +473,317 @@ def main() -> int:
         return 1
 
     print(f"Created {created} post(s); source files were not modified.")
+    return 0
+
+
+# ---------------------------------------------------------------------------
+# Pending-summary conversion (--convert)
+# ---------------------------------------------------------------------------
+
+REPO_DIR = Path(__file__).resolve().parents[1]
+POSTS_DIR = DEFAULT_POSTS_DIR
+DEFAULT_PENDING_DIR = REPO_DIR / "pending"
+COLLECTIONS_FILE = REPO_DIR / "_data" / "collections.yml"
+PROCESSED_DIR_NAME = "processed"
+
+CJK_RE = re.compile(r"[\u3400-\u4DBF\u4E00-\u9FFF]")
+EPISODE_RE = re.compile(r"^\s*(\d+)")
+LANG_MARK_RE = re.compile(r"[-_.](zh-cn|zh|cn|en|中文)([-_.]|$)", re.IGNORECASE)
+
+LOWERCASE_WORDS = {
+    "a", "an", "and", "as", "at", "by", "for", "from", "in", "of", "on",
+    "or", "the", "to", "with", "vs",
+}
+
+ACRONYMS = {
+    "AGI", "AI", "API", "CEO", "CFO", "CPU", "EU", "GPU", "LLM", "LLMS",
+    "ML", "MIT", "NASA", "NLP", "TV", "UK", "USA",
+}
+
+
+class ConversionError(Exception):
+    """Raised when a pending file cannot be converted into a Jekyll post."""
+
+
+def slugify(text: str) -> str:
+    """Lowercase ASCII slug; keep CJK characters; collapse separators."""
+    slug = []
+    for char in text.strip().lower():
+        if char.isascii():
+            if char.isalnum():
+                slug.append(char)
+            else:
+                slug.append("-")
+        elif CJK_RE.match(char):
+            slug.append(char)
+        else:
+            slug.append("-")
+    return re.sub(r"-{2,}", "-", "".join(slug)).strip("-")
+
+
+def known_collection_ids() -> set[str]:
+    """Read collection ids from _data/collections.yml."""
+    ids: set[str] = set()
+    try:
+        text = COLLECTIONS_FILE.read_text(encoding="utf-8")
+    except FileNotFoundError:
+        return ids
+    for line in text.splitlines():
+        match = re.match(r"^\s*- id:\s*(.+?)\s*$", line)
+        if match:
+            ids.add(match.group(1))
+    return ids
+
+
+def title_case(text: str) -> str:
+    """Headline capitalization for ALL-CAPS titles: major words title-cased,
+    short connector words lowered, and known acronyms preserved."""
+    words = text.split()
+    result = []
+    for index, word in enumerate(words):
+        lowered = word.lower()
+        if lowered in LOWERCASE_WORDS and index != 0 and index != len(words) - 1:
+            result.append(lowered)
+        elif word.upper() in ACRONYMS:
+            result.append(word.upper())
+        else:
+            result.append(word[0].upper() + word[1:].lower() if word else word)
+    return " ".join(result)
+
+
+def detect_language(path: Path, content: str) -> str:
+    """Chinese from the file name language mark or CJK ratio, otherwise English."""
+    match = LANG_MARK_RE.search(path.stem)
+    if match and match.group(1).lower() in {"zh", "zh-cn", "cn", "中文"}:
+        return "cn"
+    if match and match.group(1).lower() == "en":
+        return "en"
+    chars = [c for c in content if not c.isspace()]
+    if not chars:
+        return "en"
+    cjk = sum(1 for c in chars if CJK_RE.match(c))
+    return "cn" if cjk / len(chars) > 0.3 else "en"
+
+
+def extract_title(path: Path, content: str) -> str:
+    for line in content.splitlines():
+        stripped = line.strip()
+        if stripped.startswith("# ") and len(stripped) > 2:
+            raw = stripped[2:].strip()
+            cleaned = re.sub(r"^(transcript paraphrase|transcript|summary|paraphrase)\s*:\s*", "", raw, flags=re.IGNORECASE)
+            if cleaned:
+                if any(char.islower() for char in cleaned):
+                    return cleaned
+                return title_case(cleaned)
+    return path.stem
+
+
+def episode_number(title: str) -> str | None:
+    match = EPISODE_RE.match(title)
+    return match.group(1) if match else None
+
+
+def article_body_from_filename(path: Path) -> str:
+    """Strip language marks and common boilerplate words from the file name."""
+    stem = LANG_MARK_RE.sub(" ", path.stem)
+    for word in ("lexfridman.com", "lexfridman", "transcript", "summary"):
+        stem = re.sub(r"[-_.]?" + re.escape(word) + r"[-_.]?", " ", stem, flags=re.IGNORECASE)
+    return " ".join(stem.split())
+
+
+def find_video(title: str, path: Path) -> tuple[object | None, str | None]:
+    """Locate the verified video entry: numbered titles check the table,
+    unnumbered titles match the file name against verified unnumbered entries."""
+    number = episode_number(title)
+    if number:
+        video = VIDEOS.get(f"#{number}")
+        return video, number
+    name_slug = article_body_from_filename(path)
+    for key, video in VIDEOS.items():
+        if not key.startswith("#") and ascii_slugify(video.title) == name_slug:
+            return video, None
+    return None, None
+
+
+def next_variant_rank(article_id: str) -> int:
+    ranks = []
+    for post in POSTS_DIR.glob("*.md"):
+        try:
+            text = post.read_text(encoding="utf-8")
+        except OSError:
+            continue
+        match = re.search(r"^article_id:\s*(.+?)\s*$", text, re.MULTILINE)
+        if not match or match.group(1).strip() != article_id:
+            continue
+        rank_match = re.search(r"^variant_rank:\s*(\d+)\s*$", text, re.MULTILINE)
+        if rank_match:
+            ranks.append(int(rank_match.group(1)))
+    return max(ranks, default=0) + 1
+
+
+def build_front_matter(
+    *,
+    title: str,
+    date: str,
+    article_id: str,
+    article_title: str,
+    collection_id: str,
+    language: str,
+    variant_rank: int,
+    permalink: str,
+    original_link: str | None = None,
+) -> str:
+    def quote(value: str) -> str:
+        return f'"{value}"'
+
+    return "\n".join(
+        [
+            "---",
+            "layout: post",
+            f"title: {quote(title)}",
+            f"date: {date} 09:00:00 +0000",
+            f"article_id: {article_id}",
+            f"article_title: {quote(article_title)}",
+            f"collection_id: {collection_id}",
+            f"language: {language}",
+            f"variant_rank: {variant_rank}",
+            *([f"original_link: {quote(original_link)}"] if original_link else []),
+            f"permalink: {quote(permalink)}",
+            "---",
+            "",
+        ]
+    )
+
+
+def convert_file(path: Path, collection_id: str, *, apply: bool) -> tuple[str, str] | None:
+    """Convert one pending file. Returns (destination, post_text); None when the
+    destination already exists; raises ConversionError for unknown episodes."""
+    content = path.read_text(encoding="utf-8")
+    language = detect_language(path, content)
+    title = extract_title(path, content)
+    video, table_number = find_video(title, path)
+    if video is None:
+        raise ConversionError(
+            f"no verified episode for '{title}'; add it to the video table "
+            "in scripts/import_lex_summaries.py before converting"
+        )
+
+    title_number = episode_number(title)
+    if title_number:
+        body = title[len(title_number):]
+        article_id = f"{title_number}-{slugify(body)}"
+    elif table_number:
+        article_id = f"{table_number}-{article_body_from_filename(path)}"
+        title = f"{table_number} - {title}"
+    else:
+        article_id = slugify(article_body_from_filename(path))
+
+    article_title = title
+    permalink = f"/articles/{article_id}/{language}/"
+
+    # Strip the first top-level heading from the body, if it was used as the title
+    lines = content.splitlines()
+    for index, line in enumerate(lines):
+        if line.strip().startswith("# "):
+            body_text = "\n".join(lines[index + 1:]).strip() + "\n"
+            break
+    else:
+        body_text = content.strip() + "\n"
+
+    date = datetime.fromtimestamp(path.stat().st_mtime).strftime("%Y-%m-%d")
+    variant_rank = next_variant_rank(article_id)
+    destination = POSTS_DIR / f"{date}-{article_id}-{language}.md"
+
+    original_link = f"{YOUTUBE_BASE}{video.youtube_id}" if video else None
+
+    if destination.exists():
+        return None
+
+    post_text = (
+        build_front_matter(
+            title=title,
+            date=date,
+            article_id=article_id,
+            article_title=article_title,
+            collection_id=collection_id,
+            language=language,
+            variant_rank=variant_rank,
+            permalink=permalink,
+            original_link=original_link,
+        )
+        + "\n"
+        + body_text
+    )
+    return str(destination.relative_to(REPO_DIR)), post_text
+
+
+def convert_main(args: argparse.Namespace) -> int:
+    pending = args.pending
+    if not pending.is_dir():
+        print(f"ERROR: pending folder not found: {pending}", file=sys.stderr)
+        return 1
+
+    known = known_collection_ids()
+    files = sorted(pending.rglob("*.md")) + sorted(pending.rglob("*.txt"))
+    files = [f for f in files if PROCESSED_DIR_NAME not in f.parts]
+
+    if not files:
+        print("No pending files found.")
+        return 0
+
+    converted = 0
+    skipped_existing = 0
+    unknown_collections = set()
+
+    for path in files:
+        if args.collection:
+            collection_id = args.collection
+        else:
+            relative = path.relative_to(pending)
+            if len(relative.parts) > 1:
+                collection_id = relative.parts[0]
+            else:
+                print(
+                    f"SKIP {path}: place files in pending/<collection>/ to pick a collection",
+                    file=sys.stderr,
+                )
+                continue
+        if collection_id not in known:
+            unknown_collections.add(collection_id)
+
+        try:
+            result = convert_file(path, collection_id, apply=args.apply)
+        except ConversionError as error:
+            print(f"SKIP {path.name}: {error}", file=sys.stderr)
+            continue
+        if result is None:
+            skipped_existing += 1
+            print(f"SKIP {path.name}: destination already exists")
+            continue
+        destination, post_text = result
+
+        if args.apply:
+            (REPO_DIR / destination).write_text(post_text, encoding="utf-8")
+            processed_dir = pending / PROCESSED_DIR_NAME
+            processed_dir.mkdir(exist_ok=True)
+            path.rename(processed_dir / path.name)
+        else:
+            print(f"WOULD CREATE {destination} from {path}")
+
+        converted += 1
+
+    for collection_id in sorted(unknown_collections):
+        print(
+            f"WARNING: collection '{collection_id}' is not in _data/collections.yml; "
+            f"add it (and a landing page under collections/) before publishing",
+            file=sys.stderr,
+        )
+
+    mode = "APPLY" if args.apply else "DRY-RUN"
+    print(
+        f"{mode}: {converted} converted, {skipped_existing} skipped (existing), "
+        f"{len(unknown_collections)} unknown collection(s)"
+    )
     return 0
 
 

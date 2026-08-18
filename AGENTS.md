@@ -137,6 +137,15 @@ python3 scripts/import_lex_summaries.py
 python3 scripts/import_lex_summaries.py --apply
 ```
 
+Convert pending summaries (in `pending/<collection>/`) into posts — dry-run first, then apply:
+
+```sh
+python3 scripts/import_lex_summaries.py --convert
+python3 scripts/import_lex_summaries.py --convert --apply
+```
+
+The single `import_lex_summaries.py` script handles both workflows and owns the verified video metadata table; conversion rejects episodes that are not in that table, so new source summaries must be added there (and in `tests/import_lex_summaries_test.py`) first.
+
 The recipe derives the episode ID and URL slug from the title, assigns the next variant rank, and rejects duplicate episode-language variants. Authors must replace the generated placeholder body before publication.
 
 ## Change workflow
