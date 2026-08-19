@@ -197,6 +197,8 @@ class ConvertTests(unittest.TestCase):
     def test_api_summary_used_for_excerpt(self) -> None:
         from unittest import mock
 
+        captured = {}
+
         class FakeResponse:
             def __init__(self, data):
                 self._data = data
