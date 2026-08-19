@@ -3,10 +3,11 @@ layout: post
 title: "495 - 维京时代：战争、探索与中世纪欧洲的架构"
 date: 2026-08-17 09:00:00 +0000
 article_id: 495-lars-brownworth
-article_title: "维京时代：战争、探索与中世纪欧洲的架构"
+article_title: "495 - Vikings, Ragnar, Berserkers, Valhalla & the Warriors of the Viking Age"
 collection_id: lex-fridman
 language: cn
 variant_rank: 2
+excerpt: "通常被称为“维京时代”的历史时期跨度约为三个世纪，一般界定为公元793年至1066年。该时期的传统起点是公元793年6月8日，当时一支北欧航海者的海军部队（可能来自今天的挪威）逼近了林迪斯法恩岛。该定居点居住着一个致力于经文研究、祈祷与隐修的修道院社区。北欧军队系统地屠杀了居民，焚毁了几座建筑，并在撤离前劫走了贵重物品。这一事件被当时的编年史所记载，被广泛接受为维京人对西欧持续入侵开始的时间标记。此次袭击的心理和文化影响远远超出了即时的物质破坏。同时代的记载（包括学者阿尔昆致诺森布里亚国王埃塞尔雷德的信件）描述了前所未有的恐怖。阿尔昆指出，从未有人设想过异教徒从海上入侵的可能性，这强调了长期持有的地缘政治假设的破灭。"
 permalink: "/articles/495-lars-brownworth/cn/"
 ---
 

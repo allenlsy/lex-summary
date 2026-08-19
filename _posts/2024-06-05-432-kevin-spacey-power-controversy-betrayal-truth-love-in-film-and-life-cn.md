@@ -8,6 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=XJTMQtE-MIo"
+excerpt: "以下为与演员凯文·史派西的对话记录。史派西曾两度荣获奥斯卡金像奖，其代表作包括《七宗罪》《美国美人》《控方证人》及《纸牌屋》。在跨越四十余年的职业生涯中，他确立了自己作为当代电影与戏剧领域最具吸引力、心理层次最为丰富的表演者之一的地位。他所塑造的角色，往往复杂、道德模糊，甚至心理极具破坏性，深刻影响了观众，并在文化层面留下不可磨灭的印记。"
 permalink: /articles/432-kevin-spacey-power-controversy-betrayal-truth-love-in-film-and-life/cn/
 ---
 

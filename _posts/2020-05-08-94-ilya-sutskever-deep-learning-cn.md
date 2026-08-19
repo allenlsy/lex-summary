@@ -8,6 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=13CZPWmke6A"
+excerpt: "本次审查的对话捕捉了采访者Lex Friedman与OpenAI联合创始人兼首席科学家Ilya Sutskever之间的详细交流。Sutskever被公认为现代历史上被引用次数最多的计算机科学家之一，其学术引用量超过16.5万次。该对话录制于全球疫情之前，将技术对话置于更广泛的社会压力背景下，同时坚定不移地聚焦于人工智能的科学轨迹。Sutskever被许多人视为深度学习领域最具洞察力的思想家之一，他回顾了催化该领域当前主导地位的历史转折点。他指出了一个大约在2010或2011年的关键节点，当时他综合了两个基础观察：使用反向传播端到端训练大型深度神经网络的可行性，以及此类网络在理论上表示高度复杂函数的能力。"
 permalink: /articles/94-ilya-sutskever-deep-learning/cn/
 ---
 

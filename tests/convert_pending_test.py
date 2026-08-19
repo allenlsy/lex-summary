@@ -55,6 +55,34 @@ class TitleCaseTests(unittest.TestCase):
         self.assertEqual(cp.extract_title(Path("x.md"), content), "416 - Yann LeCun: Limits of LLMs")
 
 
+class ExcerptTests(unittest.TestCase):
+    def test_first_substantive_paragraph(self) -> None:
+        content = (
+            "# 416 - Yann LeCun\n\n"
+            "**Introduction and Episode Highlight**\n\n"
+            "The conversation covers the limits of large language models and the future of AI.\n\n"
+            "A second paragraph."
+        )
+        self.assertEqual(
+            cp.extract_excerpt(content),
+            "The conversation covers the limits of large language models and the future of AI.",
+        )
+
+    def test_short_bold_label_skipped(self) -> None:
+        content = "**Introduction**\n\nThis is the real summary paragraph with enough length.\n"
+        self.assertEqual(cp.extract_excerpt(content), "This is the real summary paragraph with enough length.")
+
+    def test_cjk_paragraph(self) -> None:
+        content = "## 1. 引言\n\n这是关于人工智能未来发展的实质性摘要段落，包含足够长的中文内容用于列表页展示。\n"
+        self.assertEqual(
+            cp.extract_excerpt(content),
+            "这是关于人工智能未来发展的实质性摘要段落，包含足够长的中文内容用于列表页展示。",
+        )
+
+    def test_none_when_only_short_lines(self) -> None:
+        self.assertIsNone(cp.extract_excerpt("# Only heading\n\n**Label**\n"))
+
+
 class ConvertTests(unittest.TestCase):
     def setUp(self) -> None:
         self._tmp = tempfile.TemporaryDirectory()

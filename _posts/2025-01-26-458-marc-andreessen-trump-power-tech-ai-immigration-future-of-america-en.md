@@ -8,6 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=OHWnPOKh_S0"
+excerpt: "The United States is currently on a trajectory that, if left unaddressed, could lead to a catastrophic economic collapse. The nation is adding approximately $1 trillion to its national debt every 100 days, a pace that is not only unsustainable but accelerating. This figure, already staggering, is projected to shrink to $1 trillion every 90 days, then 80 days, and eventually 70 days—a compounding spiral that mirrors the economic collapses seen in nations like Argentina and Brazil. These are not abstract warnings; they are mathematical inevitabilities rooted in fiscal policy, political inertia, and a systemic failure to confront the long-term consequences of unchecked spending."
 permalink: /articles/458-marc-andreessen-trump-power-tech-ai-immigration-future-of-america/en/
 ---
 

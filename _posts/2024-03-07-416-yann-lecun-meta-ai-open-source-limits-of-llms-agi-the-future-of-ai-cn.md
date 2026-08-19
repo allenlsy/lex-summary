@@ -8,6 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=5t1vTLU7s40"
+excerpt: "本次详尽的转述以第三人称、客观且结构化的视角，全面呈现了人工智能领域领军人物莱克斯·弗里德曼（Lex Fridman）与杨·勒昆（Yann LeCun）之间的一场高阶对话。原始对话文本超过26,000词，涵盖广泛议题，包括当前大型语言模型（LLM）的局限性、具身化与世界模型驱动的人工智能的必要性、专有AI系统带来的风险，以及一个由开源、以人为本的智能所塑造的未来愿景。"
 permalink: /articles/416-yann-lecun-meta-ai-open-source-limits-of-llms-agi-the-future-of-ai/cn/
 ---
 

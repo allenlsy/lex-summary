@@ -8,6 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=qa-wl8_wpZA"
+excerpt: "以下是对哈佛大学历史学教授、哈佛乌克兰研究所主任谢尔希·普洛克希（Serhii Plokhy）一次完整访谈的详尽、基于事实且保持中立的改写。原文超过25,000字，现已被精心重构，在保留全部事实内容、典型案例、历史背景、时间脉络、情感基调及分析结论的同时，以纪录片式、新闻报道风格呈现。本稿旨在完整保留叙事完整性，包括观点细节、学术论证与地缘政治意涵，同时以简洁而全面的英文表达完成。"
 permalink: /articles/415-serhii-plokhy-history-of-ukraine-russia-soviet-union-kgb-nazis-war/cn/
 ---
 

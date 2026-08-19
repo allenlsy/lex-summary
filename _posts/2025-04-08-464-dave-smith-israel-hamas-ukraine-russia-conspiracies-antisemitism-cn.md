@@ -8,6 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=1V0bJfqEaa4"
+excerpt: "关于伊拉克战争的叙事，无疑是美国现代政治领导层最严厉的控诉之一。一代政策制定者、媒体人物和军事战略家，通过蓄意的谎言——关于大规模杀伤性武器的虚假声明、关于萨达姆·侯赛因与“9·11”事件存在直接关联的虚假断言，以及将入侵描绘为必要自卫行动的精心策划叙事——构建了一场战争。这些并非偶然误判，而是刻意、持续且具有战略目的的谎言，旨在操纵公众舆论。"
 permalink: /articles/464-dave-smith-israel-hamas-ukraine-russia-conspiracies-antisemitism/cn/
 ---
 

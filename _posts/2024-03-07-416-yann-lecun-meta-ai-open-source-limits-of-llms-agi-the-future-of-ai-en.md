@@ -8,6 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=5t1vTLU7s40"
+excerpt: "This detailed paraphrase presents a comprehensive, third-person account of a high-level dialogue between Lex Fridman and Yann LeCun, a leading figure in artificial intelligence. The original transcript spans over 26,000 words and covers a wide range of topics, including the limitations of current large language models (LLMs), the necessity of embodied, world-model-based AI, the dangers of proprietary control over AI, and a vision for a future shaped by open-source, human-centered intelligence."
 permalink: /articles/416-yann-lecun-meta-ai-open-source-limits-of-llms-agi-the-future-of-ai/en/
 ---
 

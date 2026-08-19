@@ -8,6 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=EV7WhVT270Q"
+excerpt: "This comprehensive and in-depth conversation between Lex Fridman, Sebastian Raschka, and Nathan Lambert explores the current state and future trajectory of artificial intelligence, with a focus on technical advancements, competitive dynamics, and philosophical implications. The discussion spans over a year of progress in AI, covering architecture, training methodologies, scaling laws, open vs. closed models, and long-term societal impacts."
 permalink: /articles/490-state-of-ai-in-2026-llms-coding-scaling-laws-china-agents-gpus-agi/en/
 ---
 

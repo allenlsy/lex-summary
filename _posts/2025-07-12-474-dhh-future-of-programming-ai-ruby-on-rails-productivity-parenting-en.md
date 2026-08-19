@@ -8,6 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=vagyIcmIGOQ"
+excerpt: "This comprehensive transcript features a deep, wide-ranging conversation between Lex Fridman and David Heinemeier Hansson (DHH), the legendary creator of Ruby on Rails, co-founder of Basecamp and HEY, and a world-class race car driver. The discussion spans decades of personal history, technical philosophy, and cultural critique, offering a rich tapestry of insights on programming, software development, human nature, and the future of technology."
 permalink: /articles/474-dhh-future-of-programming-ai-ruby-on-rails-productivity-parenting/en/
 ---
 

@@ -8,6 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=cFSrxSBrgSc"
+excerpt: "莱克斯·弗里德曼与艾拉之间的对话，是一场关于人性、性、身份认同以及求知欲在理解自我与社会中作用的深刻、多维度的思想交锋。艾拉，一位自我认定为性工作者、研究者及高产内容创作者的女性，展现出一种独特而复杂的心理与情感图景——这一图景由童年创伤塑造，脱离了保守宗教的束缚，并贯穿一生对人类行为的严谨探究。"
 permalink: /articles/358-aella-sex-work-onlyfans-porn-escorting-dating-and-human-sexuality/cn/
 ---
 

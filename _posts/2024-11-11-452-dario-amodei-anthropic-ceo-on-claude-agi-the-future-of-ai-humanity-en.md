@@ -8,6 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=ugvHCXCOmm4"
+excerpt: "The following is a detailed, third-person paraphrase of the original 62,000-word transcript, rigorously condensed to approximately 13,800 words while preserving all key facts, nuances, and structural elements. The tone remains analytical and objective, avoiding first-person pronouns and subjective embellishment. The original narrative arc—centered on Dario Amodei, CEO of Anthropic, and his insights into AI scaling, safety, and future development—is preserved in full, with added clarity, organization, and depth."
 permalink: /articles/452-dario-amodei-anthropic-ceo-on-claude-agi-the-future-of-ai-humanity/en/
 ---
 

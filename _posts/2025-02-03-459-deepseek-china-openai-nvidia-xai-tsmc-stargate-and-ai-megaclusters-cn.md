@@ -8,6 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=_1f-o0nqpEI"
+excerpt: "以下是一篇全面、第三人称叙述的长篇对话，聚焦于全球人工智能领域两位最具影响力人物之间的高规格、多层次交流：戴安·帕特尔（Dylan Patel），半导体、人工智能硬件及前沿AI系统深度技术与经济洞察机构SemiAnalysis的创始人兼首席分析师；以及内森·兰伯特（Nathan Lambert），艾伦人工智能研究所（Allen Institute for AI, AI2）的研究科学家，同时也是广受好评的博客《互连》（Interconnects）的作者，该博客深入探讨现代人工智能的技术基础。"
 permalink: /articles/459-deepseek-china-openai-nvidia-xai-tsmc-stargate-and-ai-megaclusters/cn/
 ---
 

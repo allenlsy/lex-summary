@@ -8,6 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=sG8u6owzad4"
+excerpt: "巴塞姆·尤素夫（Bassem Youssef），出生于埃及开罗，已成为21世纪最具影响力且最具争议的公共知识分子之一。他的职业生涯——从心脏外科医生到网络名人，从埃及媒体偶像到美国籍讽刺家——映射出数字时代全球范围内真相、权力与话语权危机的深层图景。他的经历不仅是个人的蜕变，更是一场关于言论自由、国家控制、媒体偏见以及独裁体制下心理创伤的深刻社会政治反思。"
 permalink: /articles/424-bassem-youssef-israel-palestine-gaza-hamas-middle-east-satire-fame/cn/
 ---
 

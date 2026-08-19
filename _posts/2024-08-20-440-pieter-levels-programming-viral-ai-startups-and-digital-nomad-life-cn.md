@@ -8,6 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 4
 original_link: "https://www.youtube.com/watch?v=oFtjKbXKqbg"
+excerpt: "皮特·莱维斯（Pieter Levels），一位自学成才的软件开发者与连续创业者，自21世纪初以来已创建并推出超过40个初创企业。其业务涵盖多个领域，包括数字游民生活方式、远程工作平台、人工智能驱动的图像生成技术以及开发者工具。与大多数科技创始人不同，莱维斯从未依赖外部投资、风险资本或正式团队结构。他的整个创业历程均为独自完成，全程实时记录，并采用极简的技术基础设施——主要使用原生HTML、jQuery、PHP和SQLite。"
 permalink: /articles/440-pieter-levels-programming-viral-ai-startups-and-digital-nomad-life/cn/long/
 ---
 

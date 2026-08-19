@@ -8,6 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=ZIyB9e_7a4c"
+excerpt: "The following is a neutral, documentary-style paraphrase of a full-length conversation between Lex Fridman and Andrew Huberman, recorded for The Lex Fridman Podcast. The original transcript spans approximately 19,448 words. This revised version preserves nearly all factual details, illustrative examples, scientific references, emotional tone, structural flow, and implied implications—while condensing for clarity and consistency, aiming for a final length between 9,724 and 11,668 words."
 permalink: /articles/435-andrew-huberman-focus-controversy-politics-and-relationships/en/
 ---
 

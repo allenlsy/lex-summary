@@ -8,6 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=o3gbXDjNWyI"
+excerpt: "丹·豪瑟（Dan Houser），《侠盗猎车手》（Grand Theft Auto）与《荒野大镖客》（Red Dead Redemption）系列的联合创始人及核心创意领袖，是当代娱乐产业中最具影响力的叙事建筑师之一。他的创作不仅重塑了电子游戏作为叙事媒介的边界，更将这一形式从简单的动作体验，提升为情感深刻、电影化程度极高的艺术表达，其思想深度与结构复杂性已可与文学和影视相媲美。在超过二十年的开放世界宇宙构建历程中，豪瑟发展出一套独特的叙事设计理念——根植于心理真实、系统交互性，以及对人类本性的深刻洞察。"
 permalink: /articles/484-dan-houser-gta-red-dead-redemption-rockstar-absurd-future-of-gaming/cn/
 ---
 

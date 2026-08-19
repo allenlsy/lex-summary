@@ -163,8 +163,8 @@ echo "PASS: homepage post titles link to English with a first-variation fallback
 
 for page_spec in \
   "index.html:20" \
-  "page/2/index.html:10" \
-  "per-page/50/index.html:30"
+  "page/2/index.html:16" \
+  "per-page/50/index.html:36"
 do
   page_path=${page_spec%:*}
   expected_count=${page_spec##*:}

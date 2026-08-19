@@ -8,6 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=YFjfBk8HI5o"
+excerpt: "2020 年代中期的技术格局以人工智能的快速发展为标志，但鲜有技术突破能像 OpenClaw 的问世一样迅速吸引公众与业界的关注。该项目最初以多个临时标识发布，包括 MoldBot、ClawedBot 和 Clawdus，但在 Anthropic 的法律指导后，已正式确定使用当前名称。OpenClaw 是一个开源的自主 AI 智能体，旨在直接在用户的本地计算环境中运行。通过集成 WhatsApp、Telegram、Discord、Signal 和 iMessage 等广泛使用的通信平台，它弥合了抽象语言模型与具体数字代理能力之间的鸿沟。该系统允许用户与本地化 AI 助手进行交互，在获得明确授权的情况下，该助手可持久访问个人数据、系统文件及计算资源。"
 permalink: /articles/491-openclaw-the-viral-ai-agent-that-broke-the-internet-peter-steinberger/cn/
 ---
 

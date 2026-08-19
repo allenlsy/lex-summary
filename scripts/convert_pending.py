@@ -197,6 +197,30 @@ def significant_words(text: str) -> set[str]:
     return words
 
 
+def extract_excerpt(content: str) -> str | None:
+    """First substantive paragraph for the excerpt front matter: skip YAML front
+    matter, empty lines, headings, separators, and standalone bold labels."""
+    if content.startswith("---"):
+        parts = content.split("---", 2)
+        if len(parts) >= 3:
+            content = parts[2]
+    for line in content.splitlines():
+        stripped = line.strip()
+        if not stripped or stripped == "---" or stripped.startswith("#"):
+            continue
+        if stripped.startswith("**") and stripped.endswith("**"):
+            if "." not in stripped and "。" not in stripped:
+                continue
+        plain = re.sub(r"^[*_>\s]+", "", stripped)
+        plain = re.sub(r"[*_`]+", "", plain)
+        plain = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", plain)
+        plain = plain.strip()
+        if len(plain) < 20:
+            continue
+        return plain
+    return None
+
+
 def parse_podcast_episodes(html: str) -> list[tuple[str, str]]:
     """Extract (title, youtube_id) pairs from the lexfridman.com/podcast page."""
     pairs = []
@@ -323,6 +347,7 @@ def build_front_matter(
     variant_rank: int,
     permalink: str,
     original_link: str | None = None,
+    excerpt: str | None = None,
 ) -> str:
     def quote(value: str) -> str:
         return f'"{value}"'
@@ -339,6 +364,7 @@ def build_front_matter(
             f"language: {language}",
             f"variant_rank: {variant_rank}",
             *([f"original_link: {quote(original_link)}"] if original_link else []),
+            *([f"excerpt: {quote(excerpt)}"] if excerpt else []),
             f"permalink: {quote(permalink)}",
             "---",
             "",
@@ -433,6 +459,7 @@ def convert_file(
             variant_rank=variant_rank,
             permalink=permalink,
             original_link=original_link,
+            excerpt=extract_excerpt(content),
         )
         + "\n"
         + body_text

@@ -8,6 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=0m3hGZvD-0s"
+excerpt: "说话者以规律的流程开启新的一天，强调 6–8小时睡眠 和 30分钟高效午睡 对恢复精力的重要性。他们将睡眠、饮食与运动视为提高生产力的三大基石。每天始于写在纸上的格言，内容包括："
 permalink: /articles/a-day-in-my-life/cn/
 ---
 # 晨间习惯、深度工作与生活哲学总结

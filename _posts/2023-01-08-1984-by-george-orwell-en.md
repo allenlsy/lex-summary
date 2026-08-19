@@ -8,6 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=7Sk6lTLSZcA"
+excerpt: "I. Introduction and Political-Historical Context"
 permalink: /articles/1984-by-george-orwell/en/
 ---
 

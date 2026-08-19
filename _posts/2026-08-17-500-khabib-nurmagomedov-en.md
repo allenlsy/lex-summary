@@ -7,6 +7,7 @@ article_title: "500 - Khabib Nurmagomedov on Daghestan, Combat Sports, Culture, 
 collection_id: lex-fridman
 language: en
 variant_rank: 1
+excerpt: "The following account documents a recorded conversation between researcher and podcast host Lex Fridman and mixed martial arts competitor Khabib Nurmagomedov, who concluded his professional mixed martial arts career with an undefeated record of twenty-nine wins and zero losses. The discussion was conducted entirely in Russian, marking a linguistic shift from previous broadcast formats, with subsequent translation and dubbing coordinated by a collaborative team of human translators and automated speech synthesis systems. The recording captures Nurmagomedov’s reflections on regional sporting culture, historical influences, training methodologies, psychological conditioning, professional management, spiritual frameworks, and broader athletic comparisons. The narrative preserves the original structural progression, maintaining the sequence of topics while converting direct dialogue into a third-person documentary format. All factual references, illustrative examples, philosophical observations, and emotional reflections are retained in a condensed yet comprehensive journalistic style."
 permalink: "/articles/500-khabib-nurmagomedov/en/"
 ---
 

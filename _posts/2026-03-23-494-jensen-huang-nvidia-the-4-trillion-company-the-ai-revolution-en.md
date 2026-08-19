@@ -8,6 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=vif8NQcjVf0"
+excerpt: "This comprehensive summary captures the essence of a deep, wide-ranging, and visionary conversation between Lex Fridman and Jensen Huang, CEO of NVIDIA—one of the most transformative companies in modern technological history. The discussion spans the evolution of NVIDIA, the philosophy behind its engineering and leadership, the future of artificial intelligence, and the broader implications for humanity."
 permalink: /articles/494-jensen-huang-nvidia-the-4-trillion-company-the-ai-revolution/en/
 ---
 

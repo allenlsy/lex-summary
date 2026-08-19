@@ -7,6 +7,7 @@ article_title: "497 - Biggest Mysteries in Physics: Antimatter, Dark Energy & To
 collection_id: lex-fridman
 language: cn
 variant_rank: 2
+excerpt: "现代物理学的发展轨迹从根本上体现为长达数个世纪的统一追求。研究人员并未将物理现象视为孤立事件，而是系统地证明，不同的力和行为都源于共同的底层原理。这种认识论框架可追溯至17世纪中叶，当时地面力学与天体力学被视为完全不同的领域。艾萨克·牛顿提出的万有引力定律实现了首次重大统一，证明使下落物体坠落的力与支配行星运动和月球轨道的力是同一回事。“万有”一词明确表明，看似无关的现象遵循单一规律。"
 permalink: "/articles/497-don-lincoln/cn/"
 ---
 

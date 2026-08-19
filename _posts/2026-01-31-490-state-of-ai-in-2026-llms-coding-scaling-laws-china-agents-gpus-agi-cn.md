@@ -8,6 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=EV7WhVT270Q"
+excerpt: "本次由莱克斯·弗里德曼（Lex Fridman）、塞巴斯蒂安·拉斯克（Sebastian Raschka）与内森·兰伯特（Nathan Lambert）展开的深入对话，全面探讨了人工智能的当前发展态势与未来走向，聚焦于技术突破、竞争格局以及哲学层面的影响。讨论涵盖过去一年中AI领域的重大进展，包括模型架构、训练方法、扩展定律、开源与闭源模型之争，以及其对社会的长期影响。"
 permalink: /articles/490-state-of-ai-in-2026-llms-coding-scaling-laws-china-agents-gpus-agi/cn/
 ---
 

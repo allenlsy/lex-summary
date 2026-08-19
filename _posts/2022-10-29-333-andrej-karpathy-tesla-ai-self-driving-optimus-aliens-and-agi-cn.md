@@ -8,6 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=cdiD-9MMpb0"
+excerpt: "对话从对神经网络本质的基础探究展开，重点考察其以惊人效率进行学习的能力。卡尔帕齐将神经网络界定为大脑的数学抽象，而非生物系统的模拟。他强调，其核心架构可简化为相对基础的数学表达式：一系列矩阵乘法（在功能上等价于点积）与非线性激活函数交替排列。尽管数学形式如此简洁，卡尔帕齐指出，其中包含大量可调节参数，俗称“旋钮”。这些参数与生物大脑中的突触连接虽有一定类比性，但本质上是可训练且可通过优化过程动态调整的。他解释，核心的工程挑战在于确定这些参数的精确配置，从而让网络执行特定任务（如图像分类或词序列预测）。他警告不要过度解读生物相似性，强调神经网络本质上是复杂的数学表达式，必须经过精准校准方能产出预期结果。"
 permalink: /articles/333-andrej-karpathy-tesla-ai-self-driving-optimus-aliens-and-agi/cn/
 ---
 

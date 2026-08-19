@@ -8,6 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=vif8NQcjVf0"
+excerpt: "本次全面的对话摘要，完整呈现了科技界最具变革性的公司之一——NVIDIA——的首席执行官黄仁勋，与Lex Fridman之间一次深刻、广泛且富有远见的交流。这场对话横跨NVIDIA的发展历程、工程与领导哲学、人工智能的未来前景，以及其对人类文明的深远影响。"
 permalink: /articles/494-jensen-huang-nvidia-the-4-trillion-company-the-ai-revolution/cn/
 ---
 

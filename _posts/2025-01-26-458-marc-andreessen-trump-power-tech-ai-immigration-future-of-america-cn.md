@@ -8,6 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=OHWnPOKh_S0"
+excerpt: "美国目前正沿着一条若不加以干预，极有可能导致经济灾难性崩溃的轨迹前行。该国正以每100天增加约1万亿美元国家债务的速度发展，这一速度不仅不可持续，而且正在加速。这一数字本身已令人震惊，但其未来趋势更令人担忧——预计债务增长速度将从每100天1万亿美元，缩短至每90天、80天，最终甚至每70天就新增1万亿美元。这种指数级的债务扩张，与阿根廷、巴西等国曾经历的经济崩溃如出一辙。这些并非空泛的警告，而是根植于财政政策、政治惰性与系统性失能的数学必然。"
 permalink: /articles/458-marc-andreessen-trump-power-tech-ai-immigration-future-of-america/cn/
 ---
 

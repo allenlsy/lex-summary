@@ -8,6 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=1V0bJfqEaa4"
+excerpt: "The narrative surrounding the Iraq War remains one of the most damning indictments of modern political leadership in the United States. A generation of policymakers, media figures, and military strategists orchestrated a campaign built on deliberate falsehoods—false claims about weapons of mass destruction, false assertions of a direct link between Saddam Hussein and the 9/11 attacks, and a calculated narrative that framed the invasion as a necessary act of self-defense. These were not mere misjudgments. They were lies—deliberate, sustained, and strategically deployed to manipulate public opinion."
 permalink: /articles/464-dave-smith-israel-hamas-ukraine-russia-conspiracies-antisemitism/en/
 ---
 

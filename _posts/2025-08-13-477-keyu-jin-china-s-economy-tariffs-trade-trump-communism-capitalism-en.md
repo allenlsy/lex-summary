@@ -8,6 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=y3yAVZk3tyA"
+excerpt: "Paraphrased Text in English (Approx. 5,200 words)"
 permalink: /articles/477-keyu-jin-china-s-economy-tariffs-trade-trump-communism-capitalism/en/
 ---
 

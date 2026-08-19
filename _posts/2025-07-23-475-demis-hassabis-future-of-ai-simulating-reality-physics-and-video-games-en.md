@@ -8,6 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=-HzgcbRXUK8"
+excerpt: "The human mind struggles to make clean, deterministic predictions about complex, nonlinear dynamical systems—systems that evolve over time in ways that are sensitive to initial conditions, often exhibiting chaotic behavior. Yet, despite this inherent difficulty, there is growing evidence that classical machine learning systems, particularly deep neural networks, may be capable of modeling such systems with surprising accuracy. This includes domains long considered intractable, such as fluid dynamics."
 permalink: /articles/475-demis-hassabis-future-of-ai-simulating-reality-physics-and-video-games/en/
 ---
 
