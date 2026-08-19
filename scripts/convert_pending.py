@@ -209,7 +209,7 @@ def extract_excerpt(content: str) -> str | None:
         if not stripped or stripped == "---" or stripped.startswith("#"):
             continue
         if stripped.startswith("**") and stripped.endswith("**"):
-            if "." not in stripped and "。" not in stripped:
+            if not re.search(r"[.!?。！？]\s*$", stripped):
                 continue
         plain = re.sub(r"^[*_>\s]+", "", stripped)
         plain = re.sub(r"[*_`]+", "", plain)

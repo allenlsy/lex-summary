@@ -7,7 +7,7 @@ article_title: "497 - Biggest Mysteries in Physics: Antimatter, Dark Energy & To
 collection_id: lex-fridman
 language: en
 variant_rank: 1
-excerpt: "1. The Historical Arc of Unification in Physics"
+excerpt: "The trajectory of modern physics is fundamentally characterized by a centuries-long pursuit of unification. Rather than viewing physical phenomena as isolated occurrences, researchers systematically demonstrate that distinct forces and behaviors emerge from shared underlying principles. This epistemological framework traces back to the mid-seventeenth century, when terrestrial and celestial mechanics were perceived as entirely separate domains. Isaac Newton’s formulation of universal gravitation represented the first major unification, demonstrating that the force causing a dropped object to fall is identical to the force governing planetary motion and lunar orbits. The designation “universal” explicitly acknowledged that seemingly unrelated phenomena operated under a single law."
 permalink: "/articles/497-don-lincoln/en/"
 ---
 

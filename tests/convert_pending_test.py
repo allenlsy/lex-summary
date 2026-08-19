@@ -79,6 +79,16 @@ class ExcerptTests(unittest.TestCase):
             "这是关于人工智能未来发展的实质性摘要段落，包含足够长的中文内容用于列表页展示。",
         )
 
+    def test_bold_numbered_heading_skipped(self) -> None:
+        content = (
+            "**1. The Historical Arc of Unification in Physics**\n\n"
+            "The trajectory of modern physics is fundamentally characterized by a centuries-long pursuit.\n"
+        )
+        self.assertEqual(
+            cp.extract_excerpt(content),
+            "The trajectory of modern physics is fundamentally characterized by a centuries-long pursuit.",
+        )
+
     def test_none_when_only_short_lines(self) -> None:
         self.assertIsNone(cp.extract_excerpt("# Only heading\n\n**Label**\n"))
 
