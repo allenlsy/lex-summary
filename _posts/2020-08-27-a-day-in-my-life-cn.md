@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=0m3hGZvD-0s"
-excerpt: "本文深入解析嘉宾的自律日程，重点涵盖晨间规划、每日两次四小时深度工作及空腹运动与生酮饮食。全篇强调以固定仪式取代短暂动机，在严谨时间块中平衡身心锻炼与深度阅读，实现高效产出与精神韧性。"
+excerpt: "嘉宾分享其通过规律作息、深度工作与生酮饮食构建的高效生活体系，强调自律与极简主义。内容涵盖晨间习惯、高强度运动及阅读哲学，旨在通过系统化流程提升生产力与心理韧性。"
 permalink: /articles/a-day-in-my-life/cn/
 ---
 # 晨间习惯、深度工作与生活哲学总结

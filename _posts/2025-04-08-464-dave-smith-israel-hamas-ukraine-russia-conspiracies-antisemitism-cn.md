@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=1V0bJfqEaa4"
-excerpt: "本期嘉宾深入探讨现代冲突的政治与道德图景，指出历次战争均源于系统性欺骗与问责缺失。内容批判“正义战争”神话的瓦解、军工复合体的利益操控及平民苦难，呼吁重建政治责任。"
+excerpt: "剖析伊拉克战争以来的系统性欺骗与问责缺失，揭示“正义战争”如何异化为强权合理化暴力的工具。批判军工复合体制造威胁以获利的机制，呼吁正视战争的人道代价，重建道德清醒与政治责任。"
 permalink: /articles/464-dave-smith-israel-hamas-ukraine-russia-conspiracies-antisemitism/cn/
 ---
 

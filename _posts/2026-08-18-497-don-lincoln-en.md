@@ -7,7 +7,7 @@ article_title: "497 - Biggest Mysteries in Physics: Antimatter, Dark Energy & To
 collection_id: lex-fridman
 language: en
 variant_rank: 1
-excerpt: "This blog post traces the historical quest to unify physics, from Newton’s universal gravitation to Maxwell’s electromagnetism, highlighting how unifications reshaped civilization. It then examines Einstein’s relativistic revolution, which redefined space, time, and the speed limit, framing the ongoing search for a single underlying principle."
+excerpt: "Guest explores physics’ historical unification, from Newton’s gravity to Maxwell’s electromagnetism, culminating in the quest for a single fundamental principle. The narrative highlights how these theoretical breakthroughs reshaped civilization and continues through the Standard Model, seeking to unify all forces under one high-energy framework."
 permalink: "/articles/497-don-lincoln/en/"
 ---
 

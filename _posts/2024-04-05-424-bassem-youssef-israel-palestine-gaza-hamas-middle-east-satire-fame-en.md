@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=sG8u6owzad4"
-excerpt: "In this comprehensive interview, Egyptian-American satirist Bassem Youssef explores his transition from cardiac surgeon to political comedian, detailing how he used satire as a tool of survival during Egypt’s Arab Spring and subsequent military rule. The discussion delves into the psychological costs of authoritarianism, modern media manipulation, and the ongoing global struggle for truth and free expression."
+excerpt: "Bassem Youssef, an Egyptian-American satirist and former cardiac surgeon, explores his journey from Cairo to the U.S. amid political upheaval. He examines the Arab Spring, authoritarianism, media manipulation, and the psychological toll of dissent, highlighting satire as resistance against state control and global crises."
 permalink: /articles/424-bassem-youssef-israel-palestine-gaza-hamas-middle-east-satire-fame/en/
 ---
 

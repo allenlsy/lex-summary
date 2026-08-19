@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=SvKv7D4pBjE"
-excerpt: "本期节目特邀军事史学者，以阿登战役与闪电战起源为题，深度解析曼施坦因等将领的奇袭构想及兰克博士推广佩尔维廷的幕后贡献。内容揭示高速机动、心理震慑与兴奋剂药理如何协同重塑现代战争逻辑。"
+excerpt: "本文解析1940年阿登战役中曼施坦因等将领提出的闪电战构想，以及科学家兰克博士利用甲基苯丙胺“佩尔维廷”维持士兵连续七十二小时高强度作战的生理机制。这一战略与药理学的结合，通过速度、突袭及药物辅助，彻底颠覆了传统战争逻辑并促成德军对法国的决定性胜利。"
 permalink: /articles/481-norman-ohler-hitler-nazis-drugs-ww2-blitzkrieg-lsd-mkultra-cia/cn/
 ---
 

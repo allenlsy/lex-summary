@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=7Sk6lTLSZcA"
-excerpt: "In this episode, the featured guest dissects George Orwell’s 1984, examining how its dystopian mechanisms of perpetual surveillance, linguistic restriction, and cognitive control continue to influence contemporary political rhetoric. The conversation underscores the novel’s paradoxical legacy, revealing how terms like Newspeak and doublethink are frequently weaponized to criticize oppression while inadvertently replicating the very authoritarian structures Orwell originally condemned."
+excerpt: "This analysis examines George Orwell’s 1984, exploring its dystopian Oceania governed by Ingsoc’s totalitarian regime under Big Brother. It highlights how terms like Newspeak and doublethink enforce absolute power, while the novel’s widespread translation and censorship underscore its enduring relevance in critiquing authoritarian control and historical manipulation."
 permalink: /articles/1984-by-george-orwell/en/
 ---
 

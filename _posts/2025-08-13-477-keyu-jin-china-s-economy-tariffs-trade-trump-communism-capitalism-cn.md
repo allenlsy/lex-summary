@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=y3yAVZk3tyA"
-excerpt: "本期节目特邀经济学家金凯瑜，探讨中国经济模式的深层逻辑。她指出中国实行“政治集权与经济去中心化”的市长经济，并强调权威文化基于互惠责任，共同塑造了务实高效的本土创新生态。"
+excerpt: "金凯瑜解析中国经济去中心化特征，指出地方官员绩效激励驱动增长。她阐释中西权威观差异，强调基于互惠与责任的社会契约，以及中国务实高效的创业文化。"
 permalink: /articles/477-keyu-jin-china-s-economy-tariffs-trade-trump-communism-capitalism/cn/
 ---
 

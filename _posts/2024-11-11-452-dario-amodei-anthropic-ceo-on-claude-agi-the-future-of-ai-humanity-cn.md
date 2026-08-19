@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=ugvHCXCOmm4"
-excerpt: "本期访谈特邀Anthropic首席执行官达里奥·阿莫迪，深入探讨人工智能规模扩展、安全对齐与未来演进。他论证了算力与数据增长驱动智能涌现的规律，并强调突破资源瓶颈与强化安全机制是迈向通用智能的核心。"
+excerpt: "Anthropic首席执行官达里奥·阿莫迪深入探讨人工智能规模扩展定律及其对智能涌现的驱动作用。内容涵盖模型性能随算力与数据增长的提升机制，以及合成数据、算力基础设施和架构优化对突破数据与计算瓶颈的关键意义。"
 permalink: /articles/452-dario-amodei-anthropic-ceo-on-claude-agi-the-future-of-ai-humanity/cn/
 ---
 

@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=ugvHCXCOmm4"
-excerpt: "In this episode, Anthropic CEO Dario Amodei examines how artificial intelligence has progressed through consistent scaling rather than novel algorithms. He demonstrates how expanding model parameters, training data, and compute predictably boosts performance, positioning language as the ideal testbed for general intelligence while underscoring the critical importance of integrating safety research with rapid technological advancement."
+excerpt: "Anthropic CEO Dario Amodei explores how scaling laws drive AI progress, shifting focus from novel algorithms to increasing model size, data, and compute. This empirical approach reveals predictable performance gains, establishing language as a key testbed for general intelligence and defining the current trajectory of artificial development."
 permalink: /articles/452-dario-amodei-anthropic-ceo-on-claude-agi-the-future-of-ai-humanity/en/
 ---
 

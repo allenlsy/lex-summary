@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=XpC7SVDXimg"
-excerpt: "This episode features Israeli Prime Minister Benjamin Netanyahu discussing the nation’s ongoing judicial reform protests, democratic challenges, and geopolitical strategies. The conversation explores critical themes including artificial intelligence, national security, and the moral responsibilities of leadership, aiming to foster balanced, multi-perspective dialogue."
+excerpt: "Israeli Prime Minister Benjamin Netanyahu addresses domestic judicial reform protests and national security challenges, emphasizing the critical role of AI in modern warfare. He outlines strategies for regional stability, balancing internal political tensions with external threats to Israel’s sovereignty and long-term survival."
 permalink: /articles/389-benjamin-netanyahu-israel-palestine-power-corruption-hate-and-peace/en/
 ---
 

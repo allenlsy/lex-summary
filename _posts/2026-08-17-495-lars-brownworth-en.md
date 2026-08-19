@@ -7,7 +7,7 @@ article_title: "495 - Vikings, Ragnar, Berserkers, Valhalla & the Warriors of th
 collection_id: lex-fridman
 language: en
 variant_rank: 1
-excerpt: "This episode examines the Viking Age, centered on the 793 AD Lindisfarne raid that shattered medieval beliefs about maritime safety and religious sanctuary. It explores how contemporary chroniclers recorded the profound psychological terror of these attacks, while highlighting the inherent bias in surviving historical records, which were written exclusively by the raided communities rather than the Norse themselves."
+excerpt: "This summary examines the Viking Age, beginning with the 793 AD raid on Lindisfarne that shattered medieval European security assumptions. It analyzes how contemporary chroniclers framed Norse raids as unprecedented violations of religious sanctuary, shaping historical narratives through the lens of victimized monastic communities rather than Viking perspectives."
 permalink: "/articles/495-lars-brownworth/en/"
 ---
 

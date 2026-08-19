@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=OHWnPOKh_S0"
-excerpt: "Featuring guest Marc Andreessen, this episode explores America’s rapidly accelerating national debt alongside a deliberate cultural stagnation that suppresses innovation and individual initiative. The discussion underscores how systemic overregulation and ideological conformity risk economic collapse, while emphasizing that restoring entrepreneurial freedom is essential for national renewal."
+excerpt: "Marc Andreessen analyzes America’s accelerating debt crisis and cultural stagnation, arguing that political inertia and censorship are suppressing innovation. He warns that this engineered decline threatens economic collapse, yet remains reversible through renewed individual initiative and the restoration of civil liberties to unlock the nation’s inherent potential."
 permalink: /articles/458-marc-andreessen-trump-power-tech-ai-immigration-future-of-america/en/
 ---
 

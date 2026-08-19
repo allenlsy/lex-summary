@@ -7,7 +7,7 @@ article_title: "500 - Khabib Nurmagomedov on Daghestan, Combat Sports, Culture, 
 collection_id: lex-fridman
 language: cn
 variant_rank: 2
-excerpt: "在此博客中，莱克斯·弗里德曼与不败格斗冠军哈比布·努尔马戈梅多夫用俄语对话，探讨达吉斯坦的格斗文化、历史渊源及训练体系，强调纪律与精神韧性在职业成功中的关键作用。"
+excerpt: "前UFC冠军哈比布·努尔马戈梅多夫深入剖析达吉斯坦独特的格斗文化生态，阐述历史、地理与贫困如何共同塑造了该地区卓越的竞技传统。他进一步探讨了高海拔训练基地的建设意义，并强调心理纪律、精神信仰与屏蔽外界干扰对于维持长期卓越表现的关键作用。"
 permalink: "/articles/500-khabib-nurmagomedov/cn/"
 ---
 

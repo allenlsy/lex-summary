@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=vif8NQcjVf0"
-excerpt: "本期节目深度对话NVIDIA首席执行官黄仁勋，探讨其向AI基础设施的转型，解析协同设计、CUDA生态与AI扩展定律。黄仁勋进一步阐述AI代理、能源管理及领导哲学，展现其重塑科技生态的前瞻视野。"
+excerpt: "黄仁勋阐述NVIDIA从GPU向AI工厂的演进，强调极致协同设计与CUDA生态的护城河。他提出AI扩展定律及代理自我复制趋势，并指出电力瓶颈与基于信念的领导哲学。"
 permalink: /articles/494-jensen-huang-nvidia-the-4-trillion-company-the-ai-revolution/cn/
 ---
 

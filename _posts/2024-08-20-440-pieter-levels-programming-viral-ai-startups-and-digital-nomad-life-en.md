@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 3
 original_link: "https://www.youtube.com/watch?v=oFtjKbXKqbg"
-excerpt: "This episode features Pieter Levels, a self-taught indie hacker who has independently launched over forty profitable startups without relying on venture capital. He shares his bootstrapped philosophy of leveraging simple technology, shipping products rapidly, and validating concepts through actual user behavior instead of following traditional startup playbooks."
+excerpt: "Pieter Levels, a self-taught indie hacker, built over 40 bootstrapped startups like Nomad List and Photo AI using simple tech stacks. His philosophy prioritizes speed, solo execution, and rapid validation over venture capital, demonstrating how minimalist development and user-driven iteration can succeed without external funding or large teams."
 permalink: /articles/440-pieter-levels-programming-viral-ai-startups-and-digital-nomad-life/en/long/
 ---
 

@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=Mde2q7GFCrw"
-excerpt: "Historian Yuval Noah Harari examines the crucial distinction between intelligence and consciousness, arguing that while modern AI excels at problem-solving, it possesses no subjective experience or genuine emotions. He cautions against anthropomorphizing algorithms, stressing that consciousness is inherently private and socially constructed rather than objectively verifiable, thereby demanding a more precise framework for evaluating machine capabilities."
+excerpt: "Historian Yuval Noah Harari distinguishes intelligence, defined as problem-solving capability, from consciousness, which entails subjective emotional experience. He argues that current AI systems possess the former but lack the latter, warning against anthropomorphizing algorithms that mimic human emotions without possessing genuine internal feelings.\n\n历史学家尤瓦尔·赫拉利区分了作为问题解决能力的“智能”与包含主观情感体验的“意识”。他指出，当前人工智能具备前者但缺乏后者，警告人们不要将缺乏真实内在感受的算法拟人化。"
 permalink: /articles/390-yuval-noah-harari-human-nature-intelligence-power-and-conspiracies/en/
 ---
 

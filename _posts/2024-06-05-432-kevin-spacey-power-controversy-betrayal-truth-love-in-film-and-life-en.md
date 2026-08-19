@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=XJTMQtE-MIo"
-excerpt: "In this episode, two-time Academy Award winner Kevin Spacey discusses his last-minute casting as John Doe in David Fincher’s Se7en, detailing his strategic choice to exclude himself from all promotional campaigns. He examines the conflict between commercial marketing and artistic integrity, demonstrating how protecting the narrative’s psychological surprise ultimately defined his legacy as a masterful, nuanced performer."
+excerpt: "Two-time Academy Award winner Kevin Spacey recounts his pivotal role as John Doe in David Fincher’s *Se7en*. He negotiated to exclude his image from marketing to preserve the narrative twist, prioritizing artistic impact over commercial visibility."
 permalink: /articles/432-kevin-spacey-power-controversy-betrayal-truth-love-in-film-and-life/en/
 ---
 

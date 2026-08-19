@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=HUkBz-cdB-k"
-excerpt: "In this episode, Fields Medalist Terence Tao examines the nature of mathematical discovery, arguing that the most compelling problems reside at the boundary between solvability and impossibility. Drawing on his interdisciplinary research, he highlights how intuition, collaborative exploration, and artificial intelligence collectively drive modern mathematical breakthroughs."
+excerpt: "Renowned mathematician Terence Tao explores the nature of intellectual challenges, emphasizing the boundary between solvable and unsolvable problems. He examines the Kakeya problem’s counterintuitive solutions, revealing deep structural unity across mathematical disciplines while reflecting on intuition, collaboration, and the evolving role of artificial intelligence in modern research.\n\n著名数学家陶哲轩探讨智力挑战的本质，强调可解与不可解问题间的边界。他分析Kakeya问题的反直觉解法，揭示数学各领域的深层统一性，并反思直觉、合作及人工智能在现代研究中的作用。"
 permalink: /articles/472-terence-tao-hardest-problems-in-mathematics-physics-the-future-of-ai/en/
 ---
 

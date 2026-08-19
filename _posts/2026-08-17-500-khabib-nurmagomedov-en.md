@@ -7,7 +7,7 @@ article_title: "500 - Khabib Nurmagomedov on Daghestan, Combat Sports, Culture, 
 collection_id: lex-fridman
 language: en
 variant_rank: 1
-excerpt: "In a rare Russian-language interview, Khabib Nurmagomedov discusses his undefeated MMA career with Lex Fridman, exploring Dagestan's austere combat culture, his father's training legacy, psychological discipline, and spiritual values. The conversation highlights how hardship and minimal resources forged champions, contrasting with the comfort that can weaken athletic drive."
+excerpt: "Undefeated MMA legend Khabib Nurmagomedov explores Dagestan’s unique combat culture, attributing its success to austere training environments that foster resilience. He contrasts the minimal equipment needs of wrestling with football’s systemic demands, arguing that hardship drives competitive excellence while comfort diminishes drive."
 permalink: "/articles/500-khabib-nurmagomedov/en/"
 ---
 

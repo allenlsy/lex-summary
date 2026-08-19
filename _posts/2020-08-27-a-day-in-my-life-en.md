@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=0m3hGZvD-0s"
-excerpt: "This episode explores the guest’s meticulously structured daily routine designed to maximize productivity and mental clarity. By integrating strategic morning mantras, uninterrupted deep work sessions, intense fasted exercise, and a ketogenic diet, the speaker demonstrates how disciplined habits and holistic wellness consistently drive peak performance."
+excerpt: "The guest details a rigorous daily routine prioritizing sleep, intense fasted exercise, and a keto diet to sustain high productivity. They utilize two four-hour deep work blocks, strict addiction management, and visualization techniques to maintain focus and achieve ambitious long-term goals.\n\n嘉宾详述了以充足睡眠、高强度空腹运动和生酮饮食为基础的高效能日常。通过两个四小时深度工作时段、严格的成瘾管理及可视化技巧，他们保持专注并实现远大目标。"
 permalink: /articles/a-day-in-my-life/en/
 ---
 

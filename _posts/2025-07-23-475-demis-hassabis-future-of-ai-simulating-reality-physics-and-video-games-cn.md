@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=-HzgcbRXUK8"
-excerpt: "本期对话邀请德米斯·哈萨比斯探讨自然系统的可学习性与AI建模极限。他指出受物理与演化约束的自然界具有内在结构，AI仅凭观察即可隐式习得复杂动力学，该假说暗示宇宙本质与信息计算高度相容。"
+excerpt: "DeepMind创始人德米斯·哈萨比斯提出自然系统受演化约束形成低维流形，故具可学习性。该观点认为宇宙本质为信息体系，神经网络通过观察即可隐式掌握物理动力学，无需显式编程。"
 permalink: /articles/475-demis-hassabis-future-of-ai-simulating-reality-physics-and-video-games/cn/
 ---
 

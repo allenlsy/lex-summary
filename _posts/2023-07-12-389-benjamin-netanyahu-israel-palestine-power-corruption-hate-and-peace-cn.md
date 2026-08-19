@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=XpC7SVDXimg"
-excerpt: "本期对话以色列总理内塔尼亚胡，聚焦司法改革争议与地缘安全挑战。他剖析反锡安主义实质为反犹，援引历史警示应对伊朗威胁，并强调外交突破与国家生存战略。"
+excerpt: "本杰明·内塔尼亚胡在访谈中驳斥其“最受憎恨”的形象，强调国际尊重与亚伯拉罕协议的外交成就。他警告伊朗核威胁如希特勒时期般致命，主张反锡安主义即反犹主义，并辩护司法改革以维护民主平衡。"
 permalink: /articles/389-benjamin-netanyahu-israel-palestine-power-corruption-hate-and-peace/cn/
 ---
 

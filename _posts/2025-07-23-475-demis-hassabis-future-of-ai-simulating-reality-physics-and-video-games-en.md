@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=-HzgcbRXUK8"
-excerpt: "In this episode, guest Demis Hassabis explores how artificial intelligence implicitly learns the underlying physical laws of complex, nonlinear systems by analyzing real-world video data. He argues that because nature operates within evolutionary and thermodynamic constraints, it forms a structured manifold that classical neural networks can efficiently reverse-engineer without explicit programming."
+excerpt: "Demis Hassabis explores how deep learning models implicitly internalize physical laws by observing natural dynamics. This suggests nature’s evolutionary constraints create structured manifolds that AI can learn without explicit programming, revealing intelligence’s capacity to model complex reality through observation alone."
 permalink: /articles/475-demis-hassabis-future-of-ai-simulating-reality-physics-and-video-games/en/
 ---
 

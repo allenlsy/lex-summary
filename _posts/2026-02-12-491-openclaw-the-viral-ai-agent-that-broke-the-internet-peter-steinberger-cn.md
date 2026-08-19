@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=YFjfBk8HI5o"
-excerpt: "本期由OpenClaw创始人Steinberger分享，重点解析该开源AI智能体的本地化架构与跨平台集成机制。项目倡导用户数据主权，同时引发对系统安全、伦理边界及自主计算责任的深度探讨。"
+excerpt: "OpenClaw 作为开源自主 AI 智能体，通过集成多平台通信接口与本地计算环境，实现用户主权下的数据控制。其技术架构涵盖模块化网关、智能体循环及自我修改能力，引发关于网络安全、隐私伦理及人机关系演变的广泛讨论。"
 permalink: /articles/491-openclaw-the-viral-ai-agent-that-broke-the-internet-peter-steinberger/cn/
 ---
 

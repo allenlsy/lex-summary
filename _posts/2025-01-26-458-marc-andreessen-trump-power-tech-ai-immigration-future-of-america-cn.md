@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=OHWnPOKh_S0"
-excerpt: "本期节目由马克·安德森主讲，深入剖析美国债务指数级膨胀与文化士气崩塌引发的系统性危机。新一代科技领袖正打破审查与同质化桎梏，以创新与言论自由引领国家复兴。"
+excerpt: "马克·安德森剖析美国债务指数级增长与文化停滞危机，指出软性威权主义导致士气瓦解。新一代领袖凭借勇气挑战旧精英，科技界正通过拥抱创新与言论自由，推动国家从系统性衰败中走向复兴。"
 permalink: /articles/458-marc-andreessen-trump-power-tech-ai-immigration-future-of-america/cn/
 ---
 

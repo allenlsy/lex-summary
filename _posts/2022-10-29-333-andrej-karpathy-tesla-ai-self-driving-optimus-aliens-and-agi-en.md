@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=cdiD-9MMpb0"
-excerpt: "In this episode, guest Andrej Karpathy examines neural networks as fundamentally simple mathematical abstractions rather than biological mimics, explaining how massive scaling and rigorous optimization unlock surprising emergent capabilities like reasoning and language comprehension. He contrasts artificial training with biological evolution, highlighting how distinct optimization processes drive the system’s unpredictable yet highly sophisticated computational behaviors."
+excerpt: "Michael Karpathy defines neural networks as simple mathematical abstractions involving matrix multiplications and nonlinearities, rather than biological mimics. He highlights how scaling these systems on vast datasets yields surprising emergent capabilities like reasoning and code generation, contrasting this optimization-driven evolution with biological brain development."
 permalink: /articles/333-andrej-karpathy-tesla-ai-self-driving-optimus-aliens-and-agi/en/
 ---
 

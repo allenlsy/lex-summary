@@ -7,7 +7,7 @@ article_title: "497 - Biggest Mysteries in Physics: Antimatter, Dark Energy & To
 collection_id: lex-fridman
 language: cn
 variant_rank: 2
-excerpt: "本期节目探讨了现代物理学统一理论的历史与前沿，涵盖反物质、暗能量、希格斯机制及粒子加速器实验，强调科学通过验证与革新逐步揭示宇宙基本规律。"
+excerpt: "本期探讨反物质、暗能量及万有理论的追寻，梳理从牛顿力学到电弱统一的物理史。重点解析相对论时空观、希格斯机制及粒子加速器技术，揭示自然界基本力与物质构成的底层规律。"
 permalink: "/articles/497-don-lincoln/cn/"
 ---
 

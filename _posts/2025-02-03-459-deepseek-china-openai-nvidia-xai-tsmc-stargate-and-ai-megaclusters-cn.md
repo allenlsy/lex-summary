@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=_1f-o0nqpEI"
-excerpt: "本期对话由Patel与Lambert对谈，深度解析“DeepSeek时刻”。双方聚焦架构创新与成本效率，探讨开放权重对重塑全球AI格局及地缘博弈的关键影响。"
+excerpt: "SemiAnalysis创始人戴安·帕特尔与AI2研究员内森·兰伯特深入剖析DeepSeek时刻。双方探讨MoE架构与思维链推理带来的成本效率革命，以及开放权重对全球AI权力格局、地缘政治及工程范式的深远影响。"
 permalink: /articles/459-deepseek-china-openai-nvidia-xai-tsmc-stargate-and-ai-megaclusters/cn/
 ---
 

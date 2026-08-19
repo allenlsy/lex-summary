@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=u321m25rKXc"
-excerpt: "In this episode, host Lex Fridman interviews Ukrainian President Volodymyr Zelenskyy regarding Ukraine’s wartime governance, geopolitical strategy, and post-war reconstruction. The discussion highlights key themes such as rigorous anti-corruption enforcement, the distinction between financial and military aid, critical infrastructure restoration, and the operational challenges of maintaining international alliances during prolonged conflict."
+excerpt: "Lex Fridman interviews Ukrainian President Volodymyr Zelenskyy on wartime governance, anti-corruption measures, and infrastructure restoration. The dialogue explores geopolitical strategy, international aid logistics, and the psychological realities of prolonged conflict, addressing how Ukraine maintains credibility and manages global supply chain vulnerabilities while planning for post-war reconstruction and diplomatic normalization."
 permalink: /articles/456-ukraine-war-peace-putin-trump-nato-and-freedom/en/
 ---
 

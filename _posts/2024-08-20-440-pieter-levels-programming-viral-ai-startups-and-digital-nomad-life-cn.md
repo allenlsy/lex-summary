@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 4
 original_link: "https://www.youtube.com/watch?v=oFtjKbXKqbg"
-excerpt: "本期邀请独立创业者皮特·莱维斯，探讨其拒绝风投、单人开发数十款产品的实战路径。他主张运用极简技术栈，践行“快速构建、尽早发布、以真实付费验证”的理念，在持续迭代中实现高效创业。"
+excerpt: "皮特·莱维斯展示其独立创业模式，通过极简技术栈快速构建并验证四十多个项目。他拒绝风险投资，坚持自主开发、快速迭代及以用户付费为核心的实战哲学，强调行动胜于完美，利用失败经验持续优化产品与系统稳定性。"
 permalink: /articles/440-pieter-levels-programming-viral-ai-startups-and-digital-nomad-life/cn/long/
 ---
 

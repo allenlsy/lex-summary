@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=EV7WhVT270Q"
-excerpt: "本期由莱克斯·弗里德曼、塞巴斯蒂安·拉斯克与内森·兰伯特对谈，深入剖析2025至2026年AI前沿进展。讨论聚焦中美开源与闭源博弈、架构优化，并重点探讨后训练技术与推理扩展如何驱动AI能力跃升。"
+excerpt: "莱克斯·弗里德曼与专家探讨AI前沿，聚焦中美在开源与闭源模型上的竞争格局。重点解析MoE等架构优化及RLVR后训练技术，揭示推理扩展与数据质量对提升模型性能的关键作用。"
 permalink: /articles/490-state-of-ai-in-2026-llms-coding-scaling-laws-china-agents-gpus-agi/cn/
 ---
 

@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=cdiD-9MMpb0"
-excerpt: "本期对话由卡尔帕齐主讲，探讨神经网络作为数学抽象的涌现能力及其与生物大脑的本质差异，并延伸至宇宙计算假说与物理漏洞议题。他进一步指出，Transformer架构凭借高效机制，深刻揭示了数学优化与复杂智能涌现的内在联系。"
+excerpt: "卡尔帕齐探讨神经网络作为数学抽象的涌现能力，辨析其与生物大脑在优化机制上的本质差异。他进一步论述宇宙可能蕴含的计算漏洞、决定论本质及Transformer架构的革新意义。"
 permalink: /articles/333-andrej-karpathy-tesla-ai-self-driving-optimus-aliens-and-agi/cn/
 ---
 

@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=ZIyB9e_7a4c"
-excerpt: "Neuroscientist Andrew Huberman joins Lex Fridman to examine the natural evolution of creative careers, exploring how legacy, mentorship, and personal growth intersect with the neurochemical mechanisms driving focus, creativity, and mental resilience. The dialogue further addresses the ethical challenges of public science communication, the restorative value of solitude, and the role of unstructured conversation in navigating modern cultural polarization."
+excerpt: "Neuroscientist Andrew Huberman explores the transition from active creation to mentorship, emphasizing how hardship reveals loyalty and shapes character. The dialogue examines neurochemical influences on behavior, the value of solitude for innovation, and the ethical responsibilities of public science communication in an era of digital media and political polarization."
 permalink: /articles/435-andrew-huberman-focus-controversy-politics-and-relationships/en/
 ---
 

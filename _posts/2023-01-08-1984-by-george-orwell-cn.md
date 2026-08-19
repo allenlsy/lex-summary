@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=7Sk6lTLSZcA"
-excerpt: "本期节目嘉宾深度解读《1984》，剖析大洋国极权统治下的监控机制与历史篡改。讨论核心聚焦于国家煽动的集体仇恨仪式，并指出在系统性压迫中，爱与人类情感联结是抵御精神操控、维系革命希望的根本力量。"
+excerpt: "本播客深入解析《1984》中极权统治对人性与爱的系统性抹杀，剖析新话、双重思想及家庭纽带瓦解等核心机制。内容聚焦权力本质、仇恨动员及情感转移，揭示爱作为抵抗最后防线的革命性意义。"
 permalink: /articles/1984-by-george-orwell/cn/
 ---
 

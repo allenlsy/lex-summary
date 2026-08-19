@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=XJTMQtE-MIo"
-excerpt: "本期对话特邀凯文·史派西，回顾其在《七宗罪》中饰演约翰·多伊的幕后历程，并延伸至《纸牌屋》的角色塑造。史派西分享了如何通过极致克制、心理博弈与道德模糊性，诠释复杂反派的文化影响力。"
+excerpt: "凯文·史派西回顾《七宗罪》中约翰·多伊一角，阐述其通过剃发、克制表演及隐藏宣传以强化叙事张力的策略。他进一步解析《纸牌屋》中弗兰克·安德伍德的形象，探讨权力、心理操控及道德模糊性在角色塑造中的核心作用。"
 permalink: /articles/432-kevin-spacey-power-controversy-betrayal-truth-love-in-film-and-life/cn/
 ---
 

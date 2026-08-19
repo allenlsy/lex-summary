@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=Mde2q7GFCrw"
-excerpt: "历史学家尤瓦尔·赫拉利剖析AI的智力与意识之辨，指出其仅有计算能力而无主观体验，实为异质化的“外星智能”。他警示情感模拟易被用于操控人类，呼吁亟需划定伦理法律边界以捍卫社会信任与民主根基。"
+excerpt: "历史学家尤瓦尔·赫拉利辨析智力与意识的本质差异，指出AI虽具强大计算力却无主观体验。他警示拟人化投射可能催生基于社会共识的AI权利，并强调需通过法律禁止AI模拟情感以维护民主信任与人类主体性。"
 permalink: /articles/390-yuval-noah-harari-human-nature-intelligence-power-and-conspiracies/cn/
 ---
 

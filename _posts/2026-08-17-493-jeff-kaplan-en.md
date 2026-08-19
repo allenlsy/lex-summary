@@ -7,7 +7,7 @@ article_title: "493 - Jeff Kaplan: World of Warcraft, Overwatch, Blizzard, and F
 collection_id: lex-fridman
 language: en
 variant_rank: 1
-excerpt: "This episode features Jeff Kaplan, legendary director of World of Warcraft and Overwatch, tracing his evolution from a dedicated early gamer to a pioneering game developer. Kaplan explores his three-layer design philosophy, the intense nature of player-versus-player dynamics, and the emotional exhaustion from community feedback that ultimately shaped his departure from Blizzard."
+excerpt: "Jeff Kaplan, former director of *World of Warcraft* and *Overwatch*, explores gaming enjoyment through three distinct layers: fun for the player, designer, and computer. His career spans from early arcade and text-based adventures to leading PvP-focused environments, culminating in an emotionally exhausting departure from Blizzard due to relentless community criticism."
 permalink: "/articles/493-jeff-kaplan/en/"
 ---
 

@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=ZIyB9e_7a4c"
-excerpt: "本期播客邀请神经科学家安德鲁·休伯曼探讨创作项目的自然退出与人才传承，并解析“身静脑活”状态对创造力与科学顿悟的神经机制。对话还聚焦科学传播的伦理挑战及静默对创新的价值。"
+excerpt: "神经科学家安德鲁·休伯曼探讨创作生涯的自然转向、创造力背后的神经机制及物质对行为的影响。他主张通过静默与身体静止激发大脑活跃，强调培育下一代人才及自主神经系统可塑性在科学传播中的核心价值。"
 permalink: /articles/435-andrew-huberman-focus-controversy-politics-and-relationships/cn/
 ---
 

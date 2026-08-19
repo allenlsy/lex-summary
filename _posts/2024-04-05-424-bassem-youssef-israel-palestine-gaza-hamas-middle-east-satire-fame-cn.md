@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=sG8u6owzad4"
-excerpt: "本期访谈邀请埃及裔讽刺艺术家巴塞姆·尤素夫，回顾其从外科医生到政治喜剧人的流亡历程。节目聚焦阿拉伯之春与埃及政权更迭，深入探讨以幽默对抗极权、捍卫言论自由及追寻真相的核心议题。"
+excerpt: "埃及裔美国讽刺家巴塞姆·尤素夫回顾从心脏外科医生转型为政治评论员的历程，深入剖析阿拉伯之春、埃及军政府统治及流亡美国的经历。对话涵盖言论自由、媒体操纵与独裁体制下的心理创伤，揭示以幽默对抗极权的生存策略。"
 permalink: /articles/424-bassem-youssef-israel-palestine-gaza-hamas-middle-east-satire-fame/cn/
 ---
 

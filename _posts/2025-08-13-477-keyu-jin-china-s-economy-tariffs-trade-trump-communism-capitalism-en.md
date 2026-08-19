@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=y3yAVZk3tyA"
-excerpt: "In this episode, LSE economist Keyu Jin joins Lex Fridman to dismantle Western misconceptions about China’s rigidly centralized economy, revealing instead a dynamic, decentralized system deeply rooted in historical pragmatism and cultural values. She explores how China’s unique blend of state guidance and market innovation creates a distinct economic identity that transcends traditional socialism and capitalism, offering a nuanced framework for understanding modern China’s global trajectory."
+excerpt: "Economist Keyu Jin challenges the Western myth of China’s rigid state control, revealing a dynamic, decentralized system shaped by history and human behavior. Her analysis of China’s unique economic identity bridges socialism and capitalism, offering a nuanced understanding of its pragmatic governance and evolving market structures beyond ideological binaries."
 permalink: /articles/477-keyu-jin-china-s-economy-tariffs-trade-trump-communism-capitalism/en/
 ---
 

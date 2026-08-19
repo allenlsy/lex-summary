@@ -7,7 +7,7 @@ article_title: "495 - Vikings, Ragnar, Berserkers, Valhalla & the Warriors of th
 collection_id: lex-fridman
 language: cn
 variant_rank: 2
-excerpt: "本期节目深入探讨维京时代起源与战略，剖析航海技术、掠夺逻辑及拉格纳的历史神话。维京人凭借卓越机动性与务实扩张，彻底重塑了中世纪欧洲的政治格局。"
+excerpt: "本期节目深入解析维京时代的历史背景、军事战略及拉格纳·洛德布罗克的神话形象。内容涵盖林迪斯法恩袭击引发的心理冲击、北欧造船技术与战术优势，以及从掠夺者向行政管理者转型的历史进程。"
 permalink: "/articles/495-lars-brownworth/cn/"
 ---
 

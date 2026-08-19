@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=cFSrxSBrgSc"
-excerpt: "本期节目邀请性工作者兼研究者艾拉，深入探讨性、身份认同与人类处境的复杂交织。她结合艺术实践与大规模实证调查剖析亲密关系，并指出驱动人类探索与自我重构的核心力量正是永不停歇的好奇心。"
+excerpt: "艾拉以性工作者及研究者身份，探讨性工作作为艺术表达与身份探索的本质。她通过大规模实证研究揭示恋物与创伤无必然联系，主张以好奇心驱动对人类欲望及处境的深层理解。"
 permalink: /articles/358-aella-sex-work-onlyfans-porn-escorting-dating-and-human-sexuality/cn/
 ---
 

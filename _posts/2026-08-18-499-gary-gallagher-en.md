@@ -7,7 +7,7 @@ article_title: "499 - Gary Gallagher: American Civil War, Slavery, Lincoln, Gran
 collection_id: lex-fridman
 language: en
 variant_rank: 1
-excerpt: "In this episode of the Lex Fridman Podcast, historian Gary Gallagher discusses the American Civil War, focusing on its causes rooted in slavery, the pivotal leadership of Lincoln, Grant, and Lee, and the conflict's immense scale and lasting historical memory."
+excerpt: "Historian Gary Gallagher explores the American Civil War’s origins in slavery, leadership of Lincoln, Grant, and Lee, and the war’s transformative scale. He argues that specific political conditions, not inevitability, caused the conflict, while total war strategies and individual agency determined its outcome and historical memory."
 permalink: "/articles/499-gary-gallagher/en/"
 ---
 

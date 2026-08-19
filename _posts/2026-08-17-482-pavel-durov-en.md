@@ -7,7 +7,7 @@ article_title: "482 - Pavel Durov: Telegram, Freedom, Censorship, Money, Power &
 collection_id: lex-fridman
 language: en
 variant_rank: 1
-excerpt: "In this episode, Telegram founder Pavel Durov discusses his unwavering commitment to digital privacy and anti-surveillance, detailing how his stoic lifestyle and philosophical stance on freedom drive Telegram’s resistance to state censorship and geopolitical pressure. The conversation explores the intersection of technology and human resilience, examining how rational principles, transparent engineering, and a rejection of fear and greed shape modern digital sovereignty and societal progress."
+excerpt: "Telegram founder Pavel Durov explains how his early experiences in the Soviet Union and Italy shaped his belief that freedom outweighs money. He advocates for stoic resilience and rational confrontation of mortality to protect user privacy against state surveillance and censorship."
 permalink: "/articles/482-pavel-durov/en/"
 ---
 

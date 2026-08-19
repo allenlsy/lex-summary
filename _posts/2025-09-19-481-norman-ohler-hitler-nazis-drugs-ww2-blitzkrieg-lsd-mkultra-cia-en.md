@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=SvKv7D4pBjE"
-excerpt: "This episode examines the strategic genesis of Germany’s 1940 Blitzkrieg campaign, featuring insights on how visionary tank generals like Guderian and Manstein boldly challenged entrenched military doctrines. By prioritizing rapid armored maneuvers, terrain concealment, and psychological disruption over traditional attrition, their unorthodox Ardennes offensive fundamentally redefined modern warfare."
+excerpt: "Erich von Manstein, Heinz Guderian, and Erwin Rommel revolutionized warfare by proposing a surprise offensive through the Ardennes to bypass the Maginot Line. This strategic shift prioritized speed, concealment, and psychological disruption over traditional static tactics, fundamentally redefining armored combat and enabling Germany’s decisive victory in 1940."
 permalink: /articles/481-norman-ohler-hitler-nazis-drugs-ww2-blitzkrieg-lsd-mkultra-cia/en/
 ---
 
