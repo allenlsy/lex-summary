@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "丹·卡林的硬核历史 62 东方超新星 1"
+title: "丹·卡林的硬核历史 62 东方的超新星 1"
 date: 2026-08-19 09:00:00 +0000
 article_id: dan-carlin-s-hardcore-history-62-supernova-in-the-east-1
 article_title: "Dan Carlin's Hardcore History 62 Supernova in the East 1"
