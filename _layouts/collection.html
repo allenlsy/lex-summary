@@ -14,10 +14,15 @@ layout: default
   <div class="collection-hero-grid">
     <p class="collection-number">Collection<br>№ {{ collection_number_label }}</p>
     <div class="collection-heading">
-      <p class="eyebrow">A gathered line of thought</p>
+      <p class="eyebrow">{{ collection.tagline | default: "A gathered line of thought" }}</p>
       <h1>{{ collection.title }}</h1>
       <div class="collection-intro">
-        <p>{{ collection.description }}</p>
+        <div class="collection-intro-copy">
+          <p>{{ collection.intro }}</p>
+          {% if collection.topics %}
+          <p class="collection-topics"><span>Recurring themes</span>{{ collection.topics | join: " · " }}</p>
+          {% endif %}
+        </div>
         <dl>
           <div><dt>Ideas</dt><dd>{{ articles | size }}</dd></div>
           <div><dt>Editions</dt><dd>{{ collection_posts | size }}</dd></div>

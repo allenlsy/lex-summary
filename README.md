@@ -84,13 +84,18 @@ python3 admin/convert_metadata.py --start 2026-08-01 --end 2026-08-31 --apply
 
 ## Add a collection
 
-Collections are listed in `_data/collections.yml`. Add one stable ID, display title, URL, and description:
+Collections are listed in `_data/collections.yml`. Add one stable ID, display title, URL, an eyebrow `tagline`, a `intro` paragraph written for that podcaster, and an optional `topics` list of recurring themes:
 
 ```yaml
 - id: design-systems
   title: Design Systems
   url: /collections/design-systems/
-  description: Notes on building coherent interfaces at scale.
+  tagline: A gathered line of thought
+  intro: Notes on building coherent interfaces at scale.
+  topics:
+    - Tokens
+    - Components
+    - Documentation
 ```
 
 Then create a landing-page stub `collections/design-systems.html` with front matter only, using the shared `_layouts/collection.html` layout (see the existing collection pages):

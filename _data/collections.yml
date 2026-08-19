@@ -1,20 +1,55 @@
 - id: lex-fridman
   title: Lex Fridman Podcast
   url: /collections/practice-notes/
-  description: Concise, readable summaries of one-hour-plus conversations from the Lex Fridman Podcast.
+  tagline: Love, power, and the nature of reality
+  intro: "Lex Fridman, an AI researcher at MIT, hosts hours-long conversations with scientists, engineers, and world leaders — on artificial intelligence, power, war and peace, physics, and human nature. This collection distills them into concise, readable summaries."
+  topics:
+    - Artificial intelligence
+    - Power
+    - War and peace
+    - Physics
+    - History
+    - Human nature
 - id: dwarkesh
   title: Dwarkesh
   url: /collections/dwarkesh/
-  description: Concise, readable summaries of long-form conversations from the Dwarkesh Podcast.
+  tagline: Deep conversations about big ideas
+  intro: "Dwarkesh Patel interviews the researchers and builders at the frontier of intelligence — AI, economics, history, and mathematics, examined with unusual rigor. This collection distills them into concise, readable summaries."
+  topics:
+    - Artificial intelligence
+    - Economics
+    - History
+    - Mathematics
+    - Frontier research
 - id: huberman
   title: Huberman
   url: /collections/huberman/
-  description: Concise, readable summaries of long-form conversations from the Huberman Lab podcast.
+  tagline: Science-based tools for everyday life
+  intro: "Neuroscientist Andrew Huberman explains how the brain and body work — sleep, focus, stress, and the protocols that put science to work in everyday life. This collection distills them into concise, readable summaries."
+  topics:
+    - Neuroscience
+    - Sleep
+    - Focus
+    - Stress
+    - Protocols
 - id: joe-rogan
   title: Joe Rogan
   url: /collections/joe-rogan/
-  description: Concise, readable summaries of long-form conversations from The Joe Rogan Experience.
+  tagline: Long, unscripted conversations
+  intro: "Three-hour conversations that roam from comedy and combat sports to science, philosophy, and culture, with guests from every walk of life. This collection distills them into concise, readable summaries."
+  topics:
+    - Comedy
+    - Science
+    - Philosophy
+    - Combat sports
+    - Culture
 - id: dan-carlin
   title: Dan Carlin
   url: /collections/dan-carlin/
-  description: Concise, readable summaries of long-form conversations from Dan Carlin's Hardcore History podcast.
+  tagline: The history you didn't get in school
+  intro: "Dan Carlin tells the grand arcs of history — wars, empires, and the human choices behind them — in episodes that run as long as films. This collection distills them into concise, readable summaries."
+  topics:
+    - War
+    - Empire
+    - Power
+    - Human nature
