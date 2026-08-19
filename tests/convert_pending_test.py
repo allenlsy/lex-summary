@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
-"""Tests for the pending-summary conversion mode of import_lex_summaries.py."""
+"""Tests for admin/convert_pending.py."""
 
 from __future__ import annotations
 
+import contextlib
+import io
 import json
 import tempfile
+import types
 import unittest
 from pathlib import Path
 
@@ -54,6 +57,37 @@ class TitleCaseTests(unittest.TestCase):
     def test_mixed_case_title_preserved(self) -> None:
         content = "# 416 - Yann LeCun: Limits of LLMs\n\nbody"
         self.assertEqual(cp.extract_title(Path("x.md"), content), "416 - Yann LeCun: Limits of LLMs")
+
+
+class RawTranscriptTests(unittest.TestCase):
+    def setUp(self) -> None:
+        self._tmp = tempfile.TemporaryDirectory()
+        self.tmp = Path(self._tmp.name)
+
+    def tearDown(self) -> None:
+        self._tmp.cleanup()
+
+    def test_scraped_transcript_page_detected(self) -> None:
+        source = self.tmp / "lexfridman.com-bernie-sanders-transcript-en.md"
+        source.write_text(
+            "Transcript for Bernie Sanders Interview | Lex Fridman Podcast #450 - Lex Fridman\n\n"
+            "Body text...\n\nProudly powered by WordPress\n",
+            encoding="utf-8",
+        )
+        self.assertTrue(cp.is_raw_transcript(source))
+
+    def test_summary_file_not_detected(self) -> None:
+        source = self.tmp / "lexfridman.com-don-lincoln-transcript-en-summary.md"
+        source.write_text(
+            "**Transcript Paraphrase: The Frontier of Modern Physics**\n\nSummary body.\n",
+            encoding="utf-8",
+        )
+        self.assertFalse(cp.is_raw_transcript(source))
+
+    def test_empty_file_not_detected(self) -> None:
+        source = self.tmp / "empty.md"
+        source.write_text("", encoding="utf-8")
+        self.assertFalse(cp.is_raw_transcript(source))
 
 
 class ExcerptTests(unittest.TestCase):
@@ -195,48 +229,20 @@ class ConvertTests(unittest.TestCase):
         _, post_text = result
         self.assertIn("article_id: 501-mystery-episode", post_text)
 
-    def test_api_summary_used_for_excerpt(self) -> None:
-        from unittest import mock
-
-        captured = {}
-
-        class FakeResponse:
-            def __init__(self, data):
-                self._data = data
-            def __enter__(self):
-                return self
-            def __exit__(self, *args):
-                return False
-            def read(self):
-                return self._data
-
-        def fake_urlopen(request, timeout=0):
-            captured["prompt"] = json.loads(request.data)["messages"][0]["content"]
-            return FakeResponse(
-                b'{"choices": [{"message": {"content": "API generated summary text."}}]}'
-            )
-
-        source = self.tmp / "416-yann.md"
-        source.write_text("# 416 - Yann LeCun: Limits of LLMs\n\nBody with enough length to have a fallback excerpt.", encoding="utf-8")
-        with mock.patch("urllib.request.urlopen", side_effect=fake_urlopen):
-            _, post_text = cp.convert_file(source, "lex-fridman", apply=False, api_url="http://localhost:1234/v1")
-        self.assertIn('excerpt: "API generated summary text."', post_text)
-        self.assertIn("Capture the guest, episode topic, and key themes", captured["prompt"])
-        self.assertNotIn("framing phrases", captured["prompt"])
-
-    def test_api_failure_falls_back_to_extract(self) -> None:
-        from unittest import mock
-
+    def test_excerpt_uses_first_paragraph(self) -> None:
         source = self.tmp / "416-yann.md"
         source.write_text(
-            "# 416 - Yann LeCun: Limits of LLMs\n\n**1. A Bold Heading**\n\nThe conversation covers the limits of large language models and the future of AI systems.\n",
+            "# 416 - Yann LeCun: Limits of LLMs\n\n"
+            "The conversation covers the limits of large language models and the future of AI systems.\n",
             encoding="utf-8",
         )
-        with mock.patch("urllib.request.urlopen", side_effect=OSError("connection refused")):
-            _, post_text = cp.convert_file(source, "lex-fridman", apply=False, api_url="http://localhost:1234/v1")
-        self.assertIn("The conversation covers the limits of large language models", post_text)
+        _, post_text = cp.convert_file(source, "lex-fridman", apply=False)
+        self.assertIn(
+            'excerpt: "The conversation covers the limits of large language models and the future of AI systems."',
+            post_text,
+        )
 
-    def test_direct_prompt_for_excerpt_tool(self) -> None:
+    def test_translate_title_uses_api(self) -> None:
         from unittest import mock
 
         captured = {}
@@ -253,14 +259,16 @@ class ConvertTests(unittest.TestCase):
 
         def fake_urlopen(request, timeout=0):
             captured["prompt"] = json.loads(request.data)["messages"][0]["content"]
-            return FakeResponse(b'{"choices": [{"message": {"content": "S"}}]}')
+            return FakeResponse(('{"choices": [{"message": {"content": "450 - 伯尼·桑德斯访谈"}}]}').encode("utf-8"))
 
         with mock.patch("urllib.request.urlopen", side_effect=fake_urlopen):
-            result = cp.summarize_excerpt("body", "en", "http://test/v1", "m", direct=True)
-        self.assertEqual(result, "S")
-        self.assertIn("do not use framing phrases", captured["prompt"])
-        self.assertIn("this episode", captured["prompt"])
-        self.assertNotIn("Capture the guest, episode topic", captured["prompt"])
+            result = cp.translate_title("450 - Bernie Sanders Interview", "cn", "http://test/v1", "m")
+        self.assertEqual(result, "450 - 伯尼·桑德斯访谈")
+        self.assertIn("Translate this podcast episode title into Chinese", captured["prompt"])
+        self.assertIn("original spelling", captured["prompt"])
+
+    def test_translate_title_without_api(self) -> None:
+        self.assertIsNone(cp.translate_title("450 - X", "cn", None, "m"))
 
     def test_eof_without_number_raises(self) -> None:
         from unittest import mock
@@ -294,6 +302,27 @@ class ConvertTests(unittest.TestCase):
         source.write_text("# 416 - X\n\n正文。", encoding="utf-8")
         _, post_text = cp.convert_file(source, "lex-fridman", apply=False)
         self.assertIn("variant_rank: 3", post_text)
+
+    def test_raw_transcript_skipped_by_main(self) -> None:
+        pending = self.tmp / "pending" / "lex-fridman"
+        pending.mkdir(parents=True)
+        source = pending / "lexfridman.com-bernie-sanders-transcript-en.md"
+        source.write_text(
+            "Transcript for Bernie Sanders Interview | Lex Fridman Podcast #450 - Lex Fridman\n\nBody.",
+            encoding="utf-8",
+        )
+        args = types.SimpleNamespace(
+            pending=self.tmp / "pending",
+            collection=None,
+            apply=False,
+        )
+        out, err = io.StringIO(), io.StringIO()
+        with contextlib.redirect_stdout(out), contextlib.redirect_stderr(err):
+            rc = cp.convert_main(args)
+        self.assertEqual(rc, 0)
+        self.assertIn("raw transcript", err.getvalue())
+        self.assertIn("1 skipped (transcript)", out.getvalue())
+        self.assertEqual(list(cp.POSTS_DIR.glob("*.md")), [])
 
 
 if __name__ == "__main__":

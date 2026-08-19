@@ -2,3 +2,19 @@
   title: Lex Fridman Podcast
   url: /collections/practice-notes/
   description: Concise, readable summaries of one-hour-plus conversations from the Lex Fridman Podcast.
+- id: dwarkesh
+  title: Dwarkesh
+  url: /collections/dwarkesh/
+  description: Concise, readable summaries of long-form conversations from the Dwarkesh Podcast.
+- id: the-rest-is-history
+  title: The Rest is History
+  url: /collections/the-rest-is-history/
+  description: Concise, readable summaries of long-form conversations from The Rest is History.
+- id: huberman
+  title: Huberman
+  url: /collections/huberman/
+  description: Concise, readable summaries of long-form conversations from the Huberman Lab podcast.
+- id: joe-rogan
+  title: Joe Rogan
+  url: /collections/joe-rogan/
+  description: Concise, readable summaries of long-form conversations from The Joe Rogan Experience.

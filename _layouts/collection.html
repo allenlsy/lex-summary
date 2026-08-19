@@ -1,0 +1,69 @@
+---
+layout: default
+---
+{% assign collection = site.data.collections | where: "id", page.collection_id | first %}
+{% assign collection_posts = site.posts | where: "collection_id", page.collection_id | sort: "variant_rank" %}
+{% assign articles = collection_posts | group_by: "article_id" %}
+{% assign collection_number = 0 %}
+{% for entry in site.data.collections %}
+  {% if entry.id == page.collection_id %}{% assign collection_number = forloop.index %}{% endif %}
+{% endfor %}
+{% if collection_number < 10 %}{% assign collection_number_label = collection_number | prepend: "0" %}{% else %}{% assign collection_number_label = collection_number %}{% endif %}
+
+<section class="collection-hero wide-container">
+  <div class="collection-breadcrumb">
+    <span>Collections</span>
+  </div>
+  <div class="collection-hero-grid">
+    <p class="collection-number">Collection<br>№ {{ collection_number_label }}</p>
+    <div class="collection-heading">
+      <p class="eyebrow">A gathered line of thought</p>
+      <h1>{{ collection.title }}</h1>
+      <div class="collection-intro">
+        <p>{{ collection.description }}</p>
+        <dl>
+          <div><dt>Ideas</dt><dd>{{ articles | size }}</dd></div>
+          <div><dt>Editions</dt><dd>{{ collection_posts | size }}</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="collection-entries wide-container" aria-label="Articles in {{ collection.title }}">
+  <header class="section-heading">
+    <p class="eyebrow">In this collection</p>
+    <p>Choose your edition</p>
+  </header>
+
+  {% for article in articles %}
+    {% assign variants = article.items | sort: "variant_rank" %}
+    {% assign representative = variants | first %}
+    {% assign english_variant = variants | where: "language", "en" | first %}
+    {% assign title_variant = english_variant | default: representative %}
+    <article class="collection-entry">
+      <div class="collection-entry-copy">
+        <h2><a href="{{ title_variant.url | relative_url }}">{{ representative.article_title }}</a></h2>
+        {% include alternate_titles.html variants=variants primary_language=title_variant.language %}
+        <div class="collection-entry-meta">
+          <p class="collection-published">
+            <span>Published</span>
+            <time datetime="{{ representative.date | date_to_xmlschema }}">{{ representative.date | date: "%d %B %Y" }}</time>
+          </p>
+          <nav class="collection-languages" aria-label="Languages for {{ representative.article_title }}">
+            <span>Choose language</span>
+            <span class="collection-language-links">
+              {% for post in variants %}
+                <a href="{{ post.url | relative_url }}">
+                  {% include language_label.html language=post.language %}{% if post.spec %} · {{ post.spec | join: " / " | upcase }}{% endif %}
+                  <span aria-hidden="true">↗</span>
+                </a>
+              {% endfor %}
+            </span>
+          </nav>
+        </div>
+        <p class="collection-entry-excerpt">{{ representative.excerpt | strip_html | strip_newlines | truncate: 210 }}</p>
+      </div>
+    </article>
+  {% endfor %}
+</section>

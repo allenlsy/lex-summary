@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "499 - Gary Gallagher: 美国内战、奴隶制、林肯、格兰特与李"
+title: "499 - Gary Gallagher: 美国内战、奴隶制、Lincoln、Grant & Lee"
 date: 2026-08-18 09:00:00 +0000
 article_id: 499-gary-gallagher
 article_title: "499 - Gary Gallagher: American Civil War, Slavery, Lincoln, Grant & Lee"

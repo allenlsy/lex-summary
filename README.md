@@ -64,21 +64,23 @@ Use the language and ordered specs that describe the body (`en`/`cn` for languag
 
 Native language names are defined in `_data/languages.yml` and displayed after each language code, such as `EN · English` and `CN · 中文`. Add a mapping there when introducing another language. Codes without a mapping still render safely as their uppercase code.
 
-## Import local Lex Fridman summaries
+## Convert pending summaries
 
-The repository includes a safe importer for the summary Markdown files stored in the local iCloud folder. It defaults to a dry run:
+Blog content tooling lives in the `admin/` git submodule (`allenlsy/lex-tldr-admin`), a separate repository from this one. After a fresh checkout, fetch it with `git submodule update --init`. The tools resolve the blog root from their own location, so run them from this repository.
 
-```sh
-python3 scripts/import_lex_summaries.py
-```
-
-Review the complete plan, then create the missing Jekyll posts with:
+Place summary Markdown files under `pending/<collection_id>/` (e.g. `pending/lex-fridman/`), preview with a dry run, then apply:
 
 ```sh
-python3 scripts/import_lex_summaries.py --apply
+python3 admin/convert_pending.py
+python3 admin/convert_pending.py --apply
 ```
 
-The importer only reads the source directory. It preflights every destination before writing, refuses to overwrite different files, skips byte-identical duplicates and Lex Clips sources, and is safe to run again after a successful import. Verified Lex Fridman channel URLs and publication dates are maintained in the script's metadata table.
+The converter derives the episode id, title, and language from the file name and content, writes Jekyll posts into `_posts/`, and moves sources to `pending/processed/`. Regenerate metadata (excerpts and per-language titles) for a date range with:
+
+```sh
+python3 admin/convert_metadata.py --start 2026-08-01 --end 2026-08-31
+python3 admin/convert_metadata.py --start 2026-08-01 --end 2026-08-31 --apply
+```
 
 ## Add a collection
 
@@ -91,7 +93,19 @@ Collections are listed in `_data/collections.yml`. Add one stable ID, display ti
   description: Notes on building coherent interfaces at scale.
 ```
 
-Then create `collections/design-systems.html` using `collections/practice-notes.html` as the template, changing its `title`, `collection_id`, and `permalink`. Assign an article by adding `collection_id: design-systems` to every one of its variants. The collection automatically appears in the masthead, its landing page groups related editions by `article_id`, and each article links back to the collection.
+Then create a landing-page stub `collections/design-systems.html` with front matter only, using the shared `_layouts/collection.html` layout (see the existing collection pages):
+
+```yaml
+---
+layout: collection
+title: Design Systems
+description: Concise summaries of long-form Design Systems conversations, available in English and Chinese.
+collection_id: design-systems
+permalink: /collections/design-systems/
+---
+```
+
+The layout renders the collection hero (number derived from the `_data/collections.yml` order), groups related editions by `article_id`, and lists every variant. Assign an article by adding `collection_id: design-systems` to every one of its variants. The collection automatically appears in the masthead, and each article links back to the collection.
 
 Run the collection regression test after changing collection metadata or URLs:
 

@@ -76,23 +76,25 @@ Most imported summaries have two variants, `en` and `cn`. Episode 440 intentiona
 
 ## Local summary conversion
 
-`scripts/convert_pending.py` converts pending summary files into Jekyll posts. Place summaries in `pending/<collection_id>/` (e.g. `pending/lex-fridman/`), preview with a dry run, then apply:
+Content tooling lives in the `admin/` git submodule (separate repository `allenlsy/lex-tldr-admin`; fetch it with `git submodule update --init` after a fresh checkout). The tools resolve the blog root from their own location, so run them from this repository.
+
+`admin/convert_pending.py` converts pending summary files into Jekyll posts. Place summaries in `pending/<collection_id>/` (e.g. `pending/lex-fridman/`), preview with a dry run, then apply:
 
 ```sh
-python3 scripts/convert_pending.py
-python3 scripts/convert_pending.py --apply
+python3 admin/convert_pending.py
+python3 admin/convert_pending.py --apply
 ```
 
-The script derives the episode id, title, and language from the file name and content. The episode number comes from the heading, then the verified video metadata table (`VIDEOS`), then a live lookup against `https://lexfridman.com/podcast` (title match plus the YouTube page title), and finally an interactive prompt when nothing else resolves it; the number drives `title`, `article_id`, `article_title`, and `permalink`. It must remain dry-run by default, must never overwrite a different destination file, and moves converted sources to `pending/processed/`. Excerpts are summarized through an OpenAI-compatible endpoint (default `http://localhost:1234/v1`, model `qwen/qwen3.6-35b-a3b`) with a first-paragraph fallback. To regenerate excerpts for a date range:
+The script derives the episode id, title, and language from the file name and content. The episode number comes from the heading, then the verified video metadata table (`VIDEOS`), then a live lookup against `https://lexfridman.com/podcast` (title match plus the YouTube page title), and finally an interactive prompt when nothing else resolves it; the number drives `title`, `article_id`, `article_title`, and `permalink`. It must remain dry-run by default, must never overwrite a different destination file, and moves converted sources to `pending/processed/`. Excerpts use the first substantive paragraph of the post body. Chinese variant titles are translated from the shared `article_title` through an OpenAI-compatible endpoint (default `http://127.0.0.1:8000/v1`, model `Qwen3.6-35B-A3B-MLX-4bit`). To regenerate metadata (fill missing excerpts, translate titles) for a date range:
 
 ```sh
-python3 scripts/convert_excerpt.py --start 2026-08-01 --end 2026-08-31
-python3 scripts/convert_excerpt.py --start 2026-08-01 --end 2026-08-31 --apply
+python3 admin/convert_metadata.py --start 2026-08-01 --end 2026-08-31
+python3 admin/convert_metadata.py --start 2026-08-01 --end 2026-08-31 --apply
 ```
 
 ## Podcaster collections
 
-Collections represent podcasters in the visible interface. Add a collection entry to `_data/collections.yml`, add its landing page under `collections/`, and give all related summary variants the same `collection_id`.
+Collections represent podcasters in the visible interface. Add a collection entry to `_data/collections.yml`, add a front-matter-only landing page under `collections/` that uses the shared `_layouts/collection.html` layout, and give all related summary variants the same `collection_id`. The layout derives the collection number from the `_data/collections.yml` order.
 
 The first collection is displayed as `Lex Fridman Podcast` and uses the internal ID `lex-fridman`. Its `/collections/practice-notes/` route is a legacy public URL; preserve that route unless a task includes a deliberate URL migration and compatibility plan.
 
@@ -145,8 +147,8 @@ just new-post "EPISODE TITLE" en
 Preview and convert the pending Lex Fridman summaries:
 
 ```sh
-python3 scripts/convert_pending.py
-python3 scripts/convert_pending.py --apply
+python3 admin/convert_pending.py
+python3 admin/convert_pending.py --apply
 ```
 
 The recipe derives the episode ID and URL slug from the title, assigns the next variant rank, and rejects duplicate episode-language variants. Authors must replace the generated placeholder body before publication.

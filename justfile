@@ -19,7 +19,7 @@ default:
 
 # create a language-only podcast summary draft in _posts/
 new-post TITLE LANGUAGE:
-    ruby scripts/new_post.rb {{quote(TITLE)}} {{quote(LANGUAGE)}}
+    ruby admin/new_post.rb {{quote(TITLE)}} {{quote(LANGUAGE)}}
 
 # ── first run ───────────────────────────────────────────────────────────────
 
