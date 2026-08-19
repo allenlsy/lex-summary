@@ -34,7 +34,15 @@
             {% endfor %}
           </ul>
         </div>
-        <p class="article-excerpt">{{ representative.excerpt | strip_html | strip_newlines | truncate: 210 }}</p>
+        <div class="article-excerpts">
+          {% assign excerpt_languages = "en|cn" | split: "|" %}
+          {% for excerpt_language in excerpt_languages %}
+            {% assign excerpt_variant = variants | where: "language", excerpt_language | first %}
+            {% if excerpt_variant and excerpt_variant.excerpt %}
+              <p class="article-excerpt" lang="{% if excerpt_language == 'cn' %}zh-CN{% else %}en{% endif %}">{{ excerpt_variant.excerpt | strip_html | strip_newlines | truncate: 210 }}</p>
+            {% endif %}
+          {% endfor %}
+        </div>
       </div>
     </article>
   {% endfor %}

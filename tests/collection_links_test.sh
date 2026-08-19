@@ -193,7 +193,10 @@ echo "PASS: summary pages omit the obsolete post index block"
 if ! grep -Fq '.article-summary { display: grid; grid-template-columns: minmax(0, 1fr) minmax(18rem, .65fr);' "$site_dir/assets/css/style.css" || \
    ! grep -Fq '.article-summary .alternate-titles { grid-column: 1 / -1; grid-row: 3;' "$site_dir/assets/css/style.css" || \
    ! grep -Fq '.article-summary .edition-list { grid-column: 2; grid-row: 4;' "$site_dir/assets/css/style.css" || \
-   ! grep -Fq '.article-excerpt { grid-column: 1; grid-row: 4;' "$site_dir/assets/css/style.css"; then
+   ! grep -Fq '.article-excerpts { grid-column: 1; grid-row: 4;' "$site_dir/assets/css/style.css" || \
+   ! grep -Fq 'excerpt_languages = "en|cn"' _includes/summary_index.html || \
+   ! grep -Fq 'class="article-excerpt" lang="en"' "$site_dir/index.html" || \
+   ! grep -Fq 'class="article-excerpt" lang="zh-CN"' "$site_dir/index.html"; then
   echo "FAIL: summary cards do not reuse the former index space with a balanced content grid" >&2
   exit 1
 fi
