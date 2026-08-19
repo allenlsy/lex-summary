@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 4
 original_link: "https://www.youtube.com/watch?v=oFtjKbXKqbg"
-excerpt: "皮特·莱维斯是自学成才的独立开发者，从零开始创建了40多个项目，拒绝风投，坚持极简技术栈和快速迭代。他强调通过短时间内发布产品、验证用户付费意愿，以用户行为和简化架构驱动成功，即使多数项目失败也视为学习。"
+excerpt: "本期邀请独立创业者皮特·莱维斯，探讨其拒绝风投、单人开发数十款产品的实战路径。他主张运用极简技术栈，践行“快速构建、尽早发布、以真实付费验证”的理念，在持续迭代中实现高效创业。"
 permalink: /articles/440-pieter-levels-programming-viral-ai-startups-and-digital-nomad-life/cn/long/
 ---
 

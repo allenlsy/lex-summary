@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=5t1vTLU7s40"
-excerpt: "本次对话聚焦Meta首席AI科学家杨·勒昆与莱克斯·弗里德曼的深度访谈，核心探讨了当前大型语言模型的根本局限、世界模型与具身智能的必要性，以及开源AI对抗科技巨头垄断的关键意义。"
+excerpt: "本期对话特邀Meta首席科学家杨·勒昆，深入探讨人工智能的未来图景与当前大语言模型的根本局限。勒昆警示专有AI的垄断风险，主张通过开源与具身化世界模型构建真正具备推理与规划能力的高级机器智能。"
 permalink: /articles/416-yann-lecun-meta-ai-open-source-limits-of-llms-agi-the-future-of-ai/cn/
 ---
 

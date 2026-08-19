@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=vif8NQcjVf0"
-excerpt: "NVIDIA's CEO Jensen Huang discusses the company's evolution from GPUs to AI factories, emphasizing extreme co-design across the entire computing stack. The conversation explores how scaling AI requires redesigning hardware, software, and infrastructure holistically, with CUDA's install base serving as a key competitive moat."
+excerpt: "In this episode, Lex Fridman interviews NVIDIA CEO Jensen Huang on the company’s transformation from graphics processors to massive, integrated AI factories. Huang details how extreme co-design holistically optimizes hardware and software ecosystems, while CUDA’s entrenched platform secures NVIDIA’s competitive moat in the future of artificial intelligence."
 permalink: /articles/494-jensen-huang-nvidia-the-4-trillion-company-the-ai-revolution/en/
 ---
 

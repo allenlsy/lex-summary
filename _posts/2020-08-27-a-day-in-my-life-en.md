@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=0m3hGZvD-0s"
-excerpt: "In this episode, the guest shares a highly disciplined daily routine centered on deep work, sleep, and intense exercise. Key themes include structured morning rituals, fasting, and a keto diet to boost mental clarity and productivity."
+excerpt: "This episode explores the guest’s meticulously structured daily routine designed to maximize productivity and mental clarity. By integrating strategic morning mantras, uninterrupted deep work sessions, intense fasted exercise, and a ketogenic diet, the speaker demonstrates how disciplined habits and holistic wellness consistently drive peak performance."
 permalink: /articles/a-day-in-my-life/en/
 ---
 

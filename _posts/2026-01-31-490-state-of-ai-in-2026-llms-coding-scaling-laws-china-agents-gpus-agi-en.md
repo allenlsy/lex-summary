@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=EV7WhVT270Q"
-excerpt: "In a conversation with Lex Fridman, Sebastian Raschka and Nathan Lambert analyze the 2025-2026 AI landscape, covering model architecture advances and U.S.-China competition. The discussion highlights China's rise in open-weight models, which are cheaper and more performant, versus America's dominance in closed, user-friendly systems with superior integration and post-training."
+excerpt: "In this episode, Lex Fridman hosts Sebastian Raschka and Nathan Lambert to discuss the 2025–2026 AI landscape, focusing on the strategic U.S.-China competition between proprietary and open-weight models. They analyze how architectural innovations like Mixture of Experts drive efficiency, while exploring the broader implications of rapid scaling, competitive dynamics, and long-term societal impact."
 permalink: /articles/490-state-of-ai-in-2026-llms-coding-scaling-laws-china-agents-gpus-agi/en/
 ---
 

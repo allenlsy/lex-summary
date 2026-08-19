@@ -66,6 +66,19 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
+def progress_bar(done: int, total: int, width: int = 28) -> str:
+    """One-line progress bar like [####------] 34.0% (24/70)."""
+    filled = int(width * done / total) if total else width
+    bar = "#" * filled + "-" * (width - filled)
+    pct = 100 * done / total if total else 100.0
+    return f"\r[{bar}] {pct:5.1f}% ({done}/{total})"
+
+
+def clear_line() -> None:
+    sys.stdout.write("\r" + " " * 60 + "\r")
+    sys.stdout.flush()
+
+
 def update_excerpt(text: str, excerpt: str) -> str | None:
     """Replace or insert the excerpt line in the front matter."""
     parts = text.split("---", 2)
@@ -98,18 +111,25 @@ def main() -> int:
         print("ERROR: --start must be on or before --end", file=sys.stderr)
         return 1
 
-    matched = 0
+    in_range = sorted(
+        p
+        for p in args.posts_dir.glob("*.md")
+        if start.isoformat() <= p.name[:10] <= end.isoformat()
+    )
+    tty = sys.stdout.isatty()
+    matched = len(in_range)
     updated = 0
     skipped_existing = 0
     skipped = 0
-    for post in sorted(args.posts_dir.glob("*.md")):
-        post_date = post.name[:10]
-        if not (start.isoformat() <= post_date <= end.isoformat()):
-            continue
-        matched += 1
+    for index, post in enumerate(in_range, start=1):
+        if tty:
+            sys.stdout.write(progress_bar(index - 1, matched))
+            sys.stdout.flush()
         text = post.read_text(encoding="utf-8")
         parts = text.split("---", 2)
         if len(parts) < 3:
+            if tty:
+                clear_line()
             print(f"SKIP {post.name}: malformed front matter", file=sys.stderr)
             skipped += 1
             continue
@@ -121,20 +141,29 @@ def main() -> int:
             parts[2].strip(), language, args.api_url, args.model, args.api_key
         )
         if not summary:
+            if tty:
+                clear_line()
             print(f"SKIP {post.name}: summary failed", file=sys.stderr)
             skipped += 1
             continue
         new_text = update_excerpt(text, summary.strip())
         if new_text is None:
+            if tty:
+                clear_line()
             print(f"SKIP {post.name}: malformed front matter", file=sys.stderr)
             skipped += 1
             continue
         if args.apply:
             post.write_text(new_text, encoding="utf-8")
         else:
+            if tty:
+                clear_line()
             print(f"WOULD UPDATE {post.name}")
         updated += 1
 
+    if tty:
+        sys.stdout.write(progress_bar(matched, matched) + "\n")
+        sys.stdout.flush()
     mode = "APPLY" if args.apply else "DRY-RUN"
     print(
         f"{mode}: {matched} posts in range, {updated} updated, "

@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=13CZPWmke6A"
-excerpt: "本次对话由Lex Friedman采访OpenAI首席科学家Ilya Sutskever，回顾深度学习历史转折点，探讨大脑与人工神经网络差异、代价函数作用及机器学习模态的统一性，强调过参数化优势与通往通用人工智能的信念驱动。"
+excerpt: "本期对话特邀OpenAI联合创始人Ilya Sutskever，深入探讨深度学习与语言模型的技术边界及通往通用人工智能的路径。Sutskever系统回顾了深度学习的历史突破与范式演进，剖析了生物神经与人工架构的异同，并强调了跨模态机器学习的底层统一性。"
 permalink: /articles/94-ilya-sutskever-deep-learning/cn/
 ---
 

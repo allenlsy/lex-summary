@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=SvKv7D4pBjE"
-excerpt: "这篇博客文章讲述了1940年德国入侵法国时“闪电战”的起源，聚焦于三位坦克将领提出的穿越阿登山区的大胆战略，以及希特勒的最终采纳。文章还探讨了甲基苯丙胺（佩尔维廷）在维持德军连续作战能力中的关键作用，凸显了药物对战争进程的深远影响。"
+excerpt: "本期节目特邀军事史学者，以阿登战役与闪电战起源为题，深度解析曼施坦因等将领的奇袭构想及兰克博士推广佩尔维廷的幕后贡献。内容揭示高速机动、心理震慑与兴奋剂药理如何协同重塑现代战争逻辑。"
 permalink: /articles/481-norman-ohler-hitler-nazis-drugs-ww2-blitzkrieg-lsd-mkultra-cia/cn/
 ---
 

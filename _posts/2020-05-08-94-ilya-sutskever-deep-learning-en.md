@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=13CZPWmke6A"
-excerpt: "In this conversation, Lex Fridman interviews Ilya Sutskever, OpenAI’s chief scientist, about deep learning’s rise, the importance of overparameterized networks, and the path to artificial general intelligence, highlighting key breakthroughs like Hessian-free optimization and AlexNet’s success."
+excerpt: "In this episode, OpenAI co-founder Ilya Sutskever explores the deep learning revolution and the path to artificial general intelligence, highlighting the pivotal 2010–2011 breakthroughs that enabled end-to-end training of large neural networks. He details how dismissing early fears about overparameterization, alongside hardware and optimization advances, turned massive parameter counts into a decisive advantage for modern AI."
 permalink: /articles/94-ilya-sutskever-deep-learning/en/
 ---
 

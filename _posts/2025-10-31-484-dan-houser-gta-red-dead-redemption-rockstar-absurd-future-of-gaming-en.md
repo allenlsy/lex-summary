@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=o3gbXDjNWyI"
-excerpt: "Dan Houser, co-founder of Rockstar Games, discusses his philosophy of narrative design behind *Red Dead Redemption 2* and *Grand Theft Auto*, emphasizing emotional realism and immersive storytelling. The episode explores his cinematic and literary influences, from *The Godfather* to Orwell, shaping games as culturally resonant, character-driven experiences."
+excerpt: "This episode explores Rockstar Games co-founder Dan Houser’s approach to immersive storytelling, examining how his cinematic and literary influences shape the psychological realism and emotional weight of his landmark games. By prioritizing authentic character development and systemic interactivity, Houser transforms interactive entertainment into culturally resonant narratives that rival traditional media."
 permalink: /articles/484-dan-houser-gta-red-dead-redemption-rockstar-absurd-future-of-gaming/en/
 ---
 

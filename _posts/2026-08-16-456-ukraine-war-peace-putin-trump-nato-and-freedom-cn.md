@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=u321m25rKXc"
-excerpt: "这篇博文记录了弗里德曼与泽连斯基的深度对话，涵盖地缘政治战略、战时反腐、语言动态及和平谈判等主题。访谈以多语言进行，泽连斯基强调乌克兰语的核心地位，并讨论了对普京的评估、历史背景及战后重建前景。"
+excerpt: "本期节目特邀乌克兰总统泽连斯基，围绕战时反腐、俄乌历史与和平谈判展开深度对谈。双方重点探讨了战后重建、安全架构规划及多语种沟通在地缘博弈中的象征意义与现实挑战。"
 permalink: /articles/456-ukraine-war-peace-putin-trump-nato-and-freedom/cn/
 ---
 

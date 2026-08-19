@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=o3gbXDjNWyI"
-excerpt: "丹·豪瑟作为《侠盗猎车手》与《荒野大镖客》系列的核心创作者，分享了其沉浸式叙事理念，强调心理真实、角色深度与故事和自由的共存。他通过极简对白和系统性世界构建，重塑了游戏的情感艺术。"
+excerpt: "本期节目探讨了《侠盗猎车手》与《荒野大镖客》系列联合创始人丹·豪瑟的叙事哲学。他融合文学电影灵感与系统玩法，在开放世界中实现情感真实与玩家自由的平衡，重塑了电子游戏的艺术边界。"
 permalink: /articles/484-dan-houser-gta-red-dead-redemption-rockstar-absurd-future-of-gaming/cn/
 ---
 

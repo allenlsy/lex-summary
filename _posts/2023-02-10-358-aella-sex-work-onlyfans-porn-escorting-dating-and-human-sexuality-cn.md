@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=cFSrxSBrgSc"
-excerpt: "在莱克斯·弗里德曼的播客中，艾拉探讨了性工作、身份认同及创伤，强调好奇心驱动的人类行为研究，批判传统创伤观念，并以开放态度看待未来关系与技术。"
+excerpt: "本期节目邀请性工作者兼研究者艾拉，深入探讨性、身份认同与人类处境的复杂交织。她结合艺术实践与大规模实证调查剖析亲密关系，并指出驱动人类探索与自我重构的核心力量正是永不停歇的好奇心。"
 permalink: /articles/358-aella-sex-work-onlyfans-porn-escorting-dating-and-human-sexuality/cn/
 ---
 

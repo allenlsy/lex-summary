@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=qa-wl8_wpZA"
-excerpt: "本期节目采访了哈佛大学乌克兰史教授谢尔希·普洛克希，深入探讨苏联解体的多重成因，强调其为民族自决、经济崩溃与帝国衰亡的必然结果，并批判了普京将乌克兰视为俄罗斯一部分的“大俄罗斯”叙事。"
+excerpt: "本期访谈特邀哈佛大学历史学教授谢尔希·普洛克希，深入解析苏联解体的历史进程。他指出解体是自下而上的必然结果，乌克兰独立公投起决定性作用，有力驳斥美国主导论，并批判了普京将之视为“地缘政治灾难”的帝国叙事。"
 permalink: /articles/415-serhii-plokhy-history-of-ukraine-russia-soviet-union-kgb-nazis-war/cn/
 ---
 

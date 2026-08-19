@@ -7,7 +7,7 @@ article_title: "493 - Jeff Kaplan: World of Warcraft, Overwatch, Blizzard, and F
 collection_id: lex-fridman
 language: cn
 variant_rank: 2
-excerpt: "这期对话围绕《魔兽世界》与《守望先锋》总监杰夫·卡普兰展开，探讨他从文学创作失败转向游戏开发的心路历程。核心主题包括他沉迷《无尽的任务》的沉浸体验、对玩家对战机制的见解，以及离开暴雪时的情感挣扎。"
+excerpt: "本期专访《魔兽世界》与《守望先锋》联合创始人杰夫·卡普兰，探讨其从资深玩家到暴雪核心开发者的转型之路。他深入阐述了以PvP为核心的游戏设计哲学，并坦诚回顾了创作生涯中的情感起伏与离职反思。"
 permalink: "/articles/493-jeff-kaplan/cn/"
 ---
 

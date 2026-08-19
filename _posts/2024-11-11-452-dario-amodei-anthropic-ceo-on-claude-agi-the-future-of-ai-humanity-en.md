@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=ugvHCXCOmm4"
-excerpt: "Dario Amodei, CEO of Anthropic, discusses the scaling hypothesis in AI, tracing his journey from Baidu to discovering that model size, data, and compute drive intelligence. The post explores how empirical scaling breakthroughs, like GPT-1, revealed language as a key domain for advancing general intelligence and future development."
+excerpt: "In this episode, Anthropic CEO Dario Amodei examines how artificial intelligence has progressed through consistent scaling rather than novel algorithms. He demonstrates how expanding model parameters, training data, and compute predictably boosts performance, positioning language as the ideal testbed for general intelligence while underscoring the critical importance of integrating safety research with rapid technological advancement."
 permalink: /articles/452-dario-amodei-anthropic-ceo-on-claude-agi-the-future-of-ai-humanity/en/
 ---
 

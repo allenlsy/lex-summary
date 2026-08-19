@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=XJTMQtE-MIo"
-excerpt: "In this episode, Kevin Spacey discusses his iconic role as John Doe in *Se7en*, revealing he was cast after the original actor was fired. Key themes include his strategic decision to avoid all promotion to preserve the film's surprise, showcasing his artistic integrity and understanding of narrative impact."
+excerpt: "In this episode, two-time Academy Award winner Kevin Spacey discusses his last-minute casting as John Doe in David Fincher’s Se7en, detailing his strategic choice to exclude himself from all promotional campaigns. He examines the conflict between commercial marketing and artistic integrity, demonstrating how protecting the narrative’s psychological surprise ultimately defined his legacy as a masterful, nuanced performer."
 permalink: /articles/432-kevin-spacey-power-controversy-betrayal-truth-love-in-film-and-life/en/
 ---
 

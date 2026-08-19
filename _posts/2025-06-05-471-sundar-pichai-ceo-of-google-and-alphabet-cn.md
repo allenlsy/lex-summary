@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=9V6tWC4CdFQ"
-excerpt: "皮查伊从印度金奈简陋童年到执掌谷歌的历程，展现科技如何重塑个人命运。他提出人工智能优先战略，以冷静领导力应对媒体质疑，将其视为堪比新石器时代革命的系统性变革力量。"
+excerpt: "本期对话谷歌CEO皮查伊，回顾其从印度贫寒童年到执掌科技巨头的历程。他深入探讨了科技解放人类的变革力量，并分享谷歌“AI优先”战略、冷静领导哲学，以及将AI革命视为重塑文明的“新石器时代”前瞻。"
 permalink: /articles/471-sundar-pichai-ceo-of-google-and-alphabet/cn/
 ---
 

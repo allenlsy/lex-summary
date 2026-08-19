@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=cFSrxSBrgSc"
-excerpt: "In this episode, Lex Friedman interviews Ayla, a former sex worker and researcher, about her journey from a repressive religious upbringing to creative success in camming and OnlyFans. They explore themes of trauma, autonomy, sexuality as artistic expression, and the data-driven strategies behind her financial achievements."
+excerpt: "In this episode, Lex Friedman interviews Ayla, a sex worker and researcher, exploring how creativity, trauma, and radical curiosity shape sexual identity and self-expression. Ayla discusses transforming her restrictive religious upbringing into artistic cam work and data-driven OnlyFans success, highlighting how embracing autonomy and unconventional desire can redefine human connection and personal liberation."
 permalink: /articles/358-aella-sex-work-onlyfans-porn-escorting-dating-and-human-sexuality/en/
 ---
 

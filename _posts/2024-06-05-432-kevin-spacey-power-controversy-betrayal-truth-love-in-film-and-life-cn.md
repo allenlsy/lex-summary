@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=XJTMQtE-MIo"
-excerpt: "本集访谈聚焦演员凯文·史派西的演艺生涯，重点回顾他在《七宗罪》中饰演连环杀手的幕后故事，包括角色替换与剃发决定，并深入探讨其表演哲学与《纸牌屋》中权力角色的塑造。"
+excerpt: "本期对话特邀凯文·史派西，回顾其在《七宗罪》中饰演约翰·多伊的幕后历程，并延伸至《纸牌屋》的角色塑造。史派西分享了如何通过极致克制、心理博弈与道德模糊性，诠释复杂反派的文化影响力。"
 permalink: /articles/432-kevin-spacey-power-controversy-betrayal-truth-love-in-film-and-life/cn/
 ---
 

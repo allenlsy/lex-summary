@@ -7,7 +7,7 @@ article_title: "482 - Pavel Durov: Telegram, Freedom, Censorship, Money, Power &
 collection_id: lex-fridman
 language: cn
 variant_rank: 2
-excerpt: "杜罗夫与Telegram创始人对话，探讨其抵制监控、坚持用户隐私的自由哲学，及苦行式生活方式。节目深入分析平台精简架构、加密协议，并以法国被捕事件为案例，反思数字主权与官僚权力的荒诞性。"
+excerpt: "本期专访Telegram创始人帕维尔·杜罗夫，深入探讨其坚守隐私与反审查的运营理念，以及践行斯多葛苦行主义的生活方式。对话围绕平台去中心化架构与法国司法风波，剖析了技术自由与官僚权力的现代博弈。"
 permalink: "/articles/482-pavel-durov/cn/"
 ---
 

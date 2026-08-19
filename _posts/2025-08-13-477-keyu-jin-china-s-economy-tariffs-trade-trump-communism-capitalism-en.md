@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=y3yAVZk3tyA"
-excerpt: "Keyu Jin, an economist at the London School of Economics, discusses her book *The New China Playbook* on the Lex Fridman Podcast, challenging Western misconceptions about China’s economy."
+excerpt: "In this episode, LSE economist Keyu Jin joins Lex Fridman to dismantle Western misconceptions about China’s rigidly centralized economy, revealing instead a dynamic, decentralized system deeply rooted in historical pragmatism and cultural values. She explores how China’s unique blend of state guidance and market innovation creates a distinct economic identity that transcends traditional socialism and capitalism, offering a nuanced framework for understanding modern China’s global trajectory."
 permalink: /articles/477-keyu-jin-china-s-economy-tariffs-trade-trump-communism-capitalism/en/
 ---
 

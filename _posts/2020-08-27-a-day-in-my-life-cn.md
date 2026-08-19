@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=0m3hGZvD-0s"
-excerpt: "这篇博客介绍了嘉宾的晨间习惯、深度工作时段及生活哲学，强调睡眠、饮食和运动的重要性，并分享了自律、极简主义和感恩等核心主题。"
+excerpt: "本文深入解析嘉宾的自律日程，重点涵盖晨间规划、每日两次四小时深度工作及空腹运动与生酮饮食。全篇强调以固定仪式取代短暂动机，在严谨时间块中平衡身心锻炼与深度阅读，实现高效产出与精神韧性。"
 permalink: /articles/a-day-in-my-life/cn/
 ---
 # 晨间习惯、深度工作与生活哲学总结

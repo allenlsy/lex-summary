@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=YFjfBk8HI5o"
-excerpt: "The blog post discusses OpenClaw, an open-source AI agent created by Steinberger for local device operation. It highlights the project's rapid growth, integration with messaging platforms, and the key themes of user sovereignty, security risks, and ethical debates."
+excerpt: "Featuring OpenClaw creator Steinberger, this episode examines the explosive growth of open-source agentic AI and its shift toward localized, user-controlled computing environments. The conversation underscores how autonomous digital agents democratize technical access while simultaneously sparking urgent debates over cybersecurity vulnerabilities, data privacy, and ethical oversight."
 permalink: /articles/491-openclaw-the-viral-ai-agent-that-broke-the-internet-peter-steinberger/en/
 ---
 

@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=Mde2q7GFCrw"
-excerpt: "In a recent episode, Yuval Noah Harari distinguishes intelligence from consciousness, arguing AI can be highly intelligent yet lack subjective feeling. He warns that humanity's tendency to anthropomorphize machines risks misinterpreting their algorithmic outputs as genuine emotion."
+excerpt: "Historian Yuval Noah Harari examines the crucial distinction between intelligence and consciousness, arguing that while modern AI excels at problem-solving, it possesses no subjective experience or genuine emotions. He cautions against anthropomorphizing algorithms, stressing that consciousness is inherently private and socially constructed rather than objectively verifiable, thereby demanding a more precise framework for evaluating machine capabilities."
 permalink: /articles/390-yuval-noah-harari-human-nature-intelligence-power-and-conspiracies/en/
 ---
 

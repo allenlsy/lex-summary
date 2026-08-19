@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=5t1vTLU7s40"
-excerpt: "In this podcast, Lex Fridman interviews Yann LeCun, Meta's Chief AI Scientist, discussing the limitations of current large language models and advocating for embodied, world-model-based AI. The key theme is the danger of proprietary control over AI, with LeCun arguing that open-source, human-centered intelligence is essential for democracy and societal benefit."
+excerpt: "In this episode, Lex Fridman hosts Meta’s Yann LeCun to discuss the critical trajectory of artificial intelligence, emphasizing that corporate monopolization of proprietary models poses a far greater threat than runaway superintelligence. LeCun argues that current autoregressive language models lack true understanding, advocating instead for open-source, embodied AI systems that prioritize human autonomy, democratic access, and robust world modeling."
 permalink: /articles/416-yann-lecun-meta-ai-open-source-limits-of-llms-agi-the-future-of-ai/en/
 ---
 

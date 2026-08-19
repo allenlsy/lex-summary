@@ -10,6 +10,18 @@ from pathlib import Path
 import convert_excerpt as ce
 
 
+class ProgressBarTests(unittest.TestCase):
+    def test_format(self) -> None:
+        bar = ce.progress_bar(0, 70)
+        self.assertEqual(bar, "\r[" + "-" * 28 + "]   0.0% (0/70)")
+        full = ce.progress_bar(70, 70)
+        self.assertIn("[#" * 1, full)
+        self.assertIn("100.0% (70/70)", full)
+
+    def test_zero_total(self) -> None:
+        self.assertIn("(0/0)", ce.progress_bar(0, 0))
+
+
 class UpdateExcerptTests(unittest.TestCase):
     def test_replaces_existing_excerpt(self) -> None:
         text = (

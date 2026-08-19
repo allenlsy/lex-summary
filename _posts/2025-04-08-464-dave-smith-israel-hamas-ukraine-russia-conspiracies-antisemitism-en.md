@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=1V0bJfqEaa4"
-excerpt: "The blog post examines the moral failures and political consequences of modern conflict, focusing on the Iraq War's deliberate deception and lack of accountability. It highlights the catastrophic human and economic costs, and argues that this pattern undermines democratic governance and public trust."
+excerpt: "Featuring a guest expert, this episode examines the moral and political landscape of modern conflict through the Iraq War and subsequent interventions. The discussion highlights how deliberate state deception, catastrophic human costs, and a systemic absence of accountability have fundamentally eroded democratic trust and normalized unaccountable foreign policy."
 permalink: /articles/464-dave-smith-israel-hamas-ukraine-russia-conspiracies-antisemitism/en/
 ---
 

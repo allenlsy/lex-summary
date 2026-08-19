@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=SvKv7D4pBjE"
-excerpt: "The blog post details the origins of the 1940 German invasion of France, focusing on three tank generals who proposed a surprise attack through the Ardennes. It highlights their innovative Blitzkrieg strategy, which used speed and terrain concealment, and the February 1940 meeting where Hitler approved their plan."
+excerpt: "This episode examines the strategic genesis of Germany’s 1940 Blitzkrieg campaign, featuring insights on how visionary tank generals like Guderian and Manstein boldly challenged entrenched military doctrines. By prioritizing rapid armored maneuvers, terrain concealment, and psychological disruption over traditional attrition, their unorthodox Ardennes offensive fundamentally redefined modern warfare."
 permalink: /articles/481-norman-ohler-hitler-nazis-drugs-ww2-blitzkrieg-lsd-mkultra-cia/en/
 ---
 

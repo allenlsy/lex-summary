@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=ZIyB9e_7a4c"
-excerpt: "In this episode, Andrew Huberman discusses the impermanence of creative projects, legacy, and his future shift toward mentoring. The conversation explores neurochemistry, hardship, and the ethics of science communication in the digital age."
+excerpt: "Neuroscientist Andrew Huberman joins Lex Fridman to examine the natural evolution of creative careers, exploring how legacy, mentorship, and personal growth intersect with the neurochemical mechanisms driving focus, creativity, and mental resilience. The dialogue further addresses the ethical challenges of public science communication, the restorative value of solitude, and the role of unstructured conversation in navigating modern cultural polarization."
 permalink: /articles/435-andrew-huberman-focus-controversy-politics-and-relationships/en/
 ---
 

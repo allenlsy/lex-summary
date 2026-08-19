@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=-HzgcbRXUK8"
-excerpt: "In this episode, Demis Hassabis discusses AI's ability to model complex systems like fluid dynamics, suggesting models such as Veo learn physical structures implicitly rather than through programming. He explores how nature's inherent constraints create learnable patterns, raising questions about computation and the limits of modeling reality."
+excerpt: "In this episode, guest Demis Hassabis explores how artificial intelligence implicitly learns the underlying physical laws of complex, nonlinear systems by analyzing real-world video data. He argues that because nature operates within evolutionary and thermodynamic constraints, it forms a structured manifold that classical neural networks can efficiently reverse-engineer without explicit programming."
 permalink: /articles/475-demis-hassabis-future-of-ai-simulating-reality-physics-and-video-games/en/
 ---
 

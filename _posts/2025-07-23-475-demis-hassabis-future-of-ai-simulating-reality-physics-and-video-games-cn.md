@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=-HzgcbRXUK8"
-excerpt: "哈萨比斯在博客中探讨了AI模型通过学习自然界潜在结构的能力，提出任何受演化或物理约束的系统都可能被经典计算高效建模。他进一步将宇宙视为信息体系，认为P vs. NP问题可能根植于现实结构，并讨论了AI在直觉理解与创造力上的人类式差距。"
+excerpt: "本期对话邀请德米斯·哈萨比斯探讨自然系统的可学习性与AI建模极限。他指出受物理与演化约束的自然界具有内在结构，AI仅凭观察即可隐式习得复杂动力学，该假说暗示宇宙本质与信息计算高度相容。"
 permalink: /articles/475-demis-hassabis-future-of-ai-simulating-reality-physics-and-video-games/cn/
 ---
 

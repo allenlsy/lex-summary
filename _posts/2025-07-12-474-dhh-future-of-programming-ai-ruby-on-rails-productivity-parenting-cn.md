@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=vagyIcmIGOQ"
-excerpt: "这篇访谈记录了DHH与Lex Fridman的深度对话，涵盖编程哲学、软件开发、AI、开源及生活意义等主题。DHH强调简洁技术、小团队创新及人类幸福感，批判过度复杂化与垄断。"
+excerpt: "本期访谈中，DHH与莱克斯·弗里德曼深入探讨了现代软件开发的繁琐困境，重申Ruby“开发者幸福”哲学与“无需构建”理念。他倡导小团队创新与理性使用AI，强调在持续创造与心流体验中追寻技术与人生的真正意义。"
 permalink: /articles/474-dhh-future-of-programming-ai-ruby-on-rails-productivity-parenting/cn/
 ---
 

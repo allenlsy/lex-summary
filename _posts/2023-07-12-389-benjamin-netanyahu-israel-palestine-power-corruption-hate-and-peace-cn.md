@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=XpC7SVDXimg"
-excerpt: "在访谈中，以色列总理内塔尼亚胡驳斥其全球形象争议，强调国际尊重与外交成果，并借历史教训警示伊朗威胁，同时否认反锡安主义与反犹主义的区别，为司法改革辩护。"
+excerpt: "本期对话以色列总理内塔尼亚胡，聚焦司法改革争议与地缘安全挑战。他剖析反锡安主义实质为反犹，援引历史警示应对伊朗威胁，并强调外交突破与国家生存战略。"
 permalink: /articles/389-benjamin-netanyahu-israel-palestine-power-corruption-hate-and-peace/cn/
 ---
 

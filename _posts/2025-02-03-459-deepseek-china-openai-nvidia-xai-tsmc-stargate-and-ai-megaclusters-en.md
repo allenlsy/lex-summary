@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=_1f-o0nqpEI"
-excerpt: "Dylan Patel and Nathan Lambert discuss the DeepSeek moment and its global impact, analyzing the release of efficient, open-weight Chinese AI models that rival Western counterparts. They explore the technological, economic, and geopolitical implications, highlighting a paradigm shift in the balance of AI power and its long-term societal effects."
+excerpt: "In this episode, SemiAnalysis founder Dylan Patel and AI2 researcher Nathan Lambert analyze the seismic \"DeepSeek moment,\" where China’s highly efficient, open-weight models have disrupted the global AI landscape. Their conversation explores how this engineering breakthrough reshapes geopolitical power, challenges Western technological dominance, and forces a critical reckoning on the economic and philosophical future of artificial intelligence."
 permalink: /articles/459-deepseek-china-openai-nvidia-xai-tsmc-stargate-and-ai-megaclusters/en/
 ---
 

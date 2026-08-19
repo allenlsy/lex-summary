@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=Mde2q7GFCrw"
-excerpt: "尤瓦尔·赫拉利在博客中探讨智力与意识的本质区别，强调AI虽无意识却通过模拟情感操控人类，并指出人类基于共享虚构故事实现大规模协作，这些故事塑造了社会、经济与政治现实。"
+excerpt: "历史学家尤瓦尔·赫拉利剖析AI的智力与意识之辨，指出其仅有计算能力而无主观体验，实为异质化的“外星智能”。他警示情感模拟易被用于操控人类，呼吁亟需划定伦理法律边界以捍卫社会信任与民主根基。"
 permalink: /articles/390-yuval-noah-harari-human-nature-intelligence-power-and-conspiracies/cn/
 ---
 

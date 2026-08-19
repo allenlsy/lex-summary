@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=y3yAVZk3tyA"
-excerpt: "金凯瑜在播客中探讨中国经济模式，驳斥“中央集权”迷思，强调地方政府的去中心化驱动与新型创业文化，揭示权力与目的悖论，为西方理解中国提供新视角。"
+excerpt: "本期节目特邀经济学家金凯瑜，探讨中国经济模式的深层逻辑。她指出中国实行“政治集权与经济去中心化”的市长经济，并强调权威文化基于互惠责任，共同塑造了务实高效的本土创新生态。"
 permalink: /articles/477-keyu-jin-china-s-economy-tariffs-trade-trump-communism-capitalism/cn/
 ---
 

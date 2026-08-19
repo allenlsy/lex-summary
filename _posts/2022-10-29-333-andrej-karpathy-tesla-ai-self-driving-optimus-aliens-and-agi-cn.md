@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=cdiD-9MMpb0"
-excerpt: "本集嘉宾是Andrej Karpathy，主题聚焦神经网络本质、涌现行为与大脑差异，并以宇宙计算谜题、Transformer架构为核心，探讨AGI对物理漏洞的可能利用。"
+excerpt: "本期对话由卡尔帕齐主讲，探讨神经网络作为数学抽象的涌现能力及其与生物大脑的本质差异，并延伸至宇宙计算假说与物理漏洞议题。他进一步指出，Transformer架构凭借高效机制，深刻揭示了数学优化与复杂智能涌现的内在联系。"
 permalink: /articles/333-andrej-karpathy-tesla-ai-self-driving-optimus-aliens-and-agi/cn/
 ---
 

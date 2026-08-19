@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=7Sk6lTLSZcA"
-excerpt: "这篇博文深入剖析了乔治·奥威尔《1984》的政治哲学与反乌托邦主题，重点探讨了极权统治下爱的力量作为最后的人类抵抗形式，以及系统性权力如何通过监控、思想控制和家庭瓦解来维持绝对掌控。"
+excerpt: "本期节目嘉宾深度解读《1984》，剖析大洋国极权统治下的监控机制与历史篡改。讨论核心聚焦于国家煽动的集体仇恨仪式，并指出在系统性压迫中，爱与人类情感联结是抵御精神操控、维系革命希望的根本力量。"
 permalink: /articles/1984-by-george-orwell/cn/
 ---
 

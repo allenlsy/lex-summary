@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=EV7WhVT270Q"
-excerpt: "本次对话由莱克斯·弗里德曼与塞巴斯蒂安·拉斯克、内森·兰伯特共同探讨AI技术突破、中美竞争及开源与闭源之争，核心主题聚焦于后训练扩展、架构优化与社会影响。"
+excerpt: "本期由莱克斯·弗里德曼、塞巴斯蒂安·拉斯克与内森·兰伯特对谈，深入剖析2025至2026年AI前沿进展。讨论聚焦中美开源与闭源博弈、架构优化，并重点探讨后训练技术与推理扩展如何驱动AI能力跃升。"
 permalink: /articles/490-state-of-ai-in-2026-llms-coding-scaling-laws-china-agents-gpus-agi/cn/
 ---
 

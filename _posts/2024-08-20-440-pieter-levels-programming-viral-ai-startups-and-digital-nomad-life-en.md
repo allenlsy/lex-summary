@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 3
 original_link: "https://www.youtube.com/watch?v=oFtjKbXKqbg"
-excerpt: "In this episode, Pieter Levels shares his journey as a solo indie hacker, having launched 40+ startups without VC funding. Key themes include rapid iteration, minimalist tech stacks, and validating demand through early shipping and user behavior."
+excerpt: "This episode features Pieter Levels, a self-taught indie hacker who has independently launched over forty profitable startups without relying on venture capital. He shares his bootstrapped philosophy of leveraging simple technology, shipping products rapidly, and validating concepts through actual user behavior instead of following traditional startup playbooks."
 permalink: /articles/440-pieter-levels-programming-viral-ai-startups-and-digital-nomad-life/en/long/
 ---
 

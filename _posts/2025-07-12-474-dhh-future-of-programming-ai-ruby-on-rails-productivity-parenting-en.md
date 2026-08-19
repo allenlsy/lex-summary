@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=vagyIcmIGOQ"
-excerpt: "In this episode, Lex Fridman interviews David Heinemeier Hansson, creator of Ruby on Rails, covering topics from the failure of EU cookie banners and the decline of developer happiness to the philosophy behind Ruby's design and the \"no build\" vision. Key themes include the joy of programming, critique of modern tooling complexity, and the importance of simplicity in software development."
+excerpt: "In this episode, Lex Fridman interviews Ruby on Rails creator David Heinemeier Hansson, exploring the systemic failures of GDPR cookie banners and the heavy burden of modern software complexity. They discuss how prioritizing programmer joy through simplified, \"no build\" frameworks like Ruby can restore developer happiness and reclaim the creative freedom lost to bloated toolchains."
 permalink: /articles/474-dhh-future-of-programming-ai-ruby-on-rails-productivity-parenting/en/
 ---
 

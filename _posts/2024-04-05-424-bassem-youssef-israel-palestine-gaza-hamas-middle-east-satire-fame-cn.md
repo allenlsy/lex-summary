@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=sG8u6owzad4"
-excerpt: "巴塞姆·尤素夫，从埃及心脏外科医生转型为讽刺作家，在莱克斯·弗里德曼的访谈中，回顾了从阿拉伯之春到流亡美国的心路历程。节目探讨了言论自由、媒体操控、独裁创伤及喜剧作为生存武器的核心主题。"
+excerpt: "本期访谈邀请埃及裔讽刺艺术家巴塞姆·尤素夫，回顾其从外科医生到政治喜剧人的流亡历程。节目聚焦阿拉伯之春与埃及政权更迭，深入探讨以幽默对抗极权、捍卫言论自由及追寻真相的核心议题。"
 permalink: /articles/424-bassem-youssef-israel-palestine-gaza-hamas-middle-east-satire-fame/cn/
 ---
 

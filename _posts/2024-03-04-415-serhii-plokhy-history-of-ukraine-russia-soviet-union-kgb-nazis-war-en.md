@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=qa-wl8_wpZA"
-excerpt: "In this episode, historian Serhii Plokhy discusses the Soviet Union's 1991 collapse as a convergence of ideological, geopolitical, and territorial disintegration. He argues it was a grassroots process, driven by republics like Ukraine seeking independence, redefining national identities across Eastern Europe."
+excerpt: "In this episode, Harvard historian Serhii Plokhy analyzes the Soviet Union’s 1991 collapse as a multifaceted process driven by ideological decay, geopolitical shifts, and grassroots mobilization. He emphasizes that this bottom-up dissolution fundamentally redefined regional sovereignty and national identities across Eastern Europe."
 permalink: /articles/415-serhii-plokhy-history-of-ukraine-russia-soviet-union-kgb-nazis-war/en/
 ---
 

@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=HUkBz-cdB-k"
-excerpt: "In a recent episode, the guest was the eminent mathematician Terence Tao, often called the \"Mozart of math.\" The discussion explored the nature of mathematical difficulty, the unity across disciplines, and the evolving role of AI, using the Kakeya problem to illustrate challenges on the edge of solvability."
+excerpt: "In this episode, Fields Medalist Terence Tao examines the nature of mathematical discovery, arguing that the most compelling problems reside at the boundary between solvability and impossibility. Drawing on his interdisciplinary research, he highlights how intuition, collaborative exploration, and artificial intelligence collectively drive modern mathematical breakthroughs."
 permalink: /articles/472-terence-tao-hardest-problems-in-mathematics-physics-the-future-of-ai/en/
 ---
 

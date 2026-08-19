@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=9V6tWC4CdFQ"
-excerpt: "In this episode, Sundar Pichai shares his journey from a childhood in Chennai with scarce resources to leading Google and Alphabet. He explores how basic innovations like running water and telephones transformed daily life, highlighting technology's liberating impact and the value of persistence."
+excerpt: "In this episode, Sundar Pichai reflects on how early exposure to technological advancements—from running water to telephones—fundamentally shaped his understanding of innovation’s capacity to transform lives. His journey from modest beginnings in Chennai to leading Google underscores how accessible technology dismantles daily burdens and drives meaningful human progress."
 permalink: /articles/471-sundar-pichai-ceo-of-google-and-alphabet/en/
 ---
 

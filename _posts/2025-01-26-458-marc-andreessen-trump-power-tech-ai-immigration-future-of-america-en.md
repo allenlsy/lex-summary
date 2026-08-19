@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=OHWnPOKh_S0"
-excerpt: "In this episode, the guest discusses America's accelerating national debt, projected to add $1 trillion every 70-100 days, as a symptom of deeper cultural and institutional decay. The conversation explores how deliberate demoralization, censorship, and overregulation undermine the nation's innovation and potential, prompting a critical look at the path to renewal."
+excerpt: "Featuring guest Marc Andreessen, this episode explores America’s rapidly accelerating national debt alongside a deliberate cultural stagnation that suppresses innovation and individual initiative. The discussion underscores how systemic overregulation and ideological conformity risk economic collapse, while emphasizing that restoring entrepreneurial freedom is essential for national renewal."
 permalink: /articles/458-marc-andreessen-trump-power-tech-ai-immigration-future-of-america/en/
 ---
 

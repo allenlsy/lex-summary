@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=HUkBz-cdB-k"
-excerpt: "陶哲轩探讨了数学难题的本质，认为最棘手的问题位于可解与不可解边缘，并以卡克亚问题和纳维-斯托克斯方程为例。他还反思了直觉、结构与随机性的作用，以及数学与人工智能的演变关系。"
+excerpt: "本期对话数学家陶哲轩，深入剖析临界数学难题本质、纳维-斯托克斯方程机制及结构随机性张力。他通过跨领域抽象模型揭示数学发现的统一性，并探讨了数学思维与人工智能的密切关联。"
 permalink: /articles/472-terence-tao-hardest-problems-in-mathematics-physics-the-future-of-ai/cn/
 ---
 

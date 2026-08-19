@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=OHWnPOKh_S0"
-excerpt: "这篇博客深度剖析了美国面临的债务爆炸与文化衰败双重危机，指出国家正以每100天增加1万亿美元的不可持续速度走向经济崩溃，同时揭示了十年士气瓦解与思想同质化对创新的扼杀。文章借马克·安德森观点，探讨新精英崛起与科技从审查转向解放的复兴之路。"
+excerpt: "本期节目由马克·安德森主讲，深入剖析美国债务指数级膨胀与文化士气崩塌引发的系统性危机。新一代科技领袖正打破审查与同质化桎梏，以创新与言论自由引领国家复兴。"
 permalink: /articles/458-marc-andreessen-trump-power-tech-ai-immigration-future-of-america/cn/
 ---
 
