@@ -240,9 +240,20 @@ class ConvertTests(unittest.TestCase):
         from unittest import mock
 
         captured = {}
+
+        class FakeResponse:
+            def __init__(self, data):
+                self._data = data
+            def __enter__(self):
+                return self
+            def __exit__(self, *args):
+                return False
+            def read(self):
+                return self._data
+
         def fake_urlopen(request, timeout=0):
             captured["prompt"] = json.loads(request.data)["messages"][0]["content"]
-            return mock.MagicMock(read=lambda: b'{"choices": [{"message": {"content": "S"}}]}')
+            return FakeResponse(b'{"choices": [{"message": {"content": "S"}}]}')
 
         with mock.patch("urllib.request.urlopen", side_effect=fake_urlopen):
             result = cp.summarize_excerpt("body", "en", "http://test/v1", "m", direct=True)

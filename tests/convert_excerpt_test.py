@@ -143,7 +143,7 @@ class DateFilterTests(unittest.TestCase):
         import sys
 
         captured = {}
-        def fake_summarize(content, language, api_url, model, api_key):
+        def fake_summarize(content, language, api_url, model, api_key=None, direct=False):
             captured["key"] = api_key
             return "Summary"
 
