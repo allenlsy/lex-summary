@@ -220,7 +220,9 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
 .collection-language-links { display: flex; flex-wrap: wrap; gap: .35rem 1.5rem; }
 .collection-language-links a { width: fit-content; }
 .collection-language-links a span { color: inherit; font-size: inherit; letter-spacing: inherit; }
-.collection-entry-excerpt { max-width: 42rem; margin: 0; font-size: 1.08rem; }
+.collection-entry-excerpts { max-width: 42rem; }
+.collection-entry-excerpt { margin: 0 0 .6em; font-size: 1.08rem; }
+.collection-entry-excerpt:last-child { margin-bottom: 0; }
 
 .site-footer { border-top: 1px solid var(--ink); }
 .footer-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3rem; padding-block: 3.5rem; }
