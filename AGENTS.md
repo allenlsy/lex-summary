@@ -83,7 +83,12 @@ python3 scripts/convert_pending.py
 python3 scripts/convert_pending.py --apply
 ```
 
-The script derives the episode id, title, and language from the file name and content. The episode number comes from the heading, then the verified video metadata table (`VIDEOS`), then a live lookup against `https://lexfridman.com/podcast` (title match plus the YouTube page title), and finally an interactive prompt when nothing else resolves it; the number drives `title`, `article_id`, `article_title`, and `permalink`. It must remain dry-run by default, must never overwrite a different destination file, and moves converted sources to `pending/processed/`.
+The script derives the episode id, title, and language from the file name and content. The episode number comes from the heading, then the verified video metadata table (`VIDEOS`), then a live lookup against `https://lexfridman.com/podcast` (title match plus the YouTube page title), and finally an interactive prompt when nothing else resolves it; the number drives `title`, `article_id`, `article_title`, and `permalink`. It must remain dry-run by default, must never overwrite a different destination file, and moves converted sources to `pending/processed/`. Excerpts are summarized through an OpenAI-compatible endpoint (default `http://localhost:1234/v1`, model `qwen/qwen3.6-35b-a3b`) with a first-paragraph fallback. To regenerate excerpts for a date range:
+
+```sh
+python3 scripts/convert_excerpt.py --start 2026-08-01 --end 2026-08-31
+python3 scripts/convert_excerpt.py --start 2026-08-01 --end 2026-08-31 --apply
+```
 
 ## Podcaster collections
 

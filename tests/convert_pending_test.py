@@ -194,6 +194,42 @@ class ConvertTests(unittest.TestCase):
         _, post_text = result
         self.assertIn("article_id: 501-mystery-episode", post_text)
 
+    def test_api_summary_used_for_excerpt(self) -> None:
+        from unittest import mock
+
+        class FakeResponse:
+            def __init__(self, data):
+                self._data = data
+            def __enter__(self):
+                return self
+            def __exit__(self, *args):
+                return False
+            def read(self):
+                return self._data
+
+        def fake_urlopen(request, timeout=0):
+            return FakeResponse(
+                b'{"choices": [{"message": {"content": "API generated summary text."}}]}'
+            )
+
+        source = self.tmp / "416-yann.md"
+        source.write_text("# 416 - Yann LeCun: Limits of LLMs\n\nBody with enough length to have a fallback excerpt.", encoding="utf-8")
+        with mock.patch("urllib.request.urlopen", side_effect=fake_urlopen):
+            _, post_text = cp.convert_file(source, "lex-fridman", apply=False, api_url="http://localhost:1234/v1")
+        self.assertIn('excerpt: "API generated summary text."', post_text)
+
+    def test_api_failure_falls_back_to_extract(self) -> None:
+        from unittest import mock
+
+        source = self.tmp / "416-yann.md"
+        source.write_text(
+            "# 416 - Yann LeCun: Limits of LLMs\n\n**1. A Bold Heading**\n\nThe conversation covers the limits of large language models and the future of AI systems.\n",
+            encoding="utf-8",
+        )
+        with mock.patch("urllib.request.urlopen", side_effect=OSError("connection refused")):
+            _, post_text = cp.convert_file(source, "lex-fridman", apply=False, api_url="http://localhost:1234/v1")
+        self.assertIn("The conversation covers the limits of large language models", post_text)
+
     def test_eof_without_number_raises(self) -> None:
         from unittest import mock
 

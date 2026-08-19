@@ -197,6 +197,45 @@ def significant_words(text: str) -> set[str]:
     return words
 
 
+DEFAULT_API_URL = "http://localhost:1234/v1"
+DEFAULT_MODEL = "qwen/qwen3.6-35b-a3b"
+
+
+def summarize_excerpt(
+    content: str, language: str, api_url: str | None, model: str
+) -> str | None:
+    """Two-sentence summary via an OpenAI-compatible chat endpoint; None on failure."""
+    if not api_url:
+        return None
+    import urllib.request
+
+    lang_label = "Chinese" if language == "cn" else "English"
+    prompt = (
+        f"Write a {lang_label} summary of this blog post in 2 sentences "
+        f"(about 40-80 words for English, 60-100 Chinese characters). Capture the "
+        f"guest, episode topic, and key themes. Output only the summary text.\n\n"
+        f"{content[:3000]}"
+    )
+    payload = {
+        "model": model,
+        "messages": [{"role": "user", "content": prompt}],
+        "temperature": 0.4,
+        "max_tokens": 200,
+    }
+    try:
+        request = urllib.request.Request(
+            api_url.rstrip("/") + "/chat/completions",
+            data=json.dumps(payload).encode("utf-8"),
+            headers={"Content-Type": "application/json"},
+        )
+        with urllib.request.urlopen(request, timeout=60) as response:
+            data = json.loads(response.read().decode("utf-8"))
+        text = data["choices"][0]["message"]["content"].strip()
+        return text or None
+    except Exception:
+        return None
+
+
 def extract_excerpt(content: str) -> str | None:
     """First substantive paragraph for the excerpt front matter: skip YAML front
     matter, empty lines, headings, separators, and standalone bold labels."""
@@ -373,7 +412,13 @@ def build_front_matter(
 
 
 def convert_file(
-    path: Path, collection_id: str, *, apply: bool, page_html: str | None = None
+    path: Path,
+    collection_id: str,
+    *,
+    apply: bool,
+    page_html: str | None = None,
+    api_url: str | None = None,
+    model: str = DEFAULT_MODEL,
 ) -> tuple[str, str] | None:
     """Convert one pending file. Returns (destination, post_text); None when the
     destination already exists.
@@ -459,7 +504,8 @@ def convert_file(
             variant_rank=variant_rank,
             permalink=permalink,
             original_link=original_link,
-            excerpt=extract_excerpt(content),
+            excerpt=summarize_excerpt(content, language, api_url, model)
+            or extract_excerpt(content),
         )
         + "\n"
         + body_text
@@ -502,7 +548,9 @@ def convert_main(args: argparse.Namespace) -> int:
             unknown_collections.add(collection_id)
 
         try:
-            result = convert_file(path, collection_id, apply=args.apply)
+            result = convert_file(
+                path, collection_id, apply=args.apply, api_url=args.api_url, model=args.model
+            )
         except ConversionError as error:
             print(f"SKIP {path.name}: {error}", file=sys.stderr)
             continue
@@ -554,6 +602,16 @@ def parse_args() -> argparse.Namespace:
         "--apply",
         action="store_true",
         help="write posts and move source files; default is dry-run",
+    )
+    parser.add_argument(
+        "--api-url",
+        default=DEFAULT_API_URL,
+        help=f"OpenAI-compatible endpoint for excerpt summaries (default: {DEFAULT_API_URL})",
+    )
+    parser.add_argument(
+        "--model",
+        default=DEFAULT_MODEL,
+        help=f"model name for excerpt summaries (default: {DEFAULT_MODEL})",
     )
     return parser.parse_args()
 
