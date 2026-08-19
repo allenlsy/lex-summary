@@ -208,6 +208,7 @@ class ConvertTests(unittest.TestCase):
                 return self._data
 
         def fake_urlopen(request, timeout=0):
+            captured["prompt"] = json.loads(request.data)["messages"][0]["content"]
             return FakeResponse(
                 b'{"choices": [{"message": {"content": "API generated summary text."}}]}'
             )
@@ -217,6 +218,8 @@ class ConvertTests(unittest.TestCase):
         with mock.patch("urllib.request.urlopen", side_effect=fake_urlopen):
             _, post_text = cp.convert_file(source, "lex-fridman", apply=False, api_url="http://localhost:1234/v1")
         self.assertIn('excerpt: "API generated summary text."', post_text)
+        self.assertIn("do not use framing phrases", captured["prompt"])
+        self.assertIn("this episode", captured["prompt"])
 
     def test_api_failure_falls_back_to_extract(self) -> None:
         from unittest import mock
