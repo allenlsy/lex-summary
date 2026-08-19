@@ -6,10 +6,6 @@
   title: Dwarkesh
   url: /collections/dwarkesh/
   description: Concise, readable summaries of long-form conversations from the Dwarkesh Podcast.
-- id: the-rest-is-history
-  title: The Rest is History
-  url: /collections/the-rest-is-history/
-  description: Concise, readable summaries of long-form conversations from The Rest is History.
 - id: huberman
   title: Huberman
   url: /collections/huberman/
@@ -18,3 +14,7 @@
   title: Joe Rogan
   url: /collections/joe-rogan/
   description: Concise, readable summaries of long-form conversations from The Joe Rogan Experience.
+- id: dan-carlin
+  title: Dan Carlin
+  url: /collections/dan-carlin/
+  description: Concise, readable summaries of long-form conversations from Dan Carlin's Hardcore History podcast.

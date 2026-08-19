@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Ryan Greenblatt – 一旦人工智能能够实现人工智能研究的自动化，将会发生什么？"
+title: "Ryan Greenblatt – 当AI能够自动化AI研究时，会发生什么？"
 date: 2026-08-19 09:00:00 +0000
 article_id: ryan-greenblatt
 article_title: "Ryan Greenblatt – What happens once AI can automate AI research?"

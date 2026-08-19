@@ -25,7 +25,7 @@ search = page(site_dir, "search/index.html")
 sitemap = page(site_dir, "sitemap.xml")
 robots = page(site_dir, "robots.txt")
 
-site_description = "Concise summaries of long-form interviews across the Lex Fridman Podcast, Dwarkesh, The Rest is History, Huberman, and Joe Rogan, with more podcasters to come."
+site_description = "Concise summaries of long-form interviews across the Lex Fridman Podcast, Dwarkesh, Huberman, Joe Rogan, and Dan Carlin, with more podcasters to come."
 
 assert_includes(home, "<title>Long-Form Podcast Summaries · Lex TL;DR</title>", "homepage title is not descriptive")
 assert_includes(home, %(<meta name="description" content="#{site_description}">), "homepage description is not targeted")
