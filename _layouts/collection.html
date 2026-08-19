@@ -11,9 +11,6 @@ layout: default
 {% if collection_number < 10 %}{% assign collection_number_label = collection_number | prepend: "0" %}{% else %}{% assign collection_number_label = collection_number %}{% endif %}
 
 <section class="collection-hero wide-container">
-  <div class="collection-breadcrumb">
-    <span>Collections</span>
-  </div>
   <div class="collection-hero-grid">
     <p class="collection-number">Collection<br>№ {{ collection_number_label }}</p>
     <div class="collection-heading">

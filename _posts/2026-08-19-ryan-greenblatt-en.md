@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "-ryan-greenblatt"
+title: "Ryan Greenblatt – What happens once AI can automate AI research?"
 date: 2026-08-19 09:00:00 +0000
 article_id: ryan-greenblatt
-article_title: "-ryan-greenblatt"
+article_title: "Ryan Greenblatt – What happens once AI can automate AI research?"
 collection_id: dwarkesh
 language: en
 variant_rank: 1
