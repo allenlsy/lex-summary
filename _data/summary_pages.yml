@@ -3,6 +3,8 @@
     url: /
   - number: 2
     url: /page/2/
+  - number: 3
+    url: /page/3/
 "50":
   - number: 1
     url: /per-page/50/

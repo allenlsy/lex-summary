@@ -66,7 +66,7 @@ Native language names are defined in `_data/languages.yml` and displayed after e
 
 ## Convert pending summaries
 
-Blog content tooling lives in the `admin/` git submodule (`allenlsy/lex-tldr-admin`), a separate repository from this one. After a fresh checkout, fetch it with `git submodule update --init`. The tools resolve the blog root from their own location, so run them from this repository.
+Batch content tools live in the `admin/` git submodule (`allenlsy/lex-tldr-admin`), a separate repository from this one. After a fresh checkout, fetch it with `git submodule update --init`. The tools resolve the blog root from their own location, so run them from this repository. The `just new-post` recipe uses `scripts/new_post.rb` inside this repository and needs no submodule.
 
 Place summary Markdown files under `pending/<collection_id>/` (e.g. `pending/lex-fridman/`), preview with a dry run, then apply:
 

@@ -76,7 +76,7 @@ Most imported summaries have two variants, `en` and `cn`. Episode 440 intentiona
 
 ## Local summary conversion
 
-Content tooling lives in the `admin/` git submodule (separate repository `allenlsy/lex-tldr-admin`; fetch it with `git submodule update --init` after a fresh checkout). The tools resolve the blog root from their own location, so run them from this repository.
+Content batch tooling lives in the `admin/` git submodule (separate repository `allenlsy/lex-tldr-admin`; fetch it with `git submodule update --init` after a fresh checkout). The tools resolve the blog root from their own location, so run them from this repository. The `just new-post` recipe uses `scripts/new_post.rb` inside this repository and needs no submodule.
 
 `admin/convert_pending.py` converts pending summary files into Jekyll posts. Place summaries in `pending/<collection_id>/` (e.g. `pending/lex-fridman/`), preview with a dry run, then apply:
 
