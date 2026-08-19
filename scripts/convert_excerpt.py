@@ -43,6 +43,16 @@ def parse_args() -> argparse.Namespace:
         help=f"model name (default: {DEFAULT_MODEL})",
     )
     parser.add_argument(
+        "--api-key",
+        default=None,
+        help="bearer token for the OpenAI-compatible endpoint",
+    )
+    parser.add_argument(
+        "--override",
+        action="store_true",
+        help="regenerate excerpts that already exist; default keeps them",
+    )
+    parser.add_argument(
         "--posts-dir",
         type=Path,
         default=POSTS_DIR,
@@ -90,6 +100,7 @@ def main() -> int:
 
     matched = 0
     updated = 0
+    skipped_existing = 0
     skipped = 0
     for post in sorted(args.posts_dir.glob("*.md")):
         post_date = post.name[:10]
@@ -102,8 +113,13 @@ def main() -> int:
             print(f"SKIP {post.name}: malformed front matter", file=sys.stderr)
             skipped += 1
             continue
+        if not args.override and re.search(r"^excerpt:\s*\S", parts[1], re.MULTILINE):
+            skipped_existing += 1
+            continue
         language = "cn" if re.search(r"^language:\s*cn\s*$", parts[1], re.MULTILINE) else "en"
-        summary = summarize_excerpt(parts[2].strip(), language, args.api_url, args.model)
+        summary = summarize_excerpt(
+            parts[2].strip(), language, args.api_url, args.model, args.api_key
+        )
         if not summary:
             print(f"SKIP {post.name}: summary failed", file=sys.stderr)
             skipped += 1
@@ -120,7 +136,10 @@ def main() -> int:
         updated += 1
 
     mode = "APPLY" if args.apply else "DRY-RUN"
-    print(f"{mode}: {matched} posts in range, {updated} updated, {skipped} skipped")
+    print(
+        f"{mode}: {matched} posts in range, {updated} updated, "
+        f"{skipped_existing} skipped (existing excerpt), {skipped} skipped (error)"
+    )
     return 0
 
 

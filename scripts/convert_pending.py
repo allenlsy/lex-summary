@@ -202,7 +202,11 @@ DEFAULT_MODEL = "qwen/qwen3.6-35b-a3b"
 
 
 def summarize_excerpt(
-    content: str, language: str, api_url: str | None, model: str
+    content: str,
+    language: str,
+    api_url: str | None,
+    model: str,
+    api_key: str | None = None,
 ) -> str | None:
     """Two-sentence summary via an OpenAI-compatible chat endpoint; None on failure."""
     if not api_url:
@@ -222,11 +226,14 @@ def summarize_excerpt(
         "temperature": 0.4,
         "max_tokens": 200,
     }
+    headers = {"Content-Type": "application/json"}
+    if api_key:
+        headers["Authorization"] = f"Bearer {api_key}"
     try:
         request = urllib.request.Request(
             api_url.rstrip("/") + "/chat/completions",
             data=json.dumps(payload).encode("utf-8"),
-            headers={"Content-Type": "application/json"},
+            headers=headers,
         )
         with urllib.request.urlopen(request, timeout=60) as response:
             data = json.loads(response.read().decode("utf-8"))
@@ -419,6 +426,7 @@ def convert_file(
     page_html: str | None = None,
     api_url: str | None = None,
     model: str = DEFAULT_MODEL,
+    api_key: str | None = None,
 ) -> tuple[str, str] | None:
     """Convert one pending file. Returns (destination, post_text); None when the
     destination already exists.
@@ -504,7 +512,7 @@ def convert_file(
             variant_rank=variant_rank,
             permalink=permalink,
             original_link=original_link,
-            excerpt=summarize_excerpt(content, language, api_url, model)
+            excerpt=summarize_excerpt(content, language, api_url, model, api_key)
             or extract_excerpt(content),
         )
         + "\n"
@@ -549,7 +557,12 @@ def convert_main(args: argparse.Namespace) -> int:
 
         try:
             result = convert_file(
-                path, collection_id, apply=args.apply, api_url=args.api_url, model=args.model
+                path,
+                collection_id,
+                apply=args.apply,
+                api_url=args.api_url,
+                model=args.model,
+                api_key=args.api_key,
             )
         except ConversionError as error:
             print(f"SKIP {path.name}: {error}", file=sys.stderr)
@@ -612,6 +625,11 @@ def parse_args() -> argparse.Namespace:
         "--model",
         default=DEFAULT_MODEL,
         help=f"model name for excerpt summaries (default: {DEFAULT_MODEL})",
+    )
+    parser.add_argument(
+        "--api-key",
+        default=None,
+        help="bearer token for the OpenAI-compatible endpoint",
     )
     return parser.parse_args()
 

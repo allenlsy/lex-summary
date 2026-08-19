@@ -56,7 +56,7 @@ class DateFilterTests(unittest.TestCase):
         from unittest import mock
 
         calls = []
-        def fake_summarize(content, language, api_url, model):
+        def fake_summarize(content, language, api_url, model, api_key=None):
             calls.append((language, len(content)))
             return f"Summary for {language}"
 
@@ -83,6 +83,68 @@ class DateFilterTests(unittest.TestCase):
         # out-of-range post untouched
         self.assertNotIn("excerpt:", (self.tmp / "2026-09-01-c-en.md").read_text(encoding="utf-8"))
 
+    def test_existing_excerpt_kept_without_override(self) -> None:
+        from unittest import mock
+        import sys
+
+        (self.tmp / "2026-08-17-a-en.md").write_text(
+            "---\nlayout: post\nlanguage: en\nexcerpt: \"Existing\"\npermalink: /articles/a/en/\n---\n\nBody A.",
+            encoding="utf-8",
+        )
+        calls = []
+        def fake_summarize(*args, **kwargs):
+            calls.append(args)
+            return "New"
+
+        old_argv = sys.argv
+        sys.argv = ["convert_excerpt.py", "--posts-dir", str(self.tmp), "--apply",
+                    "--api-url", "http://test/v1"]
+        try:
+            with mock.patch.object(ce, "summarize_excerpt", side_effect=fake_summarize):
+                ce.main()
+        finally:
+            sys.argv = old_argv
+        # only the 08-18 post (without an excerpt) is summarized; 08-17 keeps its excerpt
+        self.assertEqual(len(calls), 1)
+        self.assertIn("Existing", (self.tmp / "2026-08-17-a-en.md").read_text(encoding="utf-8"))
+
+    def test_override_regenerates(self) -> None:
+        from unittest import mock
+        import sys
+
+        (self.tmp / "2026-08-17-a-en.md").write_text(
+            "---\nlayout: post\nlanguage: en\nexcerpt: \"Old\"\npermalink: /articles/a/en/\n---\n\nBody A.",
+            encoding="utf-8",
+        )
+        old_argv = sys.argv
+        sys.argv = ["convert_excerpt.py", "--posts-dir", str(self.tmp), "--apply",
+                    "--api-url", "http://test/v1", "--override"]
+        try:
+            with mock.patch.object(ce, "summarize_excerpt", return_value="New"):
+                ce.main()
+        finally:
+            sys.argv = old_argv
+        self.assertIn('excerpt: "New"', (self.tmp / "2026-08-17-a-en.md").read_text(encoding="utf-8"))
+
+    def test_api_key_forwarded(self) -> None:
+        from unittest import mock
+        import sys
+
+        captured = {}
+        def fake_summarize(content, language, api_url, model, api_key):
+            captured["key"] = api_key
+            return "Summary"
+
+        old_argv = sys.argv
+        sys.argv = ["convert_excerpt.py", "--posts-dir", str(self.tmp), "--apply",
+                    "--api-url", "http://test/v1", "--api-key", "secret-token"]
+        try:
+            with mock.patch.object(ce, "summarize_excerpt", side_effect=fake_summarize):
+                ce.main()
+        finally:
+            sys.argv = old_argv
+        self.assertEqual(captured.get("key"), "secret-token")
+
     def test_invalid_dates_rejected(self) -> None:
         import sys
         old_argv = sys.argv
@@ -98,7 +160,7 @@ class DateFilterTests(unittest.TestCase):
         import sys
 
         calls = []
-        def fake_summarize(content, language, api_url, model):
+        def fake_summarize(content, language, api_url, model, api_key=None):
             calls.append(language)
             return "Summary"
 
