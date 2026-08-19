@@ -207,6 +207,7 @@ def summarize_excerpt(
     api_url: str | None,
     model: str,
     api_key: str | None = None,
+    direct: bool = False,
 ) -> str | None:
     """Two-sentence summary via an OpenAI-compatible chat endpoint; None on failure."""
     if not api_url:
@@ -214,14 +215,22 @@ def summarize_excerpt(
     import urllib.request
 
     lang_label = "Chinese" if language == "cn" else "English"
-    prompt = (
-        f"Write a {lang_label} summary of this podcast conversation in 2 sentences "
-        f"(about 40-80 words for English, 60-100 Chinese characters). Cover the "
-        f"guest, the main topic, and key themes. State the content directly: do not "
-        f"use framing phrases like \"this episode\", \"in this conversation\", or "
-        f"\"they discussed\". Output only the summary text.\n\n"
-        f"{content[:3000]}"
-    )
+    if direct:
+        prompt = (
+            f"Write a {lang_label} summary of this podcast conversation in 2 sentences "
+            f"(about 40-80 words for English, 60-100 Chinese characters). Cover the "
+            f"guest, the main topic, and key themes. State the content directly: do not "
+            f"use framing phrases like \"this episode\", \"in this conversation\", or "
+            f"\"they discussed\". Output only the summary text.\n\n"
+            f"{content[:3000]}"
+        )
+    else:
+        prompt = (
+            f"Write a {lang_label} summary of this blog post in 2 sentences "
+            f"(about 40-80 words for English, 60-100 Chinese characters). Capture the "
+            f"guest, episode topic, and key themes. Output only the summary text.\n\n"
+            f"{content[:3000]}"
+        )
     payload = {
         "model": model,
         "messages": [{"role": "user", "content": prompt}],

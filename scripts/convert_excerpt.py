@@ -138,7 +138,7 @@ def main() -> int:
             continue
         language = "cn" if re.search(r"^language:\s*cn\s*$", parts[1], re.MULTILINE) else "en"
         summary = summarize_excerpt(
-            parts[2].strip(), language, args.api_url, args.model, args.api_key
+            parts[2].strip(), language, args.api_url, args.model, args.api_key, direct=True
         )
         if not summary:
             if tty:

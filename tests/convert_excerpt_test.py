@@ -68,7 +68,7 @@ class DateFilterTests(unittest.TestCase):
         from unittest import mock
 
         calls = []
-        def fake_summarize(content, language, api_url, model, api_key=None):
+        def fake_summarize(content, language, api_url, model, api_key=None, direct=False):
             calls.append((language, len(content)))
             return f"Summary for {language}"
 
@@ -172,7 +172,7 @@ class DateFilterTests(unittest.TestCase):
         import sys
 
         calls = []
-        def fake_summarize(content, language, api_url, model, api_key=None):
+        def fake_summarize(content, language, api_url, model, api_key=None, direct=False):
             calls.append(language)
             return "Summary"
 

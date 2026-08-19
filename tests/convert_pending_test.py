@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import json
 import tempfile
 import unittest
 from pathlib import Path
@@ -220,8 +221,8 @@ class ConvertTests(unittest.TestCase):
         with mock.patch("urllib.request.urlopen", side_effect=fake_urlopen):
             _, post_text = cp.convert_file(source, "lex-fridman", apply=False, api_url="http://localhost:1234/v1")
         self.assertIn('excerpt: "API generated summary text."', post_text)
-        self.assertIn("do not use framing phrases", captured["prompt"])
-        self.assertIn("this episode", captured["prompt"])
+        self.assertIn("Capture the guest, episode topic, and key themes", captured["prompt"])
+        self.assertNotIn("framing phrases", captured["prompt"])
 
     def test_api_failure_falls_back_to_extract(self) -> None:
         from unittest import mock
@@ -234,6 +235,21 @@ class ConvertTests(unittest.TestCase):
         with mock.patch("urllib.request.urlopen", side_effect=OSError("connection refused")):
             _, post_text = cp.convert_file(source, "lex-fridman", apply=False, api_url="http://localhost:1234/v1")
         self.assertIn("The conversation covers the limits of large language models", post_text)
+
+    def test_direct_prompt_for_excerpt_tool(self) -> None:
+        from unittest import mock
+
+        captured = {}
+        def fake_urlopen(request, timeout=0):
+            captured["prompt"] = json.loads(request.data)["messages"][0]["content"]
+            return mock.MagicMock(read=lambda: b'{"choices": [{"message": {"content": "S"}}]}')
+
+        with mock.patch("urllib.request.urlopen", side_effect=fake_urlopen):
+            result = cp.summarize_excerpt("body", "en", "http://test/v1", "m", direct=True)
+        self.assertEqual(result, "S")
+        self.assertIn("do not use framing phrases", captured["prompt"])
+        self.assertIn("this episode", captured["prompt"])
+        self.assertNotIn("Capture the guest, episode topic", captured["prompt"])
 
     def test_eof_without_number_raises(self) -> None:
         from unittest import mock
