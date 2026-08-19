@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=-HzgcbRXUK8"
-excerpt: "人类心智难以对复杂、非线性的动力系统做出清晰且确定性的预测——这类系统随时间演化，其行为对初始条件极为敏感，常表现出混沌特征。然而，尽管存在这种固有的困难，越来越多的证据表明，经典机器学习系统，尤其是深度神经网络，可能具备以惊人精度建模此类系统的能力。这包括长期被认为难以处理的领域，例如流体动力学。"
+excerpt: "哈萨比斯在博客中探讨了AI模型通过学习自然界潜在结构的能力，提出任何受演化或物理约束的系统都可能被经典计算高效建模。他进一步将宇宙视为信息体系，认为P vs. NP问题可能根植于现实结构，并讨论了AI在直觉理解与创造力上的人类式差距。"
 permalink: /articles/475-demis-hassabis-future-of-ai-simulating-reality-physics-and-video-games/cn/
 ---
 

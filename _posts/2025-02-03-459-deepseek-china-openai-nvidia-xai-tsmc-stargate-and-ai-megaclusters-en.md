@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=_1f-o0nqpEI"
-excerpt: "The following is a comprehensive, third-person narrative of a high-stakes, multi-layered conversation between two of the most influential figures in the global artificial intelligence landscape: Dylan Patel, founder and lead analyst at SemiAnalysis, a research firm renowned for its deep technical and economic insights into semiconductors, AI hardware, and frontier AI systems; and Nathan Lambert, a research scientist at the Allen Institute for AI (AI2) and the author of the widely read blog Interconnects, which explores the technical underpinnings of modern AI."
+excerpt: "Dylan Patel and Nathan Lambert discuss the DeepSeek moment and its global impact, analyzing the release of efficient, open-weight Chinese AI models that rival Western counterparts. They explore the technological, economic, and geopolitical implications, highlighting a paradigm shift in the balance of AI power and its long-term societal effects."
 permalink: /articles/459-deepseek-china-openai-nvidia-xai-tsmc-stargate-and-ai-megaclusters/en/
 ---
 

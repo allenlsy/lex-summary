@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=YFjfBk8HI5o"
-excerpt: "The technological landscape of the mid-2020s has been marked by rapid advancements in artificial intelligence, yet few developments have captured public and industry attention as swiftly as the emergence of OpenClaw. Originally launched under several provisional identifiers, including MoldBot, ClawedBot, and Clawdus, the project has since settled on its current designation following legal guidance from Anthropic. OpenClaw is an open-source autonomous AI agent designed to operate directly on a user’s local computing environment. It bridges the gap between abstract language models and tangible digital agency by integrating with widely used messaging platforms, including WhatsApp, Telegram, Discord, Signal, and iMessage. The system allows users to interact with a localized AI assistant that maintains persistent access to personal data, system files, and computational resources, provided explicit permissions are granted."
+excerpt: "The blog post discusses OpenClaw, an open-source AI agent created by Steinberger for local device operation. It highlights the project's rapid growth, integration with messaging platforms, and the key themes of user sovereignty, security risks, and ethical debates."
 permalink: /articles/491-openclaw-the-viral-ai-agent-that-broke-the-internet-peter-steinberger/en/
 ---
 

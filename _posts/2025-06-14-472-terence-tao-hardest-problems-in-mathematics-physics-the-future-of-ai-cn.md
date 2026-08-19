@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=HUkBz-cdB-k"
-excerpt: "陶哲轩（Terence Tao），被广泛视为现代最杰出的数学家之一，已在数学界取得了罕见的成就。他常被誉为“数学界的莫扎特”，不仅在众多数学领域作出了深远贡献，更荣获了该领域的最高荣誉——菲尔兹奖与突破奖。他的学术视野横跨数论、调和分析、偏微分方程、组合数学以及数学物理——这些看似彼此无关的领域，在陶哲轩的研究中却展现出深刻的内在统一性。他揭示出：不同数学分支之间的洞见，往往能相互照亮，揭示出隐藏在形式背后的深层结构。"
+excerpt: "陶哲轩探讨了数学难题的本质，认为最棘手的问题位于可解与不可解边缘，并以卡克亚问题和纳维-斯托克斯方程为例。他还反思了直觉、结构与随机性的作用，以及数学与人工智能的演变关系。"
 permalink: /articles/472-terence-tao-hardest-problems-in-mathematics-physics-the-future-of-ai/cn/
 ---
 

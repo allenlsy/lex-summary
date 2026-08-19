@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=y3yAVZk3tyA"
-excerpt: "在全球地缘政治摩擦加剧、经济竞争日益激烈、文化认知错位不断加深的背景下，鲜有声音能兼具思想深度与文化亲和力，弥合西方对中国的误解与现代中国真实面貌之间的鸿沟。在众多声音中，金凯瑜（Keyu Jin）——伦敦政治经济学院的杰出经济学家——堪称罕见的思想桥梁。她的学术专长横跨中国经济转型、国际宏观经济学、全球贸易失衡以及金融政策，但其真正贡献在于她能够解码中国成功背后的无形结构——并非基于意识形态，而是根植于制度设计、历史积淀与人类行为的深层逻辑。"
+excerpt: "金凯瑜在播客中探讨中国经济模式，驳斥“中央集权”迷思，强调地方政府的去中心化驱动与新型创业文化，揭示权力与目的悖论，为西方理解中国提供新视角。"
 permalink: /articles/477-keyu-jin-china-s-economy-tariffs-trade-trump-communism-capitalism/cn/
 ---
 

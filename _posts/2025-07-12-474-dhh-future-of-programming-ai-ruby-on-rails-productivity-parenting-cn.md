@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=vagyIcmIGOQ"
-excerpt: "这份详尽的访谈记录呈现了莱克斯·弗里德曼（Lex Fridman）与大卫·海涅梅尔·汉森（DHH）之间的一场深度、广度兼备的对话。DHH是Ruby on Rails的创始人，Basecamp与HEY的联合创始人，同时也是一位世界级的赛车手。这场对话跨越数十年的个人经历、技术哲学与文化批判，为编程、软件开发、人性以及科技未来提供了丰富而深刻的洞见。"
+excerpt: "这篇访谈记录了DHH与Lex Fridman的深度对话，涵盖编程哲学、软件开发、AI、开源及生活意义等主题。DHH强调简洁技术、小团队创新及人类幸福感，批判过度复杂化与垄断。"
 permalink: /articles/474-dhh-future-of-programming-ai-ruby-on-rails-productivity-parenting/cn/
 ---
 

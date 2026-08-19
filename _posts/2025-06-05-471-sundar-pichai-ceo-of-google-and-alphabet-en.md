@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=9V6tWC4CdFQ"
-excerpt: "Sundar Pichai’s journey from a modest two-room apartment in Chennai, India, to leading one of the world’s most influential technology companies—Google and Alphabet—offers a profound narrative on how technological advancement can reshape individual lives and, by extension, human civilization itself. His story is not merely one of personal success, but a testament to the transformative potential of innovation, particularly in contexts where access to technology was once a distant dream."
+excerpt: "In this episode, Sundar Pichai shares his journey from a childhood in Chennai with scarce resources to leading Google and Alphabet. He explores how basic innovations like running water and telephones transformed daily life, highlighting technology's liberating impact and the value of persistence."
 permalink: /articles/471-sundar-pichai-ceo-of-google-and-alphabet/en/
 ---
 

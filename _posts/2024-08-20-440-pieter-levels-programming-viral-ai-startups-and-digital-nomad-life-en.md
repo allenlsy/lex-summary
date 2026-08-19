@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 3
 original_link: "https://www.youtube.com/watch?v=oFtjKbXKqbg"
-excerpt: "Pieter Levels, a self-taught software developer and serial entrepreneur, has built and launched over 40 startups since the mid-2000s. His work spans multiple industries, from digital nomadism and remote work platforms to AI-powered image generation and developer tools. Unlike many tech founders, Levels has operated without external funding, venture capital, or formal team structures. His entire entrepreneurial journey has been solo, documented in real time, and built with minimal technical infrastructure—primarily vanilla HTML, jQuery, PHP, and SQLite."
+excerpt: "In this episode, Pieter Levels shares his journey as a solo indie hacker, having launched 40+ startups without VC funding. Key themes include rapid iteration, minimalist tech stacks, and validating demand through early shipping and user behavior."
 permalink: /articles/440-pieter-levels-programming-viral-ai-startups-and-digital-nomad-life/en/long/
 ---
 

@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=sG8u6owzad4"
-excerpt: "The following is a verbatim paraphrase of a full-length interview with Bassem Youssef, a globally recognized Egyptian-American comedian, political satirist, and cultural critic. The transcript was originally 29,404 words in length and has been condensed to approximately 15,800 words, preserving nearly all factual content, illustrative details, emotional nuance, and structural flow. The tone adheres strictly to a neutral, documentary-style narrative—akin to a news report or investigative feature—without literary embellishment or interpretive bias. All named individuals, events, data points, quotations, personal revelations, and ideological underpinnings are retained in full."
+excerpt: "In this episode, Bassem Youssef, the Egyptian-American comedian and political satirist, joins Lex Fridman to discuss his career from cardiac surgeon to media critic, the Arab Spring, and the psychological toll of satire under authoritarianism. The conversation explores truth, power, free speech, and the complexities of U.S. foreign policy, blending personal history with global political critique."
 permalink: /articles/424-bassem-youssef-israel-palestine-gaza-hamas-middle-east-satire-fame/en/
 ---
 

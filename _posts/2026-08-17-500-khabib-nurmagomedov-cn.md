@@ -7,7 +7,7 @@ article_title: "500 - Khabib Nurmagomedov on Daghestan, Combat Sports, Culture, 
 collection_id: lex-fridman
 language: cn
 variant_rank: 2
-excerpt: "本记录整理自研究人员兼播客主持人莱克斯·弗里德曼（Lex Fridman）与综合格斗选手哈比布·努尔马戈梅多夫（Khabib Nurmagomedov）的一次对话录音。哈比布以29胜0负的不败战绩结束了其职业格斗生涯。此次全程使用俄语进行，标志着与既往播出形式不同的语言转换，后续由人工翻译团队与自动语音合成系统协作完成翻译与配音。录音捕捉了努尔马戈梅多夫关于区域体育文化、历史渊源、训练体系、心理训练、职业管理、精神信仰及更广泛体育项目比较的反思。文本保留了原有的结构脉络，按主题顺序将直接对话转换为第三人称纪录片叙述体。所有事实参考、说明性案例、哲学观察与情感反思均以简明而全面的新闻体裁完整保留。"
+excerpt: "在此博客中，莱克斯·弗里德曼与不败格斗冠军哈比布·努尔马戈梅多夫用俄语对话，探讨达吉斯坦的格斗文化、历史渊源及训练体系，强调纪律与精神韧性在职业成功中的关键作用。"
 permalink: "/articles/500-khabib-nurmagomedov/cn/"
 ---
 

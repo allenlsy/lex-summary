@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=Mde2q7GFCrw"
-excerpt: "The transcript opens with a profound meditation on the evolutionary divergence between intelligence and consciousness—two distinct faculties that are often conflated in modern discourse, particularly within artificial intelligence (AI) development. The speaker, Yuval Noah Harari, a historian and philosopher, asserts that intelligence, defined as the capacity to solve problems, achieve goals, and outmaneuver competitors in survival scenarios, is not inherently linked to consciousness. Consciousness, in contrast, refers to the subjective experience of feeling—pain, pleasure, love, fear, sorrow—elements that are not required for intelligence to function."
+excerpt: "In a recent episode, Yuval Noah Harari distinguishes intelligence from consciousness, arguing AI can be highly intelligent yet lack subjective feeling. He warns that humanity's tendency to anthropomorphize machines risks misinterpreting their algorithmic outputs as genuine emotion."
 permalink: /articles/390-yuval-noah-harari-human-nature-intelligence-power-and-conspiracies/en/
 ---
 

@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=0m3hGZvD-0s"
-excerpt: "- Morning Routine and Mantra: The speaker begins their day with a structured routine, emphasizing the importance of 6-8 hours of sleep and a 30-minute power nap for restful recovery. They prioritize sleep, diet, and exercise as foundational elements for productivity. The day starts with a mantra written on a sheet of paper, which includes:"
+excerpt: "In this episode, the guest shares a highly disciplined daily routine centered on deep work, sleep, and intense exercise. Key themes include structured morning rituals, fasting, and a keto diet to boost mental clarity and productivity."
 permalink: /articles/a-day-in-my-life/en/
 ---
 

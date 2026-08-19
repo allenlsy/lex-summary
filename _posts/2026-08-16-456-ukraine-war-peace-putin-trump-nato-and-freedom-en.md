@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=u321m25rKXc"
-excerpt: "The recorded exchange between host Lex Fridman and Ukrainian President Volodymyr Zelenskyy constitutes a multi-layered, geographically and linguistically complex dialogue. Framed as an intensive, documentary-style interview, the conversation navigates geopolitical strategy, historical memory, wartime governance, institutional anti-corruption measures, and the technical mechanics of cross-linguistic communication. Throughout the exchange, both participants maintain a neutral, analytical posture while addressing deeply emotional, politically charged, and historically significant subject matter. The dialogue operates across multiple temporal frameworks, referencing events from World War II and the Soviet collapse to present-day battlefield logistics, ceasefire negotiations, and post-war reconstruction planning. The interaction is structured around alternating thematic blocks: security architecture, language dynamics, leadership accountability, international alliance mechanics, and the psychological and logistical realities of prolonged conflict."
+excerpt: "In a rare documentary-style interview, President Zelenskyy discusses Ukraine's wartime governance, anti-corruption measures, and post-conflict reconstruction with Lex Fridman. The conversation spans security architecture, leadership accountability, and alliance mechanics, addressing infrastructure restoration and credible international partnerships amid ongoing hostilities."
 permalink: /articles/456-ukraine-war-peace-putin-trump-nato-and-freedom/en/
 ---
 

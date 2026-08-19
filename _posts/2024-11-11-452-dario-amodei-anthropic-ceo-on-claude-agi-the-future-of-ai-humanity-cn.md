@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=ugvHCXCOmm4"
-excerpt: "以下为对原始62,000字访谈内容的详细、第三人称改写版本，严格压缩至约13,800字，同时完整保留所有关键事实、细微差异与结构要素。语气保持分析性与客观性，避免使用第一人称代词及主观修饰。原始叙事主线——以Anthropic首席执行官达里奥·阿莫迪（Dario Amodei）为核心，围绕AI规模扩展、安全性与未来发展所展开的洞见——得以完整保留，并在清晰度、组织性与深度方面得到增强。"
+excerpt: "这篇博客总结了Anthropic CEO Dario Amodei关于AI规模扩展、安全性与未来发展的深度访谈，探讨了规模假说如何驱动智能涌现，以及数据、算力和架构的潜在边界。"
 permalink: /articles/452-dario-amodei-anthropic-ceo-on-claude-agi-the-future-of-ai-humanity/cn/
 ---
 

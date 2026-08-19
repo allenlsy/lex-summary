@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=XJTMQtE-MIo"
-excerpt: "The following is a transcript of a conversation with Kevin Spacey, a two-time Academy Award-winning actor whose body of work includes landmark performances in Se7en, The Usual Suspects, American Beauty, and House of Cards. Over the course of a career spanning more than four decades, Spacey has established himself as one of the most compelling and psychologically nuanced performers in modern cinema and theater. His roles—often complex, morally ambiguous, and psychologically devastating—have left an indelible mark on audiences and the cultural landscape."
+excerpt: "In this episode, Kevin Spacey discusses his iconic role as John Doe in *Se7en*, revealing he was cast after the original actor was fired. Key themes include his strategic decision to avoid all promotion to preserve the film's surprise, showcasing his artistic integrity and understanding of narrative impact."
 permalink: /articles/432-kevin-spacey-power-controversy-betrayal-truth-love-in-film-and-life/en/
 ---
 

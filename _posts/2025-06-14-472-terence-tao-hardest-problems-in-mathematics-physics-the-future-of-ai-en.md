@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=HUkBz-cdB-k"
-excerpt: "Terence Tao, widely regarded as one of the most brilliant mathematicians of the modern era, has achieved a rare distinction in the world of mathematics. Often hailed as the \"Mozart of math,\" Tao has not only made profound contributions across a vast array of mathematical disciplines but has also earned the highest honors in the field, including the Fields Medal and the Breakthrough Prize. His intellectual reach spans number theory, harmonic analysis, partial differential equations, combinatorics, and mathematical physics—areas that, at first glance, seem unrelated. Yet Tao’s work reveals a deep underlying unity in mathematical structure, where insights from one domain illuminate problems in another."
+excerpt: "In a recent episode, the guest was the eminent mathematician Terence Tao, often called the \"Mozart of math.\" The discussion explored the nature of mathematical difficulty, the unity across disciplines, and the evolving role of AI, using the Kakeya problem to illustrate challenges on the edge of solvability."
 permalink: /articles/472-terence-tao-hardest-problems-in-mathematics-physics-the-future-of-ai/en/
 ---
 

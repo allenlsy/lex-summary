@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=SvKv7D4pBjE"
-excerpt: "The German military’s most decisive and revolutionary campaign of World War II—the invasion of France in 1940—was not born of brute force alone, nor solely of ideological fervor. Its true architect was a radical, unorthodox plan conceived not in the halls of traditional military doctrine, but in the mind of three young tank generals who dared to challenge the entrenched logic of warfare. Their proposal: to bypass the heavily fortified Maginot Line and the entrenched Allied forces in northern Belgium by launching a surprise offensive through the dense, forested, and supposedly impassable Ardennes Mountains."
+excerpt: "The blog post details the origins of the 1940 German invasion of France, focusing on three tank generals who proposed a surprise attack through the Ardennes. It highlights their innovative Blitzkrieg strategy, which used speed and terrain concealment, and the February 1940 meeting where Hitler approved their plan."
 permalink: /articles/481-norman-ohler-hitler-nazis-drugs-ww2-blitzkrieg-lsd-mkultra-cia/en/
 ---
 

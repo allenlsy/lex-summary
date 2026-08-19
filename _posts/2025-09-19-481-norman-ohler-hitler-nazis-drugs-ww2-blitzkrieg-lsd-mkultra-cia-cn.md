@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=SvKv7D4pBjE"
-excerpt: "德国在第二次世界大战中最具决定性与革命性的战役——1940年入侵法国——并非单纯依靠武力或意识形态激情而诞生。其真正的缔造者，是一套激进而反传统的战略构想，它并非出自传统军事理论的殿堂，而是诞生于三位年轻坦克将领的头脑之中。他们敢于挑战战争固有逻辑，提出一个前所未有的计划：绕过坚固的马其诺防线和驻守在比利时北部的盟军主力，通过密林丛生、地形复杂、历来被认为无法通行的阿登山区，发动一场出其不意的进攻。"
+excerpt: "这篇博客文章讲述了1940年德国入侵法国时“闪电战”的起源，聚焦于三位坦克将领提出的穿越阿登山区的大胆战略，以及希特勒的最终采纳。文章还探讨了甲基苯丙胺（佩尔维廷）在维持德军连续作战能力中的关键作用，凸显了药物对战争进程的深远影响。"
 permalink: /articles/481-norman-ohler-hitler-nazis-drugs-ww2-blitzkrieg-lsd-mkultra-cia/cn/
 ---
 

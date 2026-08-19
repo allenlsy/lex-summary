@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=9V6tWC4CdFQ"
-excerpt: "萨蒂亚·纳德拉·皮查伊（Sundar Pichai）从印度南部繁华而拥挤的金奈市一间仅两室的简陋公寓起步，最终执掌全球最具影响力的科技巨头之一——谷歌（Google）与阿尔phabet公司，这一历程不仅是一部个人奋斗的传奇，更深刻揭示了科技如何重塑个体命运，并由此推动整个人类文明的演进。他的故事远不止于个人成功，而是一曲关于创新潜能的颂歌——尤其在那些曾视科技为遥不可及梦想的背景下，其意义更为深远。"
+excerpt: "皮查伊从印度金奈简陋童年到执掌谷歌的历程，展现科技如何重塑个人命运。他提出人工智能优先战略，以冷静领导力应对媒体质疑，将其视为堪比新石器时代革命的系统性变革力量。"
 permalink: /articles/471-sundar-pichai-ceo-of-google-and-alphabet/cn/
 ---
 

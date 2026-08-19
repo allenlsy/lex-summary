@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=qa-wl8_wpZA"
-excerpt: "The following is a detailed, fact-based, and neutral paraphrase of a full-length interview with Serhii Plokhy, Professor of History at Harvard University and Director of the Ukrainian Research Institute at Harvard. The transcript, originally spanning over 25,000 words, has been meticulously restructured to preserve all factual content, illustrative examples, historical context, chronological structure, emotional undertones, and analytical conclusions, while presenting the material in a documentary, news-reporting style. The aim is to retain full narrative integrity, including nuances of opinion, scholarly argument, and geopolitical implication, all rendered in concise yet comprehensive English."
+excerpt: "In this episode, historian Serhii Plokhy discusses the Soviet Union's 1991 collapse as a convergence of ideological, geopolitical, and territorial disintegration. He argues it was a grassroots process, driven by republics like Ukraine seeking independence, redefining national identities across Eastern Europe."
 permalink: /articles/415-serhii-plokhy-history-of-ukraine-russia-soviet-union-kgb-nazis-war/en/
 ---
 

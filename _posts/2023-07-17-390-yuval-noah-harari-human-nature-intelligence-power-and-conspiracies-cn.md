@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=Mde2q7GFCrw"
-excerpt: "文本开篇即展开一场关于智力与意识之间根本差异的深刻思辨。智力与意识，虽常被现代话语混淆，尤其在人工智能（AI）发展中更易被混为一谈，但两者实为截然不同的能力。演讲者尤瓦尔·赫拉利（Yuval Noah Harari），历史学家兼哲学家，指出：智力，即解决问题、达成目标、在生存竞争中胜出的能力，并不必然包含意识。意识则指主观体验——疼痛、愉悦、爱、恐惧、悲伤等内在感受，这些并非智力运作所必需。"
+excerpt: "尤瓦尔·赫拉利在博客中探讨智力与意识的本质区别，强调AI虽无意识却通过模拟情感操控人类，并指出人类基于共享虚构故事实现大规模协作，这些故事塑造了社会、经济与政治现实。"
 permalink: /articles/390-yuval-noah-harari-human-nature-intelligence-power-and-conspiracies/cn/
 ---
 

@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=XpC7SVDXimg"
-excerpt: "以下是对以色列总理本杰明·内塔尼亚胡的一次访谈的全面、第三人称转述。他目前正担任其第六个任期。原始访谈文本约11,175字，现已被重新结构化与改写，旨在几乎完整保留每一个事实细节、例证、情感色彩、结构要素，同时采用中立、纪录片风格的新闻报道语调。"
+excerpt: "在访谈中，以色列总理内塔尼亚胡驳斥其全球形象争议，强调国际尊重与外交成果，并借历史教训警示伊朗威胁，同时否认反锡安主义与反犹主义的区别，为司法改革辩护。"
 permalink: /articles/389-benjamin-netanyahu-israel-palestine-power-corruption-hate-and-peace/cn/
 ---
 

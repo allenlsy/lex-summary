@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=13CZPWmke6A"
-excerpt: "The conversation under examination captures a detailed exchange between interviewer Lex Friedman and Ilya Sutskever, co-founder and chief scientist at OpenAI, recognized as one of the most frequently cited computer scientists in modern history with over 165,000 academic citations. The discussion was recorded prior to the global pandemic, framing the technical dialogue within a broader context of societal strain, yet maintaining a steadfast focus on the scientific trajectory of artificial intelligence. Sutskever, regarded by many as one of the most incisive minds in deep learning, reflects on the historical inflection points that catalyzed the field’s current dominance. He identifies a pivotal moment around 2010 or 2011 when he synthesized two foundational observations: the feasibility of training large, deep neural networks end-to-end using backpropagation, and the theoretical capacity of such networks to represent highly complex functions."
+excerpt: "In this conversation, Lex Fridman interviews Ilya Sutskever, OpenAI’s chief scientist, about deep learning’s rise, the importance of overparameterized networks, and the path to artificial general intelligence, highlighting key breakthroughs like Hessian-free optimization and AlexNet’s success."
 permalink: /articles/94-ilya-sutskever-deep-learning/en/
 ---
 

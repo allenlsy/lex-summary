@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=EV7WhVT270Q"
-excerpt: "This comprehensive and in-depth conversation between Lex Fridman, Sebastian Raschka, and Nathan Lambert explores the current state and future trajectory of artificial intelligence, with a focus on technical advancements, competitive dynamics, and philosophical implications. The discussion spans over a year of progress in AI, covering architecture, training methodologies, scaling laws, open vs. closed models, and long-term societal impacts."
+excerpt: "In a conversation with Lex Fridman, Sebastian Raschka and Nathan Lambert analyze the 2025-2026 AI landscape, covering model architecture advances and U.S.-China competition. The discussion highlights China's rise in open-weight models, which are cheaper and more performant, versus America's dominance in closed, user-friendly systems with superior integration and post-training."
 permalink: /articles/490-state-of-ai-in-2026-llms-coding-scaling-laws-china-agents-gpus-agi/en/
 ---
 

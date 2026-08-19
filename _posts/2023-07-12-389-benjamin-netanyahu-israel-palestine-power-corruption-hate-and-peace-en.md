@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: en
 variant_rank: 1
 original_link: "https://www.youtube.com/watch?v=XpC7SVDXimg"
-excerpt: "The following is a comprehensive, third-person paraphrase of a recorded conversation with Benjamin Netanyahu, the Prime Minister of Israel, who currently serves his sixth term in office. This transcript, originally spanning approximately 11,175 words, has been restructured and rewritten to preserve nearly every factual detail, illustrative example, emotional nuance, and structural element while adopting a neutral, documentary tone akin to that of a news reporter."
+excerpt: "In this episode, Israeli Prime Minister Benjamin Netanyahu discusses his leadership amid domestic protests over judicial reform, exploring themes of democracy, security, and technological innovation. The conversation balances personal reflection with geopolitical strategy, including AI’s impact and existential threats facing the nation."
 permalink: /articles/389-benjamin-netanyahu-israel-palestine-power-corruption-hate-and-peace/en/
 ---
 

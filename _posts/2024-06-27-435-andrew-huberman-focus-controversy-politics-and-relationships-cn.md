@@ -8,7 +8,7 @@ collection_id: lex-fridman
 language: cn
 variant_rank: 2
 original_link: "https://www.youtube.com/watch?v=ZIyB9e_7a4c"
-excerpt: "以下是对Lex Fridman与安德鲁·休伯曼之间完整对话的中性、纪录片风格的转述，该对话录制于《Lex Fridman播客》。原文转录约19,448词，本版本在保留几乎全部事实细节、例证、科学引用、情感基调、结构脉络及隐含意义的基础上，进行了压缩与优化，旨在使最终字数控制在9,724至11,668字之间。"
+excerpt: "该对话为Lex Fridman与安德鲁·休伯曼的第五次播客交流，涵盖遗产与导师传承、静默与创造力机制、神经科学应用及公共传播伦理等主题。两人探讨了滑板文化到科学界的传承模式，以及“静体活脑”状态对顿悟的关键作用。"
 permalink: /articles/435-andrew-huberman-focus-controversy-politics-and-relationships/cn/
 ---
 

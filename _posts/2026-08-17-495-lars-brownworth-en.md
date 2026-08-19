@@ -7,7 +7,7 @@ article_title: "495 - Vikings, Ragnar, Berserkers, Valhalla & the Warriors of th
 collection_id: lex-fridman
 language: en
 variant_rank: 1
-excerpt: "The historical period commonly designated as the Viking Age spans approximately three centuries, typically dated from 793 AD to 1066 AD. The conventional starting point for this era is June 8, 793, when a naval force of Norse seafarers, likely originating from modern-day Norway, approached the Holy Island of Lindisfarne. The settlement housed a monastic community dedicated to scriptural study, prayer, and isolation. The Norse force systematically slaughtered the inhabitants, burned several structures, and seized portable valuables before withdrawing. This event, recorded in contemporary chronicles, serves as a widely accepted chronological marker for the beginning of sustained Viking incursions into Western Europe. The psychological and cultural impact of the raid extended far beyond immediate physical destruction. Contemporary accounts, including correspondence from the scholar Alcuin to King Æthelred of Northumbria, describe unprecedented terror. Alcuin noted that no pagan incursion from the sea had ever been conceived possible, emphasizing the shattering of long-held geopolitical assumptions."
+excerpt: "This blog post marks the beginning of the Viking Age with the 793 AD raid on Lindisfarne, discussing the event's profound psychological impact on medieval Christendom. It highlights the episode’s themes of shattered sanctuary assumptions and the challenges of relying on biased external chronicles for historical reconstruction."
 permalink: "/articles/495-lars-brownworth/en/"
 ---
 
