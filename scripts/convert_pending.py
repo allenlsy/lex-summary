@@ -224,7 +224,7 @@ def summarize_excerpt(
         "model": model,
         "messages": [{"role": "user", "content": prompt}],
         "temperature": 0.4,
-        "max_tokens": 200,
+        "max_tokens": 8192,
     }
     headers = {"Content-Type": "application/json"}
     if api_key:
