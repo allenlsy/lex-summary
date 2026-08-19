@@ -93,6 +93,30 @@ class DateFilterTests(unittest.TestCase):
             sys.argv = old_argv
         self.assertEqual(rc, 1)
 
+    def test_omitted_dates_use_defaults(self) -> None:
+        from unittest import mock
+        import sys
+
+        calls = []
+        def fake_summarize(content, language, api_url, model):
+            calls.append(language)
+            return "Summary"
+
+        old_argv = sys.argv
+        # no --start/--end: should cover all posts up to today
+        sys.argv = ["convert_excerpt.py", "--posts-dir", str(self.tmp), "--apply",
+                    "--api-url", "http://test/v1"]
+        try:
+            with mock.patch.object(ce, "summarize_excerpt", side_effect=fake_summarize):
+                rc = ce.main()
+        finally:
+            sys.argv = old_argv
+        self.assertEqual(rc, 0)
+        # today's default end date covers the 08-17 and 08-18 posts only
+        self.assertEqual(len(calls), 2)
+        self.assertIn("excerpt:", (self.tmp / "2026-08-18-b-cn.md").read_text(encoding="utf-8"))
+        self.assertNotIn("excerpt:", (self.tmp / "2026-09-01-c-en.md").read_text(encoding="utf-8"))
+
 
 if __name__ == "__main__":
     unittest.main()

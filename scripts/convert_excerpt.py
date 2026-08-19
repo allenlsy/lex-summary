@@ -24,8 +24,14 @@ POSTS_DIR = REPO_DIR / "_posts"
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--start", required=True, help="start date YYYY-MM-DD (inclusive)")
-    parser.add_argument("--end", required=True, help="end date YYYY-MM-DD (inclusive)")
+    parser.add_argument(
+        "--start",
+        help="start date YYYY-MM-DD (inclusive); defaults to the earliest post",
+    )
+    parser.add_argument(
+        "--end",
+        help="end date YYYY-MM-DD (inclusive); defaults to today",
+    )
     parser.add_argument(
         "--api-url",
         default=DEFAULT_API_URL,
@@ -73,8 +79,8 @@ def update_excerpt(text: str, excerpt: str) -> str | None:
 def main() -> int:
     args = parse_args()
     try:
-        start = date.fromisoformat(args.start)
-        end = date.fromisoformat(args.end)
+        start = date.fromisoformat(args.start) if args.start else date.min
+        end = date.fromisoformat(args.end) if args.end else date.today()
     except ValueError as error:
         print(f"ERROR: invalid date: {error}", file=sys.stderr)
         return 1
