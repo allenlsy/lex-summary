@@ -7,6 +7,7 @@ article_title: "450 - Bernie Sanders Interview"
 collection_id: lex-fridman
 language: cn
 variant_rank: 2
+original_link: "https://www.youtube.com/watch?v=MzkgWDCucNY"
 excerpt: "伯尼·桑德斯的政治轨迹由一种渐进的主流化过程所定义：那些曾被视为边缘的政策立场，通过持续的选举参与和基层动员获得了现实验证。在其整个政治生涯中，桑德斯始终倡导一项进步的经济议程，包括大幅提高联邦最低工资、实现全民医疗保障，以及设计一套税收结构，迫使亿万富翁按其收入比例公平纳税。这些提议最初遭到体制内的冷遇，但在证明了自身的选举可行性后，赢得了广泛的公众支持。关键转折点出现在桑德斯在总统竞选期间为其集会吸引约两万名支持者，并在二十三个州获胜之时。这些成果迫使政治建制派承认，所提议的改革并非纸上谈兵，而是源自选民的明确授权。"
 permalink: "/articles/450-bernie-sanders/cn/"
 ---

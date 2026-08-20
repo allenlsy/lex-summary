@@ -11,40 +11,7 @@
     <p>{{ articles | size }} episode{% if articles.size != 1 %}s{% endif %} · {{ site.posts | size }} version{% if site.posts.size != 1 %}s{% endif %}</p>
   </header>
   {% for article in page_articles %}
-    {% assign variants = article.items | sort: "variant_rank" %}
-    {% assign representative = variants[0] %}
-    {% assign english_variant = variants | where: "language", "en" | first %}
-    {% assign title_variant = english_variant | default: representative %}
-    <article class="article-card">
-      <div class="article-summary">
-        <p class="article-date">{{ representative.date | date: "%d %B %Y" }}</p>
-        <h2><a href="{{ title_variant.url | relative_url }}">{{ representative.article_title }}</a></h2>
-        {% include alternate_titles.html variants=variants primary_language=title_variant.language %}
-        <div class="edition-list">
-          <p class="edition-label">Choose a language</p>
-          <ul class="variant-links">
-            {% for variant in variants %}
-              <li>
-                <a href="{{ variant.url | relative_url }}">
-                  <span>{% include language_label.html language=variant.language %}</span>
-                  {% if variant.spec %}<span>{{ variant.spec | join: " / " }}</span>{% endif %}
-                  <span aria-hidden="true">↗</span>
-                </a>
-              </li>
-            {% endfor %}
-          </ul>
-        </div>
-        <div class="article-excerpts">
-          {% assign excerpt_languages = "en|cn" | split: "|" %}
-          {% for excerpt_language in excerpt_languages %}
-            {% assign excerpt_variant = variants | where: "language", excerpt_language | first %}
-            {% if excerpt_variant and excerpt_variant.excerpt %}
-              <p class="article-excerpt" lang="{% if excerpt_language == 'cn' %}zh-CN{% else %}en{% endif %}">{{ excerpt_variant.excerpt | strip_html | strip_newlines | truncate: 210 }}</p>
-            {% endif %}
-          {% endfor %}
-        </div>
-      </div>
-    </article>
+    {% include article_card.html variants=article.items %}
   {% endfor %}
 
   <div class="summary-controls">

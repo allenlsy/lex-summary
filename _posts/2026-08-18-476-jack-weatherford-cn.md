@@ -7,6 +7,7 @@ article_title: "476 - Jack Weatherford: Genghis Khan and the Mongol Empire"
 collection_id: lex-fridman
 language: cn
 variant_rank: 2
+original_link: "https://www.youtube.com/watch?v=U1H1Ob7jk8Q"
 excerpt: "基调： 中立、分析性、历史扎实，与原稿结构一致"
 permalink: "/articles/476-jack-weatherford/cn/"
 ---

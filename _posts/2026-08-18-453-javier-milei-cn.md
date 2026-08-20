@@ -7,6 +7,7 @@ article_title: "453 - Javier Milei: President of Argentina - Freedom, Economics,
 collection_id: lex-fridman
 language: cn
 variant_rank: 2
+original_link: "https://www.youtube.com/watch?v=8NLzc9kobDk"
 excerpt: "本报告为一份纪实性文献，旨在考察哈维尔·米莱（Javier Milei）就任阿根廷总统约一年前的政治轨迹、经济政策及其哲学基础。米莱秉持自由主义与无政府资本主义的意识形态框架，在就职时面对的是一个深陷系统性经济崩溃的国家机器。其竞选运动以一把电锯为象征，这一视觉隐喻代表了他旨在摧毁其所称的腐败臃肿的国家官僚体系的明确目标。就任后，该国面临多重叠加危机：日均百分之一的通胀率导致恶性通胀压力不断加剧，财政与货币机构债务水平持续恶化，近半数人口遭受失业与贫困的困扰。"
 permalink: "/articles/453-javier-milei/cn/"
 ---

@@ -7,6 +7,7 @@ article_title: "476 - Jack Weatherford: Genghis Khan and the Mongol Empire"
 collection_id: lex-fridman
 language: en
 variant_rank: 1
+original_link: "https://www.youtube.com/watch?v=U1H1Ob7jk8Q"
 excerpt: "Format: Third-Person Journalistic/Documentary Narrative"
 permalink: "/articles/476-jack-weatherford/en/"
 ---

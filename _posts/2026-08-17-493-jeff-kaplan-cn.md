@@ -7,6 +7,7 @@ article_title: "493 - Jeff Kaplan: World of Warcraft, Overwatch, Blizzard, and F
 collection_id: lex-fridman
 language: cn
 variant_rank: 2
+original_link: "https://www.youtube.com/watch?v=H9rF1CSSh-w"
 excerpt: "前暴雪总监杰夫·卡普兰回顾其从文学创作转向游戏开发的历程，重点阐述《魔兽世界》与《守望先锋》的设计理念。他提出游戏乐趣包含玩家、设计及系统三层境界，并深刻反思了PvP机制对玩家心理及社区动态的深远影响。"
 permalink: "/articles/493-jeff-kaplan/cn/"
 ---

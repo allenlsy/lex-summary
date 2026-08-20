@@ -7,6 +7,7 @@ article_title: "450 - Bernie Sanders Interview"
 collection_id: lex-fridman
 language: en
 variant_rank: 1
+original_link: "https://www.youtube.com/watch?v=MzkgWDCucNY"
 excerpt: "The political trajectory of Bernie Sanders has been defined by the gradual mainstreaming of policy positions that were once considered fringe, only to be validated by sustained electoral engagement and grassroots mobilization. Throughout his political career, Sanders has consistently advocated for a progressive economic agenda encompassing a significantly elevated federal minimum wage, universal healthcare coverage, and a tax structure designed to compel billionaires to contribute a proportionally equitable share of their income. These proposals, which initially faced institutional dismissal, have achieved widespread public support following demonstrations of electoral viability. The pivotal moment arrived when Sanders secured the support of approximately twenty thousand attendees at his campaign rallies and captured victories across twenty-three states during his presidential bids. These outcomes compelled the political establishment to acknowledge that the proposed reforms were not merely theoretical but represented a viable mandate from the electorate."
 permalink: "/articles/450-bernie-sanders/en/"
 ---

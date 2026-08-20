@@ -7,6 +7,7 @@ article_title: "453 - Javier Milei: President of Argentina - Freedom, Economics,
 collection_id: lex-fridman
 language: en
 variant_rank: 1
+original_link: "https://www.youtube.com/watch?v=8NLzc9kobDk"
 excerpt: "The following documentary account examines the political trajectory, economic policies, and philosophical foundations of Javier Milei, who assumed the presidency of Argentina approximately one year prior to this report. Operating within the ideological framework of libertarianism and anarcho-capitalism, Milei entered office with a national apparatus confronting systemic economic collapse. His campaign was symbolically anchored by a chainsaw, a visual metaphor representing his stated objective to dismantle what he characterized as a corrupt and bloated state bureaucracy. Upon assuming office, the country faced compounding crises: hyperinflationary pressures accelerating at daily rates of one percent, state debt levels deepening across multiple fiscal and monetary institutions, and widespread unemployment and poverty affecting nearly half the population."
 permalink: "/articles/453-javier-milei/en/"
 ---

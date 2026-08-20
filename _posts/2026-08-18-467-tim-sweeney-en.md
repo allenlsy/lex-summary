@@ -7,6 +7,7 @@ article_title: "467 - Tim Sweeney: Fortnite, Unreal Engine, and the Future of Ga
 collection_id: lex-fridman
 language: en
 variant_rank: 1
+original_link: "https://www.youtube.com/watch?v=477qF6QNSvc"
 excerpt: "The following document presents a comprehensive, third-person documentary account of the career, technical philosophy, and industry vision of Tim Sweeney, founder and CEO of Epic Games. The narrative reconstructs the original interview’s structure, preserving technical specifications, historical context, illustrative examples, and the speaker’s explicit opinions and conclusions. The tone remains strictly journalistic and neutral, focusing on factual reporting, technical exposition, and the broader implications for the gaming industry, software development, and digital culture."
 permalink: "/articles/467-tim-sweeney/en/"
 ---

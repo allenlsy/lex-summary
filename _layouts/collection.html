@@ -39,41 +39,6 @@ layout: default
   </header>
 
   {% for article in articles %}
-    {% assign variants = article.items | sort: "variant_rank" %}
-    {% assign representative = variants | first %}
-    {% assign english_variant = variants | where: "language", "en" | first %}
-    {% assign title_variant = english_variant | default: representative %}
-    <article class="collection-entry">
-      <div class="collection-entry-copy">
-        <h2><a href="{{ title_variant.url | relative_url }}">{{ representative.article_title }}</a></h2>
-        {% include alternate_titles.html variants=variants primary_language=title_variant.language %}
-        <div class="collection-entry-meta">
-          <p class="collection-published">
-            <span>Published</span>
-            <time datetime="{{ representative.date | date_to_xmlschema }}">{{ representative.date | date: "%d %B %Y" }}</time>
-          </p>
-          <nav class="collection-languages" aria-label="Languages for {{ representative.article_title }}">
-            <span>Choose language</span>
-            <span class="collection-language-links">
-              {% for post in variants %}
-                <a href="{{ post.url | relative_url }}">
-                  {% include language_label.html language=post.language %}{% if post.spec %} · {{ post.spec | join: " / " | upcase }}{% endif %}
-                  <span aria-hidden="true">↗</span>
-                </a>
-              {% endfor %}
-            </span>
-          </nav>
-        </div>
-        <div class="collection-entry-excerpts">
-          {% assign excerpt_languages = "en|cn" | split: "|" %}
-          {% for excerpt_language in excerpt_languages %}
-            {% assign excerpt_variant = variants | where: "language", excerpt_language | first %}
-            {% if excerpt_variant and excerpt_variant.excerpt %}
-              <p class="collection-entry-excerpt" lang="{% if excerpt_language == 'cn' %}zh-CN{% else %}en{% endif %}">{{ excerpt_variant.excerpt | strip_html | strip_newlines | truncate: 210 }}</p>
-            {% endif %}
-          {% endfor %}
-        </div>
-      </div>
-    </article>
+    {% include article_card.html variants=article.items %}
   {% endfor %}
 </section>

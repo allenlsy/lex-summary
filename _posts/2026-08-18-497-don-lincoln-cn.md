@@ -7,6 +7,7 @@ article_title: "497 - Biggest Mysteries in Physics: Antimatter, Dark Energy & To
 collection_id: lex-fridman
 language: cn
 variant_rank: 2
+original_link: "https://www.youtube.com/watch?v=1M3Vdl6DRkU"
 excerpt: "本期探讨反物质、暗能量及万有理论的追寻，梳理从牛顿力学到电弱统一的物理史。重点解析相对论时空观、希格斯机制及粒子加速器技术，揭示自然界基本力与物质构成的底层规律。"
 permalink: "/articles/497-don-lincoln/cn/"
 ---

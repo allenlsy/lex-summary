@@ -7,6 +7,7 @@ article_title: "460 - Narendra Modi: Prime Minister of India - Power, Democracy,
 collection_id: lex-fridman
 language: cn
 variant_rank: 2
+original_link: "https://www.youtube.com/watch?v=ZPUtA3W-7_I"
 excerpt: "此次广播收录了麻省理工学院研究员、Lex Fridman 播客主持人 Lex Fridman 与印度总理纳伦德拉·莫迪之间的录音对话。该对话被整理为一份涵盖印度治理与文化认同的历史、政治、哲学及个人维度的全面访谈。文稿经人工转录生成，带有用于导航的时间戳标记，但已注明可能存在细微误差。录制方提供了多语言无障碍访问功能，包含英语、印地语及人工智能配音音频，并配有翻译字幕，旨在打破语言壁垒，扩大全球受众。Fridman 的开场旁白确立了对话框架：对一位从经济拮据背景崛起、领导全球最大民主国家、并主导三次标志性竞选的政治人物进行深度探索。叙事将讨论置于当代地缘政治现实之中，指出地区冲突升级、核紧张局势以及由人工智能与核聚变驱动的技术变革。引言将此对话定位为领导力案例研究，强调需要构建外交桥梁而非拆毁桥梁的人物，同时维护国家认同并肯定人类共性。Fridman 明确表示对集中权力、财富与名望的怀疑，指出其固有的腐败潜力。因此，对话被界定为对人类复杂性的审视，拒绝神化，转而聚焦领导力、个人哲学与公民责任的交汇。"
 permalink: "/articles/460-narendra-modi/cn/"
 ---

@@ -7,6 +7,7 @@ article_title: "468 - Janna Levin: Black Holes, Wormholes, Aliens, Paradoxes & E
 collection_id: lex-fridman
 language: en
 variant_rank: 1
+original_link: "https://www.youtube.com/watch?v=A6m4iJIw_84"
 excerpt: "The conversation between host Lex Fridman and theoretical physicist Janna Levin opens with a shared appreciation for nocturnal intellectual work, noting that profound scientific thought frequently occurs during quiet, undisturbed hours. The discussion then pivots to one of the most extreme astrophysical phenomena known to modern physics: black holes. Levin emphasizes a common misconception regarding their formation. While popular science often equates black holes with the crushed remnants of dead stars, Levin clarifies that black holes are fundamentally different from stellar debris. They are not dense, physical objects in the conventional sense, but rather regions of spacetime defined by a specific boundary: the event horizon."
 permalink: "/articles/468-janna-levin/en/"
 ---

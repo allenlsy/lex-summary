@@ -7,6 +7,7 @@ article_title: "468 - Janna Levin: Black Holes, Wormholes, Aliens, Paradoxes & E
 collection_id: lex-fridman
 language: cn
 variant_rank: 2
+original_link: "https://www.youtube.com/watch?v=A6m4iJIw_84"
 excerpt: "主持人莱克斯·弗里德曼与理论物理学家贾娜·莱文的对话始于对夜间科研工作的共同欣赏，指出深刻的科学思想往往在安静、不受打扰的时刻涌现。随后讨论转向现代物理学已知最极端的宇宙现象之一：黑洞。莱文强调了一个关于黑洞形成的常见误解。尽管科普作品常将黑洞等同于死亡恒星被压碎后的残骸，但莱文澄清，黑洞本质上与恒星残骸不同。它们并非传统意义上的致密物理物体，而是由一个特定边界定义的时空区域：事件视界。"
 permalink: "/articles/468-janna-levin/cn/"
 ---
