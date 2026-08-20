@@ -154,7 +154,7 @@ if ! grep -Fq '<h2><a href="/articles/456-ukraine-war-peace-putin-trump-nato-and
   exit 1
 fi
 
-if ! grep -Fq 'assign title_variant = english_variant | default: representative' _includes/summary_index.html; then
+if ! grep -Fq 'assign title_variant = english_variant | default: representative' _includes/article_card.html; then
   echo "FAIL: homepage post title does not fall back to the first variation" >&2
   exit 1
 fi
@@ -195,7 +195,7 @@ if ! grep -Fq '.article-summary { display: grid; grid-template-columns: minmax(0
    ! grep -Fq '.article-summary .alternate-titles { grid-column: 1 / -1; grid-row: 3;' "$site_dir/assets/css/style.css" || \
    ! grep -Fq '.article-summary .edition-list { grid-column: 2; grid-row: 4;' "$site_dir/assets/css/style.css" || \
    ! grep -Fq '.article-excerpts { grid-column: 1; grid-row: 4;' "$site_dir/assets/css/style.css" || \
-   ! grep -Fq 'excerpt_languages = "en|cn"' _includes/summary_index.html || \
+   ! grep -Fq 'excerpt_languages = "en|cn"' _includes/article_card.html || \
    ! grep -Fq 'class="article-excerpt" lang="en"' "$site_dir/index.html" || \
    ! grep -Fq 'class="article-excerpt" lang="zh-CN"' "$site_dir/index.html"; then
   echo "FAIL: summary cards do not reuse the former index space with a balanced content grid" >&2
@@ -318,24 +318,25 @@ fi
 echo "PASS: collection intro sits below the collection heading"
 
 if ! awk '
-  /class="collection-entry-copy"/ { in_entry = 1 }
+  /class="article-summary"/ { in_entry = 1 }
   in_entry && /<h2>/ { saw_heading = 1 }
-  in_entry && saw_heading && /class="collection-entry-meta"/ { found = 1; exit }
+  in_entry && saw_heading && /class="edition-list"/ { found = 1; exit }
   END { exit !found }
 ' "$collection_page"; then
-  echo "FAIL: collection entry does not place metadata below its title" >&2
+  echo "FAIL: collection entry does not place its editions below the title" >&2
   exit 1
 fi
 
-echo "PASS: collection entry places metadata below its title"
+echo "PASS: collection entry places its editions below the title"
 
-if ! grep -Fq '.collection-entry-copy h2 { margin: 0 0 1.5rem; font-size: clamp(1.65rem, 2.6vw, 2.25rem);' "$site_dir/assets/css/style.css" || \
-   ! grep -Fq 'white-space: nowrap;' "$site_dir/assets/css/style.css"; then
-  echo "FAIL: collection entry title is not constrained to one line" >&2
+if ! grep -Fq 'class="article-card"' "$collection_page" || \
+   ! grep -Fq 'class="article-summary"' "$collection_page" || \
+   ! grep -Fq 'class="edition-list"' "$collection_page"; then
+  echo "FAIL: collection entries do not reuse the homepage summary card" >&2
   exit 1
 fi
 
-echo "PASS: collection entry title uses the compact single-line treatment"
+echo "PASS: collection entries reuse the homepage summary card"
 
 article_page="$site_dir/articles/456-ukraine-war-peace-putin-trump-nato-and-freedom/en/index.html"
 cn_article_page="$site_dir/articles/456-ukraine-war-peace-putin-trump-nato-and-freedom/cn/index.html"
