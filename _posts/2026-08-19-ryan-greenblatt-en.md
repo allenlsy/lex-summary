@@ -7,6 +7,7 @@ article_title: "Ryan Greenblatt – What happens once AI can automate AI researc
 collection_id: dwarkesh
 language: en
 variant_rank: 1
+original_link: "https://www.dwarkesh.com/p/ryan-greenblatt"
 excerpt: "The central inquiry under examination concerns the feasibility and implications of recursive self-improvement (RSI) within artificial intelligence development. The core question posits whether, upon achieving human-level artificial intelligence, the research and development process will accelerate to the point of full automation, thereby triggering a feedback loop that rapidly produces tens of billions of superintelligent systems. These subsequent systems would, individually, exceed the competence of top human experts across all domains. The prevailing institutional stance has historically treated this trajectory as improbable, primarily due to perceived bottlenecks in computational scaling and the reliance on human-generated expert data as the foundational substrate for contemporary AI advancement."
 permalink: "/articles/ryan-greenblatt/en/"
 ---

@@ -7,6 +7,7 @@ article_title: "Ryan Greenblatt – What happens once AI can automate AI researc
 collection_id: dwarkesh
 language: cn
 variant_rank: 2
+original_link: "https://www.dwarkesh.com/p/ryan-greenblatt"
 excerpt: "本文考察的核心问题涉及人工智能发展中递归自我改进（Recursive Self-Improvement, RSI）的可行性及其影响。核心假设是：一旦实现人类水平的人工智能，研发过程是否会加速至完全自动化，从而触发反馈循环，迅速催生数百亿个超级智能系统？这些系统个体将超越各领域顶尖人类专家的能力。历史上，主流机构立场普遍认为这一轨迹不太可能，主要归因于对算力扩展瓶颈的认知，以及依赖人类专家数据作为当代AI进步基础载体的观点。"
 permalink: "/articles/ryan-greenblatt/cn/"
 ---

@@ -7,6 +7,7 @@ article_title: "Dan Carlin's Hardcore History 62 Supernova in the East 1"
 collection_id: dan-carlin
 language: cn
 variant_rank: 2
+original_link: "https://www.dancarlin.com/product/hardcore-history-62-supernova-in-the-east-i/"
 excerpt: "1941年12月7日的历史记录与“一个将永载史册的耻辱之日”的表述，以及“人类的一小步，人类的一大步”的宏大宣言，共同勾勒出一幅展现人类极端境遇的叙事图景。然而，在这些广为人知的历史里程碑之中，潜藏着一个更为安静却持久的现象：许多士兵在国家正式投降后，仍继续作战数十年。在这些人物中，小野寛（Hiro Onoda）的故事成为更广泛文化与心理现实的缩影。1944年，正值太平洋战争白热化阶段，小野被派往菲律宾一处茂密丛林覆盖的岛屿。他的命令明确：驻守该地形，阻滞盟军行动，并直至其直属上级直接下达解除命令前持续作战。与同时代许多人不同，1945年敌对行动结束时，小野并未投降。他在荒野中坚持作战，参与多次小规模冲突，导致数十名当地平民死伤，并保持了武器与弹药的完好状态近三十年。直到1974年3月9日，他的原上级长官才被飞往菲律宾，正式承认敌对行动结束并予以退役。小野走出丛林时，仍持有完好的步枪、手榴弹和数百发弹药，其服从命令的坚定程度完全超越了战后常规的投降协议。"
 permalink: "/articles/dan-carlin-s-hardcore-history-62-supernova-in-the-east-1/cn/"
 ---
